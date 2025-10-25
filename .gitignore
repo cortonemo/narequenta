@@ -1,0 +1,82 @@
+# ===============================
+# Nárëquenta RPG — .gitignore
+# ===============================
+
+# --- OS / System clutter ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+__MACOSX/
+
+# --- Obsidian workspace files ---
+.obsidian/
+.obsidian.vimrc
+.obsidian-*
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+
+# --- Python cache (for future scripting) ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Node / web build artifacts (if you use MkDocs or docsify) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# --- Build / Export folders ---
+build/
+dist/
+output/
+export/
+temp/
+tmp/
+cache/
+
+# --- Foundry / Game data ---
+# Keep JSON rule exports, ignore large runtime data or backups
+foundry_exports/session_logs/
+foundry_exports/cache/
+*.db
+*.sqlite
+
+# --- Image / art cache ---
+*.thumb.jpg
+*.thumb.png
+*.psd
+*.xcf
+*.kra~
+*.blend1
+*.blend2
+*.backup
+
+# --- Backups / archives ---
+old/
+archive/
+backup/
+
+# --- Sensitive / local files ---
+*.key
+*.pem
+*.crt
+*.env
+secrets.txt
+passwords.txt
+
+# --- Optional: ignore heavy exports ---
+# Uncomment if you don't want to track generated docs or PDFs
+# *.pdf
+# *.docx
