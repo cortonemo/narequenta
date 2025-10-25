@@ -226,8 +226,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "877d4f4d0ebbd967",
+  "active": "d6b40cdedcae4acd",
   "lastOpenFiles": [
+    "README.md",
+    "LICENSE.md",
+    "add_footer.md",
     "workflows/add_footer.yml",
     "workflows/New Documento de Texto.txt",
     "workflows",
@@ -235,10 +238,7 @@
     "~ew shortcut.tmp",
     "New shortcut.lnk",
     "CREDITS.md",
-    "add_footer.md",
-    "LICENSE.md",
     "teste_footer.md",
-    "README.md",
     "test_footer1.md",
     "teste.md",
     "LICENSE-draft.md",
@@ -250,7 +250,6 @@
     "add_footer_new_file.py",
     "add_footer_all_existing.py",
     "logs",
-    "playtest",
-    "Rules"
+    "playtest"
   ]
 }
