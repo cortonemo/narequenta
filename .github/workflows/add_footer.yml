@@ -1,5 +1,8 @@
 name: Add footer to Markdown files
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
