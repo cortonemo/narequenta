@@ -24,8 +24,7 @@ jobs:
           python-version: '3.12'
 
       - name: Run footer script
-        run: |
-          python .github/scripts/add_footer_new_file.py
+        run: python .github/scripts/add_footer_new_file.py
 
       - name: Commit and push changes
         run: |
@@ -35,4 +34,6 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m "chore: add footer to Markdown files"
             git push
+          else
+            echo "No footer changes needed."
           fi
