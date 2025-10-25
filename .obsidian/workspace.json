@@ -1,0 +1,199 @@
+{
+  "main": {
+    "id": "d51fd96930c1ce35",
+    "type": "split",
+    "children": [
+      {
+        "id": "3aae9652465f4f0b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "36759ebc6afc2159",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "9b7a95b436c04b85",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "logs/2025-10-25_playtest_notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-10-25_playtest_notes"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "10f3a370023953f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "2ccffe45da7cf50f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "877d4f4d0ebbd967",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "98c1c5bdc921e87f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "44eb6c0ab262e699",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8eb9c6eddbf2da9a",
+    "type": "split",
+    "children": [
+      {
+        "id": "028d02e4f9b5a57e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9c6a0e69e86cbd25",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "logs/2025-10-25_playtest_notes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2025-10-25_playtest_notes"
+            }
+          },
+          {
+            "id": "e768e410ed50f79e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "logs/2025-10-25_playtest_notes.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2025-10-25_playtest_notes"
+            }
+          },
+          {
+            "id": "9314441f312bd38d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "bb5ad8a0516e26ff",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "logs/2025-10-25_playtest_notes.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2025-10-25_playtest_notes"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "9b7a95b436c04b85",
+  "lastOpenFiles": [
+    "playtest/gm_reference_v0.1.md",
+    "logs/2025-10-25_playtest_notes.md",
+    "logs",
+    "playtest/character_sheet_v0.1.md",
+    "playtest",
+    "Rules/core_rules_v0.1.md",
+    "LICENSE-draft.md",
+    "Rules",
+    "README.md"
+  ]
+}
