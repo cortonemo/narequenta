@@ -1,5 +1,7 @@
 # Nárëquenta — Tales of the Waning
 
+### 🪶 License & Authorship
+
 Nárëquenta is a tabletop roleplaying game about beautiful erosion.
 
 You start at your absolute peak. Every action costs you pieces of yourself.  
@@ -18,3 +20,10 @@ This repo contains:
 
 Status: v0.1 (concept/playtest draft, not final).
 This is not public release material.
+
+**© 2025 Serelith Varn**  
+This project is released under the **Nárëquenta Limited Open License (v0.1)**.  
+You are free to play, stream, and create fan content for this system —  
+as long as you provide proper credit and do not use it commercially.
+
+📜 [Read the full license →](LICENSE.md)
