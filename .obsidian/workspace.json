@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test_footer1.md",
+                "file": "test_footer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "test_footer1"
+              "title": "test_footer"
             }
           }
         ],
@@ -240,11 +240,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "8b939b0f441ffe15",
+  "active": "877d4f4d0ebbd967",
   "lastOpenFiles": [
     "README.md",
-    "test_footer1.md",
-    "test_footer1.md",
+    "test_footer.md",
+    "test_footer.md",
     "teste.md",
     "LICENSE-draft.md",
     "LICENSE.md",
