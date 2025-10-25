@@ -17,3 +17,7 @@ Author: <Serelith Varn>
 5. All text, names, mechanics-as-expressed, setting concepts, and terminology in this repository are © 2025 <Serelith Varn>. All rights reserved.
 
 This is an early draft. A final license will be provided at public release.
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.

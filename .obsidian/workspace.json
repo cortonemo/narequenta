@@ -228,17 +228,19 @@
   },
   "active": "2d705a67f00177c4",
   "lastOpenFiles": [
+    "LICENSE-draft.md",
     "LICENSE.md",
     "CREDITS.md",
     "CHANGELOG.md",
-    "README.md",
-    "LICENSE-draft.md",
-    "logs/2025-10-25_playtest_notes.md",
-    "playtest/gm_reference_v0.1.md",
-    "logs",
-    "playtest/character_sheet_v0.1.md",
-    "playtest",
     "Rules/core_rules_v0.1.md",
+    "playtest/gm_reference_v0.1.md",
+    "playtest/character_sheet_v0.1.md",
+    "logs/2025-10-25_playtest_notes.md",
+    "README.md",
+    "add_footer_new_file.py",
+    "add_footer_all_existing.py",
+    "logs",
+    "playtest",
     "Rules"
   ]
 }

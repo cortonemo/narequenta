@@ -126,3 +126,7 @@ When you burn your last Facet to zero, that’s the end of your story.
 What happens to you — martyrdom, apotheosis, quiet disappearance — is part of the table’s shared fiction.
 
 The campaign is the record of *how you chose to fade.*
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.

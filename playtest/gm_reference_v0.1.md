@@ -26,3 +26,7 @@ PACING / TONE
 DEATH / END
 - When all Facets hit CURRENT 0 → they’re done.
 - Treat the ending as sacred. Ask them: how are you remembered?
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
