@@ -1,0 +1,22 @@
+{
+    "GAME_TITLE": "Nárëquenta: Contos do Escurecer",
+    "SHEET_SUBTITLE": "Ficha de Personagem v0.2 Alpha Test",
+    "FIELD_NAME": "Nome",
+    "FIELD_HP": "HP Atual",
+    "SECTION_ESSENCES": "Essências (E_max vs E_cur - Foco/Movimentos Restantes)",
+    "SECTION_SCARRING_LOG": "Registo de Cicatrizes / Refinamentos",
+    "SECTION_PROMISE": "Promessa Final",
+    "GRID_ESSENCE": "Essência",
+    "GRID_EMAX": "E_MÁX (%)",
+    "GRID_ECUR": "E_ATUAL (%)",
+    "GRID_PHASE": "Fase (S/L)",
+    "GRID_ARATE": "A_RATE (S/L)",
+    "GRID_CLIM": "C_LIM (S/L)",
+    "GRID_DCONV": "D_CONV (S/L)",
+    "PHASE_PRISTINE": "Pristine",
+    "PHASE_WEATHERED": "Desgastado",
+    "PHASE_TEMPERED": "Temperado",
+    "PHASE_FADED": "Desvanecido",
+    "PHASE_EMBERS": "Brasas",
+    "PHASE_ASHEN": "Cinzas"
+}

@@ -1,0 +1,22 @@
+{
+    "GAME_TITLE": "Nárëquenta: Tales of the Waning",
+    "SHEET_SUBTITLE": "PC Sheet v0.2 Alpha Test",
+    "FIELD_NAME": "Name",
+    "FIELD_HP": "Current HP",
+    "SECTION_ESSENCES": "Essences (E_max vs E_cur - Remaining Focus/Moves)",
+    "SECTION_SCARRING_LOG": "Scarring / Refinements Log",
+    "SECTION_PROMISE": "Final Promise",
+    "GRID_ESSENCE": "Essence",
+    "GRID_EMAX": "E_MAX (%)",
+    "GRID_ECUR": "E_CUR (%)",
+    "GRID_PHASE": "Phase (R/O)",
+    "GRID_ARATE": "A_RATE (R/O)",
+    "GRID_CLIM": "C_LIM (R/O)",
+    "GRID_DCONV": "D_CONV (R/O)",
+    "PHASE_PRISTINE": "Pristine",
+    "PHASE_WEATHERED": "Weathered",
+    "PHASE_TEMPERED": "Tempered",
+    "PHASE_FADED": "Faded",
+    "PHASE_EMBERS": "Embers",
+    "PHASE_ASHEN": "Ashen"
+}

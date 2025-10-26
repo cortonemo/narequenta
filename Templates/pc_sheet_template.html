@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="SHEET_TITLE"></title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            color: #333;
+            background-color: #f8f8f8;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header h1 {
+            color: #5d4037;
+            border-bottom: 2px solid #5d4037;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        .essence-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+            font-size: 14px;
+        }
+        .essence-grid-header {
+            font-weight: bold;
+            text-align: center;
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        input[type="number"] {
+            width: 90%;
+            padding: 3px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        .section-header {
+            background-color: #5d4037;
+            color: white;
+            padding: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .read-only {
+            background-color: #eee;
+            color: #555;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 data-lang="GAME_TITLE"></h1>
+        <h2 data-lang="SHEET_SUBTITLE"></h2>
+    </header>
+
+    <div class="info-block">
+        <span data-lang="FIELD_NAME"></span>: <input type="text" id="pc-name" value="">
+        <span style="float: right;" data-lang="FIELD_HP"></span>: <input type="number" id="hp-current" value="100" style="width: 40px;"> / 100
+    </div>
+
+    <div class="section-header" data-lang="SECTION_ESSENCES"></div>
+
+    <div class="essence-grid">
+        <div class="essence-grid-header" data-lang="GRID_ESSENCE"></div>
+        <div class="essence-grid-header" data-lang="GRID_EMAX"></div>
+        <div class="essence-grid-header" data-lang="GRID_ECUR"></div>
+        <div class="essence-grid-header" data-lang="GRID_PHASE"></div>
+        <div class="essence-grid-header" data-lang="GRID_ARATE"></div>
+        <div class="essence-grid-header" data-lang="GRID_CLIM"></div>
+        <div class="essence-grid-header" data-lang="GRID_DCONV"></div>
+
+        <div>VITALIS</div>
+        <div><input type="number" id="vitalis-emax" value="100" min="0" max="100" onchange="updateEssence('vitalis', 'physical')"></div>
+        <div><input type="number" id="vitalis-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('vitalis')"></div>
+        <div><input type="text" id="vitalis-phase" class="read-only" readonly value="Pristine"></div>
+        <div><input type="text" id="vitalis-arate" class="read-only" readonly value="30%"></div>
+        <div><input type="text" id="vitalis-clim" class="read-only" readonly value="5"></div>
+        <div><input type="text" id="vitalis-dconv" class="read-only" readonly value="0d6"></div>
+
+        <div>MOTUS</div>
+        <div><input type="number" id="motus-emax" value="100" min="0" max="100" onchange="updateEssence('motus', 'physical')"></div>
+        <div><input type="number" id="motus-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('motus')"></div>
+        <div><input type="text" id="motus-phase" class="read-only" readonly value="Pristine"></div>
+        <div><input type="text" id="motus-arate" class="read-only" readonly value="30%"></div>
+        <div><input type="text" id="motus-clim" class="read-only" readonly value="5"></div>
+        <div><input type="text" id="motus-dconv" class="read-only" readonly value="0d6"></div>
+        
+        <div>SENSUS</div>
+        <div><input type="number" id="sensus-emax" value="100" min="0" max="100" onchange="updateEssence('sensus', 'physical')"></div>
+        <div><input type="number" id="sensus-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('sensus')"></div>
+        <div><input type="text" id="sensus-phase" class="read-only" readonly value="Pristine"></div>
+        <div><input type="text" id="sensus-arate" class="read-only" readonly value="30%"></div>
+        <div><input type="text" id="sensus-clim" class="read-only" readonly value="5"></div>
+        <div><input type="text" id="sensus-dconv" class="read-only" readonly value="0d6"></div>
+
+        <div>VERBUM</div>
+        <div><input type="number" id="verbum-emax" value="100" min="0" max="100" onchange="updateEssence('verbum', 'magic')"></div>
+        <div><input type="number" id="verbum-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('verbum')"></div>
+        <div><input type="text" id="verbum-phase" class="read-only" readonly value="Pristine"></div>
+        <div><input type="text" id="verbum-arate" class="read-only" readonly value="40%"></div>
+        <div><input type="text" id="verbum-clim" class="read-only" readonly value="5"></div>
+        <div><input type="text" id="verbum-dconv" class="read-only" readonly value="0d6"></div>
+
+        <div>ANIMA</div>
+        <div><input type="number" id="anima-emax" value="100" min="0" max="100" onchange="updateEssence('anima', 'magic')"></div>
+        <div><input type="number" id="anima-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('anima')"></div>
+        <div><input type="text" id="anima-phase" class="read-only" readonly value="Pristine"></div>
+        <div><input type="text" id="anima-arate" class="read-only" readonly value="40%"></div>
+        <div><input type="text" id="anima-clim" class="read-only" readonly value="5"></div>
+        <div><input type="text" id="anima-dconv" class="read-only" readonly value="0d6"></div>
+    </div>
+
+    <div class="section-header" data-lang="SECTION_SCARRING_LOG"></div>
+    <textarea rows="5" style="width: 100%; box-sizing: border-box;"></textarea>
+
+    <div class="section-header" data-lang="SECTION_PROMISE"></div>
+    <textarea rows="2" style="width: 100%; box-sizing: border-box;"></textarea>
+    
+	<script>
+		// ====================================================================
+		// LANGUAGE SETUP
+		//
+		// Choose which language file to load for labels and phase names.
+		// Examples:
+		// const LANG_CODE = "en-us";   // English (US)
+		// const LANG_CODE = "pt-pt";   // Português (Portugal)
+		// const LANG_CODE = "fr-fr";   // (if you add fr-fr.json later)
+		//
+		// Just change the line below. No auto-detection.
+		// ====================================================================
+		const LANG_CODE = "en-us";
+
+		// ====================================================================
+		// 1. LANGUAGE LOADING LOGIC 
+		// ====================================================================
+
+		let dictionary = {};
+
+		// Path adjusted to look for /lang/ next to the game bundle.
+		// We assume a folder structure where ../../../lang/<LANG_CODE>.json exists.
+		const langFilePath = `../../../lang/${LANG_CODE}.json`;
+
+		async function loadLanguage() {
+			try {
+				const response = await fetch(langFilePath);
+				if (!response.ok) {
+					throw new Error(`Failed to load language file: ${langFilePath}`);
+				}
+
+				dictionary = await response.json();
+
+				applyTranslations();
+				initializeEssences();
+
+			} catch (error) {
+				console.error(`Error loading localization from ${langFilePath}:`, error);
+				document.getElementById('pc-name').value = "LOAD ERROR: Check /lang/ folder path.";
+				// Fallback: proceed without translated labels
+				initializeEssences();
+			}
+		}
+
+		function applyTranslations() {
+			document.querySelectorAll('[data-lang]').forEach(element => {
+				const key = element.getAttribute('data-lang');
+				const text = dictionary[key] || key; // fallback: show the key itself
+
+				if (element.tagName === 'TITLE') {
+					document.title = text;
+				} else {
+					element.textContent = text;
+				}
+			});
+		}
+
+		// ====================================================================
+		// 2. WANING SCALE AND CORE FORMULAS (Mechanics)
+		//    This section defines the actual system math.
+		// ====================================================================
+
+		const WANING_SCALE = {
+			'Pristine':  { max: 100, min: 85, multiplier: 1.0,  d_conv: 0, phase_key: 'PHASE_PRISTINE'  },
+			'Weathered': { max: 84,  min: 70, multiplier: 0.25, d_conv: 1, phase_key: 'PHASE_WEATHERED' },
+			'Tempered':  { max: 69,  min: 55, multiplier: 0.15, d_conv: 2, phase_key: 'PHASE_TEMPERED'  },
+			'Faded':     { max: 54,  min: 40, multiplier: 0.1,  d_conv: 3, phase_key: 'PHASE_FADED'     },
+			'Embers':    { max: 39,  min: 25, multiplier: 0.05, d_conv: 4, phase_key: 'PHASE_EMBERS'    },
+			'Ashen':     { max: 24,  min: 0,  multiplier: 0.05, d_conv: 4, phase_key: 'PHASE_ASHEN'     }
+		};
+
+		// base attrition rates by "type" of essence
+		const BASE_ATTRITION = {
+			'physical': 30,
+			'magic': 40
+		};
+
+		function getWaningData(eMax) {
+			for (const phase in WANING_SCALE) {
+				const data = WANING_SCALE[phase];
+				if (eMax >= data.min && eMax <= data.max) {
+					return data;
+				}
+			}
+			return WANING_SCALE['Ashen'];
+		}
+
+		function calculateCLim(eMax) {
+			// C_LIM grows as maximum Essence burns down
+			return 5 + Math.floor((100 - eMax) / 5);
+		}
+
+		function calculateARate(baseRate, multiplier) {
+			// A_RATE is base × phase multiplier, clamped to minimum 1.0%
+			return Math.max(1.0, Math.round(baseRate * multiplier * 10) / 10);
+		}
+
+		function updateEssence(essence, type) {
+			const eMaxInput = document.getElementById(`${essence}-emax`);
+			const eMax = parseFloat(eMaxInput.value);
+
+			const waningData = getWaningData(eMax);
+
+			const baseRate = BASE_ATTRITION[type];
+			const aRate = calculateARate(baseRate, waningData.multiplier);
+			const cLim = calculateCLim(eMax);
+			const dConv = waningData.d_conv;
+
+			// get translated phase label using dictionary
+			const phaseNameKey = waningData.phase_key;
+
+			document.getElementById(`${essence}-phase`).value = dictionary[phaseNameKey] || phaseNameKey;
+			document.getElementById(`${essence}-arate`).value = `${aRate}%`;
+			document.getElementById(`${essence}-clim`).value = cLim;
+			document.getElementById(`${essence}-dconv`).value = `${dConv}d6`;
+
+			checkECurCeiling(essence);
+		}
+
+		function checkECurCeiling(essence) {
+			const eCurInput = document.getElementById(`${essence}-ecur`);
+			const max = parseFloat(document.getElementById(`${essence}-emax`).value);
+
+			if (parseFloat(eCurInput.value) > max) {
+				eCurInput.value = max;
+			}
+		}
+
+		function initializeEssences() {
+			const essences = ['vitalis', 'motus', 'sensus', 'verbum', 'anima'];
+
+			essences.forEach(e => {
+				// verbum and anima are considered "magic", others "physical"
+				const type = (e === 'verbum' || e === 'anima') ? 'magic' : 'physical';
+				updateEssence(e, type);
+			});
+		}
+
+		// init
+		window.onload = loadLanguage;
+	</script>
+
+
+</body>
+</html>
