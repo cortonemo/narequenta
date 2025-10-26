@@ -1,28 +1,87 @@
 <!DOCTYPE html>
 <html lang="en-us">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title data-lang="SHEET_TITLE"></title>
-		
-		<link rel="stylesheet" href="../../../assets/css/style.css">
-    
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        The <title> is dynamically filled from the dictionary via data-lang="SHEET_TITLE".
+        We don't hardcode it, because we want localization.
+    -->
+    <title data-lang="SHEET_TITLE"></title>
+
+    <!--
+        Your stylesheet for layout / colors / table styling etc.
+        Path is relative to THIS file's location:
+        en-us/playtest/sheets/pc_sheet_v0.2.html
+        ../../../ goes back 3 levels:
+            sheets -> playtest -> en-us
+        then into assets/css/style.css at project root structure.
+    -->
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+
 <body>
+    <!-- ============================================================
+         HEADER / BASIC INFO
+         ============================================================ -->
 
     <header>
+        <!--
+            data-lang attributes are localization keys.
+            After we load the language JSON (e.g. lang/en-us.json),
+            we'll replace these with their localized text.
+        -->
         <h1 data-lang="GAME_TITLE"></h1>
         <h2 data-lang="SHEET_SUBTITLE"></h2>
     </header>
 
     <div class="info-block">
-        <span data-lang="FIELD_NAME"></span>: <input type="text" id="pc-name" value="">
-        <span style="float: right;"><span data-lang="FIELD_HP"></span>: <input type="number" id="hp-current" value="100" style="width: 40px;"> / 100</span>
+        <!-- Character name label -->
+        <span data-lang="FIELD_NAME"></span>:
+        <input type="text" id="pc-name" value="">
+
+        <!-- Current HP block aligned to the right -->
+        <span style="float: right;">
+            <span data-lang="FIELD_HP"></span>:
+            <input
+                type="number"
+                id="hp-current"
+                value="100"
+                style="width: 40px;"
+            >
+            / 100
+        </span>
     </div>
 
+    <!-- ============================================================
+         ESSENCE TABLE (ATTRITION CORE)
+         ============================================================ -->
+
+    <!-- Section header for essences -->
     <div class="section-header" data-lang="SECTION_ESSENCES"></div>
 
+    <!--
+        Grid with columns:
+        Essence name,
+        E_MAX,
+        E_CUR,
+        Phase,
+        A_RATE,
+        C_LIM,
+        D_CONV
+
+        Each "essence" row (Vitalis, Motus, etc) tracks:
+        - how strong it currently is (E_CUR),
+        - how damaged its ceiling is (E_MAX),
+        - which phase of waning it's in,
+        - attrition rate (A_RATE),
+        - conversion dice, etc.
+
+        updateEssence() and checkECurCeiling() will keep these in sync.
+    -->
     <div class="essence-grid">
+        <!-- Column headers, all translatable -->
         <div class="essence-grid-header" data-lang="GRID_ESSENCE"></div>
         <div class="essence-grid-header" data-lang="GRID_EMAX"></div>
         <div class="essence-grid-header" data-lang="GRID_ECUR"></div>
@@ -31,50 +90,325 @@
         <div class="essence-grid-header" data-lang="GRID_CLIM"></div>
         <div class="essence-grid-header" data-lang="GRID_DCONV"></div>
 
+        <!--
+            VITALIS row.
+            type 'physical' means we use BASE_ATTRITION['physical'] (30)
+            for its base attrition rate.
+        -->
         <div>VITALIS</div>
-        <div><input type="number" id="vitalis-emax" value="100" min="0" max="100" onchange="updateEssence('vitalis', 'physical')"></div>
-        <div><input type="number" id="vitalis-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('vitalis')"></div>
-        <div><input type="text" id="vitalis-phase" class="read-only" readonly value="Pristine"></div>
-        <div><input type="text" id="vitalis-arate" class="read-only" readonly value="30%"></div>
-        <div><input type="text" id="vitalis-clim" class="read-only" readonly value="5"></div>
-        <div><input type="text" id="vitalis-dconv" class="read-only" readonly value="0d6"></div>
+        <div>
+            <input
+                type="number"
+                id="vitalis-emax"
+                value="100"
+                min="0"
+                max="100"
+                onchange="updateEssence('vitalis', 'physical')"
+            >
+        </div>
+        <div>
+            <input
+                type="number"
+                id="vitalis-ecur"
+                value="100"
+                min="0"
+                max="100"
+                onchange="checkECurCeiling('vitalis')"
+            >
+        </div>
+        <div>
+            <!-- phase name (Pristine / Weathered / ...) -->
+            <input
+                type="text"
+                id="vitalis-phase"
+                class="read-only"
+                readonly
+                value="Pristine"
+            >
+        </div>
+        <div>
+            <!-- attrition rate % -->
+            <input
+                type="text"
+                id="vitalis-arate"
+                class="read-only"
+                readonly
+                value="30%"
+            >
+        </div>
+        <div>
+            <!-- C_LIM, limit for focus/moves -->
+            <input
+                type="text"
+                id="vitalis-clim"
+                class="read-only"
+                readonly
+                value="5"
+            >
+        </div>
+        <div>
+            <!-- D_CONV, dice you roll when converting essence to raw output -->
+            <input
+                type="text"
+                id="vitalis-dconv"
+                class="read-only"
+                readonly
+                value="0d6"
+            >
+        </div>
 
+        <!-- MOTUS -->
         <div>MOTUS</div>
-        <div><input type="number" id="motus-emax" value="100" min="0" max="100" onchange="updateEssence('motus', 'physical')"></div>
-        <div><input type="number" id="motus-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('motus')"></div>
-        <div><input type="text" id="motus-phase" class="read-only" readonly value="Pristine"></div>
-        <div><input type="text" id="motus-arate" class="read-only" readonly value="30%"></div>
-        <div><input type="text" id="motus-clim" class="read-only" readonly value="5"></div>
-        <div><input type="text" id="motus-dconv" class="read-only" readonly value="0d6"></div>
-        
+        <div>
+            <input
+                type="number"
+                id="motus-emax"
+                value="100"
+                min="0"
+                max="100"
+                onchange="updateEssence('motus', 'physical')"
+            >
+        </div>
+        <div>
+            <input
+                type="number"
+                id="motus-ecur"
+                value="100"
+                min="0"
+                max="100"
+                onchange="checkECurCeiling('motus')"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="motus-phase"
+                class="read-only"
+                readonly
+                value="Pristine"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="motus-arate"
+                class="read-only"
+                readonly
+                value="30%"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="motus-clim"
+                class="read-only"
+                readonly
+                value="5"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="motus-dconv"
+                class="read-only"
+                readonly
+                value="0d6"
+            >
+        </div>
+
+        <!-- SENSUS -->
         <div>SENSUS</div>
-        <div><input type="number" id="sensus-emax" value="100" min="0" max="100" onchange="updateEssence('sensus', 'physical')"></div>
-        <div><input type="number" id="sensus-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('sensus')"></div>
-        <div><input type="text" id="sensus-phase" class="read-only" readonly value="Pristine"></div>
-        <div><input type="text" id="sensus-arate" class="read-only" readonly value="30%"></div>
-        <div><input type="text" id="sensus-clim" class="read-only" readonly value="5"></div>
-        <div><input type="text" id="sensus-dconv" class="read-only" readonly value="0d6"></div>
+        <div>
+            <input
+                type="number"
+                id="sensus-emax"
+                value="100"
+                min="0"
+                max="100"
+                onchange="updateEssence('sensus', 'physical')"
+            >
+        </div>
+        <div>
+            <input
+                type="number"
+                id="sensus-ecur"
+                value="100"
+                min="0"
+                max="100"
+                onchange="checkECurCeiling('sensus')"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="sensus-phase"
+                class="read-only"
+                readonly
+                value="Pristine"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="sensus-arate"
+                class="read-only"
+                readonly
+                value="30%"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="sensus-clim"
+                class="read-only"
+                readonly
+                value="5"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="sensus-dconv"
+                class="read-only"
+                readonly
+                value="0d6"
+            >
+        </div>
 
+        <!-- VERBUM -->
         <div>VERBUM</div>
-        <div><input type="number" id="verbum-emax" value="100" min="0" max="100" onchange="updateEssence('verbum', 'magic')"></div>
-        <div><input type="number" id="verbum-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('verbum')"></div>
-        <div><input type="text" id="verbum-phase" class="read-only" readonly value="Pristine"></div>
-        <div><input type="text" id="verbum-arate" class="read-only" readonly value="40%"></div>
-        <div><input type="text" id="verbum-clim" class="read-only" readonly value="5"></div>
-        <div><input type="text" id="verbum-dconv" class="read-only" readonly value="0d6"></div>
+        <div>
+            <input
+                type="number"
+                id="verbum-emax"
+                value="100"
+                min="0"
+                max="100"
+                onchange="updateEssence('verbum', 'magic')"
+            >
+        </div>
+        <div>
+            <input
+                type="number"
+                id="verbum-ecur"
+                value="100"
+                min="0"
+                max="100"
+                onchange="checkECurCeiling('verbum')"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="verbum-phase"
+                class="read-only"
+                readonly
+                value="Pristine"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="verbum-arate"
+                class="read-only"
+                readonly
+                value="40%"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="verbum-clim"
+                class="read-only"
+                readonly
+                value="5"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="verbum-dconv"
+                class="read-only"
+                readonly
+                value="0d6"
+            >
+        </div>
 
+        <!-- ANIMA -->
         <div>ANIMA</div>
-        <div><input type="number" id="anima-emax" value="100" min="0" max="100" onchange="updateEssence('anima', 'magic')"></div>
-        <div><input type="number" id="anima-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('anima')"></div>
-        <div><input type="text" id="anima-phase" class="read-only" readonly value="Pristine"></div>
-        <div><input type="text" id="anima-arate" class="read-only" readonly value="40%"></div>
-        <div><input type="text" id="anima-clim" class="read-only" readonly value="5"></div>
-        <div><input type="text" id="anima-dconv" class="read-only" readonly value="0d6"></div>
+        <div>
+            <input
+                type="number"
+                id="anima-emax"
+                value="100"
+                min="0"
+                max="100"
+                onchange="updateEssence('anima', 'magic')"
+            >
+        </div>
+        <div>
+            <input
+                type="number"
+                id="anima-ecur"
+                value="100"
+                min="0"
+                max="100"
+                onchange="checkECurCeiling('anima')"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="anima-phase"
+                class="read-only"
+                readonly
+                value="Pristine"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="anima-arate"
+                class="read-only"
+                readonly
+                value="40%"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="anima-clim"
+                class="read-only"
+                readonly
+                value="5"
+            >
+        </div>
+        <div>
+            <input
+                type="text"
+                id="anima-dconv"
+                class="read-only"
+                readonly
+                value="0d6"
+            >
+        </div>
     </div>
 
-	<div class="section-header" data-lang="SECTION_ABILITIES"></div>
-    <p data-lang="SECTION_ABILITIES_NOTE" style="font-size: 12px; margin-bottom: 10px;"></p>
+    <!-- ============================================================
+         ABILITIES TABLE
+         ============================================================ -->
 
+    <div class="section-header" data-lang="SECTION_ABILITIES"></div>
+    <p data-lang="SECTION_ABILITIES_NOTE"
+       style="font-size: 12px; margin-bottom: 10px;"></p>
+
+    <!--
+        Abilities / Gear table.
+        We group:
+        - Weapons / physical actions
+        - Cantrips (utility / low attrition)
+        - Spells (bigger effects, higher cost)
+    -->
     <table class="abilities-table">
         <thead>
             <tr>
@@ -85,72 +419,107 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Physical / mundane actions -->
             <tr>
-                <td data-lang="WEAPON_BLADE" data-desc="WEAPON_BLADE_DESC" onclick="showDescription(this)"></td>
+                <td data-lang="WEAPON_BLADE"
+                    data-desc="WEAPON_BLADE_DESC"
+                    onclick="showDescription(this)"></td>
                 <td data-lang="WEAPON_BLADE_TYPE"></td>
                 <td>A_rate + 2%</td>
                 <td>10 HP</td>
             </tr>
             <tr>
-                <td data-lang="WEAPON_DAGGER" data-desc="WEAPON_DAGGER_DESC" onclick="showDescription(this)"></td>
+                <td data-lang="WEAPON_DAGGER"
+                    data-desc="WEAPON_DAGGER_DESC"
+                    onclick="showDescription(this)"></td>
                 <td data-lang="WEAPON_DAGGER_TYPE"></td>
                 <td>A_rate + 2%</td>
                 <td>8 HP</td>
             </tr>
             <tr>
-                <td data-lang="WEAPON_BOW" data-desc="WEAPON_BOW_DESC" onclick="showDescription(this)"></td>
+                <td data-lang="WEAPON_BOW"
+                    data-desc="WEAPON_BOW_DESC"
+                    onclick="showDescription(this)"></td>
                 <td data-lang="WEAPON_BOW_TYPE"></td>
                 <td>A_rate + 2%</td>
                 <td>12 HP</td>
             </tr>
             <tr>
-                <td data-lang="WEAPON_SHIELD" data-desc="WEAPON_SHIELD_DESC" onclick="showDescription(this)"></td>
+                <td data-lang="WEAPON_SHIELD"
+                    data-desc="WEAPON_SHIELD_DESC"
+                    onclick="showDescription(this)"></td>
                 <td data-lang="WEAPON_SHIELD_TYPE"></td>
                 <td>1% E_P + 1% E_S (Fix)</td>
                 <td>Mitigação +4 HP</td>
             </tr>
 
-            <tr class="utility-row"><td colspan="4" data-lang="SECTION_CANTRIPS_TITLE">Cantrips (Utility / Low Attrition)</td></tr>
+            <!-- Cantrips section marker row -->
+            <tr class="utility-row">
+                <td colspan="4" data-lang="SECTION_CANTRIPS_TITLE">
+                    Cantrips (Utility / Low Attrition)
+                </td>
+            </tr>
+
             <tr>
-                <td data-lang="CANTRIP_FLICKER" data-desc="CANTRIP_FLICKER_DESC" onclick="showDescription(this)"></td>
+                <td data-lang="CANTRIP_FLICKER"
+                    data-desc="CANTRIP_FLICKER_DESC"
+                    onclick="showDescription(this)"></td>
                 <td data-lang="CANTRIP_FLICKER_TYPE"></td>
                 <td>1% E_P + 1% E_S (Fix)</td>
                 <td data-lang="CANTRIP_FLICKER_EFFECT"></td>
             </tr>
             <tr>
-                <td data-lang="CANTRIP_SENSE" data-desc="CANTRIP_SENSE_DESC" onclick="showDescription(this)"></td>
+                <td data-lang="CANTRIP_SENSE"
+                    data-desc="CANTRIP_SENSE_DESC"
+                    onclick="showDescription(this)"></td>
                 <td data-lang="CANTRIP_SENSE_TYPE"></td>
                 <td>1% E_P + 1% E_S (Fix)</td>
                 <td data-lang="CANTRIP_SENSE_EFFECT"></td>
             </tr>
             <tr>
-                <td data-lang="CANTRIP_MEND" data-desc="CANTRIP_MEND_DESC" onclick="showDescription(this)"></td>
+                <td data-lang="CANTRIP_MEND"
+                    data-desc="CANTRIP_MEND_DESC"
+                    onclick="showDescription(this)"></td>
                 <td data-lang="CANTRIP_MEND_TYPE"></td>
                 <td>1% E_P + 1% E_S (Fix)</td>
                 <td data-lang="CANTRIP_MEND_EFFECT"></td>
             </tr>
 
-            <tr class="magic-row"><td colspan="4" data-lang="SECTION_SPELLS_TITLE">Spells (Attack / Defense)</td></tr>
+            <!-- Spells section marker row -->
+            <tr class="magic-row">
+                <td colspan="4" data-lang="SECTION_SPELLS_TITLE">
+                    Spells (Attack / Defense)
+                </td>
+            </tr>
+
             <tr>
-                <td data-lang="SPELL_BOLT" data-desc="SPELL_BOLT_DESC" onclick="showDescription(this)"></td>
+                <td data-lang="SPELL_BOLT"
+                    data-desc="SPELL_BOLT_DESC"
+                    onclick="showDescription(this)"></td>
                 <td data-lang="SPELL_BOLT_TYPE"></td>
                 <td>A_rate + 2%</td>
                 <td>15 HP</td>
             </tr>
             <tr>
-                <td data-lang="SPELL_AURA" data-desc="SPELL_AURA_DESC" onclick="showDescription(this)"></td>
+                <td data-lang="SPELL_AURA"
+                    data-desc="SPELL_AURA_DESC"
+                    onclick="showDescription(this)"></td>
                 <td data-lang="SPELL_AURA_TYPE"></td>
                 <td>A_rate + 2%</td>
                 <td data-lang="SPELL_AURA_EFFECT"></td>
             </tr>
             <tr>
-                <td data-lang="SPELL_STONE" data-desc="SPELL_STONE_DESC" onclick="showDescription(this)"></td>
+                <td data-lang="SPELL_STONE"
+                    data-desc="SPELL_STONE_DESC"
+                    onclick="showDescription(this)"></td>
                 <td data-lang="SPELL_STONE_TYPE"></td>
                 <td>A_rate + 2%</td>
                 <td data-lang="SPELL_STONE_EFFECT"></td>
             </tr>
             <tr>
-                <td data-lang="SPELL_DRAIN" data-desc="SPELL_DRAIN_DESC" onclick="showDescription(this)"></td>
+                <td data-lang="SPELL_DRAIN"
+                    data-desc="SPELL_DRAIN_DESC"
+                    onclick="showDescription(this)"></td>
                 <td data-lang="SPELL_DRAIN_TYPE"></td>
                 <td>A_rate + 2%</td>
                 <td data-lang="SPELL_DRAIN_EFFECT"></td>
@@ -158,54 +527,91 @@
         </tbody>
     </table>
 
+    <!-- ============================================================
+         LOGS AND PROMISES
+         ============================================================ -->
+
+    <!-- Scarring / Refinements Log -->
     <div class="section-header" data-lang="SECTION_SCARRING_LOG"></div>
-    <textarea rows="5" style="width: 100%; box-sizing: border-box;"></textarea>
+    <textarea
+        rows="5"
+        style="width: 100%; box-sizing: border-box;"
+    ></textarea>
 
+    <!-- Final Promise -->
     <div class="section-header" data-lang="SECTION_PROMISE"></div>
-    <textarea rows="2" style="width: 100%; box-sizing: border-box;"></textarea>
-    
-    <script>
-		// ====================================================================
-		// LANGUAGE SETUP
-		//
-		// Choose which language file to load for labels and phase names.
-		// Examples:
-		// const LANG_CODE = "en-us";   // English (US)
-		// const LANG_CODE = "pt-pt";   // Português (Portugal)
-		// const LANG_CODE = "fr-fr";   // (if you add fr-fr.json later)
-		//
-		// Just change the line below. No auto-detection.
-		// ====================================================================
-		const LANG_CODE = "en-us";	
-        // ====================================================================
-        // 1. LANGUAGE SETTING AND LOADING LOGIC (PT-PT VERSION)
-        // ====================================================================
+    <textarea
+        rows="2"
+        style="width: 100%; box-sizing: border-box;"
+    ></textarea>
 
+
+    <!-- ============================================================
+         LANGUAGE + MECHANICS SCRIPT
+         ============================================================ -->
+
+    <script>
+        // ------------------------------------------------------------
+        // CONFIG: Which language file to load for labels and text.
+        //
+        // You hardcode LANG_CODE in each copy of the sheet.
+        // This is still local fallback. The Python app swaps whole sheets
+        // when you pick a different language in the overlay.
+        //
+        // "en-us" must match a file in /lang/en-us.json.
+        // "pt-pt" must match /lang/pt-pt.json.
+        // ------------------------------------------------------------
+        const LANG_CODE = "en-us";
+
+        // dictionary will hold the loaded translation key -> text
         let dictionary = {};
+
+        // Build the path to the translation file relative to THIS HTML file
+        // ../../../ goes: sheets -> playtest -> en-us -> back to project root
+        // then into lang/<LANG_CODE>.json
         const langFilePath = `../../../lang/${LANG_CODE}.json`;
 
+        // ------------------------------------------------------------
+        // Load the language file and apply text to all [data-lang] nodes.
+        // Also initialize the essence table once we have text for phases.
+        // ------------------------------------------------------------
         async function loadLanguage() {
             try {
                 const response = await fetch(langFilePath);
                 if (!response.ok) {
-                    throw new Error(`Failed to load language file: ${langFilePath}`);
+                    throw new Error(
+                        `Failed to load language file: ${langFilePath}`
+                    );
                 }
+
                 dictionary = await response.json();
-                
+
                 applyTranslations();
                 initializeEssences();
 
             } catch (error) {
-                console.error(`Error loading localization from ${langFilePath}:`, error);
-                document.getElementById('pc-name').value = "LOAD ERROR: Check /lang/ folder path.";
+                console.error(
+                    `Error loading localization from ${langFilePath}:`,
+                    error
+                );
+
+                // Visible fail state so tester knows it's pathing
+                document.getElementById('pc-name').value =
+                    "LOAD ERROR: Check /lang/ folder path.";
+
+                // Still init mechanics so fields populate
                 initializeEssences();
             }
         }
-        
+
+        // ------------------------------------------------------------
+        // Replace content of every [data-lang="KEY"] with dictionary[KEY]
+        // Title tags are special: we set document.title.
+        // ------------------------------------------------------------
         function applyTranslations() {
             document.querySelectorAll('[data-lang]').forEach(element => {
                 const key = element.getAttribute('data-lang');
-                const text = dictionary[key] || key;
+                const text = dictionary[key] || key; // fallback: show key
 
                 if (element.tagName === 'TITLE') {
                     document.title = text;
@@ -214,11 +620,17 @@
                 }
             });
         }
-        
-        // ====================================================================
-        // 2. WANING SCALE AND CORE FORMULAS (Mechanics)
-        // ====================================================================
 
+        // ------------------------------------------------------------
+        // CORE MECHANIC TABLES
+        // The character weakens as E_MAX drops.
+        // Phase names map to keys in dictionary (like PHASE_PRISTINE).
+        // ------------------------------------------------------------
+
+        // WANING_SCALE maps an E_MAX range to:
+        // - multiplier (affects attrition cost %)
+        // - d_conv (conversion dice)
+        // - phase_key (localization key for the phase label)
         const WANING_SCALE = {
             'Pristine':  { max: 100, min: 85, multiplier: 1.0,  d_conv: 0, phase_key: 'PHASE_PRISTINE'  },
             'Weathered': { max: 84,  min: 70, multiplier: 0.25, d_conv: 1, phase_key: 'PHASE_WEATHERED' },
@@ -227,12 +639,16 @@
             'Embers':    { max: 39,  min: 25, multiplier: 0.05, d_conv: 4, phase_key: 'PHASE_EMBERS'    },
             'Ashen':     { max: 24,  min: 0,  multiplier: 0.05, d_conv: 4, phase_key: 'PHASE_ASHEN'     }
         };
-        
+
+        // BASE_ATTRITION:
+        // physical vs magic baseline attrition rates
+        // (before multiplier is applied)
         const BASE_ATTRITION = {
-            'physical': 30, 
-            'magic': 40     
+            'physical': 30,
+            'magic': 40
         };
 
+        // choose which row from WANING_SCALE an E_MAX belongs to
         function getWaningData(eMax) {
             for (const phase in WANING_SCALE) {
                 const data = WANING_SCALE[phase];
@@ -240,23 +656,34 @@
                     return data;
                 }
             }
+            // fallback if somehow out of range
             return WANING_SCALE['Ashen'];
         }
 
+        // how many actions / bursts / "focus points" you can still force out
+        // as max ceiling drops
         function calculateCLim(eMax) {
+            // you allow more focused spikes as you burn down
             return 5 + Math.floor((100 - eMax) / 5);
         }
 
+        // A_rate, the % attrition cost to use abilities from this essence
+        // round to nearest 0.1, but never go below 1.0%
         function calculateARate(baseRate, multiplier) {
-            return Math.max(1.0, Math.round(baseRate * multiplier * 10) / 10);
+            return Math.max(
+                1.0,
+                Math.round(baseRate * multiplier * 10) / 10
+            );
         }
-        
+
+        // updateEssence() recalculates phase, attrition cost, C_LIM and D_CONV
+        // for one essence (Vitalis, Motus, etc) whenever E_MAX changes.
         function updateEssence(essence, type) {
             const eMaxInput = document.getElementById(`${essence}-emax`);
             const eMax = parseFloat(eMaxInput.value);
-            
+
             const waningData = getWaningData(eMax);
-            
+
             const baseRate = BASE_ATTRITION[type];
             const aRate = calculateARate(baseRate, waningData.multiplier);
             const cLim = calculateCLim(eMax);
@@ -264,32 +691,177 @@
 
             const phaseNameKey = waningData.phase_key;
 
-            document.getElementById(`${essence}-phase`).value = dictionary[phaseNameKey];
-            document.getElementById(`${essence}-arate`).value = `${aRate}%`;
-            document.getElementById(`${essence}-clim`).value = cLim;
-            document.getElementById(`${essence}-dconv`).value = `${dConv}d6`;
-            
+            // Phase field: localized label for current phase, e.g. "Pristine"
+            document.getElementById(`${essence}-phase`).value =
+                dictionary[phaseNameKey];
+
+            // Attrition cost like "30%" or "7.5%"
+            document.getElementById(`${essence}-arate`).value =
+                `${aRate}%`;
+
+            // Focus/move cap
+            document.getElementById(`${essence}-clim`).value =
+                cLim;
+
+            // Conversion dice pool, e.g. "3d6"
+            document.getElementById(`${essence}-dconv`).value =
+                `${dConv}d6`;
+
+            // Make sure current doesn't exceed new max
             checkECurCeiling(essence);
         }
 
+        // Ensure E_CUR doesn't go above E_MAX when player edits numbers
         function checkECurCeiling(essence) {
             const eCurInput = document.getElementById(`${essence}-ecur`);
-            const max = parseFloat(document.getElementById(`${essence}-emax`).value);
+            const max = parseFloat(
+                document.getElementById(`${essence}-emax`).value
+            );
 
             if (parseFloat(eCurInput.value) > max) {
-                eCurInput.value = max; 
+                eCurInput.value = max;
             }
         }
-        
+
+        // Initialize all essences on first load, after dictionary is in place
         function initializeEssences() {
             const essences = ['vitalis', 'motus', 'sensus', 'verbum', 'anima'];
             essences.forEach(e => {
-                const type = (e === 'verbum' || e === 'anima') ? 'magic' : 'physical';
+                const type =
+                    (e === 'verbum' || e === 'anima') ? 'magic' : 'physical';
                 updateEssence(e, type);
             });
         }
 
+        // Kick language load + mechanics calculation once the page is loaded.
         window.onload = loadLanguage;
+
+        // Dummy description popup for abilities.
+        // You can later wire this into a modal or tooltip.
+        function showDescription(cell) {
+            const descKey = cell.getAttribute('data-desc');
+            const text = dictionary[descKey] || descKey;
+            alert(text);
+        }
     </script>
+
+<!-- ============================================================
+     IN-APP LANGUAGE SWITCHER OVERLAY
+     (Top-right dropdown that talks to Python)
+     ============================================================ -->
+
+<div id="lang-switcher"
+     style="
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.7);
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 14px;
+        padding: 8px 10px;
+        border-radius: 6px;
+        z-index: 99999;
+        display: none; /* escondido até sabermos que há bridge */
+     ">
+    <span style="font-weight:bold; margin-right:6px;">Language:</span>
+    <select id="lang-select"
+            style="background:#222;color:#fff;border:1px solid #555;border-radius:4px;padding:2px 6px;">
+    </select>
+</div>
+
+<script>
+// pywebview 6.1 detail:
+// window.expose(get_languages)  -> window.pywebview.api.get_languages()
+// window.expose(switch_language)-> window.pywebview.api.switch_language()
+// NOT camelCase. We must call those snake_case names.
+
+async function populateLanguageMenu() {
+    const switcherBox = document.getElementById('lang-switcher');
+    const select = document.getElementById('lang-select');
+
+    // Bridge sanity check
+    if (!window.pywebview || !window.pywebview.api
+        || !window.pywebview.api.get_languages
+        || !window.pywebview.api.switch_language) {
+
+        // Bridge not ready: hide box and bail
+        switcherBox.style.display = 'none';
+        return;
+    }
+
+    try {
+        // Ask Python which languages exist
+        const langs = await window.pywebview.api.get_languages();
+
+        // Clear old options
+        select.innerHTML = '';
+
+        // Fill dropdown
+        for (const lang of langs) {
+            const opt = document.createElement('option');
+            opt.value = lang.code;
+            opt.textContent = lang.label;
+            select.appendChild(opt);
+        }
+
+        // Detect current page language from URL path
+        const href = window.location.href;
+        if (href.includes('/en-us/')) {
+            select.value = 'en';
+        } else if (href.includes('/pt-pt/')) {
+            select.value = 'pt';
+        }
+
+        // On change, ask Python to navigate
+        select.addEventListener('change', async () => {
+            const chosen = select.value;
+            // tell backend to switch page
+            await window.pywebview.api.switch_language(chosen);
+        });
+
+        // We're good, show the box
+        switcherBox.style.display = 'block';
+
+    } catch (err) {
+        console.error('populateLanguageMenu failed:', err);
+        switcherBox.style.display = 'none';
+    }
+}
+
+// We still have the race condition: sometimes the bridge arrives after DOM.
+// We'll poll a few times to wait for it.
+function waitForBridgeAndInit(attempt = 0) {
+    const switcherBox = document.getElementById('lang-switcher');
+
+    // show placeholder early so player sees "there's a box there"
+    switcherBox.style.display = 'block';
+
+    if (attempt > 20) {
+        // ~2s passed, give up and hide
+        console.warn('pywebview api not detected, hiding switcher.');
+        switcherBox.style.display = 'none';
+        return;
+    }
+
+    // if bridge + methods exist, populate now
+    if (window.pywebview
+        && window.pywebview.api
+        && window.pywebview.api.get_languages
+        && window.pywebview.api.switch_language) {
+
+        populateLanguageMenu();
+    } else {
+        // retry in 100ms
+        setTimeout(() => waitForBridgeAndInit(attempt + 1), 100);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    waitForBridgeAndInit();
+});
+</script>
+
+
 </body>
 </html>
