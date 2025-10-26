@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nárëquenta - Início</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .choice-container { margin-top: 50px; }
+        .choice-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha o Tipo de Ficha</h1>
+    
+    <div class="choice-container">
+        <button onclick="selectType('pc')">Personagem (PC)</button>
+        <button onclick="selectType('npc')">NPC</button>
+    </div>
+
+    <div id="class-selection" class="choice-container" style="display: none;">
+        <h2>Escolha a Classe (PC)</h2>
+        <button onclick="createSheet('pc', 'warrior')">Guerreiro</button>
+        <button onclick="createSheet('pc', 'mage')">Mago</button>
+        <button onclick="createSheet('pc', 'rogue')">Ladrão</button>
+    </div>
+
+    <div id="npc-selection" class="choice-container" style="display: none;">
+        <button onclick="createSheet('npc', 'default')">Criar Ficha de NPC</button>
+    </div>
+
+    <script>
+        let currentType = '';
+
+        function selectType(type) {
+            currentType = type;
+            document.querySelector('h1').textContent = `Ficha Selecionada: ${type.toUpperCase()}`;
+            
+            // Esconde todas as opções de seleção
+            document.getElementById('class-selection').style.display = 'none';
+            document.getElementById('npc-selection').style.display = 'none';
+
+            // Mostra a próxima etapa
+            if (type === 'pc') {
+                document.getElementById('class-selection').style.display = 'block';
+            } else if (type === 'npc') {
+                document.getElementById('npc-selection').style.display = 'block';
+            }
+        }
+
+        async function createSheet(type, sheet_class) {
+            // AQUI CHAMAMOS A NOVA FUNÇÃO PYTHON EXPONSTA
+            if (window.pywebview && window.pywebview.api) {
+                // Chama a nova função Python para carregar a ficha final
+                await window.pywebview.api.loadSheet(type, sheet_class);
+            } else {
+                alert(`API bridge não está pronta. Tentar carregar ${type} / ${sheet_class}`);
+            }
+        }
+    </script>
+</body>
+</html>

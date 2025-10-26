@@ -1,4 +1,4 @@
-# Nárëquenta Core Rules v0.2
+# Nárëquenta Core Rules v0.3
 Draft — 2025-10-26
 
 ## 1. What This Game Is

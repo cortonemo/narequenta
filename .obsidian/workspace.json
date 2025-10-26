@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tools/README.md",
+                "file": "en-us/playtest/gm_reference_v0.3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "gm_reference_v0.3"
             }
           }
         ],
@@ -228,8 +228,14 @@
   },
   "active": "d6b40cdedcae4acd",
   "lastOpenFiles": [
-    "LICENSE.md",
+    "en-us/playtest/character_sheet_v0.3.md",
+    "pt-pt/playtest/gm_reference_v0.3.md",
+    "en-us/playtest/gm_reference_v0.3.md",
+    "pt-pt/playtest/character_sheet_v0.3.md",
+    "pt-pt/Rules/core_rules_v0.3.md",
+    "en-us/Rules/core_rules_v0.3.md",
     "Tools/README.md",
+    "LICENSE.md",
     "Tools/run_sheet_gui.py",
     "Tools/run_sheet.py",
     "Tools",
@@ -243,9 +249,6 @@
     "pt-pt/LICENSE-draft.md",
     "LICENSE-draft.md",
     "CREDITS.md",
-    "en-us/playtest/character_sheet_v0.2.md",
-    "en-us/playtest/gm_reference_v0.2.md",
-    "en-us/Rules/core_rules_v0.2.md",
     "en-us/playtest/PLAYTEST-SHEET.md",
     "pt-pt/playtest/PLAYTEST-SHEET.md",
     "en-us/playtest/PLAYTEST-SCENARIO.md",
@@ -254,9 +257,6 @@
     "pt-pt/Rules/RULES-RITUALS.md",
     "pt-pt/LICENSE.md",
     "pt-pt/CREDITS.md",
-    "pt-pt/playtest/character_sheet_v0.2.md",
-    "pt-pt/playtest/gm_reference_v0.2.md",
-    "pt-pt/Rules/core_rules_v0.2.md",
     "pt-pt/README.md",
     "README.md",
     "pt-pt/CREDITS 1.md",

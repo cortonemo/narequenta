@@ -1,4 +1,4 @@
-# Nárëquenta Regras Base v0.2
+# Nárëquenta Regras Base v0.3
 Rascunho — 2025-10-26
 
 ## 1. O Que É Este Jogo
@@ -49,6 +49,9 @@ Quando o $\mathbf{E_{cur}}$ atinge 0\% numa Faceta:
 
 Quando **TODAS** as Facetas atingem 0\%:
 - O teu fim chegou. Morte, ascensão, ou desvanecimento, consoante a ficção.
+
+### Ações Fora de Combate:
+A maioria das ações fora de combate (investigação, interações sociais) **não incorre em custos de Atrição**, usando a $\mathbf{E_{cur}}$ apenas como limite de sucesso. Apenas em situações de stress físico ou mental extremo, o MJ pode aplicar um **Custo Fixo de $\mathbf{2\%}$** (ou mais, por consenso) para simular o esforço sustentado.
 
 ---
 

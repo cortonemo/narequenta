@@ -1,4 +1,4 @@
-# Referência do Mestre de Jogo (MJ) v0.2
+# Referência do Mestre de Jogo (MJ) v0.3
 Rascunho Alpha — 2025-10-26
 
 ## FLUXO DA SESSÃO
@@ -18,6 +18,8 @@ Rascunho Alpha — 2025-10-26
 ## RITMO / TOM
 - **Nunca diga "falhas".** Diga: "Podes absolutamente fazer isso. Vai custar-te $10\%$ de Anima e $2\%$ de Verbum. Estás disposto a arder?"
 - Acelere o ritmo no Stage I ($\mathbf{E_{max}} = 100\%$) para forçar o jogador a aceitar a descida de $\mathbf{E_{max}}$.
+- **Custos Simplificados:** A Atrição significativa é **reservada ao Combate** e a Rituais. Não penalize a exploração. Ações Fora de Combate custam $\mathbf{0\%}$, exceto em stress extremo (Custo Fixo $\mathbf{2\%}$+).
+- **Penalidade Simétrica (NPCs):** Recompense a descrição tática do PC. Se a descrição explorar uma fraqueza de um NPC num teste contestado (Ex: Persuasão, Furtividade), o **NPC sofre uma Penalidade de $\mathbf{10}$** no seu teste de resistência.
 - **Trate o Fim como Sagrado.** Quando todas as Facetas atingem $\mathbf{E_{cur}} = 0$, pergunte: como são lembrados?
 
 © 2025 Serelith Varn — Nárëquenta: Contos do Escurecer.

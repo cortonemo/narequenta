@@ -1,4 +1,4 @@
-# GM Reference v0.2
+# GM Reference v0.3
 Alpha Draft — 2025-10-26
 
 ## SESSION FLOW
@@ -16,8 +16,10 @@ Alpha Draft — 2025-10-26
 - **Scarring ($\mathbf{E_{max}}$):** If the PC reached a **Decay Milestone**, they can use the $10\%$ Reallocation rule to permanently lower one $\mathbf{E_{max}}$ and gain a better **Waning Scale** $\mathbf{A_{rate}}$ in another.
 
 ## PACING / TONE
-- **Never say "you fail."** Say: "You can absolutely do that. It will cost you $10\%$ Anima and $2\%$ Verbum. Are you willing to burn?"
-- Speed up the pace in Stage I ($\mathbf{E_{max}} = 100\%$) to encourage the player to accept the $\mathbf{E_{max}}$ drop.
+- **Never say "you fail."** Say: "You can absolutely do that. It will cost you $10\%$ of Spirit and $2\%$ of Mind. Are you willing to burn?"
+- Accelerate the pace in Stage I ($\mathbf{E_{max}} = 100\%$) to force the player to accept the lowering of $\mathbf{E_{max}}$.
+- **Simplified Costs:** Significant Attrition is **reserved for Combat** and Rituals. Do not penalize exploration. Actions Outside of Combat cost $\mathbf{0\%}$, except in extreme stress (Fixed Cost $\mathbf{2\%}$+).
+- **Symmetric Penalty (NPCs):** Reward the PC's tactical description. If the description exploits an NPC's weakness in a contested roll (Ex: Persuasion, Stealth), the **NPC suffers a $\mathbf{10}$ Penalty** on their resistance roll.
 - **Treat the Ending as Sacred.** When all Facets hit $\mathbf{E_{cur}} = 0$, ask: how are they remembered?
 
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
