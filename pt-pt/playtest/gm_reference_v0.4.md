@@ -9,10 +9,10 @@ Rascunho Alpha — 2025-10-26
 3.  **Combate:**
     - Use o **Cálculo Híbrido** de Atacante vs. Defensor (d100 vs. $\mathbf{E_{cur}}$).
     - O **Dano HP** é mitigado pelo $\mathbf{E_{max}}$ de Vitalis do defensor.
-4.  **Oportunidade de Cicatrização:** Se uma ação for mítica ou esgotar um $\mathbf{E_{cur}}$ perto do $0\%$, ofereça a oportunidade de **Refinamento/Cicatrização** ($\mathbf{E_{max}}$).
 
 ## FASE DE RITUAL E RECUPERAÇÃO
-- **Renovação ($\mathbf{E_{cur}}$):** Restaura **E_cur** para o seu valor $\mathbf{E_{max}}$ atual. Deve haver um custo narrativo (ex: perda de Verbum temporária ou sacrifício de um Recurso Raro).
+- **Renovação (E_cur):** Restaura **E_cur** para o seu valor $\mathbf{E_{max}}$ atual. (Custo Narrativo mantido).
+- **Decaimento e Refinamento (E_max):** Este processo acontece **APENAS no final do Capítulo** (Waning Roll). O MJ deve solicitar aos jogadores que escolham o seu Foco de Proficiência (o 4d6) e registar os seus $\mathbf{2\text{d}10}$ $\mathbf{D_{prof}}$ antes de rolar o Decaimento Universal (2d6).
 - **Cicatrização ($\mathbf{E_{max}}$):** Se o PC atingiu um **Marcos de Decadência**, pode usar a regra de Reafetação ($10\%$) para baixar permanentemente um $\mathbf{E_{max}}$ e aumentar o $\mathbf{A_{rate}}$ da Fase.
 
 ## RITMO / TOM

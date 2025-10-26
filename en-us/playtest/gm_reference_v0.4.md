@@ -1,4 +1,4 @@
-# GM Reference v0.3
+# GM Reference v0.4
 Alpha Draft — 2025-10-26
 
 ## SESSION FLOW
@@ -9,11 +9,11 @@ Alpha Draft — 2025-10-26
 3.  **Combat:**
     - Use the **Hybrid Check** for Attacker vs. Defender (d100 vs. $\mathbf{E_{cur}}$).
     - **HP Damage** is mitigated by the defender's Vitalis $\mathbf{E_{max}}$.
-4.  **Scarring Opportunity:** If an action is mythic or drains an $\mathbf{E_{cur}}$ near $0\%$, offer the opportunity for **Refinement/Scarring** ($\mathbf{E_{max}}$).
 
 ## RITUAL AND RECOVERY PHASE
-- **Renewal ($\mathbf{E_{cur}}$):** Restores **E_cur** up to its current $\mathbf{E_{max}}$ value. This must have a narrative cost (e.g., temporary Verbum loss or sacrifice of a Rare Resource).
-- **Scarring ($\mathbf{E_{max}}$):** If the PC reached a **Decay Milestone**, they can use the $10\%$ Reallocation rule to permanently lower one $\mathbf{E_{max}}$ and gain a better **Waning Scale** $\mathbf{A_{rate}}$ in another.
+- **Renewal (E_cur):** Restores **E_cur** to its current $\mathbf{E_{max}}$ value. (Narrative Cost maintained).
+- **Decay and Refinement (E_max):** This process happens **ONLY at the end of the Chapter** (Waning Roll). The GM must prompt players to choose their Proficiency Focus (the 4d6) and record their $\mathbf{2\text{d}10}$ $\mathbf{D_{prof}}$ before rolling Universal Decay (2d6).
+
 
 ## PACING / TONE
 - **Never say "you fail."** Say: "You can absolutely do that. It will cost you $10\%$ of Spirit and $2\%$ of Mind. Are you willing to burn?"

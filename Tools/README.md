@@ -1,4 +1,4 @@
-# Tools/README.md: Nárëquenta Playtest Launcher
+# Nárëquenta Playtest Launcher
 
 This directory contains the necessary Python script to launch the HTML character sheets and the core logic required for future automation.
 

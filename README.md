@@ -1,6 +1,6 @@
 # Nárëquenta — Tales of the Waning
 
-**Version: v0.2-ALPHA (Design Framework)**
+**Version: v0.4-ALPHA (Design Framework)**
 **Author:** Serelith Varn (cortonemo)
 **License:** Nárëquenta Limited Open License (v0.1)
 
@@ -19,13 +19,13 @@ Nárëquenta is a TTRPG about **Beautiful Erosion**. Heroes start at their absol
 * You may choose to **scar** that Facet: permanently lower its maximum ($\mathbf{E_{max}}$), but become more efficient using it in the future.
 * Rest restores what remains of you, but never what you’ve already burned away.
 
-## ⚙️ System Summary (v0.2)
+## ⚙️ System Summary (v0.4)
 
-The game is built around managing two Essence bars per Attribute:
-
-1.  **Maximum Essence (E_max):** The intrinsic potential. Defines **efficiency** (Attrition cost) and **Critical chance**.
-2.  **Current Essence (E_cur):** The daily usable energy. Defines **chance of success** (d100 vs. E_cur).
-
+The game is built around Essence management.
+- **E_max (Maximum):** Permanently decreased by the **Waning Roll (2d6/4d6)**.
+- **E_cur (Current):** The daily usable energy. Defines chance of success.
+- **Progress:** Triggered by the **Waning Roll** at the end of each chapter/mission.
+- **Tactical Advantage:** The chosen Essence (4d6) gains **2d10 Proficiency Dice (D_prof)** to increase reliability in contested checks.
 ## 🗂 Repository Contents
 
 | Directory | Content | Status |

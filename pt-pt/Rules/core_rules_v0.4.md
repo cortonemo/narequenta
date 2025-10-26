@@ -85,29 +85,25 @@ A maioria das ações fora de combate (investigação, interações sociais) **n
 
 ---
 
-## 4. Ciclo de Refinamento e Decaimento (The Waning Roll)
+## ## 4. Ciclo de Refinamento e Decaimento (The Waning Roll)
 
-**Esta mecânica substitui o sistema de Reafetação anterior.** O Refinamento e o Decaimento ocorrem no final de cada marco importante, missão ou capítulo.
+**Esta mecânica substitui o sistema de Marcos de Decadência.** O Refinamento e o Decaimento ocorrem no final de cada marco importante.
 
 ### 4.1. A Escolha de Proficiência (The Proficiency Choice)
-
 Antes de qualquer rolagem, o jogador deve escolher **uma (1)** Essência para Foco (a Essência de Refinamento).
 
-|**Custo**|**Recompensa (Proficiência)**|
-|---|---|
-|Decaimento de $\mathbf{4\text{d}6}$|Ganha $\mathbf{2\text{d}10}$ Dados de Proficiência ($\mathbf{D_{prof}}$) em rolagens contestadas com essa Essência.|
+| Custo | Recompensa (Proficiência) |
+| :--- | :--- |
+| Decaimento de $\mathbf{4\text{d}6}$ | Ganha **$\mathbf{2\text{d}10}$ Dados de Proficiência ($\mathbf{D_{prof}}$)** em rolagens contestadas com essa Essência. |
 
 ### 4.2. A Rolagem do Esvanecer (Decay Phase)
-
 Aplica-se o Decaimento a todas as Essências:
 
-|**Essência**|**Rolagem de Decaimento**|**Efeito no Emax​**|
-|---|---|---|
-|**Essências Não Escolhidas**|$\mathbf{2\text{d}6}$|O total é subtraído permanentemente do **Valor Máximo ($\mathbf{E_{max}}$)**.|
-|**Essência Escolhida (Foco)**|$\mathbf{4\text{d}6}$|O total é subtraído permanentemente do **Valor Máximo ($\mathbf{E_{max}}$)** (queima mais rápido).|
-
+| Essência | Rolagem de Decaimento | Efeito no $\mathbf{E_{max}}$ |
+| :--- | :--- | :--- |
+| **Essências Não Escolhidas** | $\mathbf{2\text{d}6}$ | O total é subtraído permanentemente do **Valor Máximo ($\mathbf{E_{max}}$)**. |
+| **Essência Escolhida (Foco)** | $\mathbf{4\text{d}6}$ | O total é subtraído permanentemente do **Valor Máximo ($\mathbf{E_{max}}$)** (queima mais rápido). |
 ### 4.3. Uso da Proficiência
-
 **Uso de $\mathbf{D_{prof}}$:** O jogador pode rolar os $\mathbf{2\text{d}10}$ e **subtrair o resultado** da Dificuldade Alvo ou da Resistência do alvo em todas as rolagens contestadas que usam essa Essência.
 
 ---
@@ -141,6 +137,8 @@ No final do jogo:
     
 
 A campanha é o registo de **como escolheste desvanecer**.
+
+---
 
 © 2025 Serelith Varn — Nárëquenta: Contos do Escurecer.
 Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte LICENSE.md.

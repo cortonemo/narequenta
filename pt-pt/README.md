@@ -1,6 +1,6 @@
-# Nárëquenta — Contos do Escurecer (Tales of the Waning)
+# Nárëquenta — Contos do Esvanecer (Tales of the Waning)
 
-**Versão: v0.2-ALPHA (Design Framework)**
+**Versão: v0.4-ALPHA (Design Framework)**
 **Autor:** Serelith Varn (cortonemo)
 **Licença:** Nárëquenta Limited Open License (v0.1)
 
@@ -19,12 +19,12 @@ Nárëquenta é um TTRPG sobre **Decadência Elegante** (beautiful erosion). Os 
 * Pode-se escolher **cicatrizar** essa Faceta: diminuir permanentemente o seu máximo ($\mathbf{E_{max}}$), mas tornar-se mais eficiente a usá-la no futuro.
 * O descanso restaura o que resta, mas nunca o que já foi queimado.
 
-## ⚙️ Sumário do Sistema (v0.2)
-
-O jogo gere a Essência com duas barras por Atributo:
-
-1.  **Essência Máxima (E_max):** O potencial intrínseco. Define a **eficiência** (custo de Atrição) e a **chance de Crítico**.
-2.  **Essência Atual (E_cur):** A energia utilizável diária. Define a **probabilidade de acerto** (d100 vs. E_cur).
+## ⚙️ Sumário do Sistema (v0.4)
+O jogo é construído em torno da gestão de Essência.
+- **E_max (Máximo):** Diminui permanentemente com a **Rolagem do Esvanecer (2d6/4d6)**.
+- **E_cur (Atual):** A energia utilizável diária. Define a probabilidade de acerto.
+- **Progresso:** É acionado pela **Rolagem do Esvanecer** no final de cada capítulo/missão.
+- **Vantagem Tática:** A Essência escolhida (que rola 4d6 de Decaimento) ganha **2d10 Dados de Proficiência (D_prof)** para aumentar a fiabilidade em testes contestados.
 
 ## 🗂 Conteúdos do Repositório
 
