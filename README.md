@@ -1,4 +1,4 @@
-![Repository Header Image](IMG_7540.JPEG)
+![Repository Header Image](assets/image/IMG_7540.JPEG)
 # Nárëquenta — Tales of the Waning
 
 **Version: v0.4-ALPHA (Design Framework)**
