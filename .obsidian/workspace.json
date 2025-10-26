@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "en-us/playtest/character_sheet_v0.3.md",
+                "file": "CHANGELOG.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "character_sheet_v0.3"
+              "title": "CHANGELOG"
             }
           }
         ],
@@ -228,6 +228,10 @@
   },
   "active": "d6b40cdedcae4acd",
   "lastOpenFiles": [
+    "pt-pt/CHANGELOG.md",
+    "pt-pt/Rules/RULES-RITUALS.md",
+    "CHANGELOG.md",
+    "en-us/playtest/character_sheet_v0.3.md",
     "pt-pt/playtest/character_sheet_v0.3.md",
     "pt-pt/playtest/gm_reference_v0.4.md",
     "en-us/playtest/gm_reference_v0.4.md",
@@ -237,9 +241,7 @@
     "README.md",
     "pt-pt/README.md",
     "Tools/README.md",
-    "en-us/playtest/character_sheet_v0.3.md",
     "en-us/logs/2025-10-25_playtest_notes.md",
-    "pt-pt/Rules/RULES-RITUALS.md",
     "LICENSE.md",
     "Tools/run_sheet_gui.py",
     "Tools/run_sheet.py",
@@ -261,8 +263,6 @@
     "pt-pt/LICENSE.md",
     "pt-pt/CREDITS.md",
     "pt-pt/CREDITS 1.md",
-    "pt-pt/README .md",
-    "pt-pt/logs/2025-10-25_playtest_notes.md",
-    "pt-pt/LICENSE 1.md"
+    "pt-pt/README .md"
   ]
 }
