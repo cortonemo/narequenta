@@ -18,5 +18,52 @@
     "PHASE_TEMPERED": "Temperado",
     "PHASE_FADED": "Desvanecido",
     "PHASE_EMBERS": "Brasas",
-    "PHASE_ASHEN": "Cinzas"
+    "PHASE_ASHEN": "Cinzas",
+
+    "SECTION_ABILITIES": "Habilidades e Equipamento Básico",
+    "SECTION_ABILITIES_NOTE": "A_rate aplica-se a E_P. Cantrips custam 1% fixo E_P + 1% E_S.",
+    "TABLE_NAME": "Nome / Item",
+    "TABLE_TYPE": "Tipo (E_P + E_S)",
+    "TABLE_COSTS": "Custo de Atrição",
+    "TABLE_DAMAGE": "Dano / Efeito",
+
+    "WEAPON_BLADE": "Lâmina Gasta (Worn Blade)",
+    "WEAPON_BLADE_TYPE": "Vitalis + Anima (Mêlée)",
+    "WEAPON_BLADE_DESC": "Força bruta e determinação. (10 HP Dmg)",
+
+    "WEAPON_DAGGER": "Adaga de Finesse (Finesse Dagger)",
+    "WEAPON_DAGGER_TYPE": "Motus + Sensus (Finesse)",
+    "WEAPON_DAGGER_DESC": "Precisão para explorar aberturas. (8 HP Dmg)",
+
+    "WEAPON_BOW": "Arco de Caça (Hunting Bow)",
+    "WEAPON_BOW_TYPE": "Motus + Sensus (Alcance)",
+    "WEAPON_BOW_DESC": "Coordenação motora e foco. (12 HP Dmg)",
+
+    "WEAPON_SHIELD": "Barricada de Escudo (Shield Wall)",
+    "WEAPON_SHIELD_TYPE": "Vitalis + Anima (Defesa)",
+    "WEAPON_SHIELD_DESC": "Resistir ao impacto com pura vontade. (+4 Mitig.)",
+
+    "CANTRIP_FLICKER": "Cintilância (Flicker)",
+    "CANTRIP_FLICKER_TYPE": "Motus + Sensus (Utilidade)",
+    "CANTRIP_FLICKER_DESC": "Cria uma pequena luz ou manipula um objeto pequeno. (Custo Fixo 1%)",
+
+    "CANTRIP_SENSE": "Sentir Cicatriz (Sense Scar)",
+    "CANTRIP_SENSE_TYPE": "Sensus + Verbum (Utilidade)",
+    "CANTRIP_SENSE_DESC": "Deteta onde a Essência foi gasta próxima. (Custo Fixo 1%)",
+
+    "SPELL_BOLT": "Dardo de Brasa (Ember Bolt)",
+    "SPELL_BOLT_TYPE": "Verbum + Sensus (Ataque)",
+    "SPELL_BOLT_DESC": "Projeta energia bruta. (15 HP Dmg)",
+
+    "SPELL_AURA": "Aura de Foco (Aura of Focus)",
+    "SPELL_AURA_TYPE": "Verbum + Anima (Defesa)",
+    "SPELL_AURA_DESC": "Aliado adiciona +5 ao próximo rolo. (Custo A_rate)",
+
+    "SPELL_STONE": "Vontade de Pedra (Will of Stone)",
+    "SPELL_STONE_TYPE": "Anima + Vitalis (Defesa)",
+    "SPELL_STONE_DESC": "Aumenta a Mitigação de HP em +10 até ao próximo turno. (Custo A_rate)",
+
+    "SPELL_DRAIN": "Drenagem de Alma (Soul-Drain)",
+    "SPELL_DRAIN_TYPE": "Anima + Verbum (Ataque)",
+    "SPELL_DRAIN_DESC": "Causa dano e reverte parte do desgaste do alvo para o PC. (5 HP Dmg + cura menor)"
 }

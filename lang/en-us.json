@@ -18,5 +18,52 @@
     "PHASE_TEMPERED": "Tempered",
     "PHASE_FADED": "Faded",
     "PHASE_EMBERS": "Embers",
-    "PHASE_ASHEN": "Ashen"
+    "PHASE_ASHEN": "Ashen",
+
+    "SECTION_ABILITIES": "Abilities & Gear",
+    "SECTION_ABILITIES_NOTE": "A_rate applies to E_P. Cantrips cost 1% fixed E_P + 1% E_S.",
+    "TABLE_NAME": "Name",
+    "TABLE_TYPE": "Type (E_P + E_S)",
+    "TABLE_COSTS": "Attrition Cost",
+    "TABLE_DAMAGE": "Damage / Effect",
+
+    "WEAPON_BLADE": "Worn Blade",
+    "WEAPON_BLADE_TYPE": "Vitalis + Anima (Mêlée)",
+    "WEAPON_BLADE_DESC": "Brute force and determination. (10 HP Dmg)",
+
+    "WEAPON_DAGGER": "Finesse Dagger",
+    "WEAPON_DAGGER_TYPE": "Motus + Sensus (Finesse)",
+    "WEAPON_DAGGER_DESC": "Precision for exploiting openings. (8 HP Dmg)",
+
+    "WEAPON_BOW": "Hunting Bow",
+    "WEAPON_BOW_TYPE": "Motus + Sensus (Range)",
+    "WEAPON_BOW_DESC": "Motor coordination and focus. (12 HP Dmg)",
+
+    "WEAPON_SHIELD": "Shield Wall",
+    "WEAPON_SHIELD_TYPE": "Vitalis + Anima (Defense)",
+    "WEAPON_SHIELD_DESC": "Resist impact with sheer will. (+4 HP Mitig.)",
+
+    "CANTRIP_FLICKER": "Flicker",
+    "CANTRIP_FLICKER_TYPE": "Motus + Sensus (Utility)",
+    "CANTRIP_FLICKER_DESC": "Creates a small light or manipulates a small object. (1% Fixed Cost)",
+
+    "CANTRIP_SENSE": "Sense Scar",
+    "CANTRIP_SENSE_TYPE": "Sensus + Verbum (Utility)",
+    "CANTRIP_SENSE_DESC": "Detects where Essence was spent nearby. (1% Fixed Cost)",
+
+    "SPELL_BOLT": "Ember Bolt",
+    "SPELL_BOLT_TYPE": "Verbum + Sensus (Attack)",
+    "SPELL_BOLT_DESC": "Projects raw, exhausting energy. (15 HP Dmg)",
+
+    "SPELL_AURA": "Aura of Focus",
+    "SPELL_AURA_TYPE": "Verbum + Anima (Defense)",
+    "SPELL_AURA_DESC": "Ally adds +5 to next roll. (A_rate Cost)",
+
+    "SPELL_STONE": "Will of Stone",
+    "SPELL_STONE_TYPE": "Anima + Vitalis (Defense)",
+    "SPELL_STONE_DESC": "Increases mitigation by +10 HP until next turn. (A_rate Cost)",
+
+    "SPELL_DRAIN": "Soul-Drain",
+    "SPELL_DRAIN_TYPE": "Anima + Verbum (Attack)",
+    "SPELL_DRAIN_DESC": "Causes damage and partially heals PC E_cur. (5 HP Dmg + minor heal)"
 }
