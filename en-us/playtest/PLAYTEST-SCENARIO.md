@@ -32,3 +32,6 @@ The PCs are guardians of a **Waning Sanctuary** where the Echoes of legends are 
 * **Special Rule:** The PC with the lowest $\mathbf{E_{max}}$ (who has already scarred to $\le 84\%$) should be encouraged to attack to test their **$\mathbf{D_{conv}}$** (1d6 to subtract from the cost).
 * **Damage:** The Guardian uses a weapon that deals $10 \text{ Base Damage}$.
 * **Exit:** The GM guides the PCs to a moment of **Long Rest** and asks: "Which Essence betrayed you? What are you willing to lose to master it?"
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
