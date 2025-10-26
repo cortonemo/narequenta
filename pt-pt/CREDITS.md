@@ -64,3 +64,6 @@ Os vossos *insights* esculpem a beleza na decadência.
 
 © 2025 Serelith Varn — Nárëquenta: Contos do Escurecer.
 Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte LICENSE.md.
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.

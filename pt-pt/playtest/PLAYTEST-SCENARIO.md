@@ -32,3 +32,6 @@ Os PCs são guardiões de um **Santuário do Desvanecimento** onde Ecos de lenda
 * **Regra Especial:** O PC com a $\mathbf{E_{max}}$ mais baixa (que já cicatrizou para $\le 84\%$) deve ser encorajado a atacar para testar o seu **$\mathbf{D_{conv}}$** (1d6 para subtrair do custo).
 * **Dano:** O Guardião usa uma Arma que causa $10 \text{ Dano Base}$.
 * **Saída:** O MJ guia os PCs para um momento de **Longa Descanso** e pergunta: "Qual foi a Essência que o traiu? O que está disposto a perder para a dominar?"
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.

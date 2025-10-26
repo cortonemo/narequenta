@@ -23,3 +23,6 @@ This is the moment to accept permanent loss and redefine the self, gaining effic
 
 ---
 **Next Steps:** The full Magic and Rituals system (Verbum/Anima) will be expanded in v0.2-BETA.
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
