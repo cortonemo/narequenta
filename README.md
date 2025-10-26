@@ -1,3 +1,4 @@
+![[IMG_7540.JPEG]]
 # Nárëquenta — Tales of the Waning
 
 **Version: v0.4-ALPHA (Design Framework)**
