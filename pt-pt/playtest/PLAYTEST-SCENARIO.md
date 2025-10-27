@@ -33,5 +33,12 @@ Os PCs são guardiões de um **Santuário do Desvanecimento** onde Ecos de lenda
 * **Dano:** O Guardião usa uma Arma que causa $10 \text{ Dano Base}$.
 * **Saída:** O MJ guia os PCs para um momento de **Longa Descanso** e pergunta: "Qual foi a Essência que o traiu? O que está disposto a perder para a dominar?"
 
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Escurecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See  [LICENSE.md](license.md).
+
+---

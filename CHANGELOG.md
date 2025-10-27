@@ -55,6 +55,21 @@ The format is inspired by Keep a Changelog, and adheres to Semantic Versioning w
 
 ---
 
+## [v0.5] — 2025-10-27 (Attack Rolls & Contested Combat)
+
+**Status:** Alpha Test Ready - Core Combat Loop Defined
+**Highlights**
+- **Changed** The entire Action Resolution system now defaults to **Contested Rolls**.
+- **Added** **Proficiency Tiers and Dice Mapping** that tie $\mathbf{E_{max}}$ decay to Proficiency Dice ($\mathbf{D_{prof}}$) acquisition (1d6 up to 3d10/4d10).
+- **Changed** **Waning Roll** is now the primary mechanism for converting $\mathbf{E_{max}}$ loss into $\mathbf{D_{prof}}$.
+- **Added** **Critical Outcomes** system: **Double Critical** (Attacker Crit Hit vs. Defender Crit Fail) deals **10d10 Damage**. Critical Failure Reversal added.
+- **Added** **Proficiency Mitigation:** $\mathbf{D_{prof}}$ are now rolled to **subtract from the d100 roll result** (error mitigation).
+- **Added** **Energy Depletion Cap:** Energy loss from damage is capped by the maximum result of the highest $\mathbf{D_{prof}}$ die.
+- **Added** **Narrative Influence:** Introduced the DM's **Narrative Modifier Die** (1d6) to reward rich action descriptions.
+- **Added** **Special Attacks** by trading $\mathbf{D_{prof}}$.
+
+---
+
 🧾 Version Key
 
 Type | Meaning

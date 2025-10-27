@@ -55,6 +55,18 @@ The format is inspired by Keep a Changelog, and adheres to Semantic Versioning w
 
 ---
 
+## [v0.5] — 2025-10-27 (Rolagens de Ataque e Contested Rolls)
+
+**Status:** Alpha Test Ready - Ciclo de Combate Central Definido
+**Highlights**
+- **Alterado** O sistema de Resolução de Ação passa a ser por **Rolagens Contestadas**.
+- **Adicionado** **Tiers de Proficiência e Mapeamento de Dados** que ligam o decaimento da $\mathbf{E_{max}}$ à aquisição de Dados de Proficiência ($\mathbf{D_{prof}}$) (1d6 até 3d10/4d10).
+- **Alterado** A **Rolagem do Esvanecer** é agora o principal mecanismo para converter a perda de $\mathbf{E_{max}}$ em $\mathbf{D_{prof}}$.
+- **Adicionado** Sistema de **Resultados Críticos**: O **Crítico Duplo** (Ataque Crítico vs. Falha Crítica do Defensor) causa **10d10 de Dano**.
+- **Adicionado** **Mitigação de Proficiência:** Os $\mathbf{D_{prof}}$ são agora rolados para **subtrair do resultado do d100** (mitigação de erro).
+- **Adicionado** **Influência Narrativa:** Introduzido o **Dado Modificador Narrativo** ($\mathbf{1\text{d}6}$) do MJ para recompensar descrições ricas de ação.
+- **Adicionado** **Ataques Especiais** por troca de $\mathbf{D_{prof}}$.
+
 🧾 Version Key
 
 Type | Meaning
