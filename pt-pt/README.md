@@ -1,6 +1,6 @@
 # Nárëquenta — Contos do Esvanecer (Tales of the Waning)
 
-**Versão: v0.4-ALPHA (Design Framework)**
+**Versão: v0.5-ALPHA (Foco em Combate Contestado)**
 **Autor:** Serelith Varn (cortonemo)
 **Licença:** Nárëquenta Limited Open License (v0.1)
 
@@ -16,22 +16,22 @@ Nárëquenta é um TTRPG sobre **Decadência Elegante** (beautiful erosion). Os 
 
 * Começa-se a **100%** em todas as Facetas do ser.
 * Ao agir, **gasta-se** dessa Faceta ($\mathbf{E_{cur}}$).
-* Pode-se escolher **cicatrizar** essa Faceta: diminuir permanentemente o seu máximo ($\mathbf{E_{max}}$), mas tornar-se mais eficiente a usá-la no futuro.
+* Pode-se escolher **Refinar** essa Faceta: diminuir permanentemente o seu máximo ($\mathbf{E_{max}}$), mas ganhar **Dados de Proficiência ($\mathbf{D_{prof}}$)** para eficiência.
 * O descanso restaura o que resta, mas nunca o que já foi queimado.
 
-## ⚙️ Sumário do Sistema (v0.4)
-O jogo é construído em torno da gestão de Essência.
-- **E_max (Máximo):** Diminui permanentemente com a **Rolagem do Esvanecer (2d6/4d6)**.
-- **E_cur (Atual):** A energia utilizável diária. Define a probabilidade de acerto.
-- **Progresso:** É acionado pela **Rolagem do Esvanecer** no final de cada capítulo/missão.
-- **Vantagem Tática:** A Essência escolhida (que rola 4d6 de Decaimento) ganha **2d10 Dados de Proficiência (D_prof)** para aumentar a fiabilidade em testes contestados.
+## ⚙️ Sumário do Sistema (v0.5)
+O jogo é construído em torno da gestão de Essência e **Rolagens Contestadas**.
+- **E_max (Máximo):** Diminui permanentemente com a **Rolagem do Esvanecer (2d6/4d6)**. Esta redução determina o seu **Tier de Proficiência**.
+- **E_cur (Atual):** A energia utilizável diária. Define o limiar de sucesso ($\mathbf{d100 \le E_{cur}}$).
+- **Rolagens Contestadas:** As ações são resolvidas com a rolagem do Atacante e do Defensor. O Atacante usa $\mathbf{D_{prof}}$ para **Mitigar Erro** (subtraindo do resultado $\mathbf{d100}$).
+- **Progresso:** É acionado pela **Rolagem do Esvanecer** no final de cada capítulo/missão. O risco de decaimento garante **Dados de Proficiência ($\mathbf{D_{prof}}$)** para ações de alta eficiência.
 
 ## 🗂 Conteúdos do Repositório
 
 | Diretório | Conteúdo | Status |
 | :--- | :--- | :--- |
-| **`/Rules/`** | O Mecanismo Central, Metafísica e Rituais. | **v0.2 DRAFT** |
-| **`/Playtest/`** | Fichas, cenários e referências rápidas para a Alpha. | **NOVO** |
+| **`/Rules/`** | O Mecanismo Central, Metafísica e Rituais. | **v0.5 ATUALIZADO** |
+| **`/Playtest/`** | Fichas, cenários e referências rápidas para a Alpha. | **v0.5 ATUALIZADO** |
 | **`/Logs/`** | Notas de design e feedback de playtest (datado). | **v0.1 DRAFT** |
 | **`/Tools/`** | Scripts de cálculo e utilidades (e.g., Nárëquenta Calculator em Python). | **NOVO** |
 
