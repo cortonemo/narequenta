@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pt-pt/README.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
@@ -171,9 +171,11 @@
   },
   "active": "2ce6ca3a71ea493b",
   "lastOpenFiles": [
-    "README.md",
     "pt-pt/README.md",
-    "assets/image/Nárëquenta.png",
+    "assets/image/Narequenta.png",
+    "en-us/logs/2025-10-25_playtest_notes.md",
+    "assets/image/ps8AA0.tmp",
+    "README.md",
     "assets/image/IMG_7540.jpeg",
     "pt-pt/READMEpt.md",
     "pt-pt/Rules/RULES-RITUALS.md",
@@ -198,14 +200,12 @@
     "assets/image",
     "assets/New folder",
     "Tools/README.md",
-    "en-us/logs/2025-10-25_playtest_notes.md",
     "LICENSE.md",
     "Tools/run_sheet_gui.py",
     "Tools/run_sheet.py",
     "Tools",
     "scripts/run_sheet_gui.py",
     "scripts/run_sheet - Copy.py",
-    "scripts/run_sheet.py",
     "pt-pt/LICENSE-draft.md",
     "LICENSE-draft.md"
   ]

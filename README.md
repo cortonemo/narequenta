@@ -1,4 +1,4 @@
-![Repository Header Image](assets/image/Nárëquenta.png)
+![Repository Header Image](Narequenta.png)
 # Nárëquenta — Tales of the Waning
 
 **Version: v0.5-ALPHA (Contested Combat Focus)**
