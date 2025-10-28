@@ -1,4 +1,4 @@
-![Repository Header Image](Narequenta.png)
+![Repository Header Image](narequenta.png)
 # Nárëquenta — Contos do Esvanecer (Tales of the Waning)
 
 **Versão: v0.5-ALPHA (Foco em Combate Contestado)**
