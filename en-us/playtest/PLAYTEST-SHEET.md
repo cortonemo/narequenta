@@ -1,40 +1,41 @@
-# Nárëquenta: Alpha Test Character Sheet (v0.2)
+# Nárëquenta: Alpha Test Sheet (v0.7)
 
-Name:
-Concept / Legend People Tell About You:
-Current HP: [100] / 100
+**Name:** [_____________________]
+**Concept / Legend People Tell About You:** [_____________________]
+**HP Current:** [100] / 100
+**ACTION SURGE (AS) POOL AVAILABLE:** [ ] / [ Max: Consult AS Table ]
 
-## ESSENCES (FACETS OF THE SELF)
-For each Essence, track:
-- **E_CUR** (Current: goes down when you act)
-- **E_MAX** (Maximum: the recovery ceiling)
-- **A_RATE** (Cost: the percentage spent per action)
-- **C_LIM** (Crit Limit: the low roll that grants a luminous success)
+## ESSENCES (E_max vs E_cur)
 
-| Essence | E_MAX | E_CUR | Phase | A_RATE (P) | C_LIM | D_CONV |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **VITALIS** | [100%] | [100%] | [Pristine] | [30%] | [5] | [0d6] |
-| **MOTUS** | [100%] | [100%] | [Pristine] | [30%] | [5] | [0d6] |
-| **SENSUS** | [100%] | [100%] | [Pristine] | [30%] | [5] | [0d6] |
-| **VERBUM** | [100%] | [100%] | [Pristine] | [40%] | [5] | [0d6] |
-| **ANIMA** | [100%] | [100%] | [Pristine] | [40%] | [5] | [0d6] |
+**Instructions:** $\mathbf{E_{max}}$ is your permanent potential, capped at 50%. $\mathbf{E_{cur}}$ is your daily energy pool.
 
-## Quick Attrition Calculation
-
-| Action Result | E_P (Motor) Cost | E_S (Quality) Cost | D_conv Application |
-| :--- | :--- | :--- | :--- |
-| **Success (Normal)** | E_P - (A_rate - D6) | E_S - 2% | Roll D_conv and subtract from A_rate. |
-| **Failure (Effort)** | E_P - 1% | E_S - 1% | Does not use D_conv. |
-| **Critical (Luminous)**| E_P - 1% | E_S - 1% | Does not use D_conv. |
-
-## SCARS / REFINEMENTS Log
-
-| Date / Session | Scarred Essence | Old E_MAX | New E_MAX | New Phase |
+| Essence | E_MAX (Maximum Potential) | TIER / $\mathbf{\bar{M}}$ (Avg Proficiency) | E_CUR (Current Energy) | D_PROF POOL (Active Dice) |
 | :--- | :--- | :--- | :--- | :--- |
-| | | | | |
+| **VITALIS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **MOTUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **SENSUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **VERBUM** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **ANIMA** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
 
-## FINAL PROMISE
-(What you swore to do before you're gone.)
+## QUICK ATTRITION AND DAMAGE REFERENCE (v0.7)
 
+| Attrition | Motor Essence ($\mathbf{E_{P}}$) | Quality Essence ($\mathbf{E_{S}}$) | Calculation Summary |
+| :--- | :--- | :--- | :--- |
+| **$\mathbf{E_{cur}}$ Cost** | $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ | **$1\%$ Fixed Cost** | **$\mathbf{D_{Final}}$** is Tier-Neutral, mitigated by $\mathbf{M}_{Defense}$ and scaled by $\mathbf{M_{DTA}}$. |
+| **Failure (Effort)** | $\mathbf{1\%}$ Loss | $\mathbf{1\%}$ Loss | Both $\mathbf{E_{cur}}$ pools are reduced by $1\%$ on failed effort rolls. |
+
+**MOTOR/QUALITY PAIRS:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## EROSION / REFINEMENT LOG (Permanent Loss)
+(Log the $\mathbf{E_{max}}$ loss and resource gains achieved during the Waning Roll.)
+
+| Date / Chapter | Refined Essence (Focus 4d6 Risk) | Old E_MAX | New E_MAX | TIER Gained | AS Gained |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## FINAL VOW
+(What you promised to do before you fade.)
+
+---
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).

@@ -6,24 +6,21 @@ Os Rituais fecham o ciclo do jogo (Spend → Fade → **Renew**), permitindo ao 
 
 Este ritual permite ao PC recuperar o seu foco mental e físico, regressando ao seu potencial diário.
 
-- **Gatilho:** Descanso de Longa Duração (e.g., uma noite de sono segura) ou Ritual de Curta Duração (e.g., meditação de uma hora).
-- **Processo:** A **E_cur** de todas as Essências regressa ao seu **valor E_max** atual.
-- **Custo Narrativo (Provisório para Alpha):**
-    - **Descanso:** O PC deve sacrificar algo narrativo (e.g., deve narrar um sonho perturbador que custa -1d4% da sua E_cur de Verbum no início do próximo dia).
-    - **Ritual:** O PC deve gastar um **Recurso Raro** (e.g., uma dose de "Flor da Memória", um consumível finito) ou aceitar um **Debuff de Curta Duração** (e.g., -10 à próxima rolagem de Sensus).
+- **Gatilho:** Descanso de Longa Duração (e.g., uma noite de sono segura).
+- **Processo:**
+    1. A **$\mathbf{E_{cur}}$** de todas as Essências regressa ao seu **valor $\mathbf{E_{max}}$ atual**.
+    2. O **Pool de Impulsos de Ação (AS)** é **restaurado** ao seu total determinado pelo Tier (Sec. 5 das Regras Base).
+- **Custo Narrativo:** A Renovação não possui custo mecânico adicional; o custo é o tempo e o risco de interrupção do Descanso de Longa Duração.
 
-**Nota de Atualização (v0.5):** A Cicatrização (perda de $\mathbf{E_{max}}$) é agora gerida exclusivamente pela **Rolagem do Esvanecer** (Waning Roll) no final do capítulo, conforme detalhado nas Regras Base. O sistema de Cicatrização por Marcos de Decadência foi **removido**.
+**Nota sobre Perda Permanente:** A Atrição é apenas temporária ($\mathbf{E_{cur}}$). O sistema **NÃO** restaura o **$\mathbf{E_{max}}$** que foi permanentemente perdido.
 
 ---
-© 2025 Serelith Varn — Nárëquenta: Contos do Escurecer.
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
 Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
 
+---
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
 Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See  [LICENSE.md](license.md).
 
+
 ---
-
-
-
-© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.

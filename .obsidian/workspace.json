@@ -11,12 +11,14 @@
             "id": "2ce6ca3a71ea493b",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "assets/image/narequenta.png"
+                "file": "en-us/playtest/character_sheet_v0.7.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "narequenta"
+              "icon": "lucide-file",
+              "title": "character_sheet_v0.7"
             }
           }
         ]
@@ -169,42 +171,43 @@
   },
   "active": "2ce6ca3a71ea493b",
   "lastOpenFiles": [
-    "README.md",
+    "pt-pt/playtest/PLAYTEST-SHEET.md",
+    "en-us/playtest/PLAYTEST-SHEET.md",
+    "pt-pt/playtest/PLAYTEST-SCENARIO.md",
+    "en-us/playtest/PLAYTEST-SCENARIO.md",
+    "pt-pt/playtest/gm_reference_v0.7.md",
+    "en-us/playtest/gm_reference_v0.7.md",
+    "en-us/playtest/character_sheet_v0.7.md",
+    "pt-pt/playtest/character_sheet_v0.7.md",
+    "en-us/Rules/rules_contested_rolls_v0.7.md",
+    "pt-pt/Rules/rules_contested_rolls_v0.7.md",
+    "pt-pt/Rules/RULES-RITUALS.md",
+    "en-us/Rules/RULES-RITUALS.md",
     "pt-pt/README.md",
+    "pt-pt/CHANGELOG.md",
+    "README.md",
+    "CHANGELOG.md",
+    "pt-pt/CREDITS.md",
+    "pt-pt/LICENSE.md",
+    "en-us/Rules/core_rules_v0.7.md",
+    "pt-pt/Rules/core_rules_v0.7.md",
     "assets/image/narequenta.png",
     "en-us/logs/2025-10-25_playtest_notes.md",
     "assets/image/ps8AA0.tmp",
     "assets/image/IMG_7540.jpeg",
     "pt-pt/READMEpt.md",
-    "pt-pt/Rules/RULES-RITUALS.md",
     "CREDITS.md",
-    "CHANGELOG.md",
     "README-en.md",
     "pt-pt/playtest/sheets/pc_sheet_v0.5.html",
-    "pt-pt/Rules/rules_contested_rolls_v0.5.md",
-    "pt-pt/Rules/core_rules_v0.5.md",
-    "pt-pt/playtest/PLAYTEST-SHEET.md",
-    "pt-pt/playtest/PLAYTEST-SCENARIO.md",
-    "pt-pt/playtest/gm_reference_v0.5.md",
-    "pt-pt/playtest/character_sheet_v0.5.md",
     "pt-pt/logs/2025-10-25_playtest_notes.md",
-    "en-us/Rules/RULES-RITUALS.md",
-    "en-us/playtest/gm_reference_v0.5.md",
-    "en-us/Rules/rules_contested_rolls_v0.5.md",
-    "en-us/Rules/core_rules_v0.5.md",
-    "pt-pt/CHANGELOG.md",
-    "en-us/playtest/character_sheet_v0.5.md",
     "en-us/playtest/sheets/pc_sheet_v0.5.html",
     "assets/image",
     "assets/New folder",
     "Tools/README.md",
-    "LICENSE.md",
     "Tools/run_sheet_gui.py",
     "Tools/run_sheet.py",
     "Tools",
     "scripts/run_sheet_gui.py",
-    "scripts/run_sheet - Copy.py",
-    "pt-pt/LICENSE-draft.md",
-    "LICENSE-draft.md"
+    "scripts/run_sheet - Copy.py"
   ]
 }

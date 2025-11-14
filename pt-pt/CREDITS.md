@@ -1,4 +1,4 @@
-# 🕯️ Nárëquenta — Contos do Escurecer
+# 🕯️ Nárëquenta — Contos do Esvanecer (Tales of the Waning)
 ### Manifestação do Autor e Créditos
 
 ---
@@ -14,32 +14,31 @@ Todos os mecanismos centrais, terminologia e estrutura narrativa tiveram origem 
 
 ---
 
-## 🧩 Sumário do Conceito Base
+## 🧩 Sumário do Conceito Base (v0.7)
 
-> Um sistema de role-playing de mesa onde os heróis começam perfeitos e desvanecem com o uso.
-> O poder é consumido pela ação; a mestria erode o ser.
+> Um sistema de role-playing de mesa onde os heróis começam perto do seu auge e desvanecem com o uso.
+> O poder é consumido pela ação; a **Proficiência Compensa o Declínio**.
 > A história não é sobre ganhar força, mas sobre escolher o que gastar antes do fim.
 
-Palavras-chave mecânicas: **Facetas do Ser (Essências)**, **Cicatrizar (Scarring)**, **Refinamento**, **Eficiência de Decadência ($\mathbf{A_{rate}}$)** e **Recuperação através da Perda**.
+Palavras-chave mecânicas: **Facetas do Ser (Essências)**, **Erosão**, **Refinamento**, **Vantagem de Nível Defensivo (DTA)** e **Atrição Controlada**.
 
 ---
 
 ## ⚖️ Direitos e Licenciamento
 
 Todo o texto criativo, expressão de regras e terminologia neste repositório são © 2025 Serelith Varn.
-Todos os direitos reservados até ao lançamento formal da licença.
+Os direitos permanecem reservados até ao lançamento de uma licença Creative Commons ou ORC.
 
-Uma futura edição poderá ser publicada sob uma **Creative Commons** ou **Open RPG Creative License (ORC)** para uso não comercial ou com atribuição obrigatória.
-Até então, este trabalho permanece fechado para redistribuição ou publicação derivada sem permissão por escrito.
+Este material está atualmente publicado sob a **Nárëquenta Limited Open License (v0.1)**, que permite o uso não comercial de acordo com os seguintes termos:
 
 **Pode:**
-- Testar este material em privado.
+- Testar este material em privado ou publicamente.
 - Partilhar feedback diretamente com o autor.
+- Criar e publicar **conteúdo de fã (Fan Content)**, desde que credite Serelith Varn e mantenha a natureza não comercial.
 
-**Não pode:**
-- Reproduzir ou distribuir este sistema publicamente.
-- Publicar versões modificadas ou derivadas.
-- Usar o nome ou os mecanismos Nárëquenta para fins comerciais.
+**Não Pode:**
+- Reproduzir ou distribuir o **próprio sistema principal** publicamente.
+- Publicar versões modificadas ou derivadas **das regras centrais** ou do nome Nárëquenta para fins comerciais.
 
 Para colaboração, testes ou questões de licenciamento, por favor contacte:
 📧 serelith.varn@proton.me _(placeholder – atualizar quando pronto)_
@@ -49,7 +48,7 @@ Para colaboração, testes ou questões de licenciamento, por favor contacte:
 ## 🧱 Estrutura de Suporte
 
 **Documentação Técnica e Apoio ao Desenvolvimento do Sistema:**
-GPT-5 (Liora Vex Framework) — assistência de design colaborativo para estrutura, formatação e consistência de arquivo.
+Google (Modelo Flash 2.5, Persona Liora Vex) — assistência de design colaborativo para a estrutura, formatação e consistência de arquivo do sistema **v0.7**.
 
 ---
 
@@ -62,7 +61,7 @@ Os vossos *insights* esculpem a beleza na decadência.
 
 > _“Que os nossos fins sejam elegantes, e as nossas cicatrizes sejam lembradas.”_
 
-© 2025 Serelith Varn — Nárëquenta: Contos do Escurecer.
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
 Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte LICENSE.md.
 
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
