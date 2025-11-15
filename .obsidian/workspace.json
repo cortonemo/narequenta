@@ -11,14 +11,12 @@
             "id": "2ce6ca3a71ea493b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "CHANGELOG.md",
-                "mode": "source",
-                "source": false
+                "file": "assets/image/narequenta.png"
               },
-              "icon": "lucide-file",
-              "title": "CHANGELOG"
+              "icon": "lucide-image",
+              "title": "narequenta"
             }
           }
         ]
@@ -169,8 +167,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "2ce6ca3a71ea493b",
+  "active": "877d4f4d0ebbd967",
   "lastOpenFiles": [
+    "narequenta.png",
+    "README.md",
+    "CHANGELOG.md",
     "pt-pt/CHANGELOG.md",
     "pt-pt/README.md",
     "assets/image/narequenta.png",
@@ -213,9 +214,6 @@
     "pt-pt/playtest/PLAYTEST-SHEET.md",
     "en-us/playtest/PLAYTEST-SHEET.md",
     "pt-pt/playtest/PLAYTEST-SCENARIO.md",
-    "en-us/playtest/PLAYTEST-SCENARIO.md",
-    "pt-pt/playtest/gm_reference_v0.7.md",
-    "en-us/playtest/gm_reference_v0.7.md",
-    "pt-pt/playtest/character_sheet_v0.7.md"
+    "en-us/playtest/PLAYTEST-SCENARIO.md"
   ]
 }
