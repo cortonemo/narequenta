@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="CALC_TITLE">Nárëquenta Tier Calculator</title>
+    <link rel="stylesheet" href="../../css/style.css"> 
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 400px; margin: auto; background-color: #f8f8f8; }
+        h3 { color: #5d4037; text-align: center; border-bottom: 2px solid #5d4037; padding-bottom: 5px; }
+        .subtitle { text-align: center; margin-bottom: 20px; font-style: italic; font-size: 0.9em; }
+        input[type="number"] { width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 20px; border: 1px solid #ccc; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #5d4037; color: white; border: none; cursor: pointer; }
+        #results { margin-top: 20px; padding: 15px; border: 1px solid #5d4037; background-color: white; }
+        .result-line { margin-bottom: 5px; font-size: 1.1em; }
+        .label { font-weight: bold; color: #333; }
+        .value { float: right; color: #cc0000; }
+        .lang-control { float: right; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <div class="lang-control">
+        <label data-lang="LANG_SELECT" for="lang-select">Idioma:</label>
+        <select id="lang-select" onchange="loadLanguage(this.value)">
+            <option value="pt-pt">Português (PT-PT)</option>
+            <option value="en-us">English (EN-US)</option>
+        </select>
+    </div>
+
+    <h3 data-lang="CALC_TITLE">Calculadora de Tier de Proficiência</h3>
+    <p class="subtitle" data-lang="CALC_SUBTITLE">A Atrição é o Significado. E_max nunca cai abaixo de 50%.</p>
+    
+    <label class="label" data-lang="CALC_EMAX_LABEL" for="emax-input">E_MAX (%) da Essência (50% a 100%):</label>
+    <input type="number" id="emax-input" value="100" min="50" max="100">
+    
+    <button data-lang="CALC_BUTTON" onclick="calculateAndDisplay()">CALCULAR TIER</button>
+
+    <div id="results">
+        <p class="label" data-lang="CALC_RESULTS">Resultados do Cálculo:</p>
+        <div class="result-line"><span class="label" data-lang="CALC_TIER">NÍVEL de Proficiência:</span> <span class="value" id="tier-result">N/A</span></div>
+        <div class="result-line"><span class="label" data-lang="CALC_LOSS">Perda Total de E_MAX:</span> <span class="value" id="loss-result">N/A</span></div>
+        <div class="result-line"><span class="label" data-lang="CALC_DICE">Pool D_PROF:</span> <span class="value" id="dice-result">N/A</span></div>
+        <div class="result-line"><span class="label" data-lang="CALC_M_AVG">Mitigação Média ($\overline{M}$):</span> <span class="value" id="mavg-result">N/A</span></div>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+
+    <script>
+        let currentLanguage = {};
+
+        function loadLanguage(langCode) {
+            // Caminho: ../../lang/ do assets/html/tools/ -> /assets/lang/
+            fetch(`../../lang/${langCode}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    currentLanguage = data;
+                    applyTranslations();
+                    document.getElementById('lang-select').value = langCode;
+                })
+                .catch(error => console.error('Erro ao carregar ficheiro de idioma:', error));
+        }
+
+        function applyTranslations() {
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (currentLanguage[key]) {
+                    element.textContent = currentLanguage[key];
+                }
+            });
+            document.title = currentLanguage['CALC_TITLE'] || document.title;
+        }
+
+        function updateResults(data) {
+            document.getElementById('tier-result').textContent = data.TIER;
+            document.getElementById('loss-result').textContent = data["Perda Total (%)"];
+            document.getElementById('dice-result').textContent = data["D_PROF Pool"];
+            document.getElementById('mavg-result').textContent = data.M_AVG_Value;
+            document.getElementById('error-message').textContent = '';
+        }
+        
+        function calculateAndDisplay() {
+            const eMax = parseFloat(document.getElementById('emax-input').value);
+            
+            if (isNaN(eMax) || eMax > 100 || eMax < 50) {
+                document.getElementById('error-message').textContent = currentLanguage.CALC_ERROR || 'Error: Invalid E_MAX value.';
+                updateResults({ "TIER": "N/A", "Perda Total (%)": "N/A", "D_PROF Pool": "N/A", "M_AVG_Value": "N/A" });
+                return;
+            }
+            
+            window.pywebview.api.calculate_tier(eMax).then(updateResults);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultLang = 'pt-pt'; 
+            loadLanguage(defaultLang);
+        });
+    </script>
+</body>
+</html>

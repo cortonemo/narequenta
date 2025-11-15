@@ -19,7 +19,7 @@
     "TABLE_DAMAGE": "Dano / Efeito",
 
     "WEAPON_BLADE": "Lâmina Gasta",
-    "WEAPON_BLADE_TYPE": "VITALIS + ANIMA (Mêlée)",
+    "WEAPON_BLADE_TYPE": "VITALIS + ANIMA (Corpo a Corpo)",
     "WEAPON_BLADE_DESC": "Força bruta e determinação. (Dano baseado em R_prof + Margens)",
 
     "WEAPON_DAGGER": "Adaga de Finesse",
@@ -36,7 +36,7 @@
 
     "CANTRIP_FLICKER": "Cintilância",
     "CANTRIP_FLICKER_TYPE": "MOTUS + SENSUS (Utilidade)",
-    "CANTRIP_FLICKER_DESC": "Cria uma pequena luz ou manipula um objeto pequeno. (\u2a02(0, 7 - R_prof) Custo)",
+    "CANTRIP_FLICKER_DESC": "Cria uma pequena luz. (\u2a02(0, 7 - R_prof) Custo)",
 
     "CANTRIP_SENSE": "Sentir Cicatriz",
     "CANTRIP_SENSE_TYPE": "SENSUS + VERBUM (Utilidade)",
@@ -57,9 +57,32 @@
     "SPELL_DRAIN": "Drenagem de Alma",
     "SPELL_DRAIN_TYPE": "ANIMA + VERBUM (Ataque)",
     "SPELL_DRAIN_DESC": "Causa dano e reverte parte do desgaste do alvo para o PC. (Dano baseado em R_prof + Margens)",
-
-    "TOOLTIP_VITALIS_FOCUS_DESC": "Foco no corpo e resistência, aceitando o rápido declínio em VITALIS para alta proficiência inicial.",
-    "TOOLTIP_VERBUM_FOCUS_DESC": "Foco na mente e lógica. A proficiência em VERBUM é vital para a Mitigação e ações sociais.",
-    "TOOLTIP_MOTUS_FOCUS_DESC": "Foco em movimento e destreza, permitindo alta mobilidade e baixo custo de Atrição para evasão.",
-    "TOOLTIP_NPC_DESC": "Geração rápida de ficha para adversários. Usa Emax e Tiers fixos para configuração rápida."
+    
+    "VITALIS_NAME": "VITALIS (Vigor, Presença)",
+    "MOTUS_NAME": "MOTUS (Movimento, Destreza)",
+    "SENSUS_NAME": "SENSUS (Consciência, Instinto)",
+    "VERBUM_NAME": "VERBUM (Intelecto, Lógica)",
+    "ANIMA_NAME": "ANIMA (Vontade, Sacrifício)",
+    "FIELD_RPROF": "Nível de Proficiência Geral (R_Prof)",    
+    
+    "CALC_TITLE": "Calculadora de Tier de Proficiência",
+    "CALC_SUBTITLE": "A Atrição é o Significado. E_max nunca cai abaixo de 50%.",
+    "CALC_EMAX_LABEL": "E_MAX (%) da Essência (50% a 100%):",
+    "CALC_BUTTON": "CALCULAR TIER",
+    "CALC_RESULTS": "Resultados do Cálculo:",
+    "CALC_TIER": "NÍVEL de Proficiência:",
+    "CALC_LOSS": "Perda Total de E_MAX:",
+    "CALC_DICE": "Pool D_PROF:",
+    "CALC_M_AVG": "Mitigação Média (\u0304M):",
+    "CALC_ERROR": "Erro: O E_MAX deve ser um número entre 50 e 100.",
+    "LANG_SELECT": "Idioma:",
+    
+    "PC_SHEET_TITLE": "Ficha de Personagem",
+    "NPC_SHEET_TITLE": "Referência de Adversário",
+    "GM_REF_SHEET_TITLE": "Referência do Mestre",
+    
+    "NAVIGATE_TITLE": "Navegar:",
+    "NAVIGATE_PC": "Ficha de PC",
+    "NAVIGATE_NPC": "Referência NPC",
+    "NAVIGATE_GM": "Regras / GM Ref"
 }

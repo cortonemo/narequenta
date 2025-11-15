@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-lang="GAME_TITLE">Nárëquenta: Tales of the Waning</title>
+
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <style>
+        /* CSS AJUSTADO PARA O V0.7 */
+        body { font-family: sans-serif; padding: 20px; background-color: #f0f0f0; }
+        .info-block { margin-bottom: 20px; max-width: 1000px; margin: 0 auto 20px; }
+        
+        /* CORREÇÃO CRÍTICA DO LAYOUT: Aumentar a largura das colunas e centralizar o grid */
+        .essence-grid { 
+            display: grid; 
+            /* 1.5fr para o nome da Essência, 1fr para o resto */
+            grid-template-columns: 1.5fr repeat(5, 1fr); 
+            gap: 5px; 
+            text-align: center; 
+            margin: 0 auto 20px; /* Centraliza a grelha */
+            max-width: 1000px;
+        }
+        .essence-grid-header { font-weight: bold; padding: 5px; background-color: #ddd; }
+        
+        /* CALCULATOR FIX */
+        .calculator-container { border: 2px solid #cc0000; padding: 15px; margin-top: 30px; background-color: #ffffff; max-width: 600px; margin-left: auto; margin-right: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        
+        /* ELEMENTOS GERAIS */
+        input[type="number"], input[type="text"] { width: 90%; padding: 4px; border: 1px solid #ccc; text-align: center; box-sizing: border-box; }
+        .read-only { background-color: #eee; cursor: default; }
+        #damage-output { font-size: 1.5em; color: #cc0000; font-weight: bold; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div style="float: right; margin-top: 10px;">
+            <label for="lang-select">Language:</label>
+            <select id="lang-select" onchange="loadLanguage(this.value)">
+                <option value="en-us">English (EN-US)</option>
+                <option value="pt-pt">Português (PT-PT)</option>
+            </select>
+        </div>
+        <h1 data-lang="GAME_TITLE">Nárëquenta: Tales of the Waning</h1>
+        <h2 data-lang="SHEET_SUBTITLE">Character Sheet v0.7 Final</h2> 
+    </header>
+
+    <div class="info-block">
+        <span data-lang="FIELD_NAME">Name</span>:
+        <input type="text" id="pc-name" value="">
+
+        <span style="float: right;">
+            <span data-lang="FIELD_HP">Current HP</span>:
+            <input type="number" id="hp-current" value="100" min="0" max="100" style="width: 40px;"> / 100
+        </span>
+    </div>
+
+    <div class="section-header" data-lang="SECTION_ESSENCES">Essences (E_max vs E_cur - Hard Floor 50%)</div>
+
+    <div class="essence-grid">
+        <div class="essence-grid-header" data-lang="GRID_ESSENCE">Essence</div>
+        <div class="essence-grid-header" data-lang="GRID_EMAX">E_MAX (%)</div>
+        <div class="essence-grid-header" data-lang="GRID_ECUR">E_CURRENT (%)</div>
+        <div class="essence-grid-header">TIER</div>
+        <div class="essence-grid-header">D_PROF Pool</div>
+        <div class="essence-grid-header">Avg. Benefit ($\mathbf{\bar{M}}$)</div>
+
+        <div>VITALIS</div>
+        <div><input type="number" id="vitalis-emax" value="100" min="50" max="100" onchange="updateEssence('vitalis')"></div>
+        <div><input type="number" id="vitalis-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('vitalis')"></div>
+        <div><input type="text" id="vitalis-tier" class="read-only" readonly value="0"></div>
+        <div><input type="text" id="vitalis-dprof-pool" class="read-only" readonly value="None"></div>
+        <div><input type="text" id="vitalis-m-avg" class="read-only" readonly value="0.0"></div>
+        
+        <div>MOTUS</div>
+        <div><input type="number" id="motus-emax" value="100" min="50" max="100" onchange="updateEssence('motus')"></div>
+        <div><input type="number" id="motus-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('motus')"></div>
+        <div><input type="text" id="motus-tier" class="read-only" readonly value="0"></div>
+        <div><input type="text" id="motus-dprof-pool" class="read-only" readonly value="None"></div>
+        <div><input type="text" id="motus-m-avg" class="read-only" readonly value="0.0"></div>
+        
+        <div>SENSUS</div>
+        <div><input type="number" id="sensus-emax" value="100" min="50" max="100" onchange="updateEssence('sensus')"></div>
+        <div><input type="number" id="sensus-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('sensus')"></div>
+        <div><input type="text" id="sensus-tier" class="read-only" readonly value="0"></div>
+        <div><input type="text" id="sensus-dprof-pool" class="read-only" readonly value="None"></div>
+        <div><input type="text" id="sensus-m-avg" class="read-only" readonly value="0.0"></div>
+
+        <div>VERBUM</div>
+        <div><input type="number" id="verbum-emax" value="100" min="50" max="100" onchange="updateEssence('verbum')"></div>
+        <div><input type="number" id="verbum-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('verbum')"></div>
+        <div><input type="text" id="verbum-tier" class="read-only" readonly value="0"></div>
+        <div><input type="text" id="verbum-dprof-pool" class="read-only" readonly value="None"></div>
+        <div><input type="text" id="verbum-m-avg" class="read-only" readonly value="0.0"></div>
+
+        <div>ANIMA</div>
+        <div><input type="number" id="anima-emax" value="100" min="50" max="100" onchange="updateEssence('anima')"></div>
+        <div><input type="number" id="anima-ecur" value="100" min="0" max="100" onchange="checkECurCeiling('anima')"></div>
+        <div><input type="text" id="anima-tier" class="read-only" readonly value="0"></div>
+        <div><input type="text" id="anima-dprof-pool" class="read-only" readonly value="None"></div>
+        <div><input type="text" id="anima-m-avg" class="read-only" readonly value="0.0"></div>
+    </div>
+    <div class="calculator-container">
+        <h2 style="text-align: center; margin-top: 0; color: #333;" data-lang="CALC_TITLE">⚔️ COMBAT CALCULATOR (For Testing)</h2>
+        
+        <div style="display: flex; justify-content: space-around; gap: 20px;">
+            <fieldset>
+                <legend data-lang="CALC_ATTACKER">ATTACKER (PC)</legend>
+                <label data-lang="FIELD_ECUR">E_CUR (%):</label> <input type="number" id="a-ecur-calc" value="70" min="0" max="100">
+                <label data-lang="FIELD_TIER">TIER (I-V):</label> <input type="text" id="a-tier-calc" value="III" maxlength="2">
+                <hr>
+                <label data-lang="FIELD_D100">d100 ROLLED:</label> <input type="number" id="a-d100" value="50" min="1" max="100">
+                <label data-lang="FIELD_RPROF">R_PROF ROLLED:</label> <input type="number" id="a-rprof" value="16" min="0">
+            </fieldset>
+
+            <fieldset>
+                <legend data-lang="CALC_DEFENDER">DEFENDER (NPC/PC)</legend>
+                <label data-lang="FIELD_ECUR">E_CUR (%):</label> <input type="number" id="d-ecur-calc" value="70" min="0" max="100">
+                <label data-lang="FIELD_TIER">TIER (I-V):</label> <input type="text" id="d-tier-calc" value="III" maxlength="2">
+                <hr>
+                <label data-lang="FIELD_DEFENSE_ROLL">d100 DEFENSE:</label> <input type="number" id="d-d100" value="50" min="1" max="100">
+            </fieldset>
+        </div>
+
+        <button onclick="runDamageCalculation()" data-lang="CALC_BUTTON">
+            CALCULATE FINAL DAMAGE
+        </button>
+        
+        <hr style="border-top: 1px dashed #ccc;">
+
+        <h3 style="margin: 5px 0; color: #cc0000;" data-lang="CALC_FINAL_DAMAGE">FINAL DAMAGE: <span id="damage-output">0 HP</span></h3>
+        <p id="details-output" style="font-size: 0.85em; color: #5a5a5a; margin: 0;"></p>
+    </div>
+    <script>
+        // --- V0.7 CORE CONSTANTS ---
+        const TIER_DATA = {
+            'V': { dice: '5d10', avg: 27.5 }, 'IV': { dice: '4d10', avg: 22.0 }, 
+            'III': { dice: '3d10', avg: 16.5 }, 'II': { dice: '2d10', avg: 11.0 }, 
+            'I': { dice: '1d10', avg: 5.5 }, '0': { dice: 'None', avg: 0.0 }
+        };
+        const DTA_MULTIPLIERS = { '0': 1.0, '1': 0.75, '2': 0.50, '3': 0.25, '-1': 1.0, '-2': 1.0, '-3': 1.0 };
+        
+        let dictionary = {}; 
+        let currentLangCode = "en-us"; // Default language
+
+        // --- TIER CALCULATION ---
+        function getTierFromEmax(eMax) {
+            const loss = 100 - eMax;
+            if (eMax < 50) eMax = 50; 
+            
+            if (loss >= 50) return 'V';
+            if (loss >= 40) return 'IV';
+            if (loss >= 30) return 'III';
+            if (loss >= 20) return 'II';
+            if (loss >= 10) return 'I';
+            return '0';
+        }
+
+        function updateEssence(essence) {
+            const eMaxInput = document.getElementById(`${essence}-emax`);
+            let eMax = parseFloat(eMaxInput.value);
+
+            if (eMax < 50) eMax = 50;
+            eMaxInput.value = eMax;
+
+            const tierKey = getTierFromEmax(eMax);
+            const tierData = TIER_DATA[tierKey];
+
+            // Update Read-Only Fields
+            document.getElementById(`${essence}-tier`).value = tierKey;
+            document.getElementById(`${essence}-dprof-pool`).value = tierData.dice;
+            document.getElementById(`${essence}-m-avg`).value = tierData.avg.toFixed(1);
+
+            checkECurCeiling(essence);
+        }
+
+        function checkECurCeiling(essence) {
+            const eCurInput = document.getElementById(`${essence}-ecur`);
+            const max = parseFloat(document.getElementById(`${essence}-emax`).value);
+            
+            if (parseFloat(eCurInput.value) > max) {
+                eCurInput.value = max;
+            }
+        }
+
+        // --- DAMAGE CALCULATION LOGIC (V0.7 INTEGRATION) ---
+        function getTierDifference(defenderTier, attackerTier) {
+            const tierMap = {'V': 5, 'IV': 4, 'III': 3, 'II': 2, 'I': 1, '0': 0};
+            const diff = (tierMap[defenderTier] || 0) - (tierMap[attackerTier] || 0);
+            if (diff < -1) return -1;
+            if (diff > 3) return 3;
+            return diff;
+        }
+
+        function calculateDamage(a_Ecur, a_Tier, d_Ecur, d_Tier, d100_A, r_prof, d100_D) {
+            const d100_A_mitigated = d100_A - r_prof;
+            const isHit = d100_A_mitigated <= a_Ecur;
+
+            if (!isHit) {
+                return { damage: 0, a_FP: 0, d_Margin: 0, status: "FALHA (Rolagem de Ataque Acima do E_cur)" };
+            }
+            
+            const a_FP = 100 - d100_A_mitigated;
+            const d_Margin = d100_D - d_Ecur;
+            const m_Defense = TIER_DATA[d_Tier].avg || 0; 
+
+            const tierDifference = getTierDifference(d_Tier, a_Tier);
+            const m_DTA = DTA_MULTIPLIERS[tierDifference.toString()] || 1.0;
+            
+            const damageSum = a_FP - m_Defense + d_Margin + r_prof;
+            const finalDamage = Math.max(0, damageSum) * m_DTA;
+
+            return { 
+                damage: Math.round(finalDamage), 
+                a_FP: a_FP,
+                d_Margin: d_Margin,
+                status: `SUCESSO. TIER A: ${a_Tier} | TIER D: ${d_Tier} | DTA: x${m_DTA.toFixed(2)}`
+            };
+        }
+
+        function runDamageCalculation() {
+            // NOTE: Requires manual input of TIER in the calculator UI.
+            const a_Ecur = parseInt(document.getElementById('a-ecur-calc').value) || 0;
+            const a_Tier = document.getElementById('a-tier-calc').value.toUpperCase().trim() || '0';
+            const d_Ecur = parseInt(document.getElementById('d-ecur-calc').value) || 0;
+            const d_Tier = document.getElementById('d-tier-calc').value.toUpperCase().trim() || '0';
+            const d100_A = parseInt(document.getElementById('a-d100').value) || 100;
+            const r_prof = parseInt(document.getElementById('a-rprof').value) || 0;
+            const d100_D = parseInt(document.getElementById('d-d100').value) || 100;
+
+            if (!TIER_DATA[a_Tier] || !TIER_DATA[d_Tier]) {
+                document.getElementById('damage-output').textContent = dictionary["ERROR"];
+                document.getElementById('details-output').textContent = dictionary["ERROR_TIER_INVALID"];
+                return;
+            }
+
+            const result = calculateDamage(a_Ecur, a_Tier, d_Ecur, d_Tier, d100_A, r_prof, d100_D);
+            const mitigatedRoll = d100_A - r_prof;
+            
+            // Output based on language dictionary
+            document.getElementById('damage-output').textContent = `${result.damage} ${dictionary["FIELD_HP_UNIT"] || 'HP'}`;
+            
+            let statusText = dictionary["STATUS_SUCCESS"];
+            if (result.damage === 0 && mitigatedRoll > a_Ecur) {
+                 statusText = dictionary["STATUS_FAIL"];
+            }
+
+            document.getElementById('details-output').textContent = 
+                `${statusText} | A_FP: ${result.a_FP} | D_Margin: ${result.d_Margin} | DTA: x${result.status.split('x')[1] || '1.00'}`;
+        }
+
+        // --- LANGUAGE AND INITIALIZATION ---
+
+        function applyTranslations() {
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                const text = dictionary[key] || key;
+
+                if (element.tagName === 'TITLE') {
+                    document.title = text;
+                } else if (element.tagName === 'INPUT' || element.tagName === 'LABEL') {
+                    // This section is simplified for the main tags
+                    // Full implementation requires logic to handle various input/label types
+                    element.textContent = text;
+                } else {
+                    element.textContent = text;
+                }
+            });
+            // Ensure Essence columns are refreshed after loading language
+            const essences = ['vitalis', 'motus', 'sensus', 'verbum', 'anima'];
+            essences.forEach(e => {
+                updateEssence(e); 
+            });
+        }
+        
+        async function loadLanguage(langCode) {
+             currentLangCode = langCode;
+             const langFilePath = `../../../lang/${langCode}.json`;
+             
+             try {
+                const response = await fetch(langFilePath);
+                if (!response.ok) throw new Error(`Failed to load: ${langFilePath}`);
+                
+                dictionary = await response.json();
+                applyTranslations();
+                
+                // Set the correct option in the dropdown after loading (in case it was called externally)
+                document.getElementById('lang-select').value = langCode;
+            } catch (error) {
+                console.error(`Error loading localization for ${langCode}:`, error);
+                // Fallback to English keys if file is missing
+            }
+        }
+        
+        // Load the initial language based on the HTML's lang attribute (en-us)
+        document.addEventListener('DOMContentLoaded', () => {
+             // Set the initial dropdown value to match the HTML tag lang
+             document.getElementById('lang-select').value = document.documentElement.lang;
+             loadLanguage(document.documentElement.lang); 
+        });
+
+    </script>
+    
+</body>
+</html>

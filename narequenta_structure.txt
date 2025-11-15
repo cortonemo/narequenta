@@ -1,0 +1,57 @@
+📁 Root: G:\Git\narequenta
+├── 📂 assets/
+│   ├── 📂 css/
+│   │   ├── 📄 style.css
+│   ├── 📂 html/
+│   │   ├── 📂 sheets/
+│   │   │   ├── 📄 npc_sheet.html
+│   │   │   ├── 📄 pc_sheet.html
+│   │   │   ├── 📄 pc_sheet_0.7.html
+│   │   │   └── 📄 pc_sheet_v0.5.html
+│   │   └── 📂 tools/
+│   │       └── 📄 tier_calculator_gui.html
+│   ├── 📂 image/
+│   │   ├── 📄 narequenta_favicon.ico
+│   │   ├── 📄 narequenta_favicon_16x16.png
+│   │   ├── 📄 narequenta_favicon_32x32.png
+│   │   ├── 📄 narequenta_favicon_48x48.png
+│   │   ├── 📄 narequenta_favicon_64x64.png
+│   │   ├── 📄 narequenta_minimal_favicon.ico
+│   │   ├── 📄 narequenta_minimal_favicon_16x16.png
+│   │   ├── 📄 narequenta_minimal_favicon_32x32.png
+│   │   ├── 📄 narequenta_minimal_favicon_48x48.png
+│   │   └── 📄 narequenta_minimal_favicon_64x64.png
+│   ├── 📂 lang/
+│   │   ├── 📄 en-us.json
+│   │   ├── 📄 pt-pt.json
+│   └── 📂 Tools/
+│       ├── 📄 config.json
+│       ├── 📄 README.md
+│       ├── 📄 sheet_gui.py
+│       ├── 📄 sheet_gui0.py
+│       └── 📄 tool_tier_calculator.py
+├── 📂 en-us/
+│   ├── 📂 logs/
+│   │   └── 📄 2025-10-25_playtest_notes.md
+│   ├── 📂 playtest/
+│   │   ├── 📄 character_sheet_v0.7.md
+│   │   ├── 📄 gm_reference_v0.7.md
+│   │   ├── 📄 PLAYTEST-SCENARIO.md
+│   │   └── 📄 PLAYTEST-SHEET.md
+│   └── 📂 Rules/
+│       ├── 📄 core_rules_v0.7.md
+│       ├── 📄 RULES-RITUALS.md
+│       └── 📄 rules_contested_rolls_v0.7.md
+│   ├── 📄 CHANGELOG.md
+│   ├── 📄 CREDITS.md
+│   ├── 📄 LICENSE.md
+│   └── 📄 README.md
+├── 📂 Templates/
+│   └── 📄 pc_sheet_template.html
+├── 📄 .gitignore
+├── 📄 CHANGELOG.md
+├── 📄 CREDITS.md
+├── 📄 favicon.ico
+├── 📄 Git.lnk
+├── 📄 LICENSE.md
+└── 📄 README.md

@@ -36,7 +36,7 @@
 
     "CANTRIP_FLICKER": "Flicker",
     "CANTRIP_FLICKER_TYPE": "MOTUS + SENSUS (Utility)",
-    "CANTRIP_FLICKER_DESC": "Creates a small light or manipulates a small object. (\u2a02(0, 7 - R_prof) Cost)",
+    "CANTRIP_FLICKER_DESC": "Creates a small light. (\u2a02(0, 7 - R_prof) Cost)",
 
     "CANTRIP_SENSE": "Sense Scar",
     "CANTRIP_SENSE_TYPE": "SENSUS + VERBUM (Utility)",
@@ -57,9 +57,32 @@
     "SPELL_DRAIN": "Soul-Drain",
     "SPELL_DRAIN_TYPE": "ANIMA + VERBUM (Attack)",
     "SPELL_DRAIN_DESC": "Causes damage and partially recovers PC E_cur. (Dmg based on R_prof + Margins)",
+
+    "VITALIS_NAME": "VITALIS (Vigor, Presence)",
+    "MOTUS_NAME": "MOTUS (Movement, Finesse)",
+    "SENSUS_NAME": "SENSUS (Awareness, Instinct)",
+    "VERBUM_NAME": "VERBUM (Intellect, Logic)",
+    "ANIMA_NAME": "ANIMA (Will, Sacrifice)",
+    "FIELD_RPROF": "General Proficiency Level (R_Prof)",
     
-    "TOOLTIP_VITALIS_FOCUS_DESC": "Focus on body and endurance, accepting rapid VITALIS decay for high early proficiency.",
-    "TOOLTIP_VERBUM_FOCUS_DESC": "Focus on mind and logic. VERBUM proficiency is key for Mitigation and social actions.",
-    "TOOLTIP_MOTUS_FOCUS_DESC": "Focus on movement and dexterity, enabling high mobility and low Attrition cost for evasion.",
-    "TOOLTIP_NPC_DESC": "Quick sheet generation for adversaries. Uses fixed Emax and Tiers for fast setup."
+    "CALC_TITLE": "Proficiency Tier Calculator",
+    "CALC_SUBTITLE": "Attrition is Meaning. E_max never falls below 50%.",
+    "CALC_EMAX_LABEL": "Essence E_MAX (%) (50% to 100%):",
+    "CALC_BUTTON": "CALCULATE TIER",
+    "CALC_RESULTS": "Calculation Results:",
+    "CALC_TIER": "Proficiency TIER:",
+    "CALC_LOSS": "Total E_MAX Loss:",
+    "CALC_DICE": "D_PROF Pool:",
+    "CALC_M_AVG": "Average Mitigation (\u0304M):",
+    "CALC_ERROR": "Error: E_MAX must be a number between 50 and 100.",
+    "LANG_SELECT": "Language:",
+
+    "PC_SHEET_TITLE": "Character Sheet",
+    "NPC_SHEET_TITLE": "Adversary Reference",
+    "GM_REF_SHEET_TITLE": "GM Reference",
+    
+    "NAVIGATE_TITLE": "Navigate:",
+    "NAVIGATE_PC": "PC Sheet",
+    "NAVIGATE_NPC": "NPC Reference",
+    "NAVIGATE_GM": "Rules / GM Ref"
 }
