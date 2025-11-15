@@ -1,4 +1,4 @@
-![Repository Header Image](narequenta.png)
+![Repository Header Image](header_image.png)
 # Nárëquenta — Contos do Esvanecer (Tales of the Waning)
 
 **Versão: v0.7-FINAL (Letalidade de Precisão)**

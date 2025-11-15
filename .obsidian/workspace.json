@@ -11,12 +11,14 @@
             "id": "2ce6ca3a71ea493b",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "assets/image/narequenta.png"
+                "file": "README.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "narequenta"
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -167,14 +169,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "877d4f4d0ebbd967",
+  "active": "2ce6ca3a71ea493b",
   "lastOpenFiles": [
-    "narequenta.png",
+    "CREDITS.md",
+    "header_image.png",
     "README.md",
+    "assets/image/narequenta.png",
     "CHANGELOG.md",
     "pt-pt/CHANGELOG.md",
     "pt-pt/README.md",
-    "assets/image/narequenta.png",
     "assets/image/psCBA7.tmp",
     "assets/image/narequenta00.png",
     "assets/image/narequenta01.png",
@@ -194,7 +197,6 @@
     "assets/image/narequenta_minimal_favicon_16x16.png",
     "assets/image/Minimalist_dark_fantasy_202511151421 (3).jpeg",
     "assets/image/Minimalist_dark_fantasy_202511151421 (2).jpeg",
-    "assets/image/Minimalist_dark_fantasy_202511151421 (1).jpeg",
     "assets/Tools/sheet_gui.py.md",
     "assets/Tools/config.json.md",
     "assets/Tools/README.md",

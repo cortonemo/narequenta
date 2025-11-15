@@ -1,4 +1,4 @@
-![Repository Header Image](narequenta.png)
+![Repository Header Image](header_image.png)
 # Nárëquenta — Tales of the Waning
 
 **Version: v0.7-FINAL (Precision Lethality)**
