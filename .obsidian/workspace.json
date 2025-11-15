@@ -169,13 +169,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "2ce6ca3a71ea493b",
+  "active": "877d4f4d0ebbd967",
   "lastOpenFiles": [
+    "assets/html/sheets/index.html",
+    "assets/html/sheets/index2 - Copy.html",
+    "assets/html/sheets/index1 - Copy.html",
+    "assets/html/sheets/index1.html",
+    "assets/html/sheets/index2.html",
+    "LICENSE.md",
     "CREDITS.md",
-    "header_image.png",
-    "README.md",
-    "assets/image/narequenta.png",
     "CHANGELOG.md",
+    "README.md",
+    "narequenta.txt",
+    "header_image.png",
+    "assets/image/narequenta.png",
     "pt-pt/CHANGELOG.md",
     "pt-pt/README.md",
     "assets/image/psCBA7.tmp",
@@ -184,13 +191,8 @@
     "en-us/playtest/character_sheet_v0.7.md",
     "assets/Tools/sheet_gui_index.py",
     "assets/Tools/sheet_gui_choice - Copy.py",
-    "assets/html/sheets/index.html",
     "assets/html/sheets/New Documento de Texto.txt",
     "assets/html/sheets/gm_reference.html",
-    "assets/html/sheets/gm_reference.htm",
-    "assets/html/sheets/npc_sheet.html",
-    "assets/Tools/sheet_gui_choice.py",
-    "assets/Tools/sheet_gui_choice..py",
     "assets/image/narequenta_minimal_favicon_64x64.png",
     "assets/image/narequenta_minimal_favicon_48x48.png",
     "assets/image/narequenta_minimal_favicon_32x32.png",
@@ -214,8 +216,6 @@
     "html/sheets/pc_sheet.md",
     "html/index.md",
     "pt-pt/playtest/PLAYTEST-SHEET.md",
-    "en-us/playtest/PLAYTEST-SHEET.md",
-    "pt-pt/playtest/PLAYTEST-SCENARIO.md",
-    "en-us/playtest/PLAYTEST-SCENARIO.md"
+    "en-us/playtest/PLAYTEST-SHEET.md"
   ]
 }

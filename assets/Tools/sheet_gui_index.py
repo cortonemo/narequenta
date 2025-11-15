@@ -1,3 +1,9 @@
+"""
+Nárëquenta Sheet Viewer v0.8 - Script Principal
+Inicia o servidor, carrega a configuração e expõe o API de troca de idioma.
+Utiliza a arquitetura de Ficheiro HTML ÚNICO por tipo de ficha.
+"""
+
 import webview
 import http.server
 import socketserver

@@ -1,16 +1,46 @@
 {
+    /* ========================================================= */
+    /* 1. GLOBAL / NAVIGATION KEYS */
+    /* ========================================================= */
     "GAME_TITLE": "Nárëquenta: Contos do Esvanecer",
-    "SHEET_SUBTITLE": "Ficha de Personagem v0.7 Final",
+    "SHEET_SUBTITLE": "Ficha de Personagem",
+    
+    "WELCOME_TITLE": "Bem-vindo(a) a Nárëquenta",
+    "NAVIGATE_START_PROMPT": "Escolha o Ponto de Partida:",
+    "NAVIGATE_TITLE": "Navegar:",
+    "NAVIGATE_PC": "Ficha de PC",
+    "NAVIGATE_NPC": "Referência NPC",
+    "NAVIGATE_GM": "Regras / GM Ref",
+    "LANG_SELECT": "Idioma:",
+
+    /* ========================================================= */
+    /* 2. PC SHEET KEYS (General Fields, Essences, Abilities) */
+    /* ========================================================= */
+    
+    /* General PC Fields */
     "FIELD_NAME": "Nome",
     "FIELD_HP": "HP Atual",
-    "SECTION_ESSENCES": "Essências (E_max vs E_cur - Limite Fixo 50%)",
-    "SECTION_SCARRING_LOG": "Registo de Erosão / Refinamentos",
+    "FIELD_RPROF": "Nível de Proficiência Geral (R_Prof)",
     "SECTION_PROMISE": "Promessa Final",
+    "FIELD_PROMISE_HINT": "O Voto que a Personagem fez",
+    "SECTION_SCARRING_LOG": "Registo de Erosão / Refinamentos",
+    
+    /* Essence Grid Headers (PC) */
+    "SECTION_ESSENCES": "Essências (E_max vs E_cur - Limite Fixo 50%)",
     "GRID_ESSENCE": "Essência",
     "GRID_EMAX": "E_MÁX (%)",
     "GRID_ECUR": "E_ATUAL (%)",
     "GRID_TIER_AVG": "NÍVEL / Margem Média (\u0304M)",
     "GRID_DPROFICIENCY": "Pool D_PROF",
+    
+    /* Essence Names */
+    "VITALIS_NAME": "VITALIS (Vigor, Presença)",
+    "MOTUS_NAME": "MOTUS (Movimento, Destreza)",
+    "SENSUS_NAME": "SENSUS (Consciência, Instinto)",
+    "VERBUM_NAME": "VERBUM (Intelecto, Lógica)",
+    "ANIMA_NAME": "ANIMA (Vontade, Sacrifício)",
+
+    /* Abilities Table */
     "SECTION_ABILITIES": "Habilidades e Equipamento Básico",
     "SECTION_ABILITIES_NOTE": "Custo = \u2a02(0, 7 - R_prof) + 1% E_S. Dano é Neutro por Nível (A_FP).",
     "TABLE_NAME": "Nome / Item",
@@ -18,71 +48,18 @@
     "TABLE_COSTS": "Custo de Atrição",
     "TABLE_DAMAGE": "Dano / Efeito",
 
+    /* Abilities Descriptions */
     "WEAPON_BLADE": "Lâmina Gasta",
     "WEAPON_BLADE_TYPE": "VITALIS + ANIMA (Corpo a Corpo)",
     "WEAPON_BLADE_DESC": "Força bruta e determinação. (Dano baseado em R_prof + Margens)",
-
     "WEAPON_DAGGER": "Adaga de Finesse",
     "WEAPON_DAGGER_TYPE": "MOTUS + SENSUS (Finesse)",
     "WEAPON_DAGGER_DESC": "Precisão para explorar aberturas. (Dano baseado em R_prof + Margens)",
-
     "WEAPON_BOW": "Arco de Caça",
     "WEAPON_BOW_TYPE": "MOTUS + SENSUS (Alcance)",
     "WEAPON_BOW_DESC": "Coordenação motora e foco. (Dano baseado em R_prof + Margens)",
-
     "WEAPON_SHIELD": "Barricada de Escudo",
     "WEAPON_SHIELD_TYPE": "VITALIS + ANIMA (Defesa)",
     "WEAPON_SHIELD_DESC": "Resistir ao impacto com pura vontade. (A defesa reduz a Margem D)",
-
     "CANTRIP_FLICKER": "Cintilância",
-    "CANTRIP_FLICKER_TYPE": "MOTUS + SENSUS (Utilidade)",
-    "CANTRIP_FLICKER_DESC": "Cria uma pequena luz. (\u2a02(0, 7 - R_prof) Custo)",
-
-    "CANTRIP_SENSE": "Sentir Cicatriz",
-    "CANTRIP_SENSE_TYPE": "SENSUS + VERBUM (Utilidade)",
-    "CANTRIP_SENSE_DESC": "Deteta onde a Essência foi gasta próxima. (\u2a02(0, 7 - R_prof) Custo)",
-
-    "SPELL_BOLT": "Dardo de Brasa",
-    "SPELL_BOLT_TYPE": "VERBUM + SENSUS (Ataque)",
-    "SPELL_BOLT_DESC": "Projeta energia bruta. (Dano baseado em R_prof + Margens)",
-
-    "SPELL_AURA": "Aura de Foco",
-    "SPELL_AURA_TYPE": "VERBUM + ANIMA (Defesa)",
-    "SPELL_AURA_DESC": "Aliado adiciona \u0304M à mitigação do próximo rolo. (Custo de Atrição Completo)",
-
-    "SPELL_STONE": "Vontade de Pedra",
-    "SPELL_STONE_TYPE": "ANIMA + VITALIS (Defesa)",
-    "SPELL_STONE_DESC": "Aumenta a Mitigação de Defesa em \u0304M até ao próximo turno. (Custo de Atrição Completo)",
-
-    "SPELL_DRAIN": "Drenagem de Alma",
-    "SPELL_DRAIN_TYPE": "ANIMA + VERBUM (Ataque)",
-    "SPELL_DRAIN_DESC": "Causa dano e reverte parte do desgaste do alvo para o PC. (Dano baseado em R_prof + Margens)",
-    
-    "VITALIS_NAME": "VITALIS (Vigor, Presença)",
-    "MOTUS_NAME": "MOTUS (Movimento, Destreza)",
-    "SENSUS_NAME": "SENSUS (Consciência, Instinto)",
-    "VERBUM_NAME": "VERBUM (Intelecto, Lógica)",
-    "ANIMA_NAME": "ANIMA (Vontade, Sacrifício)",
-    "FIELD_RPROF": "Nível de Proficiência Geral (R_Prof)",    
-    
-    "CALC_TITLE": "Calculadora de Tier de Proficiência",
-    "CALC_SUBTITLE": "A Atrição é o Significado. E_max nunca cai abaixo de 50%.",
-    "CALC_EMAX_LABEL": "E_MAX (%) da Essência (50% a 100%):",
-    "CALC_BUTTON": "CALCULAR TIER",
-    "CALC_RESULTS": "Resultados do Cálculo:",
-    "CALC_TIER": "NÍVEL de Proficiência:",
-    "CALC_LOSS": "Perda Total de E_MAX:",
-    "CALC_DICE": "Pool D_PROF:",
-    "CALC_M_AVG": "Mitigação Média (\u0304M):",
-    "CALC_ERROR": "Erro: O E_MAX deve ser um número entre 50 e 100.",
-    "LANG_SELECT": "Idioma:",
-    
-    "PC_SHEET_TITLE": "Ficha de Personagem",
-    "NPC_SHEET_TITLE": "Referência de Adversário",
-    "GM_REF_SHEET_TITLE": "Referência do Mestre",
-    
-    "NAVIGATE_TITLE": "Navegar:",
-    "NAVIGATE_PC": "Ficha de PC",
-    "NAVIGATE_NPC": "Referência NPC",
-    "NAVIGATE_GM": "Regras / GM Ref"
-}
+    "CANTR

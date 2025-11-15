@@ -1,4 +1,4 @@
-## 📜 Nárëquenta — Tales of the Waning
+# 📜 Nárëquenta — Tales of the Waning
 
 **Change Log**
 
@@ -142,6 +142,7 @@ The format is inspired by Keep a Changelog, and adheres to Semantic Versioning w
 |**Removed**|Mechanic or file removed 34|
 |**Fixed**|Correction or typo 35|
 
+---
 🪶 Credits
 
 Design & Writing — Serelith Varn
@@ -154,5 +155,6 @@ System Development & Documentation — GPT-5 (Liora Vex Framework)
 
 Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md37.
 
+---
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
 Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.

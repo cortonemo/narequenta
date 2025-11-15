@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang="GAME_TITLE">Nárëquenta: Tales of the Waning</title>
+    <title data-lang="GAME_TITLE">Nárëquenta: Contos do Esvanecer</title>
     
     <link rel="stylesheet" href="/assets/css/style.css"> 
 </head>
@@ -11,61 +11,61 @@
     <div class="sheet-container">
       <header>
         <div style="float: right; margin-top: 10px;">
-          <label for="lang-select" data-lang="LANG_SELECT">Language</label>
+          <label for="lang-select" data-lang="LANG_SELECT">Idioma:</label>
           <select name="lang-select" id="lang-select" onchange="loadLanguage(this.value)">
           </select>
         </div>
-        <h1 data-lang="GAME_TITLE">Nárëquenta: Tales of the Waning</h1>
-        <h3 id="sheet-title-display" data-lang="SHEET_SUBTITLE">Sheet Selection</h3>
+        <h1 data-lang="GAME_TITLE">Nárëquenta: Contos do Esvanecer</h1>
+        <h3 id="sheet-title-display" data-lang="SHEET_SUBTITLE">Selecione a Ficha</h3>
       </header>
       <div id="navigation-bar" class="navigation-panel" style="margin: 20px auto; max-width: 900px; text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 15px; display: none;">
-          <span style="font-weight: bold; margin-right: 15px;" data-lang="NAVIGATE_TITLE">Navigate:</span>
-        <button onclick="showSheet('PC')" style="background-color: #d4edda; border: 1px solid #d4edda;" data-lang="NAVIGATE_PC"></button>
-            <button onclick="showSheet('NPC')" style="background-color: #f8d7da; border: 1px solid #f8d7da;" data-lang="NAVIGATE_NPC"></button>
-            <button onclick="showSheet('GM_REF')" style="background-color: #ffeeba; border: 1px solid #ffeeba;" data-lang="NAVIGATE_GM"></button>
+          <span style="font-weight: bold; margin-right: 15px;" data-lang="NAVIGATE_TITLE">Navegar:</span>
+        <button onclick="showSheet('PC')" style="background-color: #d4edda; border: 1px solid #d4edda;" data-lang="NAVIGATE_PC">Ficha de PC</button>
+            <button onclick="showSheet('NPC')" style="background-color: #f8d7da; border: 1px solid #f8d7da;" data-lang="NAVIGATE_NPC">Referência NPC</button>
+            <button onclick="showSheet('GM_REF')" style="background-color: #ffeeba; border: 1px solid #ffeeba;" data-lang="NAVIGATE_GM">Regras / GM Ref</button>
         </div>
         
         <div id="views-container">
         
             <div id="SELECTION_VIEW" style="display: block;">
-                <h3 style="color: #5d4037;" data-lang="WELCOME_TITLE">Welcome to Nárëquenta</h3>
-                <p data-lang="NAVIGATE_START_PROMPT" style="font-size: 1.1em;">Choose your starting view:</p>
-                <button onclick="showSheet('PC')" data-lang="NAVIGATE_PC" style="background-color: #d4edda;">PC Sheet</button>
-                <button onclick="showSheet('NPC')" data-lang="NAVIGATE_NPC" style="background-color: #f8d7da;">NPC Reference</button>
-                <button onclick="showSheet('GM_REF')" data-lang="NAVIGATE_GM" style="background-color: #ffeeba;">Rules / GM Ref</button>
+                <h3 style="color: #5d4037;">Bem-vindo(a) a Nárëquenta</h3>
+                <p data-lang="NAVIGATE_TITLE" style="font-size: 1.1em;">Escolha o Ponto de Partida:</p>
+                <button onclick="showSheet('PC')" data-lang="NAVIGATE_PC" style="background-color: #d4edda;">Ficha de PC</button>
+                <button onclick="showSheet('NPC')" data-lang="NAVIGATE_NPC" style="background-color: #f8d7da;">Referência NPC</button>
+                <button onclick="showSheet('GM_REF')" data-lang="NAVIGATE_GM" style="background-color: #ffeeba;">Regras / GM Ref</button>
             </div>
 
 			
 			
             <div id="PC_VIEW" style="display: none;">
-                <h3 class="section-header" data-lang="SHEET_SUBTITLE">Character Sheet</h3>
+                <h3 class="section-header" data-lang="SHEET_SUBTITLE">Ficha de Personagem</h3>
                 <div class="header-grid">
                     <div class="info-block">
-                        <label for="pc-name" data-lang="FIELD_NAME">Name</label>
+                        <label for="pc-name" data-lang="FIELD_NAME">Nome:</label>
                         <input type="text" id="pc-name" style="width: 80%;">
-                        <label for="char-promise" data-lang="SECTION_PROMISE" style="display: block; margin-top: 10px;">Final Vow</label>
-                        <textarea id="char-promise" data-lang="FIELD_PROMISE_HINT" placeholder=" " style="width: 90%; height: 60px;">The Vow the Character has made</textarea>
+                        <label for="char-promise" data-lang="SECTION_PROMISE" style="display: block; margin-top: 10px;">Promessa Final:</label>
+                        <textarea id="char-promise" placeholder="O Voto que a Personagem fez" style="width: 90%; height: 60px;"></textarea>
                     </div>
                     <div class="info-block" style="text-align: center;">
-                        <label for="pc-hp" data-lang="FIELD_HP">Current HP</label>
+                        <label for="pc-hp" data-lang="FIELD_HP">HP Atual:</label>
                         <input type="number" id="pc-hp" style="width: 50%;" value="100">
-                        <label for="pc-rprof" data-lang="FIELD_RPROF" style="display: block; margin-top: 10px;">General Proficiency Level (R_Prof)</label>
+                        <label for="pc-rprof" data-lang="FIELD_RPROF" style="display: block; margin-top: 10px;">Proficiência R:</label>
                         <input type="number" id="pc-rprof" class="read-only" style="width: 70%;" value="0" readonly>
                     </div>
                 </div>
 
-                <h3 class="section-header" data-lang="SECTION_ESSENCES">Essences (E_max vs E_cur - Hard Floor 50%</h3>
+                <h3 class="section-header" data-lang="SECTION_ESSENCES">Essências (E_max vs E_cur - Limite Fixo 50%)</h3>
                 <div class="pc-essence-grid essence-grid-header">
-                    <span data-lang="GRID_ESSENCE">Essence</span>
-                    <span data-lang="GRID_EMAX">E_MAX (%)</span>
-                    <span data-lang="GRID_ECUR">E_CURRENT (%)</span>
-                    <span data-lang="GRID_TIER_AVG">TIER / Avg. Margin (\u0304M)</span>
-                    <span data-lang="GRID_DPROFICIENCY">D_PROF Pool</span>
+                    <span data-lang="GRID_ESSENCE">Essência</span>
+                    <span data-lang="GRID_EMAX">E_MÁX (%)</span>
+                    <span data-lang="GRID_ECUR">E_ATUAL (%)</span>
+                    <span data-lang="GRID_TIER_AVG">NÍVEL / Margem Média (M)</span>
+                    <span data-lang="GRID_DPROFICIENCY">Pool D_PROF</span>
                 </div>
                 <div id="pc-essence-rows-container"></div>
                 
-                <h3 class="section-header" data-lang="SECTION_ABILITIES"></h3>
-                <p data-lang="SECTION_ABILITIES_NOTE" style="font-size: 0.8em; text-align: center; margin-bottom: 10px;">Abilities & Gear</p>
+                <h3 class="section-header" data-lang="SECTION_ABILITIES">Habilidades e Equipamento Básico</h3>
+                <p data-lang="SECTION_ABILITIES_NOTE" style="font-size: 0.8em; text-align: center; margin-bottom: 10px;">Custo = $\max(0, 7 - R_{prof}) + 1\% E_{S}$. Dano é Neutro por Nível ($A_{FP}$).</p>
                 <div id="pc-abilities-table-container">
                     </div>
             </div>			
@@ -74,17 +74,17 @@
 	
 			
             <div id="NPC_VIEW" style="display: none;">
-                <h3 class="section-header" data-lang="NPC_SHEET_TITLE" style="background-color: #cc0000;">Adversary Reference</h3>
+                <h3 class="section-header" data-lang="NPC_SHEET_TITLE" style="background-color: #cc0000;">Referência de Adversário</h3>
                 <div class="header-grid" style="grid-template-columns: 3fr 1fr;">
-                    <div class="info-block"><label data-lang="FIELD_NPC_NAME">Adversary Name:</label><input type="text" class="read-only" value="Form Guardian" readonly></div>
-                    <div class="info-block" style="text-align: center;"><label data-lang="FIELD_HP">Current HP</label><input type="number" class="read-only" value="100" readonly></div>
+                    <div class="info-block"><label data-lang="FIELD_NAME">Nome do Adversário:</label><input type="text" class="read-only" value="Form Guardian" readonly></div>
+                    <div class="info-block" style="text-align: center;"><label data-lang="FIELD_HP">HP Total:</label><input type="number" class="read-only" value="100" readonly></div>
                 </div>
-                <h3 class="section-header" data-lang="SECTION_ESSENCES_NPC">Essences (Focus on Mitigation)</h3>
+                <h3 class="section-header" data-lang="SECTION_ESSENCES">Essências (Foco na Mitigação)</h3>
                 <div class="npc-essence-grid essence-grid-header" style="background-color: #f8d7da;">
-                    <span data-lang="GRID_ESSENCE">Essence</span>
-                    <span data-lang="GRID_EMAX">E_MAX (%)</span>
-                    <span data-lang="GRID_TIER_AVG">TIER / Avg. Margin (\u0304M)</span>
-                    <span data-lang="GRID_DPROFICIENCY">D_PROF Pool</span>
+                    <span data-lang="GRID_ESSENCE">Essência</span>
+                    <span data-lang="GRID_EMAX">E_MÁX (%)</span>
+                    <span data-lang="GRID_TIER_AVG">NÍVEL / Média (\u0304M)</span>
+                    <span data-lang="GRID_DPROFICIENCY">Pool D_PROF</span>
                 </div>
                 <div id="npc-essence-rows-container">
                     </div>
@@ -92,59 +92,59 @@
 			
 	
             <div id="GM_REF_VIEW" style="display: none;">
-                <h3 class="section-header" data-lang="GM_REF_SHEET_TITLE" style="background-color: #6d4c41;">GM Reference</h3>
+                <h3 class="section-header" data-lang="GM_REF_SHEET_TITLE" style="background-color: #6d4c41;">Referência de Regras e Mestre</h3>
                 
-                <h3 class="section-header" data-lang="CALC_TITLE" style="background-color: #333;">IV. Interactive Damage Calculator \u2694\ufe0f</h3>
+                <h3 class="section-header" data-lang="CALC_TITLE" style="background-color: #333;">IV. Calculadora de Dano Interativa ⚔️</h3>
                 
                 <div id="damage-calculator-container" class="formula-box">
                     
                     <div class="calc-grid">
                         <fieldset class="calc-fieldset">
-                            <legend data-lang="CALC_ATTACKER">ATTACKER (PC)</legend>
+                            <legend data-lang="CALC_ATTACKER">ATACANTE (PC)</legend>
                             <label data-lang="FIELD_ECUR">E_CUR (%):</label> <input type="number" id="a-ecur-calc" value="70" min="0" max="100" class="calc-input">
-                            <label data-lang="GRID_TIER">TIER (I-V)</label> <input type="text" id="a-tier-calc" value="III" maxlength="2" class="calc-input">
+                            <label data-lang="GRID_TIER">TIER (I-V):</label> <input type="text" id="a-tier-calc" value="III" maxlength="2" class="calc-input">
                             <hr>
-                            <label data-lang="FIELD_D100">d100 ROLLED:</label> <input type="number" id="a-d100" value="50" min="1" max="100" class="calc-input">
-                            <label data-lang="FIELD_RPROF">General Proficiency Level (R_Prof)</label> <input type="number" id="a-rprof" value="16" min="0" class="calc-input">
+                            <label data-lang="FIELD_D100">d100 ROLADO:</label> <input type="number" id="a-d100" value="50" min="1" max="100" class="calc-input">
+                            <label data-lang="FIELD_RPROF">R_PROF ROLADO:</label> <input type="number" id="a-rprof" value="16" min="0" class="calc-input">
                         </fieldset>
 
                         <fieldset class="calc-fieldset">
-                            <legend data-lang="CALC_DEFENDER">DEFENDER (NPC/PC)</legend>
+                            <legend data-lang="CALC_DEFENDER">DEFENSOR (NPC/PC)</legend>
                             <label data-lang="FIELD_ECUR">E_CUR (%):</label> <input type="number" id="d-ecur-calc" value="70" min="0" max="100" class="calc-input">
-                            <label data-lang="GRID_TIER">TIER (I-V)</label> <input type="text" id="d-tier-calc" value="III" maxlength="2" class="calc-input">
+                            <label data-lang="GRID_TIER">TIER (I-V):</label> <input type="text" id="d-tier-calc" value="III" maxlength="2" class="calc-input">
                             <hr>
-                            <label data-lang="FIELD_DEFENSE_ROLL">d100 DEFENSE:</label> <input type="number" id="d-d100" value="50" min="1" max="100" class="calc-input">
+                            <label data-lang="FIELD_DEFENSE_ROLL">d100 DEFESA:</label> <input type="number" id="d-d100" value="50" min="1" max="100" class="calc-input">
                         </fieldset>
                     </div>
 
-                    <button onclick="runDamageCalculation()" data-lang="CALC_BUTTON" style="width: 80%; padding: 10px; background-color: #cc0000; color: white; border: none; cursor: pointer; margin-top: 10px;">CALCULATE FINAL DAMAGE</button>
+                    <button onclick="runDamageCalculation()" data-lang="CALC_BUTTON" style="width: 80%; padding: 10px; background-color: #cc0000; color: white; border: none; cursor: pointer; margin-top: 10px;">CALCULAR DANO FINAL</button>
                     <hr style="border-top: 1px dashed #ccc;">
-                    <h3 style="margin: 5px 0; color: #cc0000;" data-lang="CALC_FINAL_DAMAGE">FINAL DAMAGE:</h3>
-                    <p id="details-output" data-lang="CALC_ERROR_D100" style="font-size: 0.85em; color: #5a5a5a; margin: 0;"></p>
+                    <h3 style="margin: 5px 0; color: #cc0000;" data-lang="CALC_FINAL_DAMAGE">DANO FINAL: <span id="damage-output">0 HP</span></h3>
+                    <p id="details-output" style="font-size: 0.85em; color: #5a5a5a; margin: 0;"></p>
                 </div>
 
-                <h3 class="section-header" data-lang="GM_SECTION_1_TITLE" style="background-color: #6d4c41;">I. Action Resolution & Attrition</h3>
+                <h3 class="section-header" data-lang="GM_SECTION_1_TITLE" style="background-color: #6d4c41;">I. Resolução de Ação e Atrição</h3>
 
                 <div class="formula-box">
-                    <h4 data-lang="ROLL_SUCCESS_TITLE">Roll for Success ($d100$)</h4>
-                    <p data-lang="ROLL_SUCCESS_DESC">The Attack/Ability Test hits if: $$\mathbf{d100 - R_{prof} \le E_{cur}}$$.</p>
+                    <h4 data-lang="ROLL_SUCCESS_TITLE">Roll de Sucesso (d100)</h4>
+                    <p>O Ataque/Teste de Habilidade acerta se: $$\mathbf{d100 - R_{prof} \le E_{cur}}$$.</p>
                     <hr style="margin: 10px 0;">
 
-                    <h4 data-lang="ATTRITION_COST_TITLE">Attrition Cost ($E_{cur}$ Loss)</h4>
-                    <p data-lang="MOTOR_ESSENCE_LOSS">$$\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$$.</p>
-                    <p data-lang="ES_LOSS_COST">**$\mathbf{1\%}$** (Custo Fixo).</p>
+                    <h4 data-lang="ATTRITION_COST_TITLE">Custo de Atrição (E\_cur Loss)</h4>
+                    <p data-lang="MOTOR_ESSENCE_LOSS">Perda de Essência Motor ($\mathbf{E_P}$): $$\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$$.</p>
+                    <p data-lang="ES_LOSS_COST">Perda de Essência Qualidade ($\mathbf{E_S}$): **$\mathbf{1\%}$** (Custo Fixo).</p>
                 </div>
 
-                <h3 class="section-header" data-lang="GM_SECTION_2_TITLE" style="background-color: #5d4037;"></h3>
+                <h3 class="section-header" data-lang="GM_SECTION_2_TITLE" style="background-color: #5d4037;">II. Escala de Proficiência ($\mathbf{E_{max}}$)</h3>
                 <div class="formula-box">
                      <table class="abilities-table key-table" style="width: 100%; font-size: 0.9em;">
                         <thead>
                             <tr>
-                                <th data-lang="GRID_EMAX_REM">E_MAX Remaining (%)</th>
-                                <th data-lang="GRID_TIER_HEADER">TIER</th>
-                                <th data-lang="GRID_DPROFICIENCY">D_PROF Pool</th>
-                                <th data-lang="GRID_MITIGATION_AVG">\u0304M (Avg Mitigation)</th>
-                                <th data-lang="GRID_AS_MAX">AS (Action Surges) Max</th>
+                                <th>E\_MAX Remanescente (%)</th>
+                                <th>TIER</th>
+                                <th>Pool $\mathbf{D_{prof}}$</th>
+                                <th>$\mathbf{\overline{M}}$ (Mitigação Média)</th>
+                                <th>AS (Action Surges) Máx</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -155,23 +155,23 @@
                             <tr><td>60% – 51%</td><td>**IV**</td><td>$4\text{d}10$</td><td>22.0</td><td>4</td></tr>
                             <tr><td>**50% (PINNACLE)**</td><td>**V**</td><td>$5\text{d}10$</td><td>27.5</td><td>4</td></tr>
                             
-                            <tr class="utility-row"><td colspan="5" data-lang="DECAY_SUMMARY"></td></tr>
+                            <tr class="utility-row"><td colspan="5">Decay: Não Escolhido $\mathbf{2\text{d}6}$ Loss / Foco $\mathbf{4\text{d}6}$ Loss (Waning Roll)</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3 class="section-header" data-lang="GM_SECTION_3_TITLE" style="background-color: #cc0000;"></h3>
+                <h3 class="section-header" data-lang="GM_SECTION_3_TITLE" style="background-color: #cc0000;">III. Fórmula de Dano ($\mathbf{D_{Final}}$)</h3>
 
                 <div class="formula-box" style="padding: 20px;">
                     $$\mathbf{D_{Final}} = \max \left( 0, (A_{FP} - \bar{M}_{Defense} + D_{Margin} + R_{prof}) \right) \times M_{DTA}$$
                     
                     <hr style="margin: 10px 0;">
                     
-                    <p data-lang="FORMULA_WHERE" style="font-size: 0.9em; text-align: left;"></p>
-                    <p data-lang="A_FP_TITLE" style="font-size: 0.9em; text-align: left; margin-left: 20px;">$\mathbf{100 - (d100 - R_{prof})}$.</p>
-                    <p data-lang="DEFENDER_MARGIN_TITLE" style="font-size: 0.9em; text-align: left; margin-left: 20px;">$\mathbf{d100_{D} - E_{cur}}$.</p>
+                    <p data-lang="DAMAGE_FORMULA_WHERE" style="font-size: 0.9em; text-align: left;">Onde:</p>
+                    <p data-lang="A_FP_TITLE" style="font-size: 0.9em; text-align: left; margin-left: 20px;">$A_{FP}$ (Full Potential Margin): $\mathbf{100 - (d100 - R_{prof})}$.</p>
+                    <p data-lang="DEFENDER_MARGIN_TITLE" style="font-size: 0.9em; text-align: left; margin-left: 20px;">$D_{Margin}$ (Margem de Defesa): $\mathbf{d100_{D} - E_{cur}}$.</p>
                 </div>
-            </div>		
+            </div>			
 			
 
             
