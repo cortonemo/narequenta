@@ -1,67 +1,85 @@
 # 🕯️ Nárëquenta — Tales of the Waning
-### Author Manifest & Credits
+
+### Author's Manifestation and Credits
 
 ---
 
 ## 🪶 Primary Authorship
 
-**Created & Written by:**
-**Serelith Varn**
-_Designer · Storyteller · System Architect_
+Created and Written by:
 
-Nárëquenta was conceived, designed, and first documented on **25 October 2025**.
-All core mechanics, terminology, and narrative framework originated in the private repository `narequenta` under the GitHub account of Serelith Varn.
+Serelith Varn
 
----
+Designer · Storyteller · System Architect
 
-## 🧩 Core Concept Summary
+Nárëquenta was first conceived, designed, and documented on October 25, 2025.
 
-> A tabletop role-playing system where heroes begin perfect and fade with use.
-> Power is consumed by action; mastery erodes the self.
-> The story is not about gaining strength, but choosing what to spend before the end.
-
-Mechanic keywords: **Essences**, **Scarring**, **Refinement**, **Attrition Rate ($\mathbf{A_{rate}}$)**, **Waning Scale**, and **Recovery through Loss**.
+All core mechanisms, terminology, and narrative structure originated in the private narequenta repository under Serelith Varn's GitHub account.
 
 ---
 
-## ⚖️ Rights & Licensing
+## 🧩 Core Concept Summary (v0.8)
 
-All creative text, rules expression, and terminology in this repository are © 2025 Serelith Varn.
-All rights reserved until formal license release.
+> A tabletop role-playing system where heroes start near their peak and fade with use.
+> 
+> Power is consumed by action; Proficiency Compensates for Decline.
+> 
+> The story is not about gaining strength, but about choosing what to spend before the end.
 
-A future edition may be published under a **Creative Commons** or **Open RPG Creative License (ORC)** for non-commercial or attribution-required use.
-Until then, this work remains closed for redistribution or derivative publication without written permission.
+Mechanical Keywords: **Facets of the Self (Essences)**, **Erosion**, **Refinement**, **Defensive Tier Advantage ($\mathbf{M_{DTA}}$)**, **Controlled Attrition**, and **Stabilized SPA Architecture**.
 
-**You may:**
-- Playtest this material privately.
+---
+
+## ⚖️ Rights and Licensing
+
+All creative text, rule expression, and terminology in this repository are © 2025 Serelith Varn.
+
+This material is currently published under the Nárëquenta Limited Open License (v0.1).
+
+**You May:**
+
+- Playtest this material privately or publicly.
+    
 - Share feedback directly with the author.
+    
+- Create and publish **Fan Content**, provided you credit Serelith Varn and maintain the non-commercial nature.
+    
 
-**You may not:**
-- Reproduce or distribute this system publicly.
-- Publish modified or derivative versions.
-- Use the Nárëquenta name or mechanics for commercial purposes.
+**You May Not:**
+
+- Sell, monetize, or commercially distribute this system or derived works.
+    
+- Alter, copy, or redistribute the text of the core rules without permission.
+    
+- Use the _Nárëquenta_ name or logo to imply partnership or official endorsement.
+    
 
 For collaboration, testing, or licensing inquiries, please contact:
-📧 serelith.varn@proton.me _(placeholder – update when ready)_
+
+📧 serelith.varn@proton.me (placeholder – update when ready)
 
 ---
 
-## 🧱 Supporting Framework
+## 🧱 Support Structure
 
-**Technical Documentation & System Development Support:**
-GPT-5 (Liora Vex Framework) — collaborative design assistance for structure, formatting, and archival consistency.
+Technical Documentation and System Development Support:
+
+Google (Flash 2.5 Model, Liora Vex Persona) — collaborative design assistance for the system's v0.7 structure, formatting, and file consistency.
 
 ---
 
 ## 🌒 Acknowledgments
 
 Special thanks to everyone who helps refine this system through playtesting, feedback, and philosophical debate.
-Your insights carve the beauty into the decay.
+
+Your insights sculpt the beauty in the decay.
 
 ---
 
 > _“May our endings be elegant, and our scars be remembered.”_
 
----
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1).📜 [Read the full license →](LICENSE.md)
+
+---

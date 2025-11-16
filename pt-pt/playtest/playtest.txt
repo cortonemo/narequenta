@@ -1,0 +1,216 @@
+# Ficha de Personagem v0.7 - Nárëquenta: Contos do Esvanecer
+
+**Versão: v0.7-FINAL (Letalidade de Precisão)**
+
+Nome:
+Conceito / Lenda que as Pessoas Contam Sobre Ti:
+HP Atual: [100] / 100
+POOL DE IMPULSOS DE AÇÃO (AS) DISPONÍVEL: [ ] / [ Máx: Cons. Tabela AS ]
+
+## ESSÊNCIAS (FACETAS DO SER)
+Monitorize a sua capacidade máxima ($\mathbf{E_{max}}$ Hard Floor 50%) e a energia atual utilizável.
+
+| Essência | E_MÁX (Potencial Máximo) | E_ATUAL (Uso Atual) | TIER / $\mathbf{\bar{M}}$ (Proficiência Média) | POOL D_PROF (Dados Ativos) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **MOTUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **SENSUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **VERBUM** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **ANIMA** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+
+## REFERÊNCIA RÁPIDA DE TIERS (v0.7)
+Os $\mathbf{D_{prof}}$ são **$1d10$ por Tier**. A **Margem Média ($\mathbf{\bar{M}}$)** é usada para Mitigação de Defesa e Cálculo de Atrição.
+
+| E_MÁX Restante (%) | TIER | D_PROF Pool | $\mathbf{\bar{M}}$ (Mitigação/Dano Avg) |
+| :--- | :--- | :--- | :--- |
+| 100% – 91% | **0** | Nenhum | 0.0 |
+| 90% – 81% | **I** | $1\text{d}10$ | 5.5 |
+| 80% – 71% | **II** | $2\text{d}10$ | 11.0 |
+| 70% – 61% | **III** | $3\text{d}10$ | 16.5 |
+| 60% – 51% | **IV** | $4\text{d}10$ | 22.0 |
+| **50% (PINÁCULO)** | **V** | $5\text{d}10$ | 27.5 |
+
+## REGISTO DE RESOLUÇÃO DE AÇÃO E ATRIÇÃO
+*Sucesso na Rolagem Contestada:* Rola $\mathbf{d100 \le \mathbf{E_{cur}}}$. Subtrai $\mathbf{R_{prof}}$ (rolagem $\mathbf{D_{prof}}$) do $\mathbf{d100}$.
+
+| Atrição | Essência Motor ($\mathbf{E_{P}}$) | Essência Qualidade ($\mathbf{E_{S}}$) | Fórmulas de Cálculo v0.7 |
+| :--- | :--- | :--- | :--- |
+| **Custo de $\mathbf{E_{cur}}$** | $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ | **$1\%$ Custo Fixo** | **Dano Final:** $\mathbf{D_{Final}} = \max \left( 0, (A_{FP} - \bar{M}_{Defesa} + D_{Margin} + R_{prof}) \right) \times M_{DTA}$ |
+
+**PARES MOTOR/QUALIDADE:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## REGISTO DE EROSÃO / REFINAMENTOS (Perda Permanente)
+(Registe a perda permanente de $\mathbf{E_{max}}$ e os ganhos de recursos.)
+
+| Data / Capítulo | Essência Refinada (Foco 4d6) | E_MÁX Antigo | E_MÁX Novo | TIER Ganho | AS Ganho |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## PROMESSA FINAL
+(O que prometeste fazer antes de te desvaneças.)
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+<!-- ==== gm_reference_v0.7.md ==== -->
+
+# GM Reference v0.7
+
+Rascunho Finalizado — 2025-11-14
+
+## FLUXO DA SESSÃO
+1. **Briefing / Preparação:** Por que esta missão é importante (e o que arriscam perder).
+2. **Cenas de Jogo:** Qualquer ação significativa custa Essência ($\mathbf{E_{cur}}$) e é resolvida com uma **Rolagem Contestada**.
+    - O jogador escolhe as Essências Motor ($\mathbf{E_{P}}$) e Qualidade ($\mathbf{E_{S}}$) (ver Regras de Combate para Pares).
+    - O jogador usa $\mathbf{D_{prof}}$ para **Mitigação de Erro** ($\mathbf{R_{prof}}$ subtrai do $\mathbf{d100}$) e **Dano Base**.
+    - **Custo de Atrição:** A perda de $\mathbf{E_{cur}}$ é calculada usando o **resultado $\mathbf{R_{prof}}$ da rolagem** (Custo: $\max(0, 7 - R_{prof})$).
+
+## RITUAL E FASE DE RECUPERAÇÃO
+- **Renovação ($\mathbf{E_{cur}}$ e AS):** Restaura **$\mathbf{E_{cur}}$** para o seu valor $\mathbf{E_{max}}$ atual. Também restaura o pool de **Impulsos de Ação (AS)** até ao máximo determinado pelo Tier (Tier V = 4 AS).
+- **Decaimento e Refinamento ($\mathbf{E_{max}}$):** Este processo acontece **SOMENTE no final do Capítulo** (Rolagem do Esvanecer).
+    - Peça aos jogadores para escolherem o seu Foco de Proficiência (o risco de $\mathbf{4\text{d}6}$).
+    - Role o Decaimento Universal ($\mathbf{2\text{d}6}$) e aplique todas as perdas, garantindo que $\mathbf{E_{max}}$ nunca desce abaixo de **$50\%$**.
+
+## RITMO / TOM
+- **A Atrição é uma Escolha:** Nunca diga: "Não podes fazer isso." Diga: "O custo é $\mathbf{X\%}$ de perda de [Motor] e $\mathbf{1\%}$ de [Qualidade]. Estás disposto a queimar?"
+- **Vantagem de Nível (DTA):** Lembre-se que a **Vantagem de Nível Defensivo ($\mathbf{M_{DTA}}$)** gere automaticamente encontros de Tier baixo vs. Tier alto. O PC altamente proficiente (com $\mathbf{E_{max}}$ baixo) é defensivamente forte contra inimigos mais fracos.
+- **Letalidade:** Quando os Tiers são iguais, o combate é altamente letal ($\approx 46 \text{ HP}$ por acerto). Esteja preparado para resultados rápidos e decisivos baseados em margens críticas.
+- **Recompensa Narrativa:** Recompense descrições criativas e vívidas, permitindo ao Atacante ganhar vantagem na própria **rolagem de $\mathbf{D_{prof}}$** (e.g., rolar novamente um dado), em vez de modificar a fórmula final.
+- **Trate o Fim Como Sagrado.** Quando todas as Facetas atingem $\mathbf{E_{cur}} = 0$, pergunte: como são lembrados?
+
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Escurecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See  [LICENSE.md](license.md).
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+<!-- ==== PLAYTEST-SCENARIO.md ==== -->
+
+# Nárëquenta: Cenário de Teste Alpha — O Resgate do Último Eco
+
+**Foco do Teste (v0.7):** Testar o **Controlo de Atrição Tier I+** e a letalidade da **Fórmula de Dano Neutra por Nível**.
+**Duração:** 2-3 Horas.
+
+## 1. Ponto de Partida: O Santuário do Declínio
+
+Os PCs são guardiões de um **Santuário do Declínio** onde os Ecos de lendas são preservados. Um desses Ecos está sob ataque de **O Silêncio** (uma entidade que se alimenta de potencial não realizado). O Silêncio causa um **Debuff de Ansiedade** (Todas as rolagens de ataque do Atacante têm $\mathbf{-5}$ aplicado ao $\mathbf{R_{prof}}$ apenas para cálculo de dano) e o **Eco em Declínio** tem 5 turnos até desvanecer completamente.
+
+* **Preparação:** Certifique-se de que todos os PCs rolaram a **Erosão Inicial ($\mathbf{1\text{d}10}$)**. Todos os $\mathbf{E_{cur}}$ estão em $90-99\%$.
+
+---
+
+## 2. Fase 1: A Travessia Pródiga (Teste de Pares Motor/Qualidade)
+
+* **Objetivo:** Forçar o gasto de $\mathbf{E_{cur}}$ em múltiplas Essências.
+* **Desafio:** Uma Barricada de Força Mística bloqueia o caminho.
+* **Ação:** Os PCs devem gastar esforço para contornar o desafio (requer 3 sucessos rápidos).
+
+| Ação | Motor ($\mathbf{E_{P}}$) | Qualidade ($\mathbf{E_{S}}$) | Atrição (Por Sucesso) |
+| :--- | :--- | :--- | :--- |
+| **Força Bruta** | VITALIS | MOTUS | $\max(0, 7 - R_{prof}) + 1\%$ |
+| **Escalada Rápida** | MOTUS | VITALIS | $\max(0, 7 - R_{prof}) + 1\%$ |
+
+* **Verificação de Sucesso:** O PC deve sentir a pressão da queda de $\mathbf{E_{cur}}$ devido ao custo da ação e ao Debuff de Ansiedade.
+
+---
+
+## 3. Fase 2: O Enigma do Sacrifício (Teste de Atrição de Alto Risco)
+
+* **Objetivo:** Testar o uso de **VERBUM / ANIMA** e a vulnerabilidade de um *pool* $\mathbf{E_{cur}}$ baixo.
+* **Desafio:** A porta do Eco está selada por um Enigma Místico que requer **Foco e Vontade**.
+* **Ação:** O PC deve:
+    * **Resolver:** $\text{VERBUM}$ (Motor) + $\text{SENSUS}$ (Qualidade).
+    * **Quebrar:** $\text{ANIMA}$ (Motor) + $\text{VERBUM}$ (Qualidade).
+* **Verificação de Sucesso:** Requer uma rolagem bem-sucedida ($\mathbf{d100' \le E_{cur}}$). A falha deve resultar na **penalização da $\mathbf{E_{cur}}$ Motor em $\mathbf{1\text{d}6}\%$** (simulando *stress* mental extremo) para além do custo padrão.
+
+---
+
+## 4. Fase 3: O Ato Final e Configuração de Progressão
+
+* **Objetivo:** Testar a **Fórmula de Dano Neutra por Nível** e a necessidade de **Impulsos de Ação (AS)**.
+* **Desafio:** Um **Guardião de Forma** (NPC, Tier I, $\mathbf{E_{cur}} \approx 90\%$, $\mathbf{HP 100}$) materializa-se.
+* **Regra Especial:** O PC com o $\mathbf{E_{max}}$ mais baixo (Tier mais alto) deve ser incentivado a atacar primeiro para testar a eficiência da sua **Margem de Potencial Total ($\mathbf{A_{FP}}$)**.
+* **Regra de Dano:** Use o **Multiplicador de Vantagem de Nível Defensivo ($\mathbf{M_{DTA}}$)** quando o PC for atingido (e.g., PC Tier III vs NPC Tier I $\rightarrow \times 0.75$ Multiplicador).
+
+| Regra Testada | PC Tier IV $\rightarrow$ NPC Tier I | Componente da Fórmula |
+| :--- | :--- | :--- |
+| **Poder Ofensivo** | $\mathbf{R_{prof}}$ elevado do PC gera $\mathbf{A_{FP}}$ elevado. | $100 - d100'$ |
+| **Equilíbrio Defensivo** | PC recebe dano reduzido. | $\times M_{DTA}$ |
+
+* **Saída:** O MJ guia os PCs para um momento de **Descanso de Longa Duração** e inicia a **Rolagem do Esvanecer** no final do capítulo: "Que Essência vos traiu? O que estão dispostos a perder para a dominar?"
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+<!-- ==== PLAYTEST-SHEET.md ==== -->
+
+# Nárëquenta: Ficha de Teste Alpha (v0.7)
+
+**Nome:** [_____________________]
+**Conceito / Lenda que as Pessoas Contam Sobre Ti:** [_____________________]
+**HP Atual:** [100] / 100
+**POOL DE IMPULSOS DE AÇÃO (AS) DISPONÍVEL:** [ ] / [ Máx: Consultar Tabela AS ]
+
+## ESSÊNCIAS (E\_max vs E\_cur)
+
+**Instruções:** $\mathbf{E_{max}}$ é o seu potencial permanente, limitado a 50%. $\mathbf{E_{cur}}$ é o seu *pool* de energia diária.
+
+| Essência | E\_MÁX (Potencial Máximo) | TIER / $\mathbf{\bar{M}}$ (Proficiência Média) | E\_ATUAL (Energia Atual) | POOL D\_PROF (Dados Ativos) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **MOTUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **SENSUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **VERBUM** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **ANIMA** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+
+## REFERÊNCIA RÁPIDA DE ATRIÇÃO E DANO (v0.7)
+
+| Atrição | Essência Motor ($\mathbf{E_{P}}$) | Essência Qualidade ($\mathbf{E_{S}}$) | Sumário do Cálculo |
+| :--- | :--- | :--- | :--- |
+| **Custo de $\mathbf{E_{cur}}$** | $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ | **$1\%$ Custo Fixo** | **$\mathbf{D_{Final}}$** é Neutro por Nível, mitigado por $\mathbf{M}_{Defesa}$ e dimensionado por $\mathbf{M_{DTA}}$. |
+| **Falha (Esforço)** | $\mathbf{1\%}$ Perda | $\mathbf{1\%}$ Perda | Ambas as *pools* $\mathbf{E_{cur}}$ são reduzidas em $1\%$ em rolagens de esforço falhadas. |
+
+**PARES MOTOR/QUALIDADE:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## REGISTO DE EROSÃO / REFINAMENTOS (Perda Permanente)
+(Registar a perda $\mathbf{E_{max}}$ permanente e os ganhos de recursos obtidos durante a Rolagem do Esvanecer.)
+
+| Data / Capítulo | Essência Refinada (Foco 4d6 Risco) | E\_MÁX Antigo | E\_MÁX Novo | TIER Ganho | AS Ganho |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## PROMESSA FINAL
+(O que prometeste fazer antes de te desvaneças.)
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.

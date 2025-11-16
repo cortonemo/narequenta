@@ -52,15 +52,9 @@ Os PCs são guardiões de um **Santuário do Declínio** onde os Ecos de lendas 
 * **Saída:** O MJ guia os PCs para um momento de **Descanso de Longa Duração** e inicia a **Rolagem do Esvanecer** no final do capítulo: "Que Essência vos traiu? O que estão dispostos a perder para a dominar?"
 
 ---
-
-© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+© 2025 Serelith Varn — Nárëquenta: Contos do Escurecer.
 Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
 
 ---
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
-
----
-
-© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See  [LICENSE.md](license.md).
