@@ -1,0 +1,677 @@
+<!-- ==== core_rules_v0.9.md ==== -->
+
+# 📜 Nárëquenta Core Rules v0.9 (Decay Mitigation)
+
+## 1. What This Game Is 🧭
+
+Nárëquenta is a TTRPG where heroes begin near their peak and end spent. Progression is the **defining of character through loss**. Power is a finite resource. **Proficiency Compensates for Decline**.
+
+---
+
+## 2. Facets of the Self (Essences) ✨
+
+Each character is defined by five Essences. Each Essence starts at **$100\%$**, subject to Initial Erosion.
+
+- **VITALIS** — body, endurance, force, presence
+- **MOTUS** — movement, finesse, agility, grace
+- **SENSUS** — awareness, instinct, focus, perception
+- **VERBUM** — intellect, logic, structure, speech
+- **ANIMA** — conviction, will, faith, sacrifice
+
+### Essence Values
+
+Each Facet has:
+
+- A **Current Value ($\mathbf{E_{cur}}$)** (usable energy).
+- A **Maximum Value ($\mathbf{E_{max}}$)** (permanent limit).
+- **Limit:** $\mathbf{E_{max}}$ can never drop below **$50\%$** (Hard Floor).
+
+### Initial Erosion (v0.9 Update)
+
+At character creation, **Initial Erosion** is applied:
+
+- For each of the five Essences, roll $\mathbf{1d10}$. This value is subtracted from **$100\%$**, setting the initial $\mathbf{E_{cur}}$ and $\mathbf{E_{max}}$.
+- **Tier I Guarantee:** The player may designate one Essence to have its $\mathbf{E_{max}}$ set precisely to **$90\%$** after the roll, guaranteeing **Tier I** status and $\mathbf{1d10}$ $\mathbf{D_{prof}}$ immediately.
+
+---
+
+## 3. Acting in the World (Action Resolution: Precision Lethality) 🎯
+
+Actions are resolved as **Contested Rolls**.
+
+### Action Resolution Flow
+
+- The success threshold is defined as: $\mathbf{d100 \le \mathbf{E_{cur}}}$.
+- **Attacker Mitigates:** The Attacker subtracts their Proficiency Roll ($\mathbf{R_{prof}}$) from the $\mathbf{d100}$ roll (Error Mitigation).
+
+### Attrition Cost
+
+Cost is applied to the **Motor Essence ($\mathbf{E_{P}}$)** and **Quality Essence ($\mathbf{E_{S}}$)**.
+
+- **$\mathbf{E_{P}}$ Loss (Motor):** $\mathbf{D_{Loss} = \max \left(0, (7-R_{prof}) \right)}$.
+- **$\mathbf{E_{S}}$ Loss (Quality):** $1\%$ (Fixed Cost).
+
+---
+
+## 4. Refinement Cycle (The Waning Roll) 🌘 (v0.9 Decay Mitigation)
+
+Refinement and Decay occur at the conclusion of every major milestone. The Proficiency Tier is determined by the total $\mathbf{E_{max}}$ loss.
+
+### 4.1. The Proficiency Choice & Waning Roll
+
+- **Universal Decay (Non-Chosen Essences):**
+    $$\mathbf{1d6} \text{}$$
+    Roll one six-sided die, and the result is permanently subtracted from $\mathbf{E_{max}}$ (down to the $50\%$ Hard Floor).
+- **Refinement Focus (Chosen Essence):**
+    $$\mathbf{2d6} \text{}$$
+    Roll two six-sided dice, and the result is permanently subtracted from $\mathbf{E_{max}}$, granting an increase in the $\mathbf{D_{prof}}$ Pool (Tier Advancement).
+
+### 4.2. Using Proficiency (Uniform Tier System)
+
+The $\mathbf{D_{prof}}$ pool is defined as:
+$$\mathbf{1d10} \text{ per Tier}$$
+
+---
+## 5. Damage & Health (Tier-Neutral Lethality) 💥
+
+All characters have a base of $100$ HP.
+
+### Damage Formula
+
+$$\mathbf{D_{Final}} = \max \left(0, (A_{FP} - \bar{M}_{Defense} + D_{Margin} + R_{prof}) \right) \times M_{DTA} \text{}$$
+
+| **Component** | **Formula** |
+| :--- | :--- |
+| **$\mathbf{A_{FP}}$ (Full Potential Margin)** | $\mathbf{100 - (d100-R_{prof})}$ |
+| **$\mathbf{D_{Margin}}$ (Defender Margin)** | $\mathbf{d100_D-D_{Ecur}}$ |
+
+---
+
+## 6. Proficiency Tiers and $\mathbf{M_{DTA}}$ Multipliers 🛡️
+
+### Proficiency Tiers (v0.9 AS Correction)
+
+The Proficiency Tier is determined by the $\mathbf{E_{max}}$ of the Essence.
+
+| $\mathbf{E_{max}}$ Loss | Remaining $\mathbf{E_{max}}$ (%) |       Tier       | $\mathbf{D_{prof}}$ | $\mathbf{\bar{M}}$ (Defense Mitigation) | **Action Surges (AS)** |
+| :---------------------: | :------------------------------: | :--------------: | :-----------------: | :-------------------------------------: | :--------------------: |
+|         $0-9\%$         |            $100-91\%$            |      **0**       |        None         |                  $0.0$                  |         **0**          |
+|        $10-19\%$        |            $90-81\%$             |      **I**       |   $\mathbf{1d10}$   |                  $5.5$                  |         **1**          |
+|        $20-29\%$        |            $80-71\%$             |      **II**      |   $\mathbf{2d10}$   |                 $11.0$                  |         **2**          |
+|        $30-39\%$        |            $70-61\%$             |     **III**      |   $\mathbf{3d10}$   |                 $16.5$                  |         **3**          |
+|        $40-49\%$        |            $60-51\%$             |      **IV**      |   $\mathbf{4d10}$   |                 $22.0$                  |         **4**          |
+|     $\mathbf{50\%}$     |         $\mathbf{50\%}$          | **V (Pinnacle)** |   $\mathbf{5d10}$   |             $\mathbf{27.5}$             |        5 (Max)         |
+
+### Tier Advantage Multiplier ($\mathbf{M_{DTA}}$)
+
+| Attacker Tier $\downarrow$ vs. Defender Tier $\rightarrow$ | **I** | **II** | **III** | **IV** | **V** |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **I** | $\mathbf{1.00}$ (Neutral) | $\mathbf{0.75}$ | $\mathbf{0.50}$ | $\mathbf{0.25}$ | $\mathbf{0.25}$ |
+| **II** | $\mathbf{1.25}$ | $\mathbf{1.00}$ (Neutral) | $\mathbf{0.75}$ | $\mathbf{0.50}$ | $\mathbf{0.25}$ |
+| **III** | $\mathbf{1.50}$ | $\mathbf{1.25}$ | $\mathbf{1.00}$ (Neutral) | $\mathbf{0.75}$ | $\mathbf{0.50}$ |
+| **IV** | $\mathbf{1.75}$ | $\mathbf{1.50}$ | $\mathbf{1.25}$ | $\mathbf{1.00}$ (Neutral) | $\mathbf{0.75}$ |
+| **V** | $\mathbf{2.00}$ (Max Bonus) | $\mathbf{1.75}$ | $\mathbf{1.50}$ | $\mathbf{1.25}$ | $\mathbf{1.00}$ (Neutral) |
+
+---
+
+## 7. Recovery and Endgame ⏳
+
+* **Recovery Phase** restores the $\mathbf{E_{cur}}$ up to the current $\mathbf{E_{max}}$ value.
+* **Action Surge Progression:** The AS pool scales with Tier, up to 5 AS.
+* **Endgame:** The campaign is the record of **how you chose to fade**.
+
+---
+## 8. End of the Game
+
+In the end, you retire hollowed and legendary.
+
+The campaign is the record of **how you chose to fade**.
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
+
+<!-- ==== character_sheet_v0.9.md ==== -->
+
+# Character Sheet v0.9 - Nárëquenta: Tales of the Waning
+
+**Version: v0.9-BETA (Decay Mitigation & Tier I Stabilization)**
+
+Name:
+Concept / The Legend People Tell About You:
+Current HP: [100] / 100
+ACTION SURGE (AS) POOL AVAILABLE: [ ] / [ Max: 5 at Tier V ]
+
+## ESSENCES (FACETS OF THE SELF)
+Monitor your maximum capacity ($\mathbf{E_{max}}$ Hard Floor 50%) and current usable energy.
+
+| Essence | E_MAX (Maximum Potential) | E_CURRENT (Current Use) | TIER / $\mathbf{\bar{M}}$ (Avg Proficiency) | D_PROF POOL (Active Dice) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **MOTUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **SENSUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **VERBUM** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **ANIMA** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+
+## QUICK TIER REFERENCE (v0.9)
+$\mathbf{D_{prof}}$ are **$1d10$ per Tier**. The **Average Margin ($\mathbf{\bar{M}}$)** is used for Defense Mitigation and Attrition Calculation.
+
+| Remaining E_MAX (%) | TIER    | D_PROF Pool   | $\mathbf{\bar{M}}$ (Mitigation/Damage Avg) | AS Max |
+| :------------------ | :------ | :------------ | :----------------------------------------- | :----- |
+| 100% – 91%          | **0**   | None          | 0.0                                        | 0      |
+| 90% – 81%           | **I**   | $1\text{d}10$ | 5.5                                        | 1      |
+| 80% – 71%           | **II**  | $2\text{d}10$ | 11.0                                       | 2      |
+| 70% – 61%           | **III** | $3\text{d}10$ | 16.5                                       | 3      |
+| 60% – 51%           | **IV**  | $4\text{d}10$ | 22.0                                       | 4      |
+| **50% (PINNACLE)**  | **V**   | $5\text{d}10$ | 27.5                                       | 5      |
+
+## ACTION RESOLUTION AND ATTRITION LOG
+*Successful Contested Roll:* Roll $\mathbf{d100 \le \mathbf{E_{cur}}}$. Subtract $\mathbf{R_{prof}}$ ($\mathbf{D_{prof}}$ roll) from the $\mathbf{d100}$.
+
+| Attrition                   | Motor Essence ($\mathbf{E_{P}}$)                            | Quality Essence ($\mathbf{E_{S}}$) | v0.9 Calculation Formulas                                                                                       |
+| :-------------------------- | :---------------------------------------------------------- | :--------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
+| **$\mathbf{E_{cur}}$ Cost** | $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ | **$1\%$ Fixed Cost**               | **$\mathbf{D_{Final}}$** is Tier-Neutral, mitigated by $\mathbf{M}_{Defense}$ and scaled by $\mathbf{M_{DTA}}$. |
+|                             |                                                             |                                    |                                                                                                                 |
+
+## EROSION / REFINEMENT LOG (Permanent Loss)
+(Log the permanent loss of $\mathbf{E_{max}}$ and resource gains.)
+
+| Date / Chapter | Refined Essence (Focus 2d6 Risk) | Old E_MAX | New E_MAX | TIER Gained | AS Gained |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+| | | | | | |
+
+## FINAL VOW
+(What you promised to do before you fade.)
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
+
+
+<!-- ==== character_sheet_v0.9.md ==== -->
+
+# Character Sheet v0.9 - Nárëquenta: Tales of the Waning
+
+**Version: v0.9-BETA (Decay Mitigation & Tier I Stabilization)**
+
+Name:
+Concept / The Legend People Tell About You:
+Current HP: [100] / 100
+ACTION SURGE (AS) POOL AVAILABLE: [ ] / [ Max: 5 at Tier V ]
+
+## ESSENCES (FACETS OF THE SELF)
+Monitor your maximum capacity ($\mathbf{E_{max}}$ Hard Floor 50%) and current usable energy.
+
+| Essence | E_MAX (Maximum Potential) | E_CURRENT (Current Use) | TIER / $\mathbf{\bar{M}}$ (Avg Proficiency) | D_PROF POOL (Active Dice) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **MOTUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **SENSUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **VERBUM** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **ANIMA** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+
+## QUICK TIER REFERENCE (v0.9)
+$\mathbf{D_{prof}}$ are **$1d10$ per Tier**. The **Average Margin ($\mathbf{\bar{M}}$)** is used for Defense Mitigation and Attrition Calculation.
+
+| Remaining E_MAX (%) | TIER    | D_PROF Pool   | $\mathbf{\bar{M}}$ (Mitigation/Damage Avg) | AS Max |
+| :------------------ | :------ | :------------ | :----------------------------------------- | :----- |
+| 100% – 91%          | **0**   | None          | 0.0                                        | 0      |
+| 90% – 81%           | **I**   | $1\text{d}10$ | 5.5                                        | 1      |
+| 80% – 71%           | **II**  | $2\text{d}10$ | 11.0                                       | 2      |
+| 70% – 61%           | **III** | $3\text{d}10$ | 16.5                                       | 3      |
+| 60% – 51%           | **IV**  | $4\text{d}10$ | 22.0                                       | 4      |
+| **50% (PINNACLE)**  | **V**   | $5\text{d}10$ | 27.5                                       | 5      |
+
+## ACTION RESOLUTION AND ATTRITION LOG
+*Successful Contested Roll:* Roll $\mathbf{d100 \le \mathbf{E_{cur}}}$. Subtract $\mathbf{R_{prof}}$ ($\mathbf{D_{prof}}$ roll) from the $\mathbf{d100}$.
+
+| Attrition                   | Motor Essence ($\mathbf{E_{P}}$)                            | Quality Essence ($\mathbf{E_{S}}$) | v0.9 Calculation Formulas                                                                                       |
+| :-------------------------- | :---------------------------------------------------------- | :--------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
+| **$\mathbf{E_{cur}}$ Cost** | $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ | **$1\%$ Fixed Cost**               | **$\mathbf{D_{Final}}$** is Tier-Neutral, mitigated by $\mathbf{M}_{Defense}$ and scaled by $\mathbf{M_{DTA}}$. |
+|                             |                                                             |                                    |                                                                                                                 |
+
+## EROSION / REFINEMENT LOG (Permanent Loss)
+(Log the permanent loss of $\mathbf{E_{max}}$ and resource gains.)
+
+| Date / Chapter | Refined Essence (Focus 2d6 Risk) | Old E_MAX | New E_MAX | TIER Gained | AS Gained |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+| | | | | | |
+
+## FINAL VOW
+(What you promised to do before you fade.)
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
+
+
+<!-- ==== gm_reference_v0.9.md ==== -->
+
+## ⚔️ Systematic Output: PC Sheet (v0.8 Update)
+
+---
+# GM Reference v0.9 (Decay Mitigation)
+Finalized Draft — 2025-11-17
+
+## SESSION FLOW
+1. **Briefing / Setup:** Why this mission matters (and what they risk losing).
+2. **Play Scenes:** Any meaningful action costs Essence ($\mathbf{E_{cur}}$) and is resolved with a **Contested Roll**.
+- Player chooses the Motor ($\mathbf{E_{P}}$) and Quality ($\mathbf{E_{S}}$) Essences (see Core Rules for Pairs).
+- Player uses $\mathbf{D_{prof}}$ for **Error Mitigation** ($\mathbf{R_{prof}}$ subtracts from the $\mathbf{d100}$ roll) and **Damage Base**.
+- **Attrition Cost:** $\mathbf{E_{cur}}$ loss is calculated using the **$R_{prof}$ roll result** (Cost: $\max(0, 7 - R_{prof})$).
+
+## RITUAL AND RECOVERY PHASE (v0.9)
+- **Renewal (E_cur & AS):** Restores **$\mathbf{E_{cur}}$** to its current $\mathbf{E_{max}}$ value.
+Also restores the **Action Surge (AS)** pool to the Tier-determined maximum (Tier V = **4 AS**).
+- **Decay and Refinement (E_max):** This process happens **ONLY at the end of the Chapter** (Waning Roll).
+- Prompt players to choose their Proficiency Focus (the **$\mathbf{2d6}$** risk).
+- Roll Universal Decay ($\mathbf{1d6}$) and apply all losses, ensuring $\mathbf{E_{max}}$ never drops below **$50\%$**.
+
+## PACING / TONE
+- **Attrition is a Choice:** Never say, "You cannot do that". Say: "The cost is $\mathbf{X\%}$ loss from both [Motor] and [Quality]. Are you willing to burn that much?".
+- **Tier Advantage (DTA):** Remember that the **Defensive Tier Advantage ($\mathbf{M_{DTA}}$)** automatically manages low-Tier vs. high-Tier encounters. The highly proficient PC (low $\mathbf{E_{max}}$) is defensively strong against weaker foes.
+- **Lethality:** When Tiers are equal, combat is highly lethal ($\approx 46 \text{ HP}$ per hit). Be ready for quick, decisive outcomes based on critical margins.
+- **Narrative Reward:** Reward creative and vivid descriptions by allowing the Attacker to gain advantage on the **$\mathbf{D_{prof}}$ roll** itself (e.g., re-roll one die), rather than modifying the final formula.
+- **Treat the Ending as Sacred.** When all Facets hit $\mathbf{E_{cur}} = 0$, ask: how are they remembered?.
+
+---
+
+## VII. Proficiency Tiers and Mitigation Reference (v0.9)
+The Tier is calculated from $\mathbf{E_{max}}$ loss.
+
+| $\mathbf{E_{max}}$ Loss | Remaining $\mathbf{E_{max}}$ (%) |       Tier       | $\mathbf{D_{prof}}$ | $\mathbf{\bar{M}}$ (Defense Mitigation) | **Action Surges (AS)** |
+| :---------------------: | :------------------------------: | :--------------: | :-----------------: | :-------------------------------------: | :--------------------: |
+|         $0-9\%$         |            $100-91\%$            |      **0**       |        None         |                  $0.0$                  |         **0**          |
+|        $10-19\%$        |            $90-81\%$             |      **I**       |   $\mathbf{1d10}$   |                  $5.5$                  |         **1**          |
+|        $20-29\%$        |            $80-71\%$             |      **II**      |   $\mathbf{2d10}$   |                 $11.0$                  |         **2**          |
+|        $30-39\%$        |            $70-61\%$             |     **III**      |   $\mathbf{3d10}$   |                 $16.5$                  |         **3**          |
+|        $40-49\%$        |            $60-51\%$             |      **IV**      |   $\mathbf{4d10}$   |                 $22.0$                  |         **4**          |
+|     $\mathbf{50\%}$     |         $\mathbf{50\%}$          | **V (Pinnacle)** |   $\mathbf{5d10}$   |             $\mathbf{27.5}$             |      **5** (Max)       |
+
+---
+
+## VIII. Defensive Tier Advantage Multiplier ($\mathbf{M_{DTA}}$) Grid (v0.9)
+The $\mathbf{M_{DTA}}$ is determined by the difference in Tiers ($\Delta T = T_{Defender} - T_{Attacker}$).
+
+| Attacker Tier $\downarrow$ vs. Defender Tier $\rightarrow$ |            **I**            |          **II**           |          **III**          |          **IV**           |           **V**           |
+| :--------------------------------------------------------: | :-------------------------: | :-----------------------: | :-----------------------: | :-----------------------: | :-----------------------: |
+|                           **I**                            |  $\mathbf{1.00}$ (Neutral)  |      $\mathbf{0.75}$      |      $\mathbf{0.50}$      |      $\mathbf{0.25}$      | $\mathbf{0.25}$ (Capped)  |
+|                           **II**                           |       $\mathbf{1.25}$       | $\mathbf{1.00}$ (Neutral) |      $\mathbf{0.75}$      |      $\mathbf{0.50}$      |      $\mathbf{0.25}$      |
+|                          **III**                           |       $\mathbf{1.50}$       |      $\mathbf{1.25}$      | $\mathbf{1.00}$ (Neutral) |      $\mathbf{0.75}$      |      $\mathbf{0.50}$      |
+|                           **IV**                           |       $\mathbf{1.75}$       |      $\mathbf{1.50}$      |      $\mathbf{1.25}$      | $\mathbf{1.00}$ (Neutral) |      $\mathbf{0.75}$      |
+|                           **V**                            | $\mathbf{2.00}$ (Max Bonus) |      $\mathbf{1.75}$      |      $\mathbf{1.50}$      |      $\mathbf{1.25}$      | $\mathbf{1.00}$ (Neutral) |
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
+
+<!-- ==== Playtest_scenario_v0.9.md ==== -->
+
+# Nárëquenta: Alpha Test Scenario — The Rescue of the Last Echo (v0.9)
+
+Test Focus (v0.9): Testing the Tier I Guarantee at creation, Attrition Control with $\mathbf{1\text{d}10}$ Proficiency, and the lethality of the Tier-Neutral Damage Formula.
+
+Duration: 2-3 Hours.
+
+---
+
+## 1. Starting Point: The Waning Sanctuary 🛡️
+
+The PCs are guardians of a **Waning Sanctuary** where the Echoes of legends are preserved. One such Echo is under attack by **The Silence** (an entity that feeds on unrealized potential). The Silence causes an **Anxiety Debuff** (All Attacker rolls have $\mathbf{-5}$ applied to $\mathbf{R_{prof}}$ for damage calculation only). The **Waning Echo** has 5 turns until it fades completely.
+
+- **Preparation:** Ensure all PCs have rolled **Initial Erosion ($\mathbf{1\text{d}10}$)**. All $\mathbf{E_{cur}}$ are at $90-99\%$. Crucially, ensure the player has designated **one Essence** to be exactly **$90\% \ \mathbf{E_{max}}$** to grant them **Tier I** status and $\mathbf{1d10}$ $\mathbf{D_{prof}}$ (Tier I Guarantee).
+    
+
+---
+
+## 2. Phase 1: The Prodigal Crossing (Testing Motor/Quality Pairs)
+
+- **Goal:** Force the spending of $\mathbf{E_{cur}}$ across multiple Essences.
+    
+- **Challenge:** A Barricade of Mistic Force blocks the way.
+    
+- **Action:** PCs must spend effort to bypass the challenge (requires 3 quick successes).
+    
+
+|**Action**|**Motor (EP​)**|**Quality (ES​)**|**Attrition (Per Success)**|
+|---|---|---|---|
+|**Brute Force**|VITALIS|MOTUS|$\max(0, 7 - R_{prof}) + 1\%$|
+|**Quick Climb**|MOTUS|VITALIS|$\max(0, 7 - R_{prof}) + 1\%$|
+
+- **Success Check:** The PC must feel the pressure of the $\mathbf{E_{cur}}$ drop from the cost of action and the Anxiety Debuff.
+    
+
+---
+
+## 3. Phase 2: The Enigma of Sacrifice (Testing High-Risk Attrition)
+
+- **Goal:** Test VERBUM / ANIMA usage and the vulnerability of a low $\mathbf{E_{cur}}$ pool.
+    
+- **Challenge:** The Echo's door is sealed by a Mystical Enigma requiring **Focus and Will**.
+    
+- **Action:** The PC must:
+    
+    - **Solve:** $\text{VERBUM}$ (Motor) + $\text{SENSUS}$ (Quality).
+        
+    - **Break:** $\text{ANIMA}$ (Motor) + $\text{VERBUM}$ (Quality).
+        
+- **Success Check:** Requires a successful roll ($\mathbf{d100' \le E_{cur}}$). Failure should result in the **$\mathbf{E_{cur}}$ Motor being penalized by $\mathbf{1\text{d}6}\%$** (simulating extreme mental strain) in addition to the standard cost.
+    
+
+---
+
+## 4. Phase 3: The Final Act and Progression Setup ⚔️
+
+- **Goal:** Test the **Tier-Neutral Damage Formula** and the need for **Action Surges** (max 5 at Tier V).
+    
+- **Challenge:** A **Form Guardian** (NPC, Tier I, $\mathbf{E_{cur}} \approx 90\%$, $\mathbf{HP 100}$) materializes.
+    
+- **Special Rule:** The PC with the lowest $\mathbf{E_{max}}$ (highest Tier) should be encouraged to attack first to test the efficiency of their $\mathbf{A_{FP}}$.
+    
+- **Damage Rule:** Use the **Defensive Tier Advantage ($\mathbf{M_{DTA}}$)** when the PC is hit (e.g., PC Tier III vs NPC Tier I $\rightarrow \times 0.75$ Multiplier).
+    
+
+|**Rule Tested**|**PC Tier IV → Tier I NPC**|**Formula Component**|
+|---|---|---|
+|**Offense Power**|PC's high $\mathbf{R_{prof}}$ yields high $\mathbf{A_{FP}}$.|$100 - d100'$|
+|**Defense Balance**|PC takes reduced damage.|$\times M_{DTA}$|
+
+- **Exit:** The GM guides the PCs to a moment of **Long Rest** and prompts the **Waning Roll** at the end of the chapter: "Which Essence betrayed you? What are you willing to lose to master it?".
+    
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See See [LICENSE.md](license.md)].
+
+<!-- ==== Playtest_sheet_v0.9.md ==== -->
+
+# Nárëquenta: Alpha Test Sheet (v0.9)
+
+**Name:** [_____________________]
+**Concept / Legend People Tell About You:** [_____________________]
+**HP Current:** [100] / 100
+**ACTION SURGE (AS) POOL AVAILABLE:** [ ] / [ Max: 5 at Tier V ] [cite: 199, 201]
+
+## ESSENCES (E_max vs E_cur)
+
+**Instructions:** $\mathbf{E_{max}}$ is your permanent potential, capped at **50%**.$\mathbf{E_{cur}}$ is your daily energy pool.
+
+| Essence | E_MAX (Maximum Potential) | TIER / $\mathbf{\bar{M}}$ (Avg Proficiency) | E_CUR (Current Energy) | D_PROF POOL (Active Dice) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **MOTUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **SENSUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **VERBUM** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **ANIMA** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+
+## QUICK TIER REFERENCE (v0.9) 
+
+| Remaining E_MAX (%) | TIER | D_PROF Pool | $\mathbf{\bar{M}}$ (Mitigation/Damage Avg) | AS Max |
+| :--- | :--- | :--- | :--- | :--- |
+| 100% – 91% | **0** | None | 0.0 | 0 |
+| 90% – 81% | **I** | $1\text{d}10$ | 5.5 | 1 |
+| 80% – 71% | **II** | $2\text{d}10$ | 11.0 | 2 |
+| 70% – 61% | **III** | $3\text{d}10$ | 16.5 | 3 |
+| 60% – 51% | **IV** | $4\text{d}10$ | 22.0 | 4 |
+| **50% (PINNACLE)** | **V** | $5\text{d}10$ | 27.5 | **5** |
+
+## QUICK ATTRITION AND DAMAGE REFERENCE (v0.9) 
+
+| Attrition | Motor Essence ($\mathbf{E_{P}}$) | Quality Essence ($\mathbf{E_{S}}$) | Calculation Summary |
+| :--- | :--- | :--- | :--- |
+| **$\mathbf{E_{cur}}$ Cost** | [cite_start]$\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ [cite: 204] | [cite_start]**$1\%$ Fixed Cost** [cite: 204, 266] | [cite_start]**$\mathbf{D_{Final}}$** is Tier-Neutral, mitigated by $\mathbf{M}_{Defense}$ and scaled by $\mathbf{M_{DTA}}$[cite: 266]. |
+| **Failure (Effort)** | [cite_start]$\mathbf{1\%}$ Loss [cite: 267] | [cite_start]$\mathbf{1\%}$ Loss [cite: 267] | [cite_start]Both $\mathbf{E_{cur}}$ pools are reduced by $1\%$ on failed effort rolls[cite: 267]. |
+
+**MOTOR/QUALITY PAIRS:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## EROSION / REFINEMENT LOG (Permanent Loss)
+(Log the $\mathbf{E_{max}}$ loss and resource gains achieved during the Waning Roll.)
+
+| Date / Chapter | [cite_start]Refined Essence (Focus **2d6** Risk) [cite: 18] | Old E\_MAX | New E\_MAX | TIER Gained | AS Gained |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## FINAL VOW
+(What you promised to do before you fade.)
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license: 62).
+
+<!-- ==== Rules_rituals_v0.9.md ==== -->
+
+# 🕯️ Nárëquenta: Rules for Rituals and Renewal (Recovery) (v0.9)
+
+Rituals close the game cycle (Spend → Fade → **Renew**), allowing the PC to manage their daily fatigue ($\mathbf{E_{cur}}$) and accept their permanent loss ($\mathbf{E_{max}}$).
+
+## 1. Focus Renewal (Recovery - E_cur)
+
+This ritual allows the PC to recover their mental and physical focus, returning to their daily potential.
+
+- **Trigger:** Long Rest (e.g., a safe night's sleep).
+- **Process:**
+    1. The **Current Value ($\mathbf{E_{cur}}$)** of all Essences returns to their current **Maximum Value ($\mathbf{E_{max}}$)**.
+    2. The **Action Surge (AS) Pool** is **restored** to its total determined by the Tier (max 5 AS).
+- **Narrative Cost:** Renewal has no additional mechanical cost; the cost is the time and the risk of interruption during the Long Rest.
+
+**Note on Permanent Loss:** Attrition is only temporary ($\mathbf{E_{cur}}$). The system **DOES NOT** restore the **$\mathbf{E_{max}}$** that was permanently lost.
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md)].
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
+
+
+<!-- ==== rules_contested_rolls_v0.9.md ==== -->
+
+## ⚔️ Nárëquenta: Combat and Proficiency Rules (v0.9)
+
+This document details the final mechanics of **Precision Lethality** and the use of Proficiency in Nárëquenta, synchronized with the Decay Mitigation system.
+
+## 1. Proficiency Tiers and Dice Mapping
+
+The **Proficiency Tier** is determined by the current $\mathbf{E_{max}}$ of the Essence.
+Proficiency is **Unified** to $\mathbf{1\text{d}10}$ per Tier.
+
+| Tier | Total $E_{max}$ Loss | Remaining $E_{max}$ (%) | Proficiency Dice ($\mathbf{D_{prof}}$) | Average Benefit ($\bar{M}$) | **Action Surges (AS)** |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **0** | $0-9\%$ | $100-91\%$ | None | $0.0$ | **0** |
+| **I** | $10-19\%$ | $90-81\%$ | $\mathbf{1\text{d}10}$ | $5.5$ | **1** |
+| **II** | $20-29\%$ | $80-71\%$ | $\mathbf{2\text{d}10}$ | $11.0$ | **2** |
+| **III** | $30-39\%$ | $70-61\%$ | $\mathbf{3\text{d}10}$ | $16.5$ | **3** |
+| **IV** | $40-49\%$ | $60-51\%$ | $\mathbf{4\text{d}10}$ | $22.0$ | **4** |
+| **V (Pinnacle)** | $\mathbf{50\%}$ | $\mathbf{50\%}$ | $\mathbf{5\text{d}10}$ | $\mathbf{27.5}$ | **5** |
+
+## 2. Use of Proficiency ($\mathbf{R_{prof}}$ Unified)
+
+The result of the $\mathbf{D_{prof}}$ roll ($\mathbf{R_{prof}}$) is used for three simultaneous effects: Mitigation, Attrition, and Base Damage.
+
+### A. Error Mitigation (Contested Rolls)
+
+The Attacker rolls their $\mathbf{D_{prof}}$ and **subtracts the $\mathbf{R_{prof}}$ from the $\mathbf{d100}$ roll**.
+This is the method for increasing the chance of success (Error Mitigation).
+
+### B. Attrition Reduction (Energy Cost)
+
+The $\mathbf{R_{prof}}$ is used to mitigate the $\mathbf{E_{cur}}$ cost of the Motor Essence ($\mathbf{E_{P}}$) and Quality Essence ($\mathbf{E_{S}}$):
+
+- **$E_{P}$ Loss (Motor):** $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$
+- **$E_{S}$ Loss (Quality):** **$1\%$**
+
+### C. Additive Base Damage
+The $\mathbf{R_{prof}}$ is added to the final damage calculation as the base of power (see Section 3).
+
+### D. Special Attacks (Optional Rule)
+Players may temporarily sacrifice $\mathbf{D_{prof}}$ from their *pool* to perform enhanced actions.
+Characters without Proficiency cannot perform these enhanced actions.
+
+## 3. Final Damage Formula (Precision Lethality)
+
+Damage is Tier-Neutral in Offense and Defense, calculated by Margins and modified by Tier Advantage.
+
+$$\mathbf{D_{Final}} = \max \left( 0, (A_{FP} - \bar{M}_{Defense} + D_{Margin} + R_{prof}) \right) \times M_{DTA}$$
+
+| Component | Calculation | v0.9 Note |
+| :--- | :--- | :--- |
+| **$A_{FP}$ (Full Potential Margin)** | $100 - (d100 - R_{prof})$ | **Tier-Neutral** (Based on 100%, not Attacker's $E_{cur}$). |
+| **$\bar{M}_{Defense}$** | Average $\bar{M}$ of Defender's $\mathbf{D_{prof}}$. | Defender reduces damage due to their Proficiency. |
+| **$D_{Margin}$ (Defender Margin)** | $d100_D - D_{Ecur}$ | Positive on failure, negative on successful defense. |
+| **$R_{prof}$ (Additive Damage)** | Result of Attacker's $\mathbf{D_{prof}}$ roll. | Guaranteed damage and offensive base. |
+| **$M_{DTA}$ (Tier Advantage)** | Multiplier ($\times 0.75$ to $\times 2.00$) | Reduces damage if Defender is higher Tier, increases damage if Attacker is higher Tier. |
+
+## 4. Damage, Health, and Energy Depletion
+
+* All characters have a base of **100 HP**.
+* **Bonus Damage Roll** and **Energy Depletion Cap** (v0.5 Rules) are **REMOVED**, as $\mathbf{D_{Final}}$ and Mitigated Attrition (Section 2) now govern the pace of the game.
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
+
+<!-- ==== en-us.json ==== -->
+{
+    "GAME_TITLE": "Nárëquenta: Tales of the Waning",
+    "SHEET_SUBTITLE": "Character Sheet",
+    
+    "WELCOME_TITLE": "Welcome to Nárëquenta",
+    "NAVIGATE_START_PROMPT": "Choose your starting view:",
+    "NAVIGATE_TITLE": "Navigate:",
+    "NAVIGATE_PC": "PC Sheet",
+    "NAVIGATE_NPC": "NPC Reference",
+    "NAVIGATE_GM": "Rules / GM Ref",
+    "LANG_SELECT": "Language:",
+
+    "LABEL_E_MAX": "Soul's Peak (%)",
+    "LABEL_E_CUR": "Active Vigor (%)",
+    "LABEL_TIER_PROF": "Tier / Waning Yield",
+    "LABEL_D_PROF_POOL": "Waning Yield Pool",
+	
+    "LABEL_ACTION_SURGES": "Surges of Intent",
+    
+    "LABEL_INITIAL_EROSION": "Initial Erosion (1d10)",
+    "LABEL_SUCCESS_CHECK": "Success Check (d100)",
+    "LABEL_WANING_YIELD_RESULT": "Waning Yield Result (Sum)"
+	
+    "FIELD_NAME": "Name",
+    "FIELD_HP": "Current HP",
+    "FIELD_RPROF": "General Proficiency Level (R_Prof)",
+    "SECTION_PROMISE": "Final Vow",
+    "FIELD_PROMISE_HINT": "The Vow the Character has made",
+    "SECTION_SCARRING_LOG": "Erosion / Refinements Log",
+    
+    "SECTION_ESSENCES": "Essences (E_max vs E_cur - Hard Floor 50%)",
+    "GRID_ESSENCE": "Essence",
+    "GRID_EMAX": "E_MAX (%)",
+    "GRID_ECUR": "E_CURRENT (%)",
+    "GRID_TIER_AVG": "TIER / Avg. Margin (\u0304M)",
+    "GRID_DPROFICIENCY": "D_PROF Pool",
+    
+    "VITALIS_NAME": "VITALIS (Vigor, Presence)",
+    "MOTUS_NAME": "MOTUS (Movement, Finesse)",
+    "SENSUS_NAME": "SENSUS (Awareness, Instinct)",
+    "VERBUM_NAME": "VERBUM (Intellect, Logic)",
+    "ANIMA_NAME": "ANIMA (Will, Sacrifice)",
+
+    "SECTION_ABILITIES": "Abilities & Gear",
+    "SECTION_ABILITIES_NOTE": "Cost = \u2a02(0, 7 - R_prof) + 1% E_S. Damage is Tier-Neutral (A_FP).",
+    "TABLE_NAME": "Name / Item",
+    "TABLE_TYPE": "Motor (E_P) + Quality (E_S)",
+    "TABLE_COSTS": "Attrition Cost",
+    "TABLE_DAMAGE": "Damage / Effect",
+
+    "WEAPON_BLADE": "Worn Blade",
+    "WEAPON_BLADE_TYPE": "VITALIS + ANIMA (Mêlée)",
+    "WEAPON_BLADE_DESC": "Brute force and determination. (Dmg based on R_prof + Margins)",
+    "WEAPON_DAGGER": "Finesse Dagger",
+    "WEAPON_DAGGER_TYPE": "MOTUS + SENSUS (Finesse)",
+    "WEAPON_DAGGER_DESC": "Precision for exploiting openings. (Dmg based on R_prof + Margins)",
+    "WEAPON_BOW": "Hunting Bow",
+    "WEAPON_BOW_TYPE": "MOTUS + SENSUS (Range)",
+    "WEAPON_BOW_DESC": "Motor coordination and focus. (Dmg based on R_prof + Margins)",
+    "WEAPON_SHIELD": "Shield Wall",
+    "WEAPON_SHIELD_TYPE": "VITALIS + ANIMA (Defense)",
+    "WEAPON_SHIELD_DESC": "Resist impact with sheer will. (Defense reduces D_Margin)",
+    "CANTRIP_FLICKER": "Flicker",
+    "CANTRIP_FLICKER_TYPE": "MOTUS + SENSUS (Utility)",
+    "CANTRIP_FLICKER_DESC": "Creates a small light. (\u2a02(0, 7 - R_prof) Cost)",
+    "CANTRIP_SENSE": "Sense Scar",
+    "CANTRIP_SENSE_TYPE": "SENSUS + VERBUM (Utility)",
+    "CANTRIP_SENSE_DESC": "Detects where Essence was spent nearby. (\u2a02(0, 7 - R_prof) Cost)",
+    "SPELL_BOLT": "Ember Bolt",
+    "SPELL_BOLT_TYPE": "VERBUM + SENSUS (Attack)",
+    "SPELL_BOLT_DESC": "Projects raw, exhausting energy. (Dmg based on R_prof + Margins)",
+    "SPELL_AURA": "Aura of Focus",
+    "SPELL_AURA_TYPE": "VERBUM + ANIMA (Defense)",
+    "SPELL_AURA_DESC": "Ally adds \u0304M to next roll's mitigation. (Full Attrition Cost)",
+    "SPELL_STONE": "Will of Stone",
+    "SPELL_STONE_TYPE": "ANIMA + VITALIS (Defense)",
+    "SPELL_STONE_DESC": "Increases Defense Mitigation by \u0304M until next turn. (Full Attrition Cost)",
+    "SPELL_DRAIN": "Soul-Drain",
+    "SPELL_DRAIN_TYPE": "ANIMA + VERBUM (Attack)",
+    "SPELL_DRAIN_DESC": "Causes damage and partially recovers PC E_cur. (Dmg based on R_prof + Margins)",
+
+    "NPC_SHEET_TITLE": "Adversary Reference",
+    "FIELD_NPC_NAME": "Adversary Name:",
+    "SECTION_ESSENCES_NPC": "Essences (Focus on Mitigation)",
+
+    "GM_REF_SHEET_TITLE": "GM Reference",
+    
+    "GM_SECTION_1_TITLE": "I. Action Resolution & Attrition",
+    "ROLL_SUCCESS_TITLE": "Roll for Success ($d100$)",
+    "ROLL_SUCCESS_DESC": "The Attack/Ability Test hits if:",
+    "ATTRITION_COST_TITLE": "Attrition Cost ($E_{cur}$ Loss)",
+    "MOTOR_ESSENCE_LOSS": "Motor Essence ($E_{P}$) Loss:",
+    "ES_LOSS_COST": "Quality Essence ($E_{S}$) Loss:",
+
+    "GM_SECTION_2_TITLE": "II. Proficiency Scale ($E_{max}$)",
+    "GRID_EMAX_REM": "E_MAX Remaining (%)",
+    "GRID_TIER_HEADER": "TIER",
+    "GRID_MITIGATION_AVG": "\u0304M (Avg Mitigation)",
+    "GRID_AS_MAX": "AS (Action Surges) Max",
+    "DECAY_SUMMARY": "Decay: Non-Chosen $2\text{d}6$ Loss / Focus $4\text{d}6$ Loss (Waning Roll)",
+
+    "GM_SECTION_3_TITLE": "III. Damage Formula ($D_{Final}$)",
+    "FORMULA_WHERE": "Where:",
+    "A_FP_TITLE": "$A_{FP}$ (Full Potential Margin):",
+    "DEFENDER_MARGIN_TITLE": "$D_{Margin}$ (Defender Margin):",
+
+    "CALC_TITLE": "IV. Interactive Damage Calculator \u2694\ufe0f",
+    "CALC_ATTACKER": "ATTACKER (PC)",
+    "CALC_DEFENDER": "DEFENDER (NPC/PC)",
+    "FIELD_ECUR": "E_CUR (%):",
+    "GRID_TIER": "TIER (I-V):",
+    "FIELD_D100": "d100 ROLLED:",
+    "FIELD_DEFENSE_ROLL": "d100 DEFENSE:",
+    "CALC_BUTTON": "CALCULATE FINAL DAMAGE",
+    "CALC_FINAL_DAMAGE": "FINAL DAMAGE:",
+    
+    "CALC_SUBTITLE": "Attrition is Meaning. E_max never falls below 50%.",
+    "CALC_EMAX_LABEL": "Essence E_MAX (%) (50% to 100%):",
+    "CALC_RESULTS": "Calculation Results:",
+    "CALC_TIER": "Proficiency TIER:",
+    "CALC_LOSS": "Total E_MAX Loss:",
+    "CALC_DICE": "D_PROF Pool:",
+    "CALC_M_AVG": "Average Mitigation (\u0304M):",
+    
+    "CALC_ERROR": "ERROR",
+    "CALC_FAIL_STATUS": "FAILURE (Attack Roll Above E_cur)",
+    "CALC_SUCCESS_STATUS": "SUCCESS.",
+    "CALC_D100_RANGE_ERROR": "d100 rolls must be between 1 and 100."
+}
+
+<!-- ==== config.json ==== -->
+
+{
+    "SERVER_PORT": 8000,
+    "DEFAULT_LANG": "en-us", 
+    "AVAILABLE_LANGS": ["en-us", "pt-pt"], 
+    "NOTES": "Os caminhos completos das fichas são resolvidos pelo script Python para o formato /html/sheets/{tipo}.html."
+}

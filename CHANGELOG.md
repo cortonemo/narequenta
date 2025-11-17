@@ -113,25 +113,36 @@ The format is inspired by Keep a Changelog, and adheres to Semantic Versioning w
 ---
 
 ## **[v0.8] — 2025-11-15 (SPA Migration & Launcher Stabilization)**
-
 **Status:** Alpha Test Ready - Architecture Stabilized
+* **Added:** Implementation of the **Single Page Application (SPA)** architecture in `index.html`, unifiying the three sheets (`PC`, `NPC`, `GM_REF`) into a single page.
+* **Added:** Full integration of the **Damage Calculator** into the GM Reference section (`index.html`).
+* **Added:** All GM Reference headers and descriptions now support **Multilingual Localization** (`data-lang`).
+* **Removed:** Obsolete HTML files (`pc_sheet.html`, `npc_sheet.html`, `gm_reference.html`).
+* **Changed:** Sheet navigation was migrated from page *reload* to **internal JavaScript view transitions** (`showSheet()`), eliminating threading *glitches* and increasing application stability.
+* **Fixed:** Corrected the calculation of the **root path** (*root\_dir*) in the Python *launcher* (`sheet_gui.py`) to resolve the fatal path duplication error when loading JSON localization files.
+* **Fixed:** Corrected the path mapping logic and error handling of the `pywebview` API for the language selector, ensuring robust language initialization.
 
-- **Added:** Implementation of the **Single Page Application (SPA)** architecture in `index.html`, unifying the three sheets (`PC`, `NPC`, `GM_REF`) into a single page.
-    
-- **Added:** Full integration of the **Damage Calculator** into the GM Reference section (`index.html`).
-    
-- **Added:** All GM Reference headers and descriptions now support **Multilingual Localization** (`data-lang`).
-    
-- **Removed:** Obsolete HTML files (`pc_sheet.html`, `npc_sheet.html`, `gm_reference.html`).
-    
-- **Changed:** Sheet navigation was migrated from page _reload_ to **internal JavaScript view transitions** (`showSheet()`), eliminating threading _glitches_ and increasing application stability.
-    
-- **Fixed:** Corrected the calculation of the **root path** (_root_dir_) in the Python _launcher_ (`sheet_gui.py`) to resolve the fatal path duplication error when loading JSON localization files.
-    
-- **Fixed:** Corrected the path mapping logic and error handling of the `pywebview` API for the language selector, ensuring robust language initialization.
-    
+***
 
----
+## **[v0.9] — 2025-11-17 (Progressive Mastery & Attrition Control)**
+**Status:** Alpha Test Ready - Progression Logic Finalized
+* **Changed:** Progression from $\mathbf{E_{max}}$ loss is now **strictly sequential** (one Tier at a time) to prevent skipping mastery levels.
+* **Added:** **Tier Synchronization Rule** for Waning Rolls:
+    * If $\mathbf{E_{max}}$ loss is sufficient to pass multiple thresholds, the player only gains **$\mathbf{1\text{d}10}$** and advances **one Tier**.
+    * Subsequent Waning Rolls use a low-risk **$\mathbf{1\text{d}4}$ utility roll** instead of $4\text{d}6$ until $\mathbf{E_{max}}$ is synchronized with the current Tier.
+    * High-risk **$\mathbf{4\text{d}6}$ decay** is only used when actively trying to reach the *next* Tier threshold.
+* **Added:** **Refocus (Short Rest)** mechanic to allow progressive restoration of $\mathbf{E_{cur}}$ (Quick Breath $\mathbf{1\text{d}4\%}$, Mental Calming $\mathbf{1\text{d}6\%}$, Deep Meditation $\mathbf{1\text{d}10\%}$).
+* **Added:** **Final Spark (Moment of Fury)** emergency action:
+    * Allows action at $\mathbf{E_{cur}=0\%}$.
+    * Incurs a severe, fixed **Surge Cost** (Motor $\mathbf{7\%}$, Quality $\mathbf{3\%}$) that bypasses $\mathbf{R_{prof}}$ mitigation.
+    * May trigger an optional $\mathbf{1\text{d}4\%}$ permanent $\mathbf{E_{max}}$ loss to reflect burnout.
+* **Changed:** The use of **3 or more Essences** for complex actions requires spending a $\mathbf{1\text{d}10}$ Proficiency Die for activation, in addition to the standard $\mathbf{E_{cur}}$ Attrition.
+* **Fixed:** Ensured the **Initial Erosion ($\mathbf{1\text{d}10}$)** roll is conducted *before* the character sees the result to maintain the theme of fated start.
+
+***
+
+
+***
 
 🧾 Version Key
 
@@ -151,10 +162,6 @@ System Development & Documentation — GPT-5 (Liora Vex Framework)
 
 “We are remembered for how beautifully we burn out.” 36
 
-© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md37.
-
 ---
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).

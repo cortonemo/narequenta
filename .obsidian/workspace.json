@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "en-us/playtest/gm_reference_v0.8.md",
+                "file": "pt-pt/Rules/Rules_rituals_v0.9.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "gm_reference_v0.8"
+              "title": "Rules_rituals_v0.9"
             }
           }
         ]
@@ -171,10 +171,20 @@
   },
   "active": "2ce6ca3a71ea493b",
   "lastOpenFiles": [
-    "pt-pt/playtest/gm_reference_v0.8.md",
-    "pt-pt/playtest/character_sheet_v0.7.md",
-    "pt-pt/playtest/PLAYTEST-SCENARIO.md",
+    "pt-pt/Rules/core_rules_v0.9.md",
+    "pt-pt/Rules/rules_contested_rolls_v0.9.md",
+    "pt-pt/Rules/Rules_rituals_v0.9.md",
+    "en-us/Rules/Rules_rituals_v0.9.md",
+    "en-us/Rules/rules_contested_rolls_v0.9.md",
+    "en-us/Rules/core_rules_v0.9.md",
+    "pt-pt/playtest/Playtest_sheet_v0.9.md",
+    "en-us/playtest/Playtest_sheet_v0.9.md",
+    "pt-pt/playtest/Playtest_scenario_v0.9.md",
     "pt-pt/playtest/PLAYTEST-SHEET.md",
+    "en-us/playtest/Playtest_scenario_v0.9.md",
+    "pt-pt/playtest/gm_reference_v0.9.md",
+    "pt-pt/playtest/character_sheet_v0.9.md",
+    "pt-pt/logs/playtest_notes_v0.9.md",
     "en-us/playtest/gm_reference_v0.8.md",
     "pt-pt/CREDITS.md",
     "pt-pt/LICENSE.md",
@@ -184,14 +194,11 @@
     "CREDITS.md",
     "README.md",
     "CHANGELOG.md",
-    "pt-pt/Rules/core_rules_v0.8.md",
     "pt-pt/Rules/rules.txt",
     "pt-pt/playtest/playtest.txt",
     "en-us/Rules/core_rules_v0.8.md",
     "en-us/playtest/character_sheet_v0.7.md",
     "Untitled.md",
-    "0.8.md",
-    "en-us/Rules/rules_contested_rolls_v0.7.md",
     "header_image.png",
     "assets/html/sheets/index.html",
     "assets/html/sheets/index2 - Copy.html",
@@ -209,13 +216,6 @@
     "assets/image/narequenta_minimal_favicon_32x32.png",
     "assets/image/narequenta_minimal_favicon_16x16.png",
     "assets/image/Minimalist_dark_fantasy_202511151421 (3).jpeg",
-    "assets/image/Minimalist_dark_fantasy_202511151421 (2).jpeg",
-    "assets/Tools/sheet_gui.py.md",
-    "assets/Tools/config.json.md",
-    "assets/Tools/README.md",
-    "assets/lang/en-us.md",
-    "assets/lang/pt-pt.md",
-    "assets/html/sheets/pc_sheet.md",
-    "assets/html/sheets/npc_sheet.md"
+    "assets/image/Minimalist_dark_fantasy_202511151421 (2).jpeg"
   ]
 }

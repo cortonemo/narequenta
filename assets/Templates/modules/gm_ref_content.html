@@ -1,0 +1,82 @@
+<div id="GM_REF_VIEW">
+    <h3 class="section-header" data-lang="GM_REF_SHEET_TITLE">GM Reference (v0.8)</h3>
+    
+    <h3 class="section-header" data-lang="CALC_TITLE" style="background-color: #333;">I. Interactive Damage Calculator \u2694\ufe0f</h3>
+    <div id="damage-calculator-container" class="formula-box">
+        <div class="calc-grid">
+            <fieldset class="calc-fieldset">
+                <legend data-lang="CALC_ATTACKER">ATTACKER (PC)</legend>
+                <label data-lang="GRID_TIER">TIER (I-V)</label> <input type="text" id="a-tier-calc" value="III" maxlength="2" class="calc-input">
+                <label data-lang="FIELD_ECUR">E_CUR (%):</label> <input type="number" id="a-ecur-calc" value="70" min="0" max="100" class="calc-input">
+                <hr>
+                <label data-lang="FIELD_D100">d100 ROLLED:</label> <input type="number" id="a-d100" value="50" min="1" max="100" class="calc-input">
+                <label data-lang="FIELD_RPROF">R_Prof (D&D Roll Result)</label> <input type="number" id="a-rprof" value="16" min="0" class="calc-input">
+            </fieldset>
+             <fieldset class="calc-fieldset">
+                <legend data-lang="CALC_DEFENDER">DEFENDER (NPC/PC)</legend>
+                <label data-lang="GRID_TIER">TIER (I-V)</label> <input type="text" id="d-tier-calc" value="III" maxlength="2" class="calc-input">
+                <label data-lang="FIELD_ECUR">E_CUR (%):</label> <input type="number" id="d-ecur-calc" value="70" min="0" max="100" class="calc-input">
+                <hr>
+                <label data-lang="FIELD_DEFENSE_ROLL">d100 DEFENSE:</label> <input type="number" id="d-d100" value="50" min="1" max="100" class="calc-input">
+            </fieldset>
+        </div>
+         <button onclick="alert('Run Damage Calc via Python API')" data-lang="CALC_BUTTON" style="width: 80%; padding: 10px; background-color: #cc0000; color: white; border: none; cursor: pointer; margin-top: 10px;">CALCULATE FINAL DAMAGE (API Placeholder)</button>
+    </div>
+    
+
+    
+    <h3 class="section-header" data-lang="GM_SECTION_2_TITLE" style="background-color: #5d4037;">II. Proficiency Scale ($E_{max}$)</h3>
+    <div class="formula-box">
+         <table class="abilities-table key-table" style="width: 100%; font-size: 0.9em;">
+            <thead>
+                <tr>
+                    <th data-lang="GRID_EMAX_REM">E_MAX Remaining (%)</th>
+                    <th data-lang="GRID_TIER_HEADER">TIER</th>
+                    <th data-lang="GRID_DPROFICIENCY">D_PROF Pool</th>
+                    <th data-lang="GRID_MITIGATION_AVG">\u0304M (Avg Mitigation)</th>
+                    <th data-lang="GRID_AS_MAX">AS (Action Surges) Max</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>100% – 91%</td><td>**0**</td><td>None</td><td>0.0</td><td>0</td></tr>
+                <tr><td>90% – 81%</td><td>**I**</td><td>$1\text{d}10$</td><td>5.5</td><td>1</td></tr>
+                <tr><td>**50% (PINNACLE)**</td><td>**V**</td><td>$5\text{d}10$</td><td>27.5</td><td>4</td></tr>
+                <tr class="utility-row"><td colspan="5" data-lang="DECAY_SUMMARY">Decay: Non-Chosen $2\text{d}6$ Loss / Focus $4\text{d}6$ Loss (Waning Roll)</td></tr>
+            </tbody>
+        </table>
+    </div>
+	
+    <h3 class="section-header" data-lang="GM_SECTION_3_TITLE" style="background-color: #cc0000;">III. Damage Formula ($\mathbf{D_{Final}}$)</h3>
+    <div class="formula-box" style="padding: 20px;">
+        $$\mathbf{D_{Final}} = \max \left( 0, (A_{FP} - \bar{M}_{Defense} + D_{Margin} + R_{prof}) \right) \times M_{DTA}$$
+        <hr style="margin: 10px 0;">
+        <p data-lang="FORMULA_WHERE" style="font-size: 0.9em; text-align: left;">Where:</p>
+        <p data-lang="A_FP_TITLE" style="font-size: 0.9em; text-align: left; margin-left: 20px;">$\mathbf{A_{FP}}$ (Attacker Full Potential): $\mathbf{100 - (d100 - R_{prof})}$.</p>
+        <p data-lang="DEFENDER_MARGIN_TITLE" style="font-size: 0.9em; text-align: left; margin-left: 20px;">$\mathbf{D_{Margin}}$ (Defender Margin): $\mathbf{d100_{D} - E_{cur}}$.</p>
+    </div>
+
+	<h3 class="section-header" data-lang="GM_SECTION_4_TITLE" style="background-color: #5d4037;">IV. Tier Advantage Multiplier ($\mathbf{M_{DTA}}$)</h3>
+	<div class="formula-box">
+		 <table class="abilities-table key-table" style="width: 100%; font-size: 0.85em; text-align: center;">
+			<thead>
+				<tr>
+					<th>Attacker Tier $\downarrow$ vs. Defender Tier $\rightarrow$</th>
+					<th>I</th>
+					<th>II</th>
+					<th>III</th>
+					<th>IV</th>
+					<th>V</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr><td>**I**</td><td>$\mathbf{1.00}$ (Neutral)</td><td>$\mathbf{0.75}$</td><td>$\mathbf{0.50}$</td><td>$\mathbf{0.25}$</td><td>$\mathbf{0.25}$</td></tr>
+				<tr><td>**II**</td><td>$\mathbf{1.25}$</td><td>$\mathbf{1.00}$ (Neutral)</td><td>$\mathbf{0.75}$</td><td>$\mathbf{0.50}$</td><td>$\mathbf{0.25}$</td></tr>
+				<tr><td>**III**</td><td>$\mathbf{1.50}$</td><td>$\mathbf{1.25}$</td><td>$\mathbf{1.00}$ (Neutral)</td><td>$\mathbf{0.75}$</td><td>$\mathbf{0.50}$</td></tr>
+				<tr><td>**IV**</td><td>$\mathbf{1.75}$</td><td>$\mathbf{1.50}$</td><td>$\mathbf{1.25}$</td><td>$\mathbf{1.00}$ (Neutral)</td><td>$\mathbf{0.75}$</td></tr>
+				<tr><td>**V**</td><td>$\mathbf{2.00}$ (Max Bonus)</td><td>$\mathbf{1.75}$</td><td>$\mathbf{1.50}$</td><td>$\mathbf{1.25}$</td><td>$\mathbf{1.00}$ (Neutral)</td></tr>
+			</tbody>
+		</table>
+	</div>
+	
+	
+</div>

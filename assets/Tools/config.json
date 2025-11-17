@@ -1,6 +1,6 @@
 {
     "SERVER_PORT": 8000,
-    "DEFAULT_LANG": "en-us", 
-    "AVAILABLE_LANGS": ["en-us", "pt-pt"], 
+    "DEFAULT_LANG": "en-us",     
+	"AVAILABLE_LANGS": ["en-us", "pt-pt"], 
     "NOTES": "Os caminhos completos das fichas são resolvidos pelo script Python para o formato /html/sheets/{tipo}.html."
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{SHEET_TITLE}} | {{GAME_TITLE}}</title>
+    {{INLINE_STYLE}}
+	<script>
+	  window.MathJax = {
+		tex: {
+		  inlineMath: [['$', '$'], ['\\(', '\\)']],
+		  displayMath: [['$$', '$$'], ['\\[', '\\]']]
+		},
+		svg: { fontCache: 'global' }
+	  };
+	</script>
+	<script id="MathJax-script" async
+			src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+	</script>
+
+</head>
+<body>
+    <div class="sheet-container">
+        <header>
+            <h1 data-lang="GAME_TITLE">{{GAME_TITLE}}</h1>
+            <h3 id="sheet-title-display">{{SHEET_TITLE}}</h3>
+        </header>
+
+        {{NAV_BAR}}
+
+        <div id="views-container">
+            {{VIEW_CONTENT}}
+        </div>
+    </div>
+    
+<script>
+    // LANGUAGE_DATA_JS_PLACEHOLDER
+    
+    // Function to handle the Python-driven sheet switching
+    function showSheet(targetKey) {
+		if (window.pywebview && window.pywebview.api && window.pywebview.api.load_sheet) {
+			window.pywebview.api.load_sheet(targetKey).then(html => {
+				document.open();
+				document.write(html);
+				document.close();
+			});
+		} else {
+			alert(`Simulation: Requesting sheet assembly for: ${targetKey}. pywebview API not available.`);
+		}
+	}
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        // Initializes the title on load using the injected language data
+        const titleElement = document.getElementById('sheet-title-display');
+        if (titleElement.textContent === 'SELECTION') {
+             titleElement.textContent = currentLanguage['SHEET_SUBTITLE'];
+        }
+        // INIT_FRONTEND_LOGIC_PLACEHOLDER
+        console.log("Nárëquenta Frontend Initialized.");
+    });
+</script>
+</body>
+</html>

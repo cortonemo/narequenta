@@ -1,7 +1,4 @@
 {
-    /* ========================================================= */
-    /* 1. GLOBAL / NAVIGATION KEYS */
-    /* ========================================================= */
     "GAME_TITLE": "Nárëquenta: Tales of the Waning",
     "SHEET_SUBTITLE": "Character Sheet",
     
@@ -13,11 +10,18 @@
     "NAVIGATE_GM": "Rules / GM Ref",
     "LANG_SELECT": "Language:",
 
-    /* ========================================================= */
-    /* 2. PC SHEET KEYS (General Fields, Essences, Abilities) */
-    /* ========================================================= */
+    "LABEL_E_MAX": "Soul's Peak (%)",
+    "LABEL_E_CUR": "Active Vigor (%)",
+    "LABEL_TIER_PROF": "Tier / Waning Yield",
+    "LABEL_D_PROF_POOL": "Waning Yield Pool",
+	
+   
+ "LABEL_ACTION_SURGES": "Surges of Intent",
     
-    /* General PC Fields */
+    "LABEL_INITIAL_EROSION": "Initial Erosion (1d10)",
+    "LABEL_SUCCESS_CHECK": "Success Check (d100)",
+    "LABEL_WANING_YIELD_RESULT": "Waning Yield Result (Sum)",
+	
     "FIELD_NAME": "Name",
     "FIELD_HP": "Current HP",
     "FIELD_RPROF": "General Proficiency Level (R_Prof)",
@@ -25,97 +29,100 @@
     "FIELD_PROMISE_HINT": "The Vow the Character has made",
     "SECTION_SCARRING_LOG": "Erosion / Refinements Log",
     
-    /* Essence Grid Headers (PC) */
     "SECTION_ESSENCES": "Essences (E_max vs E_cur - Hard Floor 50%)",
     "GRID_ESSENCE": "Essence",
-    "GRID_EMAX": "E_MAX (%)",
+    "GRID_EMAX": "E_MAX 
+(%)",
     "GRID_ECUR": "E_CURRENT (%)",
-    "GRID_TIER_AVG": "TIER / Avg. Margin (\u0304M)",
+    "GRID_TIER_AVG": "TIER / Avg.
+Margin (̄M)",
     "GRID_DPROFICIENCY": "D_PROF Pool",
     
-    /* Essence Names */
     "VITALIS_NAME": "VITALIS (Vigor, Presence)",
     "MOTUS_NAME": "MOTUS (Movement, Finesse)",
     "SENSUS_NAME": "SENSUS (Awareness, Instinct)",
     "VERBUM_NAME": "VERBUM (Intellect, Logic)",
     "ANIMA_NAME": "ANIMA (Will, Sacrifice)",
 
-    /* Abilities Table */
     "SECTION_ABILITIES": "Abilities & Gear",
-    "SECTION_ABILITIES_NOTE": "Cost = \u2a02(0, 7 - R_prof) + 1% E_S. Damage is Tier-Neutral (A_FP).",
+    "SECTION_ABILITIES_NOTE": "Cost = max(0, 7 - R_prof) + 1% E_S.
+Damage is Tier-Neutral (A_FP).",
     "TABLE_NAME": "Name / Item",
     "TABLE_TYPE": "Motor (E_P) + Quality (E_S)",
     "TABLE_COSTS": "Attrition Cost",
     "TABLE_DAMAGE": "Damage / Effect",
 
-    /* Abilities Descriptions */
     "WEAPON_BLADE": "Worn Blade",
     "WEAPON_BLADE_TYPE": "VITALIS + ANIMA (Mêlée)",
-    "WEAPON_BLADE_DESC": "Brute force and determination. (Dmg based on R_prof + Margins)",
+    "WEAPON_BLADE_DESC": "Brute force and determination.
+(Dmg based on R_prof + Margins)",
     "WEAPON_DAGGER": "Finesse Dagger",
     "WEAPON_DAGGER_TYPE": "MOTUS + SENSUS (Finesse)",
-    "WEAPON_DAGGER_DESC": "Precision for exploiting openings. (Dmg based on R_prof + Margins)",
+    "WEAPON_DAGGER_DESC": "Precision for exploiting openings.
+(Dmg based on R_prof + Margins)",
     "WEAPON_BOW": "Hunting Bow",
     "WEAPON_BOW_TYPE": "MOTUS + SENSUS (Range)",
-    "WEAPON_BOW_DESC": "Motor coordination and focus. (Dmg based on R_prof + Margins)",
+    "WEAPON_BOW_DESC": "Motor coordination and focus.
+(Dmg based on R_prof + Margins)",
     "WEAPON_SHIELD": "Shield Wall",
     "WEAPON_SHIELD_TYPE": "VITALIS + ANIMA (Defense)",
-    "WEAPON_SHIELD_DESC": "Resist impact with sheer will. (Defense reduces D_Margin)",
+    "WEAPON_SHIELD_DESC": "Resist impact with sheer will.
+(Defense reduces D_Margin)",
     "CANTRIP_FLICKER": "Flicker",
     "CANTRIP_FLICKER_TYPE": "MOTUS + SENSUS (Utility)",
-    "CANTRIP_FLICKER_DESC": "Creates a small light. (\u2a02(0, 7 - R_prof) Cost)",
+    "CANTRIP_FLICKER_DESC": "Creates a small light.
+(max(0, 7 - R_prof) Cost)",
     "CANTRIP_SENSE": "Sense Scar",
     "CANTRIP_SENSE_TYPE": "SENSUS + VERBUM (Utility)",
-    "CANTRIP_SENSE_DESC": "Detects where Essence was spent nearby. (\u2a02(0, 7 - R_prof) Cost)",
+    "CANTRIP_SENSE_DESC": "Detects where Essence was spent nearby.
+(max(0, 7 - R_prof) Cost)",
     "SPELL_BOLT": "Ember Bolt",
     "SPELL_BOLT_TYPE": "VERBUM + SENSUS (Attack)",
-    "SPELL_BOLT_DESC": "Projects raw, exhausting energy. (Dmg based on R_prof + Margins)",
+    "SPELL_BOLT_DESC": "Projects raw, exhausting energy.
+(Dmg based on R_prof + Margins)",
     "SPELL_AURA": "Aura of Focus",
     "SPELL_AURA_TYPE": "VERBUM + ANIMA (Defense)",
-    "SPELL_AURA_DESC": "Ally adds \u0304M to next roll's mitigation. (Full Attrition Cost)",
+    "SPELL_AURA_DESC": "Ally adds ̄M to next roll's mitigation.
+(Full Attrition Cost)",
     "SPELL_STONE": "Will of Stone",
     "SPELL_STONE_TYPE": "ANIMA + VITALIS (Defense)",
-    "SPELL_STONE_DESC": "Increases Defense Mitigation by \u0304M until next turn. (Full Attrition Cost)",
+    "SPELL_STONE_DESC": "Increases Defense Mitigation by ̄M until next turn.
+(Full Attrition Cost)",
     "SPELL_DRAIN": "Soul-Drain",
     "SPELL_DRAIN_TYPE": "ANIMA + VERBUM (Attack)",
-    "SPELL_DRAIN_DESC": "Causes damage and partially recovers PC E_cur. (Dmg based on R_prof + Margins)",
+    "SPELL_DRAIN_DESC": "Causes damage and partially recovers PC E_cur.
+(Dmg based on R_prof + Margins)",
 
-    /* ========================================================= */
-    /* 3. NPC SHEET KEYS */
-    /* ========================================================= */
     "NPC_SHEET_TITLE": "Adversary Reference",
     "FIELD_NPC_NAME": "Adversary Name:",
     "SECTION_ESSENCES_NPC": "Essences (Focus on Mitigation)",
 
-    /* ========================================================= */
-    /* 4. GM REFERENCE SHEET KEYS (Sections I, II, III, Calculator) */
-    /* ========================================================= */
     "GM_REF_SHEET_TITLE": "GM Reference",
     
-    /* Section I: Action Resolution & Attrition */
-    "GM_SECTION_1_TITLE": "I. Action Resolution & Attrition",
+    "GM_SECTION_1_TITLE": "I.
+Action Resolution & Attrition",
     "ROLL_SUCCESS_TITLE": "Roll for Success ($d100$)",
     "ROLL_SUCCESS_DESC": "The Attack/Ability Test hits if:",
     "ATTRITION_COST_TITLE": "Attrition Cost ($E_{cur}$ Loss)",
     "MOTOR_ESSENCE_LOSS": "Motor Essence ($E_{P}$) Loss:",
     "ES_LOSS_COST": "Quality Essence ($E_{S}$) Loss:",
 
-    /* Section II: Proficiency Scale */
-    "GM_SECTION_2_TITLE": "II. Proficiency Scale ($E_{max}$)",
+    "GM_SECTION_2_TITLE": "II.
+Proficiency Scale ($E_{max}$)",
     "GRID_EMAX_REM": "E_MAX Remaining (%)",
     "GRID_TIER_HEADER": "TIER",
-    "GRID_MITIGATION_AVG": "\u0304M (Avg Mitigation)",
+    "GRID_MITIGATION_AVG": "̄M (Avg Mitigation)",
     "GRID_AS_MAX": "AS (Action Surges) Max",
     "DECAY_SUMMARY": "Decay: Non-Chosen $2\text{d}6$ Loss / Focus $4\text{d}6$ Loss (Waning Roll)",
 
-    /* Section III: Damage Formula */
-    "GM_SECTION_3_TITLE": "III. Damage Formula ($D_{Final}$)",
+    "GM_SECTION_3_TITLE": "III.
+Damage Formula ($D_{Final}$)",
     "FORMULA_WHERE": "Where:",
     "A_FP_TITLE": "$A_{FP}$ (Full Potential Margin):",
     "DEFENDER_MARGIN_TITLE": "$D_{Margin}$ (Defender Margin):",
 
-    /* Section IV: Damage Calculator */
-    "CALC_TITLE": "IV. Interactive Damage Calculator \u2694\ufe0f",
+    "CALC_TITLE": "IV.
+Interactive Damage Calculator ⚔️",
     "CALC_ATTACKER": "ATTACKER (PC)",
     "CALC_DEFENDER": "DEFENDER (NPC/PC)",
     "FIELD_ECUR": "E_CUR (%):",
@@ -125,18 +132,24 @@
     "CALC_BUTTON": "CALCULATE FINAL DAMAGE",
     "CALC_FINAL_DAMAGE": "FINAL DAMAGE:",
     
-    /* Calculator Tool Keys */
-    "CALC_SUBTITLE": "Attrition is Meaning. E_max never falls below 50%.",
+    "CALC_SUBTITLE": "Attrition is Meaning.
+E_max never falls below 50%.",
     "CALC_EMAX_LABEL": "Essence E_MAX (%) (50% to 100%):",
     "CALC_RESULTS": "Calculation Results:",
     "CALC_TIER": "Proficiency TIER:",
     "CALC_LOSS": "Total E_MAX Loss:",
     "CALC_DICE": "D_PROF Pool:",
-    "CALC_M_AVG": "Average Mitigation (\u0304M):",
+    "CALC_M_AVG": "Average Mitigation (̄M):",
     
-    /* JS Error Keys */
     "CALC_ERROR": "ERROR",
     "CALC_FAIL_STATUS": "FAILURE (Attack Roll Above E_cur)",
     "CALC_SUCCESS_STATUS": "SUCCESS.",
-    "CALC_D100_RANGE_ERROR": "d100 rolls must be between 1 and 100."
+    "CALC_D100_RANGE_ERROR": "d100 rolls must be between 1 and 100.",
+    
+    "SECTION_WANING_ROLLS": "Permanent Decay (Waning Roll)",
+    "FIELD_FOCUS_DECAY": "Focus Essence Decay (2d6 Loss):",
+    "FIELD_UNIVERSAL_DECAY": "Universal Decay (1d6 Loss):",
+    "SECTION_ROLLS_INPUT": "🎯 Action Resolution Inputs",
+    "FIELD_D100_ROLL": "d100 Roll (Success Check):",
+    "FIELD_RPROF_RESULT": "R_Prof Result (D_prof roll):"
 }

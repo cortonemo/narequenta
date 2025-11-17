@@ -2,11 +2,6 @@
 ├── 📂 assets/
 │   ├── 📂 css/
 │   │   ├── 📄 style.css
-│   ├── 📂 html/
-│   │   ├── 📂 sheets/
-│   │   │   └── 📄 index.html
-│   │   └── 📂 tools/
-│   │       └── 📄 tier_calculator_gui.html
 │   ├── 📂 image/
 │   │   ├── 📄 narequenta.png
 │   ├── 📂 lang/
@@ -14,39 +9,20 @@
 │   │   └── 📄 pt-pt.json
 │   └── 📂 Tools/
 │       ├── 📄 config.json
-│       ├── 📄 sheet_gui_choice.py
-│       ├── 📄 sheet_gui_index.py
-│       └── 📄 tool_tier_calculator.py
+│       ├── 📄 sheet_gui_launcher.py
+│       └── 📄 README.md
 ├── 📂 en-us/
 │   ├── 📂 logs/
-│   │   └── 📄 2025-10-25_playtest_notes.md
+│   │   └── 📄 playtest_notes.md
 │   ├── 📂 playtest/
 │   │   ├── 📄 character_sheet_v0.7.md
-│   │   ├── 📄 gm_reference_v0.7.md
+│   │   ├── 📄 gm_reference_v0.8.md
 │   │   ├── 📄 PLAYTEST-SCENARIO.md
 │   │   └── 📄 PLAYTEST-SHEET.md
 │   └── 📂 Rules/
-│       ├── 📄 core_rules_v0.7.md
+│       ├── 📄 core_rules_v0.8.md
 │       ├── 📄 RULES-RITUALS.md
 │       └── 📄 rules_contested_rolls_v0.7.md
-├── 📂 pt-pt/
-│   ├── 📂 logs/
-│   │   └── 📄 2025-10-25_playtest_notes.md
-│   ├── 📂 playtest/
-│   │   ├── 📄 character_sheet_v0.7.md
-│   │   ├── 📄 gm_reference_v0.7.md
-│   │   ├── 📄 PLAYTEST-SCENARIO.md
-│   │   └── 📄 PLAYTEST-SHEET.md
-│   ├── 📂 Rules/
-│   │   ├── 📄 core_rules_v0.7.md
-│   │   ├── 📄 RULES-RITUALS.md
-│   │   └── 📄 rules_contested_rolls_v0.7.md
-│   ├── 📄 CHANGELOG.md
-│   ├── 📄 CREDITS.md
-│   ├── 📄 LICENSE.md
-│   └── 📄 README.md
-├── 📂 Templates/
-│   └── 📄 pc_sheet_template.html
 ├── 📄 CHANGELOG.md
 ├── 📄 CREDITS.md
 ├── 📄 favicon.ico

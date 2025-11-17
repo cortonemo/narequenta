@@ -1,65 +1,129 @@
 {
-    /* ========================================================= */
-    /* 1. GLOBAL / NAVIGATION KEYS */
-    /* ========================================================= */
-    "GAME_TITLE": "Nárëquenta: Contos do Esvanecer",
+    "GAME_TITLE": "Nárëquenta: Contos do Declínio",
     "SHEET_SUBTITLE": "Ficha de Personagem",
     
-    "WELCOME_TITLE": "Bem-vindo(a) a Nárëquenta",
-    "NAVIGATE_START_PROMPT": "Escolha o Ponto de Partida:",
+    "WELCOME_TITLE": "Bem-vindo a Nárëquenta",
+    "NAVIGATE_START_PROMPT": "Escolha a sua visualização inicial:",
     "NAVIGATE_TITLE": "Navegar:",
-    "NAVIGATE_PC": "Ficha de PC",
-    "NAVIGATE_NPC": "Referência NPC",
-    "NAVIGATE_GM": "Regras / GM Ref",
+    "NAVIGATE_PC": "Ficha de Personagem",
+    "NAVIGATE_NPC": "Referência de Adversários",
+    "NAVIGATE_GM": "Regras / Ref. Mestre",
     "LANG_SELECT": "Idioma:",
 
-    /* ========================================================= */
-    /* 2. PC SHEET KEYS (General Fields, Essences, Abilities) */
-    /* ========================================================= */
+    "LABEL_E_MAX": "Pico da Alma (%)",
+    "LABEL_E_CUR": "Vigor Ativo (%)",
+    "LABEL_TIER_PROF": "Nível / Compensação de Declínio",
+    "LABEL_D_PROF_POOL": "Reserva de Compensação de Declínio",
     
-    /* General PC Fields */
+    "LABEL_ACTION_SURGES": "Surtos de Intenção",
+    
+    "LABEL_INITIAL_EROSION": "Erosão Inicial (1d10)",
+    "LABEL_SUCCESS_CHECK": "Teste de Sucesso (d100)",
+    "LABEL_WANING_YIELD_RESULT": "Resultado da Compensação de Declínio (Soma)",
+    
     "FIELD_NAME": "Nome",
-    "FIELD_HP": "HP Atual",
+    "FIELD_HP": "Vigor Atual",
     "FIELD_RPROF": "Nível de Proficiência Geral (R_Prof)",
-    "SECTION_PROMISE": "Promessa Final",
-    "FIELD_PROMISE_HINT": "O Voto que a Personagem fez",
+    "SECTION_PROMISE": "Voto Final",
+    "FIELD_PROMISE_HINT": "O Voto que o Personagem assumiu",
     "SECTION_SCARRING_LOG": "Registo de Erosão / Refinamentos",
     
-    /* Essence Grid Headers (PC) */
-    "SECTION_ESSENCES": "Essências (E_max vs E_cur - Limite Fixo 50%)",
+    "SECTION_ESSENCES": "Essências (Pico da Alma vs Vigor Ativo - Limite Mínimo 50%)",
     "GRID_ESSENCE": "Essência",
-    "GRID_EMAX": "E_MÁX (%)",
-    "GRID_ECUR": "E_ATUAL (%)",
-    "GRID_TIER_AVG": "NÍVEL / Margem Média (\u0304M)",
-    "GRID_DPROFICIENCY": "Pool D_PROF",
+    "GRID_EMAX": "E_MAX (%)",
+    "GRID_ECUR": "E_CURRENT (%)",
+    "GRID_TIER_AVG": "NÍVEL / Marg. Média (\u0304M)",
+    "GRID_DPROFICIENCY": "Reserva de D_PROF",
     
-    /* Essence Names */
     "VITALIS_NAME": "VITALIS (Vigor, Presença)",
     "MOTUS_NAME": "MOTUS (Movimento, Destreza)",
     "SENSUS_NAME": "SENSUS (Consciência, Instinto)",
     "VERBUM_NAME": "VERBUM (Intelecto, Lógica)",
     "ANIMA_NAME": "ANIMA (Vontade, Sacrifício)",
 
-    /* Abilities Table */
-    "SECTION_ABILITIES": "Habilidades e Equipamento Básico",
-    "SECTION_ABILITIES_NOTE": "Custo = \u2a02(0, 7 - R_prof) + 1% E_S. Dano é Neutro por Nível (A_FP).",
+    "SECTION_ABILITIES": "Habilidades e Equipamento",
+    "SECTION_ABILITIES_NOTE": "Custo = \u2a02(0, 7 - R_prof) + 1% E_S. Dano é Nível-Neutro (A_FP).",
     "TABLE_NAME": "Nome / Item",
     "TABLE_TYPE": "Motor (E_P) + Qualidade (E_S)",
     "TABLE_COSTS": "Custo de Atrição",
     "TABLE_DAMAGE": "Dano / Efeito",
 
-    /* Abilities Descriptions */
-    "WEAPON_BLADE": "Lâmina Gasta",
+    "WEAPON_BLADE": "Lâmina Usada",
     "WEAPON_BLADE_TYPE": "VITALIS + ANIMA (Corpo a Corpo)",
     "WEAPON_BLADE_DESC": "Força bruta e determinação. (Dano baseado em R_prof + Margens)",
-    "WEAPON_DAGGER": "Adaga de Finesse",
-    "WEAPON_DAGGER_TYPE": "MOTUS + SENSUS (Finesse)",
+    "WEAPON_DAGGER": "Adaga de Destreza",
+    "WEAPON_DAGGER_TYPE": "MOTUS + SENSUS (Destreza)",
     "WEAPON_DAGGER_DESC": "Precisão para explorar aberturas. (Dano baseado em R_prof + Margens)",
     "WEAPON_BOW": "Arco de Caça",
-    "WEAPON_BOW_TYPE": "MOTUS + SENSUS (Alcance)",
+    "WEAPON_BOW_TYPE": "MOTUS + SENSUS (Distância)",
     "WEAPON_BOW_DESC": "Coordenação motora e foco. (Dano baseado em R_prof + Margens)",
-    "WEAPON_SHIELD": "Barricada de Escudo",
+    "WEAPON_SHIELD": "Muro de Escudos",
     "WEAPON_SHIELD_TYPE": "VITALIS + ANIMA (Defesa)",
-    "WEAPON_SHIELD_DESC": "Resistir ao impacto com pura vontade. (A defesa reduz a Margem D)",
-    "CANTRIP_FLICKER": "Cintilância",
-    "CANTR
+    "WEAPON_SHIELD_DESC": "Resistir ao impacto com pura vontade. (Defesa reduz D_Margin)",
+    "CANTRIP_FLICKER": "Brilho",
+    "CANTRIP_FLICKER_TYPE": "MOTUS + SENSUS (Utilidade)",
+    "CANTRIP_FLICKER_DESC": "Cria uma pequena luz. (\u2a02(0, 7 - R_prof) Custo)",
+    "CANTRIP_SENSE": "Sentido de Cicatriz",
+    "CANTRIP_SENSE_TYPE": "SENSUS + VERBUM (Utilidade)",
+    "CANTRIP_SENSE_DESC": "Deteta onde a Essência foi gasta nas proximidades. (\u2a02(0, 7 - R_prof) Custo)",
+    "SPELL_BOLT": "Projétil de Brasa",
+    "SPELL_BOLT_TYPE": "VERBUM + SENSUS (Ataque)",
+    "SPELL_BOLT_DESC": "Projeta energia bruta e exaustiva. (Dano baseado em R_prof + Margens)",
+    "SPELL_AURA": "Aura de Foco",
+    "SPELL_AURA_TYPE": "VERBUM + ANIMA (Defesa)",
+    "SPELL_AURA_DESC": "Aliado adiciona \u0304M à mitigação do próximo teste. (Custo de Atrição total)",
+    "SPELL_STONE": "Vontade de Pedra",
+    "SPELL_STONE_TYPE": "ANIMA + VITALIS (Defesa)",
+    "SPELL_STONE_DESC": "Aumenta a Mitigação de Defesa por \u0304M até à próxima ronda. (Custo de Atrição total)",
+    "SPELL_DRAIN": "Dreno de Alma",
+    "SPELL_DRAIN_TYPE": "ANIMA + VERBUM (Ataque)",
+    "SPELL_DRAIN_DESC": "Causa dano e recupera parcialmente o Vigor Ativo do PC. (Dano baseado em R_prof + Margens)",
+
+    "NPC_SHEET_TITLE": "Referência de Adversários",
+    "FIELD_NPC_NAME": "Nome do Adversário:",
+    "SECTION_ESSENCES_NPC": "Essências (Foco na Mitigação)",
+
+    "GM_REF_SHEET_TITLE": "Referência do Mestre",
+    
+    "GM_SECTION_1_TITLE": "I. Resolução de Ações e Atrição",
+    "ROLL_SUCCESS_TITLE": "Teste para Sucesso ($d100$)",
+    "ROLL_SUCCESS_DESC": "O Teste de Ataque/Habilidade acerta se:",
+    "ATTRITION_COST_TITLE": "Custo de Atrição (Perda de $E_{cur}$)",
+    "MOTOR_ESSENCE_LOSS": "Perda de Essência Motora ($E_{P}$):",
+    "ES_LOSS_COST": "Perda de Essência de Qualidade ($E_{S}$):",
+
+    "GM_SECTION_2_TITLE": "II. Escala de Proficiência (Pico da Alma)",
+    "GRID_EMAX_REM": "Pico da Alma Remanescente (%)",
+    "GRID_TIER_HEADER": "NÍVEL",
+    "GRID_MITIGATION_AVG": "\u0304M (Mitigação Média)",
+    "GRID_AS_MAX": "SIA (Surtos de Intenção de Ação) Máx",
+    "DECAY_SUMMARY": "Declínio: Perda $2\text{d}6$ Não-Escolha / Perda $4\text{d}6$ Focada (Teste de Declínio)",
+
+    "GM_SECTION_3_TITLE": "III. Fórmula de Dano (Prioridade de Compensação de Declínio)",
+    "FORMULA_WHERE": "Onde:",
+    "A_FP_TITLE": "$A_{FP}$ (Margem de Potencial Total):",
+    "DEFENDER_MARGIN_TITLE": "$D_{Margin}$ (Margem do Defensor):",
+
+    "CALC_TITLE": "IV. Calculadora de Dano Interativa \u2694\ufe0f",
+    "CALC_ATTACKER": "ATACANTE (PC)",
+    "CALC_DEFENDER": "DEFENSOR (NPC/PC)",
+    "FIELD_ECUR": "E_CUR (%):",
+    "GRID_TIER": "NÍVEL (I-V):",
+    "FIELD_D100": "d100 ROLADO:",
+    "FIELD_DEFENSE_ROLL": "d100 DEFESA:",
+    "CALC_BUTTON": "CALCULAR DANO FINAL",
+    "CALC_FINAL_DAMAGE": "DANO FINAL:",
+    
+    "CALC_SUBTITLE": "Atrição é Significado. O Pico da Alma nunca desce abaixo de 50%.",
+    "CALC_EMAX_LABEL": "Essência Pico da Alma (%) (50% a 100%):",
+    "CALC_RESULTS": "Resultados do Cálculo:",
+    "CALC_TIER": "NÍVEL de Proficiência:",
+    "CALC_LOSS": "Perda Total de E_MAX:",
+    "CALC_DICE": "Reserva de D_PROF:",
+    "CALC_M_AVG": "Mitigação Média (\u0304M):",
+    
+    "CALC_ERROR": "ERRO",
+    "CALC_FAIL_STATUS": "FALHA (Teste de Ataque Acima do Vigor Ativo)",
+    "CALC_SUCCESS_STATUS": "SUCESSO.",
+    "CALC_D100_RANGE_ERROR": "Os testes d100 devem estar entre 1 e 100."
+}
