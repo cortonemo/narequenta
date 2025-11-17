@@ -86,3 +86,6 @@ $$\mathbf{D_{Final}} = \max \left(0, (A_{FP} - \bar{M}_{Defense} + D_{Margin} + 
     $$\mathbf{D_{Margin}} = \mathbf{d100_D-D_{Ecur}} \text{}$$
 
     **Explanation:** This measures the Defender's vulnerability. It is the **Defender's Defense Roll ($\mathbf{d100_D}$)** minus their **Current Essence ($\mathbf{D_{Ecur}}$)** (Active Vigor). A positive $\mathbf{D_{Margin}}$ means the Defender failed their defense, increasing the **Final Damage ($\mathbf{D_{Final}}$)**, while a negative $\mathbf{D_{Margin}}$ means the Defender successfully defended, reducing the damage base.
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.

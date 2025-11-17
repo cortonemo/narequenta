@@ -53,3 +53,7 @@ $\mathbf{D_{prof}}$ are **$1d10$ per Tier**. The **Average Margin ($\mathbf{\bar
 
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
 Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.

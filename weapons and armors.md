@@ -96,3 +96,6 @@ Unarmed strikes are considered basic expressions of **Vigor (VITALIS)** and **Mo
 ---
 
 Would you like to review the proposed Armor rules and see how they apply their specific damage reductions?
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
