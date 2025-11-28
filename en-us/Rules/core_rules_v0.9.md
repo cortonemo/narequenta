@@ -94,3 +94,7 @@ Progression occurs at narrative milestones by permanently reducing $\mathbf{E_{m
 
 ---
 © 2025 Serelith Varn — Nárëquenta. Licensed under Nárëquenta Limited Open License (v0.1).
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
