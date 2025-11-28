@@ -1,60 +1,38 @@
-# Nárëquenta: Ficha de Teste Alpha (v0.9)
+# Nárëquenta: Ficha de Teste Alpha (v0.9.6)
 
 **Nome:** [_____________________]
-**Conceito / Lenda Que Contam Sobre Si:** [_____________________]
+**Conceito:** [_____________________]
 **PV Atuais:** [100] / 100
-**RESERVA DE ATAQUE SÚBITO (AS) DISPONÍVEL:** [ ] / [ Máx: 5 no Nível V ]
+**RESERVA DE ATAQUE SÚBITO (AS):** [ ] / [ Máx: ___ ]
 
-## ESSÊNCIAS ($E_{max}$ vs $E_{cur}$)
+## ESSÊNCIAS (E_max vs E_cur)
+**Instruções:** $\mathbf{E_{max}}$ é o potencial permanente (Piso 50%). $\mathbf{E_{cur}}$ define a sua **Zona de Tensão**.
 
-**Instruções:** $\mathbf{E_{max}}$ é o seu potencial permanente, limitado a **50%**. $\mathbf{E_{cur}}$ é a sua reserva de energia diária.
-
-| Essência | $E_{MAX}$ (Potencial Máximo) | NÍVEL / $\mathbf{\bar{M}}$ (Proficiência Média) | $E_{CUR}$ (Energia Atual) | RESERVA $D_{PROF}$ (Dados Ativos) |
+| Essência | $E_{MAX}$ (Potencial) | NÍVEL | $E_{CUR}$ (Atual) | ZONA (0/-10/-20/-30) |
 | :--- | :--- | :--- | :--- | :--- |
-| **VITALIS** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
-| **MOTUS** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
-| **SENSUS** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
-| **VERBUM** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
-| **ANIMA** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
+| **VITALIS** | [100%] | [____] | [100%] | [____] |
+| **MOTUS** | [100%] | [____] | [100%] | [____] |
+| **SENSUS** | [100%] | [____] | [100%] | [____] |
+| **VERBUM** | [100%] | [____] | [100%] | [____] |
+| **ANIMA** | [100%] | [____] | [100%] | [____] |
 
-## REFERÊNCIA RÁPIDA DE NÍVEIS (v0.9) 
+## REFERÊNCIA RÁPIDA: ZONAS DE TENSÃO
+| $E_{cur}$ % | Zona | Penalidade |
+| :--- | :--- | :--- |
+| 100-76% | Pico | **-0** |
+| 75-51% | Minguante | **-10** |
+| 50-26% | Desvanecente | **-20** |
+| 25-0% | Vazio | **-30** |
 
-| $E_{MAX}$ Remanescente (%) | NÍVEL | Reserva $D_{PROF}$ | $\mathbf{\bar{M}}$ (Média de Mitigação/Dano) | AS Máx |
-| :--- | :--- | :--- | :--- | :--- |
-| 100% – 91% | **0** | Nenhum | 0.0 | 0 |
-| 90% – 81% | **I** | $1\text{d}10$ | 5.5 | 1 |
-| 80% – 71% | **II** | $2\text{d}10$ | 11.0 | 2 |
-| 70% – 61% | **III** | $3\text{d}10$ | 16.5 | 3 |
-| 60% – 51% | **IV** | $4\text{d}10$ | 22.0 | 4 |
-| **50% (PINÁCULO)** | **V** | $5\text{d}10$ | 27.5 | **5** |
+## REFERÊNCIA DE ATRIÇÃO E DANO (v0.9.6)
 
-## REFERÊNCIA RÁPIDA DE ATRIÇÃO E DANO (v0.9) 
+**Sucesso:** $(d100 - R_{prof}) \le (E_{max} - Zona)$
 
-| Atrição | Essência Motor ($\mathbf{E_{P}}$) | Essência Qualidade ($\mathbf{E_{S}}$) | Resumo do Cálculo |
+| Atrição (Custo) | Peso Leve (10) | Peso Médio (15) | Peso Pesado (20) |
 | :--- | :--- | :--- | :--- |
-| **Custo $\mathbf{E_{cur}}$** | $\mathbf{D_{Perda} = \max \left( 0, (7 - R_{prof}) \right)}$ | **Custo Fixo de $\mathbf{1\%}$** | **$\mathbf{D_{Final}}$** é Neutro em Nível, mitigado por $\mathbf{M}_{Defesa}$ e escalado por $\mathbf{M_{DTA}}$. |
-| **Falha (Esforço)** | $\mathbf{1\%}$ de Perda | $\mathbf{1\%}$ de Perda | Ambas as reservas de $\mathbf{E_{cur}}$ são reduzidas em $1\%$ em jogadas de esforço falhadas. |
+| **Fórmula** | $\max(0, 10 - \lfloor R_{prof}/2 \rfloor)$ | $\max(0, 15 - \lfloor R_{prof}/2 \rfloor)$ | $\max(0, 20 - \lfloor R_{prof}/2 \rfloor)$ |
 
-**PARES MOTOR/QUALIDADE:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
-
-## REGISTO DE EROSÃO / REFINAMENTO (Perda Permanente)
-(Registe a perda de $\mathbf{E_{max}}$ e os ganhos de recurso alcançados durante a Jogada Minguante.)
-
-| Data / Capítulo | Essência Refinada (Risco Foco **$2\text{d}6$**) | $E_{MAX}$ Antigo | $E_{MAX}$ Novo | NÍVEL Ganho | AS Ganho |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| | | | | | |
-
-## VOTO FINAL
-(O que prometeu fazer antes de se desvanecer.)
+**Dano Final:** $\max(R_{prof}, (A_{FP} - \bar{M}_{Def} + D_{Margin} + R_{prof})) \times M_{DTA}$
 
 ---
-© 2025 Serelith Varn — Nárëquenta: Contos do Minguante.
-Licenciado para jogo não comercial e conteúdo de fãs sob a Licença Aberta Limitada Nárëquenta (v0.1). Ver [LICENSE.md](license: 62).
-
----
-© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See  [LICENSE.md](license.md).
-
-
-© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+© 2025 Serelith Varn.
