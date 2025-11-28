@@ -1,59 +1,41 @@
-# Character Sheet v0.9 - Nárëquenta: Tales of the Waning
+# Character Sheet v0.9.6 - Nárëquenta
 
-**Version: v0.9-BETA (Decay Mitigation & Tier I Stabilization)**
-
-Name:
-Concept / The Legend People Tell About You:
-Current HP: [100] / 100
-ACTION SURGE (AS) POOL AVAILABLE: [ ] / [ Max: 5 at Tier V ]
+**Name:** ____________________
+**HP:** [100] / 100
+**ACTION SURGES:** [ ] / [ Max: ___ ]
 
 ## ESSENCES (FACETS OF THE SELF)
-Monitor your maximum capacity ($\mathbf{E_{max}}$ Hard Floor 50%) and current usable energy.
+$E_{max}$ Hard Floor is **50%**.
 
-| Essence | E_MAX (Maximum Potential) | E_CURRENT (Current Use) | TIER / $\mathbf{\bar{M}}$ (Avg Proficiency) | D_PROF POOL (Active Dice) |
+| Essence | **$E_{MAX}$** (Potential) | **TIER** | **$E_{CUR}$** (Current) | **ZONE PENALTY** |
 | :--- | :--- | :--- | :--- | :--- |
-| **VITALIS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
-| **MOTUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
-| **SENSUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
-| **VERBUM** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
-| **ANIMA** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **VITALIS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **MOTUS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **SENSUS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **VERBUM** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **ANIMA** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
 
-## QUICK TIER REFERENCE (v0.9)
-$\mathbf{D_{prof}}$ are **$1d10$ per Tier**. The **Average Margin ($\mathbf{\bar{M}}$)** is used for Defense Mitigation and Attrition Calculation.
+## QUICK REFERENCE: ZONES OF STRAIN
+[cite_start]Check your $\mathbf{E_{cur}}$ to determine your Penalty to Success[cite: 2504].
 
-| Remaining E_MAX (%) | TIER    | D_PROF Pool   | $\mathbf{\bar{M}}$ (Mitigation/Damage Avg) | AS Max |
-| :------------------ | :------ | :------------ | :----------------------------------------- | :----- |
-| 100% – 91%          | **0**   | None          | 0.0                                        | 0      |
-| 90% – 81%           | **I**   | $1\text{d}10$ | 5.5                                        | 1      |
-| 80% – 71%           | **II**  | $2\text{d}10$ | 11.0                                       | 2      |
-| 70% – 61%           | **III** | $3\text{d}10$ | 16.5                                       | 3      |
-| 60% – 51%           | **IV**  | $4\text{d}10$ | 22.0                                       | 4      |
-| **50% (PINNACLE)**  | **V**   | $5\text{d}10$ | 27.5                                       | 5      |
+| $\mathbf{E_{cur}}$ % | Zone | Penalty |
+| :--- | :--- | :--- |
+| 100-76% | Peak | **-0** |
+| 75-51% | Waning | **-10** |
+| 50-26% | Fading | **-20** |
+| 25-0% | Hollow | **-30** |
 
-## ACTION RESOLUTION AND ATTRITION LOG
-*Successful Contested Roll:* Roll $\mathbf{d100 \le \mathbf{E_{cur}}}$. Subtract $\mathbf{R_{prof}}$ ($\mathbf{D_{prof}}$ roll) from the $\mathbf{d100}$.
+## ATTRITION & DAMAGE LOG
+**Success:** $(d100 - R_{prof}) \le (E_{max} - Zone)$
+[cite_start]**Attrition:** $Cost = \max(0, Weight - \lfloor R_{prof}/2 \rfloor)$[cite: 2528].
 
-| Attrition                   | Motor Essence ($\mathbf{E_{P}}$)                            | Quality Essence ($\mathbf{E_{S}}$) | v0.9 Calculation Formulas                                                                                       |
-| :-------------------------- | :---------------------------------------------------------- | :--------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
-| **$\mathbf{E_{cur}}$ Cost** | $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ | **$1\%$ Fixed Cost**               | **$\mathbf{D_{Final}}$** is Tier-Neutral, mitigated by $\mathbf{M}_{Defense}$ and scaled by $\mathbf{M_{DTA}}$. |
-|                             |                                                             |                                    |                                                                                                                 |
+| Weight Class | Base Cost | Examples |
+| :--- | :--- | :--- |
+| **Light** | **10%** | Daggers, Shortbows |
+| **Medium** | **15%** | Swords, Javelins |
+| **Heavy** | **20%** | Mauls, Arbalests |
 
-## EROSION / REFINEMENT LOG (Permanent Loss)
-(Log the permanent loss of $\mathbf{E_{max}}$ and resource gains.)
-
-| Date / Chapter | Refined Essence (Focus 2d6 Risk) | Old E_MAX | New E_MAX | TIER Gained | AS Gained |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| | | | | | |
-| | | | | | |
-
-## FINAL VOW
-(What you promised to do before you fade.)
+**Damage ($D_{Final}$):** $\max(R_{prof}, (A_{FP} - \bar{M} + D_{Margin} + R_{prof})) \times M_{DTA}$.
 
 ---
-
-© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
-
-
-© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+© 2025 Serelith Varn.
