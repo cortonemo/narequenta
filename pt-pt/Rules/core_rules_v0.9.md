@@ -94,3 +94,7 @@ A progressão ocorre em marcos narrativos ao reduzir permanentemente $\mathbf{E_
 
 ---
 © 2025 Serelith Varn — Nárëquenta. Licenciado sob Nárëquenta Limited Open License (v0.1).
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
