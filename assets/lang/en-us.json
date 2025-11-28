@@ -10,14 +10,11 @@
     "NAVIGATE_GM": "Rules / GM Ref",
     "LANG_SELECT": "Language:",
 
-    "LABEL_E_MAX": "Soul's Peak (%)",
-    "LABEL_E_CUR": "Active Vigor (%)",
+    "LABEL_E_MAX": "Soul's Peak (E_max)",
+    "LABEL_E_CUR": "Active Vigor (E_cur)",
     "LABEL_TIER_PROF": "Tier / Waning Yield",
     "LABEL_D_PROF_POOL": "Waning Yield Pool",
-	
-   
- "LABEL_ACTION_SURGES": "Surges of Intent",
-    
+    "LABEL_ACTION_SURGES": "Surges of Intent",
     "LABEL_INITIAL_EROSION": "Initial Erosion (1d10)",
     "LABEL_SUCCESS_CHECK": "Success Check (d100)",
     "LABEL_WANING_YIELD_RESULT": "Waning Yield Result (Sum)",
@@ -31,11 +28,9 @@
     
     "SECTION_ESSENCES": "Essences (E_max vs E_cur - Hard Floor 50%)",
     "GRID_ESSENCE": "Essence",
-    "GRID_EMAX": "E_MAX 
-(%)",
+    "GRID_EMAX": "E_MAX (%)",
     "GRID_ECUR": "E_CURRENT (%)",
-    "GRID_TIER_AVG": "TIER / Avg.
-Margin (̄M)",
+    "GRID_TIER_AVG": "TIER / Avg. Margin (̄M)",
     "GRID_DPROFICIENCY": "D_PROF Pool",
     
     "VITALIS_NAME": "VITALIS (Vigor, Presence)",
@@ -45,53 +40,11 @@ Margin (̄M)",
     "ANIMA_NAME": "ANIMA (Will, Sacrifice)",
 
     "SECTION_ABILITIES": "Abilities & Gear",
-    "SECTION_ABILITIES_NOTE": "Cost = max(0, 7 - R_prof) + 1% E_S.
-Damage is Tier-Neutral (A_FP).",
+    "SECTION_ABILITIES_NOTE": "Cost = max(0, Weight - floor(R_prof/2)). Damage Floor = R_prof.",
     "TABLE_NAME": "Name / Item",
-    "TABLE_TYPE": "Motor (E_P) + Quality (E_S)",
+    "TABLE_TYPE": "Weight Class",
     "TABLE_COSTS": "Attrition Cost",
     "TABLE_DAMAGE": "Damage / Effect",
-
-    "WEAPON_BLADE": "Worn Blade",
-    "WEAPON_BLADE_TYPE": "VITALIS + ANIMA (Mêlée)",
-    "WEAPON_BLADE_DESC": "Brute force and determination.
-(Dmg based on R_prof + Margins)",
-    "WEAPON_DAGGER": "Finesse Dagger",
-    "WEAPON_DAGGER_TYPE": "MOTUS + SENSUS (Finesse)",
-    "WEAPON_DAGGER_DESC": "Precision for exploiting openings.
-(Dmg based on R_prof + Margins)",
-    "WEAPON_BOW": "Hunting Bow",
-    "WEAPON_BOW_TYPE": "MOTUS + SENSUS (Range)",
-    "WEAPON_BOW_DESC": "Motor coordination and focus.
-(Dmg based on R_prof + Margins)",
-    "WEAPON_SHIELD": "Shield Wall",
-    "WEAPON_SHIELD_TYPE": "VITALIS + ANIMA (Defense)",
-    "WEAPON_SHIELD_DESC": "Resist impact with sheer will.
-(Defense reduces D_Margin)",
-    "CANTRIP_FLICKER": "Flicker",
-    "CANTRIP_FLICKER_TYPE": "MOTUS + SENSUS (Utility)",
-    "CANTRIP_FLICKER_DESC": "Creates a small light.
-(max(0, 7 - R_prof) Cost)",
-    "CANTRIP_SENSE": "Sense Scar",
-    "CANTRIP_SENSE_TYPE": "SENSUS + VERBUM (Utility)",
-    "CANTRIP_SENSE_DESC": "Detects where Essence was spent nearby.
-(max(0, 7 - R_prof) Cost)",
-    "SPELL_BOLT": "Ember Bolt",
-    "SPELL_BOLT_TYPE": "VERBUM + SENSUS (Attack)",
-    "SPELL_BOLT_DESC": "Projects raw, exhausting energy.
-(Dmg based on R_prof + Margins)",
-    "SPELL_AURA": "Aura of Focus",
-    "SPELL_AURA_TYPE": "VERBUM + ANIMA (Defense)",
-    "SPELL_AURA_DESC": "Ally adds ̄M to next roll's mitigation.
-(Full Attrition Cost)",
-    "SPELL_STONE": "Will of Stone",
-    "SPELL_STONE_TYPE": "ANIMA + VITALIS (Defense)",
-    "SPELL_STONE_DESC": "Increases Defense Mitigation by ̄M until next turn.
-(Full Attrition Cost)",
-    "SPELL_DRAIN": "Soul-Drain",
-    "SPELL_DRAIN_TYPE": "ANIMA + VERBUM (Attack)",
-    "SPELL_DRAIN_DESC": "Causes damage and partially recovers PC E_cur.
-(Dmg based on R_prof + Margins)",
 
     "NPC_SHEET_TITLE": "Adversary Reference",
     "FIELD_NPC_NAME": "Adversary Name:",
@@ -99,30 +52,26 @@ Damage is Tier-Neutral (A_FP).",
 
     "GM_REF_SHEET_TITLE": "GM Reference",
     
-    "GM_SECTION_1_TITLE": "I.
-Action Resolution & Attrition",
-    "ROLL_SUCCESS_TITLE": "Roll for Success ($d100$)",
-    "ROLL_SUCCESS_DESC": "The Attack/Ability Test hits if:",
-    "ATTRITION_COST_TITLE": "Attrition Cost ($E_{cur}$ Loss)",
-    "MOTOR_ESSENCE_LOSS": "Motor Essence ($E_{P}$) Loss:",
-    "ES_LOSS_COST": "Quality Essence ($E_{S}$) Loss:",
+    "GM_SECTION_1_TITLE": "I. Action Resolution & Attrition",
+    "ROLL_SUCCESS_TITLE": "Roll for Success",
+    "ROLL_SUCCESS_DESC": "Effective Roll (d100 - R_prof) <= (E_max - Zone Penalty).",
+    "ATTRITION_COST_TITLE": "Attrition Cost (E_cur Loss)",
+    "MOTOR_ESSENCE_LOSS": "Motor Essence (E_P) Loss:",
+    "ES_LOSS_COST": "Quality Essence (E_S) Loss:",
 
-    "GM_SECTION_2_TITLE": "II.
-Proficiency Scale ($E_{max}$)",
+    "GM_SECTION_2_TITLE": "II. Proficiency Scale (E_max)",
     "GRID_EMAX_REM": "E_MAX Remaining (%)",
     "GRID_TIER_HEADER": "TIER",
     "GRID_MITIGATION_AVG": "̄M (Avg Mitigation)",
     "GRID_AS_MAX": "AS (Action Surges) Max",
-    "DECAY_SUMMARY": "Decay: Non-Chosen $2\text{d}6$ Loss / Focus $4\text{d}6$ Loss (Waning Roll)",
+    "DECAY_SUMMARY": "Decay: Non-Chosen 1d6 Loss / Focus 2d6 Loss (Waning Roll)",
 
-    "GM_SECTION_3_TITLE": "III.
-Damage Formula ($D_{Final}$)",
+    "GM_SECTION_3_TITLE": "III. Damage Formula (D_Final)",
     "FORMULA_WHERE": "Where:",
-    "A_FP_TITLE": "$A_{FP}$ (Full Potential Margin):",
-    "DEFENDER_MARGIN_TITLE": "$D_{Margin}$ (Defender Margin):",
+    "A_FP_TITLE": "A_FP (Full Potential):",
+    "DEFENDER_MARGIN_TITLE": "D_Margin (Defender Margin):",
 
-    "CALC_TITLE": "IV.
-Interactive Damage Calculator ⚔️",
+    "CALC_TITLE": "IV. Interactive Damage Calculator ⚔️",
     "CALC_ATTACKER": "ATTACKER (PC)",
     "CALC_DEFENDER": "DEFENDER (NPC/PC)",
     "FIELD_ECUR": "E_CUR (%):",
@@ -132,8 +81,7 @@ Interactive Damage Calculator ⚔️",
     "CALC_BUTTON": "CALCULATE FINAL DAMAGE",
     "CALC_FINAL_DAMAGE": "FINAL DAMAGE:",
     
-    "CALC_SUBTITLE": "Attrition is Meaning.
-E_max never falls below 50%.",
+    "CALC_SUBTITLE": "Attrition is Meaning. E_max never falls below 50%.",
     "CALC_EMAX_LABEL": "Essence E_MAX (%) (50% to 100%):",
     "CALC_RESULTS": "Calculation Results:",
     "CALC_TIER": "Proficiency TIER:",
@@ -142,7 +90,7 @@ E_max never falls below 50%.",
     "CALC_M_AVG": "Average Mitigation (̄M):",
     
     "CALC_ERROR": "ERROR",
-    "CALC_FAIL_STATUS": "FAILURE (Attack Roll Above E_cur)",
+    "CALC_FAIL_STATUS": "FAILURE (Effective Roll > Threshold)",
     "CALC_SUCCESS_STATUS": "SUCCESS.",
     "CALC_D100_RANGE_ERROR": "d100 rolls must be between 1 and 100.",
     
