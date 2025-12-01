@@ -16,7 +16,7 @@ $E_{max}$ Hard Floor is **50%**.
 | **ANIMA** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
 
 ## QUICK REFERENCE: ZONES OF STRAIN
-[cite_start]Check your $\mathbf{E_{cur}}$ to determine your Penalty to Success[cite: 2504].
+Check your $\mathbf{E_{cur}}$ to determine your Penalty to Success.
 
 | $\mathbf{E_{cur}}$ % | Zone | Penalty |
 | :--- | :--- | :--- |
