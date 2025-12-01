@@ -3,7 +3,6 @@
 ## 1. O Que É Este Jogo 🧭
 
 Nárëquenta é um TTRPG onde os heróis começam perto do seu auge e terminam gastos. A progressão é a **definição da personagem através da perda**. O poder é um recurso finito. **A Proficiência Compensa o Declínio**.
-
 ***
 
 ## 2. Facetas do Eu (Essências) ✨
@@ -20,7 +19,6 @@ Cada personagem é definida por cinco Essências. Cada Essência começa a **$10
 
 - **Pico da Alma ($\mathbf{E_{max}}$):** Limite permanente. Nunca pode descer abaixo de **$50\%$** (Piso Rígido).
 - **Vigor Ativo ($\mathbf{E_{cur}}$):** Energia utilizável. Determina a tua **Zona de Tensão**.
-
 ***
 
 ## 3. Resolução de Ações: A Rolagem Efetiva 🎯
@@ -41,14 +39,13 @@ $$\text{Se } \mathbf{E_{cur}} < 1 \rightarrow \text{Falha Automática / Ação I
 
 $$\mathbf{R_{Eff}} = \mathbf{d100} - \mathbf{R_{prof}}$$
 
-> ==**A Rolagem Efetiva é igual ao Dado de Caos ($\mathbf{d100}$) menos o Resultado de Perícia ($\mathbf{R_{prof}}$).==**
+> ==**A Rolagem Efetiva é igual ao Dado de Caos ($\mathbf{d100}$) menos o Resultado de Perícia ($\mathbf{R_{prof}}$).**==
 
 ### C. O Teste de Sucesso
 
 $$\mathbf{R_{Eff}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$$
 
-> ==**A ação é bem-sucedida se a Rolagem Efetiva for menor ou igual ao teu $\mathbf{E_{max}}$ menos a Penalidade de Zona atual.**
-==
+> ==**A ação é bem-sucedida se a Rolagem Efetiva for menor ou igual ao teu $\mathbf{E_{max}}$ menos a Penalidade de Zona atual.**==
 ### D. Zonas de Tensão ($\mathbf{E_{cur}}$)
 
 À medida que $\mathbf{E_{cur}}$ desce, a dificuldade artificial aumenta.
@@ -59,7 +56,6 @@ $$\mathbf{R_{Eff}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$$
 | **75% – 51%** | **Minguante** | **-10** |
 | **50% – 26%** | **Desvanecente** | **-20** |
 | **25% – 0%** | **Vazio** | **-30** |
-
 ***
 
 ## 4. Atrição: O Custo da Ação 🩸
@@ -80,7 +76,6 @@ $$\mathbf{Custo} = \max \left( 0, \mathbf{Peso} - \left\lfloor \frac{\mathbf{R_{
 
 - **Sucesso Crítico (1-5):** Reduz para metade o Custo final.
 - **Falha Crítica (96-100):** Duplica o Custo final.
-
 ***
 
 ## 5. Combate: Letalidade de Precisão ($\mathbf{D_{Final}}$) 💥
@@ -100,7 +95,6 @@ $$\mathbf{D_{Final}} = \max \left( \mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf
 | **$\mathbf{\bar{M}_{Def}}$ (Mitigação)** | A armadura passiva do Defensor (Média do seu *pool* de $D_{prof}$). |
 | **$\mathbf{D_{Margin}}$ (Vulnerabilidade)** | Rolagem de Defesa do Defensor menos $\mathbf{E_{cur}}$. Valores positivos aumentam o dano. |
 | **$\mathbf{M_{DTA}}$ (Vantagem de Nível)** | Multiplicador que escala de $\times 0.75$ (Desvantagem) a $\times 2.00$ (Dominância). |
-
 ***
 
 ## 6. Rituais e Renovação (Recuperação) 🕯️
@@ -142,7 +136,6 @@ O sistema distingue entre **Fadiga** e **Decadência**.
 
 - **Renovável:** $\mathbf{E_{cur}}$ (**Vigor Ativo**) representa energia. Flutua constantemente e recupera a **100%**.
 - **Não Renovável:** $\mathbf{E_{max}}$ (**Pico da Alma**) representa a integridade estrutural da alma. O sistema **NÃO** restaura $\mathbf{E_{max}}$ perdido através da Rolagem do Esvanecer.
-
 ***
 
 ## 7. Progressão: A Rolagem do Esvanecer 🌘
@@ -162,7 +155,6 @@ A progressão ocorre em marcos narrativos ao reduzir permanentemente $\mathbf{E_
 | **III** | $30-39\%$ | $70-61\%$ | $\mathbf{3\text{d}10}$ | $16.5$ | **3** |
 | **IV** | $40-49\%$ | $60-51\%$ | $\mathbf{4\text{d}10}$ | $22.0$ | **4** |
 | **V** | $\mathbf{50\%}$ | **50% (Pináculo)** | $\mathbf{5\text{d}10}$ | $\mathbf{27.5}$ | **5** |
-
 ***
 
 ## 8. Uso da Proficiência (Mecânicas Detalhadas) ⚙️
@@ -172,7 +164,6 @@ O resultado da rolagem $\mathbf{D_{prof}}$ ($\mathbf{R_{prof}}$) é usado para t
 1.  **Mitigação de Erro:** Subtrai $\mathbf{R_{prof}}$ da rolagem de $\mathbf{d100}$.
 2.  **Redução de Atrição:** $\mathbf{Custo} = \text{Peso} - \lfloor R_{prof}/2 \rfloor$.
 3.  **Ataques Especiais (Opcional):** Sacrificar dados do *pool* de $\mathbf{D_{prof}}$ para realizar ações aprimoradas.
-
 ***
 
 ## 9. Apêndice: Referência do Sistema (Sigla) 📚
@@ -189,10 +180,6 @@ $$\mathbf{A_{FP}} = \mathbf{100 - (d100-R_{prof})}$$
 
 $$\mathbf{D_{Margin}} = \mathbf{d100_D-D_{Ecur}}$$
 
-> ==**Isto mede a vulnerabilidade do Defensor. Um $\mathbf{D_{Margin}}$ positivo significa que o Defensor falhou na defesa, aumentando o dano.**
-==
+> ==**Isto mede a vulnerabilidade do Defensor. Um $\mathbf{D_{Margin}}$ positivo significa que o Defensor falhou na defesa, aumentando o dano.**==
 ***
 © 2025 Serelith Varn — Nárëquenta. Licenciado sob Nárëquenta Limited Open License (v0.1). Ver [[LICENSE.md]].
-
-© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.

@@ -3,7 +3,6 @@
 ## 1. What This Game Is 🧭
 
 Nárëquenta is a TTRPG where heroes begin near their peak and end spent. Progression is the **defining of character through loss**. Power is a finite resource. **Proficiency Compensates for Decline**.
-
 ***
 
 ## 2. Facets of the Self (Essences) ✨
@@ -20,7 +19,6 @@ Each character is defined by five Essences. Each Essence starts at **$100\%$**, 
 
 - **Maximum Value ($\mathbf{E_{max}}$):** Permanent limit. Can never drop below **$50\%$** (Hard Floor).
 - **Current Value ($\mathbf{E_{cur}}$):** Usable energy. Determines your **Zone of Strain**.
-
 ***
 
 ## 3. Action Resolution: The Effective Roll 🎯
@@ -59,7 +57,6 @@ As $\mathbf{E_{cur}}$ depletes, you fall into lower Zones, increasing the diffic
 | **75% – 51%** | **Waning** | **-10** |
 | **50% – 26%** | **Fading** | **-20** |
 | **25% – 0%** | **Hollow** | **-30** |
-
 ***
 
 ## 4. Attrition: The Cost of Action 🩸
@@ -80,7 +77,6 @@ $$\mathbf{Cost} = \max \left( 0, \mathbf{Weight} - \left\lfloor \frac{\mathbf{R_
 
 - **Critical Success (1-5):** Halve the final Cost.
 - **Critical Failure (96-100):** Double the final Cost.
-
 ***
 
 ## 5. Combat: Precision Lethality ($\mathbf{D_{Final}}$) 💥
@@ -100,7 +96,6 @@ $$\mathbf{D_{Final}} = \max \left( \mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf
 | **$\mathbf{\bar{M}_{Def}}$ (Mitigation)**    | The Defender's passive armor (Average of their $D_{prof}$ pool).                               |
 | **$\mathbf{D_{Margin}}$ (Vulnerability)**    | Defender's Defense Roll minus Defender's $\mathbf{E_{cur}}$. Positive values add damage.       |
 | **$\mathbf{M_{DTA}}$ (Tier Advantage)**      | Multiplier scaling from $\times 0.75$ (Uphill) to $\times 2.00$ (Overpower).                   |
-
 ***
 
 ## 6. Rituals and Renewal (Recovery) 🕯️
@@ -142,7 +137,6 @@ The system distinguishes between **Fatigue** and **Decay**.
 
 - **Renewable:** $\mathbf{E_{cur}}$ (**Active Vigor**) represents energy. It fluctuates constantly and recovers to **100%**.
 - **Non-Renewable:** $\mathbf{E_{max}}$ (**Soul Peak**) represents the soul's structural integrity. The system **DOES NOT** restore $\mathbf{E_{max}}$ lost through the Waning Roll.
-
 ***
 
 ## 7. Progression: The Waning Roll 🌘
@@ -162,7 +156,6 @@ Progression occurs at narrative milestones by permanently reducing $\mathbf{E_{m
 | **III** | $30-39\%$ | $70-61\%$ | $\mathbf{3\text{d}10}$ | $16.5$ | **3** |
 | **IV** | $40-49\%$ | $60-51\%$ | $\mathbf{4\text{d}10}$ | $22.0$ | **4** |
 | **V** | $\mathbf{50\%}$ | **50% (Pinnacle)** | $\mathbf{5\text{d}10}$ | $\mathbf{27.5}$ | **5** |
-
 ***
 
 ## 8. Use of Proficiency (Detailed Mechanics) ⚙️
@@ -193,6 +186,3 @@ $$\mathbf{D_{Margin}} = \mathbf{d100_D-D_{Ecur}}$$
 
 ***
 © 2025 Serelith Varn — Nárëquenta. Licensed under Nárëquenta Limited Open License (v0.1). See [[LICENSE.md]].
-
-© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
