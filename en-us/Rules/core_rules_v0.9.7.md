@@ -230,6 +230,8 @@ $$\mathbf{A_{FP}} = \mathbf{100 - (d100-R_{prof})}$$
 $$\mathbf{D_{Margin}} = \mathbf{d100_D-D_{Ecur}}$$
 
 > ==**This measures the Defender's vulnerability. A positive $\mathbf{D_{Margin}}$ means the Defender failed their defense, increasing damage.==**
-
 ***
+
 © 2025 Serelith Varn — Nárëquenta. Licensed under Nárëquenta Limited Open License (v0.1). See [[LICENSE.md]].
+***
+
