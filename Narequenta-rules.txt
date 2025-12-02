@@ -1,0 +1,4264 @@
+###############################################################################
+##                                                                          ###
+##                                .gitignore                                ###
+##                                                                          ###
+###############################################################################
+
+# ===============================
+# Nárëquenta RPG — .gitignore
+# ===============================
+
+# --- OS / System clutter ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+__MACOSX/
+
+# --- Obsidian workspace files ---
+.obsidian/
+.obsidian.vimrc
+.obsidian-*
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+
+# --- Python cache (for future scripting) ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Node / web build artifacts (if you use MkDocs or docsify) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# --- Build / Export folders ---
+build/
+dist/
+output/
+export/
+temp/
+tmp/
+cache/
+
+# --- Foundry / Game data ---
+# Keep JSON rule exports, ignore large runtime data or backups
+foundry_exports/session_logs/
+foundry_exports/cache/
+*.db
+*.sqlite
+
+# --- Image / art cache ---
+*.thumb.jpg
+*.thumb.png
+*.psd
+*.xcf
+*.kra~
+*.blend1
+*.blend2
+*.backup
+
+# --- Backups / archives ---
+old/
+archive/
+backup/
+
+# --- Sensitive / local files ---
+*.key
+*.pem
+*.crt
+*.env
+secrets.txt
+passwords.txt
+
+# --- Optional: ignore heavy exports ---
+# Uncomment if you don't want to track generated docs or PDFs
+# *.pdf
+# *.docx
+
+
+###############################################################################
+##                                                                          ###
+##                               CHANGELOG.md                               ###
+##                                                                          ###
+###############################################################################
+
+# 📜 Nárëquenta — Tales of the Waning
+
+**Change Log**
+
+All notable changes to this project will be documented in this file.
+
+The format is inspired by Keep a Changelog, and adheres to Semantic Versioning when applicable.
+
+---
+
+## [v0.9.64] — 2025-12-01 (Unified Recovery)
+**Status:** Beta Refinement - Game Cycle Adjustment
+- **Changed:** **Focus Renewal (Long Rest)** rule altered. $\mathbf{E_{cur}}$ restoration now goes to **100%** (Peak Zone), no longer limited by the current $\mathbf{E_{max}}$ value. The $\mathbf{E_{max}}$ limit applies only to difficulty tests.
+- **Added:** Defined **Short Rest** formula as the **Sum of $\mathbf{D_{prof}}$ results** (or 1d10 for Tier 0).
+- **Added:** **Emergency Recovery (The Quick Breath)** mechanic added, allowing a full action to be spent to perform a Short Rest when Vigor hits zero.
+- **Fixed:** Consolidated Core Rules and Rituals files into a single logical flow for easier reference.
+
+---
+
+## [v0.9.6] — 2025-11-28 (Precision Lethality & Zones of Strain)
+**Status:** Beta Refinement - Core Math Update
+- **Changed:** **Success Threshold** altered. Success is now $\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$. Current Essence ($\mathbf{E_{cur}}$) only determines the Zone.
+- **Added:** **Zones of Strain** defined: **Peak** (-0), **Waning** (-10), **Fading** (-20), and **Hollow** (-30).
+- **Changed:** **Attrition Formula** updated to reflect Item Weight.
+    - Old: $\max(0, 7 - R_{prof})$.
+    - New: $\max(0, \mathbf{Weight} - \lfloor R_{prof}/2 \rfloor)$.
+- **Added:** **Weight Classes** defined as Light (**10%**), Medium (**15%**), and Heavy (**20%**).
+- **Changed:** **Damage Formula** updated to include a **Hard Floor**. Damage can no longer be reduced below the raw $\mathbf{R_{prof}}$ result by mitigation (before Tier Multipliers).
+- **Fixed:** Localization files (`en.json`) updated to reflect the new Attrition and Success formulas.
+
+---
+
+## [v0.9] — 2025-11-17 (Progressive Mastery & Attrition Control)
+**Status:** Progression Logic Finalized
+- **Changed:** Progression via $\mathbf{E_{max}}$ loss is now strictly sequential (one Tier at a time).
+- **Added:** Tier Synchronization Rule for Waning Rolls.
+- **Added:** **Refocus (Short Rest)** mechanic to restore $\mathbf{E_{cur}}$.
+- **Added:** **Final Spark** emergency action ($\mathbf{E_{cur}=0\%}$).
+
+---
+
+## [v0.8] — 2025-11-15 (SPA Migration & Stabilization)
+**Status:** Architecture Stabilized
+- **Added:** Implementation of **Single Page Application (SPA)** architecture.
+- **Added:** Full integration of the **Damage Calculator** into the GM Reference section.
+- **Fixed:** Critical fixes to Python launcher and localization logic.
+
+---
+
+## [v0.7] — 2025-11-14 (Precision Lethality)
+**Status:** Core Rules Finalized
+- **Changed:** Complete restructuring of progression and combat.
+- **Added:** **Initial Erosion ($\mathbf{1\text{d}10}$)** at character creation.
+- **Added:** **Maximum Limit ($\mathbf{50\%}$)** for $\mathbf{E_{max}}$.
+- **Changed:** Proficiency Tier Table altered to **Uniform Progression ($\mathbf{1\text{d}10}$ per Tier)**.
+- **Added:** Additive Damage Formula and Tier Advantage Multiplier ($\mathbf{M_{DTA}}$).
+- **Added:** Motor/Quality Essence Pairs rule.
+
+---
+
+## [v0.5] — 2025-10-27 (Attack Rolls & Combat)
+**Status:** Alpha Test Ready
+- **Changed:** Action Resolution system defaults to **Contested Rolls**.
+- **Added:** Proficiency Tiers and Dice Mapping.
+- **Added:** Critical Outcomes and Proficiency Mitigation system.
+
+---
+
+## [v0.4] — 2025-10-26 (Final Progress Loop)
+**Status:** Alpha Test Ready
+- **Removed:** Obsolete Scarring rules removed.
+- **Changed:** Progression rule altered to **The Waning Roll**.
+- **Changed:** Proficiency Choice rolls $\mathbf{4\text{d}6}$ in exchange for permanent **$\mathbf{2\text{d}10}$ Proficiency Dice ($\mathbf{D_{prof}}$)**.
+- **Fixed:** Game title fixed to **Nárëquenta — Tales of the Waning**.
+
+---
+
+## [v0.3] — 2025-10-26 (Attrition Scope Refinement)
+**Status:** Alpha Test Readiness
+- **Removed:** Removed Attrition cost ($\mathbf{E_{cur}}$) for most non-combat actions.
+- **Added:** Added Fixed Cost rule of **$\mathbf{2\%}$** for extreme stress situations outside combat.
+- **Added:** Added **Symmetric Penalty ($\mathbf{10}$)** for NPCs.
+
+---
+
+## [v0.2] — 2025-10-26 (Design Framework)
+**Status:** Alpha Test Readiness
+- **Changed:** Facet naming changed to **VITALIS · MOTUS · SENSUS · VERBUM · ANIMA**.
+- **Added:** Added critical separation between **Maximum Essence ($\mathbf{E_{max}}$)** and **Current Essence ($\mathbf{E_{cur}}$)**.
+- **Added:** Added **Waning Scale**, where low $\mathbf{E_{max}}$ grants Efficiency bonuses.
+- **Added:** Added Hybrid Roll resolution and $\mathbf{E_{max}}$-mitigated Damage system.
+- **Added:** Added Multilingual support (PT-PT / EN-US) and sheet automation logic.
+
+---
+
+## [v0.1] — 2025-10-25 (Private Development)
+**Status:** Proof of Origin
+- **Added:** Established core mechanic of self-attrition: Actions consume Facet percentages.
+- **Added:** Defined optional "Scarring" system reducing max value for efficiency.
+- **Added:** Defined five Facets of the Self: VIGOR · GRACE · MIND · SPIRIT · SHADOW.
+- **Added:** Added Recovery Phase and Endgame rule.
+
+***
+
+🧾 Version Key
+
+|**Type**|**Meaning**|
+|---|---|
+|**Added**|New feature or mechanic|
+|**Changed**|Adjusted or rebalanced rule|
+|**Removed**|Mechanic or file removed|
+|**Fixed**|Correction or typo|
+
+---
+🪶 Credits
+
+Design & Writing — Serelith Varn
+System Development & Documentation — GPT-5 (Liora Vex Framework)
+
+“We are remembered for how beautifully we burn out.”
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](LICENSE.md).
+
+###############################################################################
+##                                                                          ###
+##                               CHANGELOG.md                               ###
+##                                                                          ###
+###############################################################################
+
+# 📜 Nárëquenta — Contos do Declínio
+
+**Registo de Alterações (Change Log)**
+
+Todas as alterações notáveis a este projeto serão documentadas neste ficheiro.
+
+O formato é inspirado em Keep a Changelog, e adere ao Versionamento Semântico quando aplicável.
+
+---
+
+## [v0.9.64] — 2025-12-01 (Recuperação Unificada)
+**Status:** Refinamento Beta - Ajuste de Ciclo de Jogo
+- **Changed:** Alterada a regra de **Renovação de Foco (Descanso Longo)**. A restauração de $\mathbf{E_{cur}}$ agora vai até **100%** (Zona de Pico), não sendo mais limitada pelo valor atual de $\mathbf{E_{max}}$. O limite de $\mathbf{E_{max}}$ aplica-se apenas a testes de dificuldade.
+- **Added:** Definida a fórmula de **Descanso Curto** como a **Soma dos resultados de $\mathbf{D_{prof}}$** (ou 1d10 para Tier 0).
+- **Added:** Adicionada a mecânica de **Recuperação de Emergência (Fôlego Rápido)**, permitindo gastar uma ação completa para realizar um Descanso Curto quando o Vigor atinge zero.
+- **Fixed:** Consolidação dos ficheiros de Regras Centrais e Rituais num único fluxo lógico para facilitar a consulta.
+
+---
+
+## [v0.9.6] — 2025-11-28 (Letalidade de Precisão & Zonas de Tensão)
+**Status:** Refinamento Beta - Atualização Matemática Central
+- **Changed:** **Limiar de Sucesso** alterado. O sucesso é agora $\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalidade}})$. A Essência Atual ($\mathbf{E_{cur}}$) determina apenas a Zona.
+- **Added:** **Zonas de Tensão** definidas: **Pico** (-0), **Minguante** (-10), **Desvanecente** (-20) e **Vazio** (-30).
+- **Changed:** **Fórmula de Atrição** atualizada para refletir o Peso do Equipamento.
+    - Antigo: $\max(0, 7 - R_{prof})$.
+    - Novo: $\max(0, \mathbf{Peso} - \lfloor R_{prof}/2 \rfloor)$.
+- **Added:** **Classes de Peso** definidas como Leve (**10%**), Médio (**15%**) e Pesado (**20%**).
+- **Changed:** **Fórmula de Dano** atualizada para incluir um **Piso Rígido**. O dano já não pode ser reduzido abaixo do resultado bruto de $\mathbf{R_{prof}}$ pela mitigação (antes dos Multiplicadores de Tier).
+- **Fixed:** Ficheiros de localização (`pt.json`) atualizados para refletir as novas fórmulas de Atrição e Sucesso.
+
+---
+
+## [v0.9] — 2025-11-17 (Maestria Progressiva & Controlo de Atrição)
+**Status:** Lógica de Progressão Finalizada
+- **Changed:** A progressão por perda de $\mathbf{E_{max}}$ é agora estritamente sequencial (um Tier de cada vez).
+- **Added:** Regra de Sincronização de Tier para Rolagens do Esvanecer.
+- **Added:** Mecânica de **Refocus (Descanso Curto)** para restaurar $\mathbf{E_{cur}}$.
+- **Added:** Ação de emergência **Centelha Final** ($\mathbf{E_{cur}=0\%}$).
+
+---
+
+## [v0.8] — 2025-11-15 (Migração SPA & Estabilização)
+**Status:** Arquitetura Estabilizada
+- **Added:** Implementação da arquitetura **Single Page Application (SPA)**.
+- **Added:** Integração completa da **Calculadora de Dano** na secção de Referência GM.
+- **Fixed:** Correções críticas no *launcher* Python e lógica de localização.
+
+---
+
+## [v0.7] — 2025-11-14 (Letalidade de Precisão)
+**Status:** Regras Base Finalizadas
+- **Changed:** Reestruturação completa da progressão e combate.
+- **Added:** **Erosão Inicial ($\mathbf{1\text{d}10}$)** na criação de personagem.
+- **Added:** **Limite Máximo ($\mathbf{50\%}$)** para $\mathbf{E_{max}}$.
+- **Changed:** Tabela de Tier de Proficiência alterada para **Progressão Uniforme ($\mathbf{1\text{d}10}$ por Tier)**.
+- **Added:** Fórmula de Dano Aditiva e Multiplicador de Vantagem de Tier ($\mathbf{M_{DTA}}$).
+- **Added:** Regra de Pares de Essência Motor/Qualidade.
+
+---
+
+## [v0.5] — 2025-10-27 (Rolagens de Ataque & Combate)
+**Status:** Pronto para Teste Alpha
+- **Changed:** O sistema de Resolução de Ação passa a ser por **Rolagens Contestadas**.
+- **Added:** Tiers de Proficiência e Mapeamento de Dados.
+- **Added:** Sistema de Resultados Críticos e Mitigação de Proficiência.
+
+---
+
+## [v0.4] — 2025-10-26 (Ciclo de Progresso Final)
+**Status:** Pronto para Teste Alpha
+- **Removed:** Removidas regras obsoletas de Cicatrização.
+- **Changed:** Alterada a regra de progressão para a **Rolagem do Esvanecer** (Waning Roll).
+- **Changed:** A Escolha de Proficiência rola $\mathbf{4\text{d}6}$ em troca de **$\mathbf{2\text{d}10}$ Dados de Proficiência ($\mathbf{D_{prof}}$)**.
+- **Fixed:** Corrigido o título do jogo para **Nárëquenta — Contos do Declínio**.
+
+---
+
+## [v0.3] — 2025-10-26 (Refinamento do Escopo de Atrição)
+**Status:** Prontidão para Teste Alpha
+- **Removed:** Removido o custo de Atrição ($\mathbf{E_{cur}}$) para a maioria das ações fora de combate.
+- **Added:** Adicionada regra de Custo Fixo de **$\mathbf{2\%}$** para situações de stress extremo fora de combate.
+- **Added:** Adicionada **Penalidade Simétrica ($\mathbf{10}$)** para NPCs.
+
+---
+
+## [v0.2] — 2025-10-26 (Estrutura de Design)
+**Status:** Prontidão para Teste Alpha
+- **Changed:** Alterada a nomenclatura das Facetas para **VITALIS · MOTUS · SENSUS · VERBUM · ANIMA**.
+- **Added:** Adicionada a separação crítica entre **Essência Máxima ($\mathbf{E_{max}}$)** e **Essência Atual ($\mathbf{E_{cur}}$)**.
+- **Added:** Adicionada a **Escala Minguante**, onde $\mathbf{E_{max}}$ baixo concede bónus de Eficiência.
+- **Added:** Adicionada Resolução de Ação por Rolagem Híbrida e sistema de Dano Mitigado por $\mathbf{E_{max}}$.
+- **Added:** Adicionado suporte Multilíngue (PT-PT / EN-US) e lógica de automação da ficha.
+
+---
+
+## [v0.1] — 2025-10-25 (Desenvolvimento Privado)
+**Status:** Prova de Origem
+- **Added:** Estabelecido o mecanismo principal de auto-atrito: Ações consomem percentagens da Faceta.
+- **Added:** Definido o sistema opcional de "Cicatrização" que reduz o valor máximo em troca de eficiência.
+- **Added:** Definidas cinco Facetas do Eu: VIGOR · GRACE · MIND · SPIRIT · SHADOW.
+- **Added:** Adicionada Fase de Recuperação e regra de Fim de Jogo.
+
+***
+
+🧾 Chave de Versão
+
+|**Tipo**|**Significado**|
+|---|---|
+|**Added**|Nova funcionalidade ou mecânica|
+|**Changed**|Regra ajustada ou reequilibrada|
+|**Removed**|Mecânica ou ficheiro removido|
+|**Fixed**|Correção ou erro tipográfico|
+
+---
+🪶 Créditos
+
+Design & Escrita — Serelith Varn
+Desenvolvimento de Sistema & Documentação — GPT-5 (Liora Vex Framework)
+
+“Somos lembrados pela forma elegante como nos desvanecemos.”
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Declínio.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Ver [LICENSE.md](license.md).
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                        character_sheet_v0.9.6.md                         ###
+##                                                                          ###
+###############################################################################
+
+# Ficha de Personagem v0.9.6 - Nárëquenta
+
+**Nome:** ____________________
+**PV:** [100] / 100
+**SURTOS DE INTENÇÃO (AS):** [ ] / [ Máx: ___ ]
+
+## ESSÊNCIAS (FACETAS DO EU)
+O Piso Rígido de $E_{max}$ é **50%**.
+
+| Essência | **$E_{MAX}$** (Potencial) | **NÍVEL** | **$E_{CUR}$** (Atual) | **PENALIDADE DE ZONA** |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **MOTUS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **SENSUS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **VERBUM** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **ANIMA** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+
+## REFERÊNCIA RÁPIDA: ZONAS DE TENSÃO
+Verifique o seu $\mathbf{E_{cur}}$ para determinar a Penalidade no Sucesso.
+
+| $\mathbf{E_{cur}}$ % | Zona | Penalidade |
+| :--- | :--- | :--- |
+| 100-76% | Pico | **-0** |
+| 75-51% | Minguante | **-10** |
+| 50-26% | Desvanecente | **-20** |
+| 25-0% | Vazio | **-30** |
+
+## REGISTO DE ATRIÇÃO E DANO
+**Sucesso:** $(d100 - R_{prof}) \le (E_{max} - Zona)$
+**Atrição:** $Custo = \max(0, Peso - \lfloor R_{prof}/2 \rfloor)$.
+
+| Classe de Peso | Custo Base | Exemplos |
+| :--- | :--- | :--- |
+| **Leve** | **10%** | Adagas, Arcos Curtos |
+| **Médio** | **15%** | Espadas, Dardos |
+| **Pesado** | **20%** | Maças, Bestas |
+
+**Dano ($D_{Final}$):** $\max(R_{prof}, (A_{FP} - \bar{M} + D_{Margin} + R_{prof})) \times M_{DTA}$.
+
+---
+© 2025 Serelith Varn.
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                        character_sheet_v0.9.6.md                         ###
+##                                                                          ###
+###############################################################################
+
+# Character Sheet v0.9.6 - Nárëquenta
+
+**Name:** ____________________
+**HP:** [100] / 100
+**ACTION SURGES:** [ ] / [ Max: ___ ]
+
+## ESSENCES (FACETS OF THE SELF)
+$E_{max}$ Hard Floor is **50%**.
+
+| Essence | **$E_{MAX}$** (Potential) | **TIER** | **$E_{CUR}$** (Current) | **ZONE PENALTY** |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **MOTUS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **SENSUS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **VERBUM** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **ANIMA** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+
+## QUICK REFERENCE: ZONES OF STRAIN
+Check your $\mathbf{E_{cur}}$ to determine your Penalty to Success.
+
+| $\mathbf{E_{cur}}$ % | Zone | Penalty |
+| :--- | :--- | :--- |
+| 100-76% | Peak | **-0** |
+| 75-51% | Waning | **-10** |
+| 50-26% | Fading | **-20** |
+| 25-0% | Hollow | **-30** |
+
+## ATTRITION & DAMAGE LOG
+**Success:** $(d100 - R_{prof}) \le (E_{max} - Zone)$
+[cite_start]**Attrition:** $Cost = \max(0, Weight - \lfloor R_{prof}/2 \rfloor)$[cite: 2528].
+
+| Weight Class | Base Cost | Examples |
+| :--- | :--- | :--- |
+| **Light** | **10%** | Daggers, Shortbows |
+| **Medium** | **15%** | Swords, Javelins |
+| **Heavy** | **20%** | Mauls, Arbalests |
+
+**Damage ($D_{Final}$):** $\max(R_{prof}, (A_{FP} - \bar{M} + D_{Margin} + R_{prof})) \times M_{DTA}$.
+
+---
+© 2025 Serelith Varn.
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                          core_rules_v0.9.6.4.md                          ###
+##                                                                          ###
+###############################################################################
+
+# 📜 Nárëquenta Core Rules v0.9.64
+
+## 1. What This Game Is 🧭
+
+Nárëquenta is a TTRPG where heroes begin near their peak and end spent. Progression is the **defining of character through loss**. Power is a finite resource. **Proficiency Compensates for Decline**.
+***
+
+## 2. Facets of the Self (Essences) ✨
+
+Each character is defined by five Essences. Each Essence starts at **$100\%$**, subject to Initial Erosion.
+
+- **VITALIS** — body, endurance, force, presence
+- **MOTUS** — movement, finesse, agility, grace
+- **SENSUS** — awareness, instinct, focus, perception
+- **VERBUM** — intellect, logic, structure, speech
+- **ANIMA** — conviction, will, faith, sacrifice
+
+### Essence Values
+
+- **Maximum Value ($\mathbf{E_{max}}$):** Permanent limit. Can never drop below **$50\%$** (Hard Floor).
+- **Current Value ($\mathbf{E_{cur}}$):** Usable energy. Determines your **Zone of Strain**.
+***
+
+## 3. Action Resolution: The Effective Roll 🎯
+
+Success is determined by comparing the **Effective Roll** against the Permanent Capacity ($\mathbf{E_{max}}$), adjusted by fatigue.
+
+### A. Lockout Condition (The Absolute Void)
+
+Before any roll, the Current Value ($\mathbf{E_{cur}}$) is checked.
+
+$$\text{If } \mathbf{E_{cur}} < 1 \rightarrow \text{Automatic Failure / Action Impossible}$$
+
+> ==**If Active Vigor is less than 1, the action results in automatic failure.**==
+
+**Emergency Recovery (The Quick Breath):** If you are at $0 \mathbf{E_{cur}}$, you may spend your entire turn to take a Quick Breath (Short Rest).
+
+### B. The Effective Roll Formula
+
+$$\mathbf{R_{Eff}} = \mathbf{d100} - \mathbf{R_{prof}}$$
+
+> ==**The Effective Roll equals the Chaos Die ($\mathbf{d100}$) minus the Skill Result ($\mathbf{R_{prof}}$).==**
+
+### C. The Success Check
+
+$$\mathbf{R_{Eff}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$$
+
+> ==**The action succeeds if the Effective Roll is less than or equal to your $\mathbf{E_{max}}$ minus the current Zone Penalty.==**
+
+### D. Zones of Strain ($\mathbf{E_{cur}}$)
+
+As $\mathbf{E_{cur}}$ depletes, you fall into lower Zones, increasing the difficulty of actions.
+
+| **Range $\mathbf{E_{cur}}$** | **Zone Name** | **Penalty ($\mathbf{Z_{Penalty}}$)** |
+| :--- | :--- | :--- |
+| **100% – 76%** | **Peak** | **-0** |
+| **75% – 51%** | **Waning** | **-10** |
+| **50% – 26%** | **Fading** | **-20** |
+| **25% – 0%** | **Hollow** | **-30** |
+***
+
+## 4. Attrition: The Cost of Action 🩸
+
+Every action burns Essence. The cost is derived from the **Item Weight** and mitigated by **Skill**.
+
+### Attrition Formula
+
+$$\mathbf{Cost} = \max \left( 0, \mathbf{Weight} - \left\lfloor \frac{\mathbf{R_{prof}}}{2} \right\rfloor \right)$$
+
+> **The Energy Cost equals the Weapon Weight minus half of the Proficiency Roll (rounded down).**
+
+| **Weight Class** | **Base Cost** | **Examples** |
+| :--- | :--- | :--- |
+| **Light** | **10%** | Daggers, Shortbows |
+| **Medium** | **15%** | Swords, Javelins |
+| **Heavy** | **20%** | Mauls, Arbalests |
+
+- **Critical Success (1-5):** Halve the final Cost.
+- **Critical Failure (96-100):** Double the final Cost.
+***
+
+## 5. Combat: Precision Lethality ($\mathbf{D_{Final}}$) 💥
+
+Damage calculation privileges Skill ($\mathbf{R_{prof}}$). **Damage is Tier-Neutral**, calculated by Margins and modified by Tier Advantage.
+
+### Final Damage Formula
+
+$$\mathbf{D_{Final}} = \max \left( \mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Def}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}}) \right) \times \mathbf{M_{DTA}}$$
+
+ >==**Final Damage is the higher of the Proficiency Floor or the Calculated Margin, multiplied by the Tier Advantage.**==
+
+| **Component**                                | **Definition**                                                                                 |
+| :------------------------------------------- | :--------------------------------------------------------------------------------------------- |
+| **$\mathbf{R_{prof}}$ (Hard Floor)**         | **Additive Base Damage.** The absolute minimum damage is your Proficiency Roll result.         |
+| **$\mathbf{A_{FP}}$ (Full Force Potential)** | $\mathbf{100 - (d100 - R_{prof})}$. **Tier-Neutral.** Based on 100%, not Attacker's $E_{cur}$. |
+| **$\mathbf{\bar{M}_{Def}}$ (Mitigation)**    | The Defender's passive armor (Average of their $D_{prof}$ pool).                               |
+| **$\mathbf{D_{Margin}}$ (Vulnerability)**    | Defender's Defense Roll minus Defender's $\mathbf{E_{cur}}$. Positive values add damage.       |
+| **$\mathbf{M_{DTA}}$ (Tier Advantage)**      | Multiplier scaling from $\times 0.75$ (Uphill) to $\times 2.00$ (Overpower).                   |
+***
+
+## 6. Rituals and Renewal (Recovery) 🕯️
+
+Rituals close the game cycle (Spend → Fade → **Renew**), allowing the PC to manage their daily fatigue and accept their permanent loss.
+
+### A. Focus Renewal (Long Rest) 🌙
+
+This ritual allows the PC to recover their mental and physical focus, returning to their daily potential.
+
+- **Trigger:** Long Rest (e.g., a safe night's sleep, minimum 6 hours).
+- **Process:**
+    1. **Vigor Restoration:** The **Current Value ($\mathbf{E_{cur}}$)** of all Essences resets to **100%**.
+       > _Critical Rule:_ Recovery is **NOT** capped by $\mathbf{E_{max}}$. Even if your Soul Peak is degraded to 50%, your Active Vigor returns to 100%. You begin the day fully energized, in the **Peak Zone**.
+    2. **Surge Restoration:** The **Action Surge (AS) Pool** is **fully restored** to the total determined by the character's Proficiency Tier.
+- **Narrative Cost:** Time and safety.
+
+### B. The Short Rest (Respite) 🍵
+
+A brief pause to bind wounds, catch breath, and center the mind (15 minutes).
+
+$$\mathbf{Recovery} = \text{Sum of } \mathbf{D_{prof}}$$
+
+ >==**Recovery equals the sum of your Proficiency Dice pool results.**==
+
+(Fallback: If Tier 0, roll 1d10).
+
+### C. Emergency Recovery (The Quick Breath) 💨
+
+A desperate attempt to center oneself in the heat of battle, usually triggered when hitting the Void ($0 \ \mathbf{E_{cur}}$).
+
+- **Trigger:** Can be taken at any time during your turn, or forced when $\mathbf{E_{cur}} < 1$.
+- **Cost:** **Entire Turn Action.** You cannot Move, Defend, Attack, or React until the start of your next turn.
+- **Effect:** Immediately resolves as a **Short Rest** (Roll $\mathbf{D_{prof}}$ or 1d10 and recover that amount to $\mathbf{E_{cur}}$).
+
+### D. Note on Permanent Loss 💀
+
+The system distinguishes between **Fatigue** and **Decay**.
+
+- **Renewable:** $\mathbf{E_{cur}}$ (**Active Vigor**) represents energy. It fluctuates constantly and recovers to **100%**.
+- **Non-Renewable:** $\mathbf{E_{max}}$ (**Soul Peak**) represents the soul's structural integrity. The system **DOES NOT** restore $\mathbf{E_{max}}$ lost through the Waning Roll.
+***
+
+## 7. Progression: The Waning Roll 🌘
+
+Progression occurs at narrative milestones by permanently reducing $\mathbf{E_{max}}$ to advance Proficiency Tiers.
+
+- **Universal Decay (Non-Chosen):** Roll **1d6**. Subtract from $\mathbf{E_{max}}$.
+- **Refinement Focus (Chosen):** Roll **2d6**. Subtract from $\mathbf{E_{max}}$ to gain $\mathbf{D_{prof}}$.
+
+### Proficiency & Dice Mapping Table
+
+| **Tier** | **Total $\mathbf{E_{max}}$ Loss** | **Remaining $\mathbf{E_{max}}$** | **$\mathbf{D_{prof}}$ Dice** | **Mitigation ($\mathbf{\bar{M}}$)** | **Action Surges** |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **0** | $0-9\%$ | $100-91\%$ | None | $0.0$ | **0** |
+| **I** | $10-19\%$ | $90-81\%$ | $\mathbf{1\text{d}10}$ | $5.5$ | **1** |
+| **II** | $20-29\%$ | $80-71\%$ | $\mathbf{2\text{d}10}$ | $11.0$ | **2** |
+| **III** | $30-39\%$ | $70-61\%$ | $\mathbf{3\text{d}10}$ | $16.5$ | **3** |
+| **IV** | $40-49\%$ | $60-51\%$ | $\mathbf{4\text{d}10}$ | $22.0$ | **4** |
+| **V** | $\mathbf{50\%}$ | **50% (Pinnacle)** | $\mathbf{5\text{d}10}$ | $\mathbf{27.5}$ | **5** |
+***
+
+## 8. Use of Proficiency (Detailed Mechanics) ⚙️
+
+The result of the $\mathbf{D_{prof}}$ roll ($\mathbf{R_{prof}}$) is used for three simultaneous effects:
+
+1.  **Error Mitigation:** Subtract $\mathbf{R_{prof}}$ from the $\mathbf{d100}$ roll.
+2.  **Attrition Reduction:** $\mathbf{Cost} = \text{Weight} - \lfloor R_{prof}/2 \rfloor$.
+3.  **Special Attacks (Optional):** Sacrifice dice from the $\mathbf{D_{prof}}$ *pool* to perform enhanced actions.
+
+***
+
+## 9. Appendix: System Reference (Sigla) 📚
+
+### Component Breakdowns
+
+1. Full Potential Margin ($\mathbf{A_{FP}}$)
+
+$$\mathbf{A_{FP}} = \mathbf{100 - (d100-R_{prof})}$$
+
+> ==**This calculates the Attacker's raw power relative to a perfect 100 base. A lower modified roll yields a higher $\mathbf{A_{FP}}$.==**
+
+2. Defender Margin ($\mathbf{D_{Margin}}$)
+
+$$\mathbf{D_{Margin}} = \mathbf{d100_D-D_{Ecur}}$$
+
+> ==**This measures the Defender's vulnerability. A positive $\mathbf{D_{Margin}}$ means the Defender failed their defense, increasing damage.==**
+
+***
+© 2025 Serelith Varn — Nárëquenta. Licensed under Nárëquenta Limited Open License (v0.1). See [[LICENSE.md]].
+
+###############################################################################
+##                                                                          ###
+##                          core_rules_v0.9.64.md                           ###
+##                                                                          ###
+###############################################################################
+
+# 📜 Nárëquenta Regras Base v0.9.64 
+
+## 1. O Que É Este Jogo 🧭
+
+Nárëquenta é um TTRPG onde os heróis começam perto do seu auge e terminam gastos. A progressão é a **definição da personagem através da perda**. O poder é um recurso finito. **A Proficiência Compensa o Declínio**.
+***
+
+## 2. Facetas do Eu (Essências) ✨
+
+Cada personagem é definida por cinco Essências. Cada Essência começa a **$100\%$**, sujeita à Erosão Inicial.
+
+- **VITALIS** — corpo, resistência, força, presença
+- **MOTUS** — movimento, finesse, agilidade, graça
+- **SENSUS** — perceção, instinto, foco, atenção
+- **VERBUM** — intelecto, lógica, estrutura, discurso
+- **ANIMA** — convicção, vontade, fé, sacrifício
+
+### Valores de Essência
+
+- **Pico da Alma ($\mathbf{E_{max}}$):** Limite permanente. Nunca pode descer abaixo de **$50\%$** (Piso Rígido).
+- **Vigor Ativo ($\mathbf{E_{cur}}$):** Energia utilizável. Determina a tua **Zona de Tensão**.
+***
+
+## 3. Resolução de Ações: A Rolagem Efetiva 🎯
+
+O sucesso é determinado comparando a **Rolagem Efetiva** com a Capacidade Permanente ($\mathbf{E_{max}}$), ajustada pela fadiga.
+
+### A. Condição de Bloqueio (O Vazio Absoluto)
+
+Antes de qualquer rolagem, verifica-se o Vigor Ativo ($\mathbf{E_{cur}}$).
+
+$$\text{Se } \mathbf{E_{cur}} < 1 \rightarrow \text{Falha Automática / Ação Impossível}$$
+
+> ==**Se o Vigor Ativo for menor que 1, a ação resulta em falha automática.**==
+
+**Recuperação de Emergência (Fôlego Rápido):** Se estiveres a $0 \ \mathbf{E_{cur}}$, podes gastar o teu turno inteiro para tomar um Fôlego Rápido (Descanso Curto).
+
+### B. A Fórmula da Rolagem Efetiva
+
+$$\mathbf{R_{Eff}} = \mathbf{d100} - \mathbf{R_{prof}}$$
+
+> ==**A Rolagem Efetiva é igual ao Dado de Caos ($\mathbf{d100}$) menos o Resultado de Perícia ($\mathbf{R_{prof}}$).**==
+
+### C. O Teste de Sucesso
+
+$$\mathbf{R_{Eff}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$$
+
+> ==**A ação é bem-sucedida se a Rolagem Efetiva for menor ou igual ao teu $\mathbf{E_{max}}$ menos a Penalidade de Zona atual.**==
+### D. Zonas de Tensão ($\mathbf{E_{cur}}$)
+
+À medida que $\mathbf{E_{cur}}$ desce, a dificuldade artificial aumenta.
+
+| **Intervalo $\mathbf{E_{cur}}$** | **Nome da Zona** | **Penalidade ($\mathbf{Z_{Penalty}}$)** |
+| :--- | :--- | :--- |
+| **100% – 76%** | **Pico** | **-0** |
+| **75% – 51%** | **Minguante** | **-10** |
+| **50% – 26%** | **Desvanecente** | **-20** |
+| **25% – 0%** | **Vazio** | **-30** |
+***
+
+## 4. Atrição: O Custo da Ação 🩸
+
+Cada ação queima Essência. O custo deriva do **Peso do Item** e é mitigado pela **Perícia**.
+
+### Fórmula de Atrição
+
+$$\mathbf{Custo} = \max \left( 0, \mathbf{Peso} - \left\lfloor \frac{\mathbf{R_{prof}}}{2} \right\rfloor \right)$$
+
+> ==**O Custo de Energia é igual ao Peso da Arma menos metade do Resultado de Proficiência (arredondado para baixo).**==
+
+| **Classe de Peso** | **Custo Base** | **Exemplos** |
+| :--- | :--- | :--- |
+| **Leve** | **10%** | Adagas, Arcos Curtos |
+| **Médio** | **15%** | Espadas, Dardos |
+| **Pesado** | **20%** | Maças, Bestas Pesadas |
+
+- **Sucesso Crítico (1-5):** Reduz para metade o Custo final.
+- **Falha Crítica (96-100):** Duplica o Custo final.
+***
+
+## 5. Combate: Letalidade de Precisão ($\mathbf{D_{Final}}$) 💥
+
+O cálculo de dano privilegia a Perícia ($\mathbf{R_{prof}}$). **O Dano é Neutro em Nível**, calculado pelas Margens e modificado pela Vantagem de Nível.
+
+### Fórmula de Dano Final
+
+$$\mathbf{D_{Final}} = \max \left( \mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Def}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}}) \right) \times \mathbf{M_{DTA}}$$
+
+> ==**O Dano Final é o maior entre o Piso de Proficiência ou a Margem Calculada, multiplicado pela Vantagem de Nível.**==
+
+| **Componente** | **Definição** |
+| :--- | :--- |
+| **$\mathbf{R_{prof}}$ (Piso Rígido)** | **Dano Base Aditivo.** O dano mínimo absoluto é o teu resultado de Proficiência. |
+| **$\mathbf{A_{FP}}$ (Potencial Total)** | $\mathbf{100 - (d100 - R_{prof})}$. **Neutro em Nível.** Baseado em 100%, não no $E_{cur}$ do Atacante. |
+| **$\mathbf{\bar{M}_{Def}}$ (Mitigação)** | A armadura passiva do Defensor (Média do seu *pool* de $D_{prof}$). |
+| **$\mathbf{D_{Margin}}$ (Vulnerabilidade)** | Rolagem de Defesa do Defensor menos $\mathbf{E_{cur}}$. Valores positivos aumentam o dano. |
+| **$\mathbf{M_{DTA}}$ (Vantagem de Nível)** | Multiplicador que escala de $\times 0.75$ (Desvantagem) a $\times 2.00$ (Dominância). |
+***
+
+## 6. Rituais e Renovação (Recuperação) 🕯️
+
+Os Rituais fecham o ciclo do jogo (Gastar → Desvanecer → **Renovar**), permitindo ao PC gerir a fadiga diária e aceitar a perda permanente.
+
+### A. Renovação de Foco (Descanso Longo) 🌙
+
+Este ritual permite ao PC recuperar o seu foco mental e físico, regressando ao seu potencial diário.
+
+- **Gatilho:** Descanso Longo (ex: uma noite de sono segura, mínimo 6 horas).
+- **Processo:**
+    1. **Restauração de Vigor:** O **Valor Atual ($\mathbf{E_{cur}}$)** de todas as Essências reinicia a **100%**.
+       > *Regra Crítica:* A recuperação **NÃO** é limitada pelo $\mathbf{E_{max}}$. Mesmo se o teu Pico da Alma estiver degradado a 50%, o teu Vigor Ativo regressa a 100%. Começas o dia totalmente energizado, na **Zona de Pico**.
+    2. **Restauração de Surto:** O **Pool de Impulso de Ação (AS)** é **totalmente restaurado** ao total determinado pelo Nível de Proficiência.
+- **Custo Narrativo:** Tempo e segurança.
+
+### B. O Descanso Curto (Pausa) 🍵
+
+Uma breve pausa para tratar feridas, recuperar o fôlego e centrar a mente (15 minutos).
+
+$$\mathbf{Recuperação} = \text{Soma de } \mathbf{D_{prof}}$$
+
+> ==**A Recuperação é igual à soma dos resultados da tua Reserva de Dados de Proficiência.**==
+
+(Fallback: Se Nível 0, rola 1d10).
+
+### C. Recuperação de Emergência (O Fôlego Rápido) 💨
+
+Uma tentativa desesperada de se centrar no calor da batalha, geralmente acionada ao atingir o Vazio ($0 \ \mathbf{E_{cur}}$).
+
+- **Gatilho:** Pode ser realizado a qualquer momento durante o teu turno, ou forçado quando $\mathbf{E_{cur}} < 1$.
+- **Custo:** **Ação de Turno Completo.** Não podes Mover, Defender, Atacar ou Reagir até ao início do teu próximo turno.
+- **Efeito:** Resolve imediatamente como um **Descanso Curto** (Rola $\mathbf{D_{prof}}$ ou 1d10 e recupera essa quantidade em $\mathbf{E_{cur}}$).
+
+### D. Nota sobre Perda Permanente 💀
+
+O sistema distingue entre **Fadiga** e **Decadência**.
+
+- **Renovável:** $\mathbf{E_{cur}}$ (**Vigor Ativo**) representa energia. Flutua constantemente e recupera a **100%**.
+- **Não Renovável:** $\mathbf{E_{max}}$ (**Pico da Alma**) representa a integridade estrutural da alma. O sistema **NÃO** restaura $\mathbf{E_{max}}$ perdido através da Rolagem do Esvanecer.
+***
+
+## 7. Progressão: A Rolagem do Esvanecer 🌘
+
+A progressão ocorre em marcos narrativos ao reduzir permanentemente $\mathbf{E_{max}}$ para avançar Níveis de Proficiência.
+
+- **Decadência Universal (Não-Escolhida):** Rola **1d6**. Subtrai a $\mathbf{E_{max}}$.
+- **Foco de Refinamento (Escolhida):** Rola **2d6**. Subtrai a $\mathbf{E_{max}}$ para ganhar $\mathbf{D_{prof}}$.
+
+### Tabela de Proficiência e Mapeamento de Dados
+
+| **Nível** | **Perda Total $\mathbf{E_{max}}$** | **$\mathbf{E_{max}}$ Restante** | **Dados $\mathbf{D_{prof}}$** | **Mitigação ($\mathbf{\bar{M}}$)** | **Surtos de Ação** |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **0** | $0-9\%$ | $100-91\%$ | Nenhum | $0.0$ | **0** |
+| **I** | $10-19\%$ | $90-81\%$ | $\mathbf{1\text{d}10}$ | $5.5$ | **1** |
+| **II** | $20-29\%$ | $80-71\%$ | $\mathbf{2\text{d}10}$ | $11.0$ | **2** |
+| **III** | $30-39\%$ | $70-61\%$ | $\mathbf{3\text{d}10}$ | $16.5$ | **3** |
+| **IV** | $40-49\%$ | $60-51\%$ | $\mathbf{4\text{d}10}$ | $22.0$ | **4** |
+| **V** | $\mathbf{50\%}$ | **50% (Pináculo)** | $\mathbf{5\text{d}10}$ | $\mathbf{27.5}$ | **5** |
+***
+
+## 8. Uso da Proficiência (Mecânicas Detalhadas) ⚙️
+
+O resultado da rolagem $\mathbf{D_{prof}}$ ($\mathbf{R_{prof}}$) é usado para três efeitos simultâneos:
+
+1.  **Mitigação de Erro:** Subtrai $\mathbf{R_{prof}}$ da rolagem de $\mathbf{d100}$.
+2.  **Redução de Atrição:** $\mathbf{Custo} = \text{Peso} - \lfloor R_{prof}/2 \rfloor$.
+3.  **Ataques Especiais (Opcional):** Sacrificar dados do *pool* de $\mathbf{D_{prof}}$ para realizar ações aprimoradas.
+***
+
+## 9. Apêndice: Referência do Sistema (Sigla) 📚
+
+### Detalhes dos Componentes
+
+1. Margem de Potencial Total ($\mathbf{A_{FP}}$)
+
+$$\mathbf{A_{FP}} = \mathbf{100 - (d100-R_{prof})}$$
+
+> ==**Isto calcula o poder bruto do Atacante em relação a uma base perfeita de 100. Uma rolagem modificada mais baixa gera um $\mathbf{A_{FP}}$ maior.==**
+
+2. Margem do Defensor ($\mathbf{D_{Margin}}$)
+
+$$\mathbf{D_{Margin}} = \mathbf{d100_D-D_{Ecur}}$$
+
+> ==**Isto mede a vulnerabilidade do Defensor. Um $\mathbf{D_{Margin}}$ positivo significa que o Defensor falhou na defesa, aumentando o dano.**==
+***
+© 2025 Serelith Varn — Nárëquenta. Licenciado sob Nárëquenta Limited Open License (v0.1). Ver [[LICENSE.md]].
+
+###############################################################################
+##                                                                          ###
+##                                CREDITS.md                                ###
+##                                                                          ###
+###############################################################################
+
+# 🕯️ Nárëquenta — Contos do Esvanecer (Tales of the Waning)
+
+### Manifestação do Autor e Créditos
+
+---
+
+## 🪶 Autoria Primária
+
+Criado e Escrito por:
+
+Serelith Varn
+
+Designer · Contador de Histórias · Arquiteto de Sistema
+
+Nárëquenta foi concebido, desenhado e documentado pela primeira vez em 25 de Outubro de 2025.
+
+Todos os mecanismos centrais, terminologia e estrutura narrativa tiveram origem no repositório privado narequenta sob a conta GitHub de Serelith Varn.
+
+---
+
+## 🧩 Sumário do Conceito Base (v0.8)
+
+> Um sistema de role-playing de mesa onde os heróis começam perto do seu auge e desvanecem com o uso.
+> 
+> O poder é consumido pela ação; a Proficiência Compensa o Declínio.
+> 
+> A história não é sobre ganhar força, mas sobre escolher o que gastar antes do fim.
+
+Palavras-chave mecânicas: **Facetas do Ser (Essências)**, **Erosão**, **Refinamento**, **Vantagem de Nível Defensivo ($\mathbf{M_{DTA}}$)**, **Atrição Controlada**, e **Arquitetura SPA Estabilizada**.
+
+---
+
+## ⚖️ Direitos e Licenciamento
+
+Todo o texto criativo, expressão de regras e terminologia neste repositório são © 2025 Serelith Varn.
+
+Este material está atualmente publicado sob a Nárëquenta Limited Open License (v0.1).
+
+**Pode:**
+
+- Testar este material em privado ou publicamente.
+    
+- Partilhar feedback diretamente com o autor.
+    
+- Criar e publicar **conteúdo de fã (Fan Content)**, desde que credite Serelith Varn e mantenha a natureza não comercial.
+    
+
+**Não Pode:**
+
+- Vender, monetizar ou distribuir comercialmente este sistema ou trabalhos derivados.
+    
+- Alterar, copiar ou redistribuir o texto das regras sem permissão.
+    
+- Usar o nome ou logótipo _Nárëquenta_ para implicar parceria ou endosso oficial.
+    
+
+Para colaboração, testes ou questões de licenciamento, por favor contacte:
+
+📧 serelith.varn@proton.me (placeholder – atualizar quando pronto)
+
+---
+
+## 🧱 Estrutura de Suporte
+
+Documentação Técnica e Apoio ao Desenvolvimento do Sistema:
+
+Google (Modelo Flash 2.5, Persona Liora Vex) — assistência de design colaborativo para a estrutura, formatação e consistência de arquivo do sistema v0.7.
+
+---
+
+## 🌒 Agradecimentos
+
+Um agradecimento especial a todos os que ajudam a refinar este sistema através de testes de jogo, feedback e debate filosófico.
+
+Os vossos insights esculpem a beleza na decadência.
+
+---
+
+> _“Que os nossos fins sejam elegantes, e as nossas cicatrizes sejam lembradas.”_
+
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). 📜 [Consulte a Licença →](LICENSE.md)
+
+---
+
+Qual o próximo documento que devo preparar para a atualização v0.8?
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                                CREDITS.md                                ###
+##                                                                          ###
+###############################################################################
+
+## 🕯️ Nárëquenta — Tales of the Waning
+
+### Author's Manifestation and Credits
+
+---
+
+## 🪶 Primary Authorship
+
+Created and Written by:
+
+Serelith Varn
+
+Designer · Storyteller · System Architect
+
+Nárëquenta was first conceived, designed, and documented on October 25, 2025.
+
+All core mechanisms, terminology, and narrative structure originated in the private narequenta repository under Serelith Varn's GitHub account.
+
+---
+
+## 🧩 Core Concept Summary (v0.9)
+
+> A tabletop role-playing system where heroes start near their peak and fade with use.
+>
+> Power is consumed by action; Proficiency Compensates for Decline.
+>
+> The story is not about gaining strength, but about choosing what to spend before the end.
+
+Mechanical Keywords: **Facets of the Self (Essences)**, **Erosion**, **Refinement**, **Defensive Tier Advantage ($\mathbf{M_{DTA}}$)**, **Tier Synchronization**, and **Final Spark**.
+
+---
+
+## ⚖️ Rights and Licensing
+
+All creative text, rule expression, and terminology in this repository are © 2025 Serelith Varn.
+
+This material is currently published under the Nárëquenta Limited Open License (v0.1).
+
+**You May:**
+
+* Playtest this material privately or publicly.
+* Share feedback directly with the author.
+* Create and publish **Fan Content**, provided you credit Serelith Varn and maintain the non-commercial nature[.
+
+**You May Not:**
+
+* Sell, monetize, or commercially distribute this system or derived works.
+* Alter, copy, or redistribute the text of the core rules without permission.
+* Use the *Nárëquenta* name or logo to imply partnership or official endorsement.
+
+For collaboration, testing, or licensing inquiries, please contact:
+
+📧 serelith.varn@proton.me (placeholder – update when ready)
+
+---
+
+## 🧱 Support Structure
+
+Technical Documentation and System Development Support:
+
+Google (Flash 2.5 Model, Liora Vex Persona) — collaborative design assistance for the system's v0.7 structure, formatting, and file consistency.
+
+---
+
+## 🌒 Acknowledgments
+
+Special thanks to everyone who helps refine this system through playtesting, feedback, and philosophical debate.
+
+Your insights sculpt the beauty in the decay.
+
+---
+
+> _“May our endings be elegant, and our scars be remembered.”_ 
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+
+---
+
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1) .📜 [Read the full license →](LICENSE.md)
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                                en-us.json                                ###
+##                                                                          ###
+###############################################################################
+
+{
+    "GAME_TITLE": "Nárëquenta: Tales of the Waning",
+    "SHEET_SUBTITLE": "Character Sheet",
+    
+    "WELCOME_TITLE": "Welcome to Nárëquenta",
+    "NAVIGATE_START_PROMPT": "Choose your starting view:",
+    "NAVIGATE_TITLE": "Navigate:",
+    "NAVIGATE_PC": "PC Sheet",
+    "NAVIGATE_NPC": "NPC Reference",
+    "NAVIGATE_GM": "Rules / GM Ref",
+    "LANG_SELECT": "Language:",
+
+    "LABEL_E_MAX": "Soul's Peak (E_max)",
+    "LABEL_E_CUR": "Active Vigor (E_cur)",
+    "LABEL_TIER_PROF": "Tier / Waning Yield",
+    "LABEL_D_PROF_POOL": "Waning Yield Pool",
+    "LABEL_ACTION_SURGES": "Surges of Intent",
+    "LABEL_INITIAL_EROSION": "Initial Erosion (1d10)",
+    "LABEL_SUCCESS_CHECK": "Success Check (d100)",
+    "LABEL_WANING_YIELD_RESULT": "Waning Yield Result (Sum)",
+	
+    "FIELD_NAME": "Name",
+    "FIELD_HP": "Current HP",
+    "FIELD_RPROF": "General Proficiency Level (R_Prof)",
+    "SECTION_PROMISE": "Final Vow",
+    "FIELD_PROMISE_HINT": "The Vow the Character has made",
+    "SECTION_SCARRING_LOG": "Erosion / Refinements Log",
+    
+    "SECTION_ESSENCES": "Essences (E_max vs E_cur - Hard Floor 50%)",
+    "GRID_ESSENCE": "Essence",
+    "GRID_EMAX": "E_MAX (%)",
+    "GRID_ECUR": "E_CURRENT (%)",
+    "GRID_TIER_AVG": "TIER / Avg. Margin (̄M)",
+    "GRID_DPROFICIENCY": "D_PROF Pool",
+    
+    "VITALIS_NAME": "VITALIS (Vigor, Presence)",
+    "MOTUS_NAME": "MOTUS (Movement, Finesse)",
+    "SENSUS_NAME": "SENSUS (Awareness, Instinct)",
+    "VERBUM_NAME": "VERBUM (Intellect, Logic)",
+    "ANIMA_NAME": "ANIMA (Will, Sacrifice)",
+
+    "SECTION_ABILITIES": "Abilities & Gear",
+    "SECTION_ABILITIES_NOTE": "Cost = max(0, Weight - floor(R_prof/2)). Damage Floor = R_prof.",
+    "TABLE_NAME": "Name / Item",
+    "TABLE_TYPE": "Weight Class",
+    "TABLE_COSTS": "Attrition Cost",
+    "TABLE_DAMAGE": "Damage / Effect",
+
+    "NPC_SHEET_TITLE": "Adversary Reference",
+    "FIELD_NPC_NAME": "Adversary Name:",
+    "SECTION_ESSENCES_NPC": "Essences (Focus on Mitigation)",
+
+    "GM_REF_SHEET_TITLE": "GM Reference",
+    
+    "GM_SECTION_1_TITLE": "I. Action Resolution & Attrition",
+    "ROLL_SUCCESS_TITLE": "Roll for Success",
+    "ROLL_SUCCESS_DESC": "Effective Roll (d100 - R_prof) <= (E_max - Zone Penalty).",
+    "ATTRITION_COST_TITLE": "Attrition Cost (E_cur Loss)",
+    "MOTOR_ESSENCE_LOSS": "Motor Essence (E_P) Loss:",
+    "ES_LOSS_COST": "Quality Essence (E_S) Loss:",
+
+    "GM_SECTION_2_TITLE": "II. Proficiency Scale (E_max)",
+    "GRID_EMAX_REM": "E_MAX Remaining (%)",
+    "GRID_TIER_HEADER": "TIER",
+    "GRID_MITIGATION_AVG": "̄M (Avg Mitigation)",
+    "GRID_AS_MAX": "AS (Action Surges) Max",
+    "DECAY_SUMMARY": "Decay: Non-Chosen 1d6 Loss / Focus 2d6 Loss (Waning Roll)",
+
+    "GM_SECTION_3_TITLE": "III. Damage Formula (D_Final)",
+    "FORMULA_WHERE": "Where:",
+    "A_FP_TITLE": "A_FP (Full Potential):",
+    "DEFENDER_MARGIN_TITLE": "D_Margin (Defender Margin):",
+
+    "CALC_TITLE": "IV. Interactive Damage Calculator ⚔️",
+    "CALC_ATTACKER": "ATTACKER (PC)",
+    "CALC_DEFENDER": "DEFENDER (NPC/PC)",
+    "FIELD_ECUR": "E_CUR (%):",
+    "GRID_TIER": "TIER (I-V):",
+    "FIELD_D100": "d100 ROLLED:",
+    "FIELD_DEFENSE_ROLL": "d100 DEFENSE:",
+    "CALC_BUTTON": "CALCULATE FINAL DAMAGE",
+    "CALC_FINAL_DAMAGE": "FINAL DAMAGE:",
+    
+    "CALC_SUBTITLE": "Attrition is Meaning. E_max never falls below 50%.",
+    "CALC_EMAX_LABEL": "Essence E_MAX (%) (50% to 100%):",
+    "CALC_RESULTS": "Calculation Results:",
+    "CALC_TIER": "Proficiency TIER:",
+    "CALC_LOSS": "Total E_MAX Loss:",
+    "CALC_DICE": "D_PROF Pool:",
+    "CALC_M_AVG": "Average Mitigation (̄M):",
+    
+    "CALC_ERROR": "ERROR",
+    "CALC_FAIL_STATUS": "FAILURE (Effective Roll > Threshold)",
+    "CALC_SUCCESS_STATUS": "SUCCESS.",
+    "CALC_D100_RANGE_ERROR": "d100 rolls must be between 1 and 100.",
+    
+    "SECTION_WANING_ROLLS": "Permanent Decay (Waning Roll)",
+    "FIELD_FOCUS_DECAY": "Focus Essence Decay (2d6 Loss):",
+    "FIELD_UNIVERSAL_DECAY": "Universal Decay (1d6 Loss):",
+    "SECTION_ROLLS_INPUT": "🎯 Action Resolution Inputs",
+    "FIELD_D100_ROLL": "d100 Roll (Success Check):",
+    "FIELD_RPROF_RESULT": "R_Prof Result (D_prof roll):"
+}
+
+
+###############################################################################
+##                                                                          ###
+##                          gm_reference_v0.9.6.md                          ###
+##                                                                          ###
+###############################################################################
+
+# Referência do Mestre v0.9.6 (Letalidade de Precisão)
+
+## I. FLUXO DA SESSÃO
+1. **Briefing:** Estabelecer o que arriscam perder.
+2. **Resolução de Ação:**
+   - **Teste:** $\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalidade}})$.
+   - **Atrição:** A ação queima $\mathbf{E_{cur}}$ com base no Peso do Item (Leve 10%, Med 15%, Pes 20%) menos $\lfloor R_{prof}/2 \rfloor$.
+3. **Zonas de Tensão:** Garantir que os jogadores registam a sua penalidade de Zona atual.
+   - **Pico (100-76%):** -0
+   - **Minguante (75-51%):** -10
+   - **Desvanecente (50-26%):** -20
+   - **Vazio (25-0%):** -30.
+
+## II. FÓRMULAS DE COMBATE
+**O Piso de Dano:** O dano nunca desce abaixo de $\mathbf{R_{prof}}$ (antes do Multiplicador de Nível).
+
+$$\mathbf{D_{Final}} = \max(\mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Def}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}})) \times \mathbf{M_{DTA}}$$
+
+| Componente | Fórmula / Valor |
+| :--- | :--- |
+| **$\mathbf{A_{FP}}$** | $100 - (d100 - R_{prof})$ |
+| **$\mathbf{D_{Margin}}$** | $Rolagem_{Def} - Defensor_{Ecur}$ |
+| **$\mathbf{\bar{M}_{Def}}$** | $Defensor_{Nível} \times 5.5$ |
+
+## III. MULTIPLICADOR DE VANTAGEM DE NÍVEL ($\mathbf{M_{DTA}}$)
+Baseado em $\Delta T = T_{Defensor} - T_{Atacante}$.
+
+| Atacante vs Defensor | Multiplicador |
+| :--- | :--- |
+| **Nível Igual** | **x 1.00** |
+| **Defensor +1 Nível** | **x 0.75** |
+| **Defensor +2 Níveis** | **x 0.50** |
+| **Atacante +1 Nível** | **x 1.25** |
+| **Atacante +2 Níveis** | **x 1.50** |
+
+## IV. RECUPERAÇÃO (RENOVAÇÃO)
+- **Descanso Longo:** Restaura $\mathbf{E_{cur}}$ para 100% (ou $\mathbf{E_{max}}$ atual). **Não** recupera $\mathbf{E_{max}}$ perdido.
+- **Rolagem do Esvanecer:** Ocorre em marcos. $\mathbf{1d6}$ (Universal) ou $\mathbf{2d6}$ (Foco).
+
+---
+© 2025 Serelith Varn.
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                          gm_reference_v0.9.6.md                          ###
+##                                                                          ###
+###############################################################################
+
+# GM Reference v0.9.6 (Precision Lethality)
+
+## I. SESSION FLOW
+1. **Briefing:** Establish what they risk losing.
+2. **Action Resolution:**
+   - [cite_start]**Check:** $\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$[cite: 2502].
+   - [cite_start]**Attrition:** Action burns $\mathbf{E_{cur}}$ based on Item Weight (Light 10%, Med 15%, Hvy 20%) minus $\lfloor R_{prof}/2 \rfloor$[cite: 2528].
+3. **Zones of Strain:** Ensure players track their current Zone penalty.
+   - **Peak (100-76%):** -0
+   - **Waning (75-51%):** -10
+   - **Fading (50-26%):** -20
+   - [cite_start]**Hollow (25-0%):** -30 [cite: 2505-2508].
+
+## II. COMBAT FORMULAS
+[cite_start]**The Damage Floor:** Damage never drops below $\mathbf{R_{prof}}$ (before Tier Multiplier)[cite: 2517].
+
+$$\mathbf{D_{Final}} = \max(\mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Def}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}})) \times \mathbf{M_{DTA}}$$
+
+| Component | Formula / Value |
+| :--- | :--- |
+| **$\mathbf{A_{FP}}$** | $100 - (d100 - R_{prof})$ |
+| **$\mathbf{D_{Margin}}$** | $Defense_{Roll} - Defender_{Ecur}$ |
+| **$\mathbf{\bar{M}_{Def}}$** | $Defender_{Tier} \times 5.5$ |
+
+## III. TIER ADVANTAGE MULTIPLIER ($\mathbf{M_{DTA}}$)
+Based on $\Delta T = T_{Defender} - T_{Attacker}$.
+
+| Attacker vs Defender | Multiplier |
+| :--- | :--- |
+| **Equal Tier** | **x 1.00** |
+| **Defender +1 Tier** | **x 0.75** |
+| **Defender +2 Tier** | **x 0.50** |
+| **Attacker +1 Tier** | **x 1.25** |
+| **Attacker +2 Tier** | **x 1.50** |
+
+## IV. RECOVERY (RENEWAL)
+- **Long Rest:** Restores $\mathbf{E_{cur}}$ to 100% (or current $\mathbf{E_{max}}$). [cite_start]It **does not** recover lost $\mathbf{E_{max}}$[cite: 2490].
+- **Waning Roll:** Happens at milestones. $\mathbf{1d6}$ (Universal) or $\mathbf{2d6}$ (Focus).
+
+---
+© 2025 Serelith Varn.
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                                LICENSE.md                                ###
+##                                                                          ###
+###############################################################################
+
+# 🕯️ Nárëquenta — Contos do Escurecer
+### Nárëquenta Limited Open License (v0.1)
+
+**Copyright © 2025 Serelith Varn**
+Todos os direitos reservados.
+
+---
+
+## 1. Propriedade
+
+Todo o texto criativo, terminologia, mecânica-tal-como-expressa, conceitos de cenário e apresentação de *Nárëquenta — Contos do Escurecer* são propriedade intelectual exclusiva de **Serelith Varn**.
+
+Este trabalho não pode ser vendido, relicenciado ou redistribuído no todo ou em parte sem permissão explícita por escrito do autor.
+
+---
+
+## 2. Permissão para Jogar e Criar
+
+É-lhe concedida uma **licença não exclusiva e livre de royalties** para:
+
+- Ler, aprender e jogar este sistema privada ou publicamente.
+- Gravar, transmitir (*stream*) ou publicar sessões de *actual-play* utilizando este sistema.
+- Criar e partilhar **conteúdo de fã ou homebrew** (aventuras, personagens, cenários ou suplementos) inspirados ou compatíveis com este sistema.
+
+Estas permissões são concedidas **desde que** siga os termos abaixo.
+
+---
+
+## 3. Termos de Uso
+
+Você **deve:**
+- Dar crédito a **Serelith Varn** como o criador de *Nárëquenta — Contos do Escurecer* em qualquer material publicado ou referência pública.
+- Incluir um link para o repositório original ou publicação oficial quando possível.
+- Declarar claramente que o seu trabalho não é oficial e não é endossado pelo criador.
+
+Você **não pode:**
+- Vender, monetizar ou distribuir comercialmente este sistema ou trabalhos derivados.
+- Alterar, copiar ou redistribuir o texto das regras sem permissão.
+- Usar o nome ou logótipo *Nárëquenta* para implicar parceria ou endosso oficial.
+
+---
+
+## 4. Trabalhos Derivados
+
+Criações de fãs ou de terceiros são bem-vindas e encorajadas, desde que:
+- Permaneçam **não comerciais**,
+- Incluam crédito visível a **Serelith Varn**,
+- Mantenham este texto de licença ou um link para o mesmo,
+- E se marquem claramente como conteúdo *não oficial*.
+
+---
+
+## 5. Direitos Comerciais
+
+Todos os direitos comerciais de *Nárëquenta — Contos do Escurecer* permanecem exclusivamente com **Serelith Varn**.
+Nenhuma transferência, venda ou propriedade partilhada está implícita por esta licença.
+
+Se desejar publicar conteúdo comercial ou oficial, contacte o autor para um acordo por escrito separado.
+
+---
+
+## 6. Licenciamento Futuro
+
+Esta versão da licença (v0.1) destina-se ao desenvolvimento fechado e ao uso comunitário não comercial.
+Uma edição pública posterior pode adotar uma estrutura compatível com Creative Commons ou ORC, mantendo a atribuição total ao autor.
+
+---
+
+> “Começamos perfeitos e desvanecemo-nos com graça.
+> Esta licença garante que os nossos ecos permanecem nossos.”
+
+###############################################################################
+##                                                                          ###
+##                                LICENSE.md                                ###
+##                                                                          ###
+###############################################################################
+
+# 🕯️ Nárëquenta — Tales of the Waning
+### Nárëquenta Limited Open License (v0.1)
+
+**Copyright © 2025 Serelith Varn**
+All rights reserved.
+
+---
+
+## 1. Ownership
+
+All creative text, terminology, mechanics-as-expressed, setting concepts, and presentation of *Nárëquenta — Tales of the Waning* are the sole intellectual property of **Serelith Varn**.
+
+This work may not be sold, relicensed, or redistributed in full or in part without explicit written permission from the author.
+
+---
+
+## 2. Permission to Play and Create
+
+You are granted a **non-exclusive, royalty-free license** to:
+
+- Read, learn, and play this system privately or publicly.
+- Record, stream, or publish actual-play sessions using this system.
+- Create and share **fan-made or homebrew content** (adventures, characters, settings, or supplements) inspired by or compatible with this system.
+
+These permissions are granted **as long as** you follow the terms below.
+
+---
+
+## 3. Terms of Use
+
+You **must:**
+- Credit **Serelith Varn** as the creator of *Nárëquenta — Tales of the Waning* in any published material or public reference.
+- Include a link to the original repository or official publication when possible.
+- Clearly state that your work is unofficial and not endorsed by the creator.
+
+You **may not:**
+- Sell, monetize, or commercially distribute this system or derivative works.
+- Alter, copy, or redistribute the rules text without permission.
+- Use the *Nárëquenta* name or logo to imply official partnership or endorsement.
+
+---
+
+## 4. Derivative Works
+
+Fan or third-party creations are welcome and encouraged, provided they:
+- Remain **non-commercial**,
+- Include visible credit to **Serelith Varn**,
+- Retain this license text or a link to it,
+- And clearly mark themselves as *unofficial* content.
+
+---
+
+## 5. Commercial Rights
+
+All commercial rights to *Nárëquenta — Tales of the Waning* remain solely with **Serelith Varn**.
+No transfer, sale, or shared ownership is implied by this license.
+
+If you wish to publish commercial or official content, contact the author for a separate written agreement.
+
+---
+
+## 6. Future Licensing
+
+This version of the license (v0.1) is intended for closed development and non-commercial community use.
+A later public edition may adopt a Creative Commons or ORC-compatible framework while maintaining full author attribution.
+
+---
+
+> “We begin perfect, and fade with grace.
+> This license ensures that our echoes remain ours.”
+
+###############################################################################
+##                                                                          ###
+##                           Narequenta-rules.txt                           ###
+##                                                                          ###
+###############################################################################
+
+###############################################################################
+##                                                                          ###
+##                          playtest_notes_v0.9.md                          ###
+##                                                                          ###
+###############################################################################
+
+# Playtest Notes — 2025-11-17 (Post-v0.9 Alpha Test)
+
+Session ID:
+
+Players:
+
+Location / context:
+
+## V0.9 Mechanical Efficacy 🧪
+
+_(Focus on the Decay Mitigation and Starting Tier)_
+
+What felt good:
+
+- Did the initial **Tier I Guarantee** ($\mathbf{E_{max}} = 90\%$) feel appropriate, or did it make character creation too complex?
+    
+- Was the slower **Universal Decay ($\mathbf{1d6}$ loss)** noticeable, making players feel safer against permanent loss?
+    
+
+What felt punishing / not worth it:
+
+- Did the **Focus $\mathbf{2d6}$ risk** still feel like a compelling trade-off for a guaranteed Tier increase, given the decay rate was halved?
+    
+
+Did players hesitate to act because cost felt unfair?
+
+- Specifically, did players avoid using the **Tier I Essence** ($90\% \ \mathbf{E_{max}}$) because they wanted to preserve that permanent advantage?
+    
+
+Did anyone love burning themselves for something dramatic?
+
+Any rules confusion:
+
+- Was the distinction between the $\mathbf{E_{max}}$ Hard Floor ($50\%$) and the $\mathbf{E_{cur}}$ minimum ($0\%$) clear during play?
+    
+
+Immediate changes to test in next version:
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license: 282).
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                        character_sheet_v0.9.6.md                         ###
+##                                                                          ###
+###############################################################################
+
+# Character Sheet v0.9.6 - Nárëquenta
+
+**Name:** ____________________
+**HP:** [100] / 100
+**ACTION SURGES:** [ ] / [ Max: ___ ]
+
+## ESSENCES (FACETS OF THE SELF)
+$E_{max}$ Hard Floor is **50%**.
+
+| Essence | **$E_{MAX}$** (Potential) | **TIER** | **$E_{CUR}$** (Current) | **ZONE PENALTY** |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **MOTUS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **SENSUS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **VERBUM** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **ANIMA** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+
+## QUICK REFERENCE: ZONES OF STRAIN
+Check your $\mathbf{E_{cur}}$ to determine your Penalty to Success.
+
+| $\mathbf{E_{cur}}$ % | Zone | Penalty |
+| :--- | :--- | :--- |
+| 100-76% | Peak | **-0** |
+| 75-51% | Waning | **-10** |
+| 50-26% | Fading | **-20** |
+| 25-0% | Hollow | **-30** |
+
+## ATTRITION & DAMAGE LOG
+**Success:** $(d100 - R_{prof}) \le (E_{max} - Zone)$
+[cite_start]**Attrition:** $Cost = \max(0, Weight - \lfloor R_{prof}/2 \rfloor)$[cite: 2528].
+
+| Weight Class | Base Cost | Examples |
+| :--- | :--- | :--- |
+| **Light** | **10%** | Daggers, Shortbows |
+| **Medium** | **15%** | Swords, Javelins |
+| **Heavy** | **20%** | Mauls, Arbalests |
+
+**Damage ($D_{Final}$):** $\max(R_{prof}, (A_{FP} - \bar{M} + D_{Margin} + R_{prof})) \times M_{DTA}$.
+
+---
+© 2025 Serelith Varn.
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                          gm_reference_v0.9.6.md                          ###
+##                                                                          ###
+###############################################################################
+
+# GM Reference v0.9.6 (Precision Lethality)
+
+## I. SESSION FLOW
+1. **Briefing:** Establish what they risk losing.
+2. **Action Resolution:**
+   - [cite_start]**Check:** $\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$[cite: 2502].
+   - [cite_start]**Attrition:** Action burns $\mathbf{E_{cur}}$ based on Item Weight (Light 10%, Med 15%, Hvy 20%) minus $\lfloor R_{prof}/2 \rfloor$[cite: 2528].
+3. **Zones of Strain:** Ensure players track their current Zone penalty.
+   - **Peak (100-76%):** -0
+   - **Waning (75-51%):** -10
+   - **Fading (50-26%):** -20
+   - [cite_start]**Hollow (25-0%):** -30 [cite: 2505-2508].
+
+## II. COMBAT FORMULAS
+[cite_start]**The Damage Floor:** Damage never drops below $\mathbf{R_{prof}}$ (before Tier Multiplier)[cite: 2517].
+
+$$\mathbf{D_{Final}} = \max(\mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Def}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}})) \times \mathbf{M_{DTA}}$$
+
+| Component | Formula / Value |
+| :--- | :--- |
+| **$\mathbf{A_{FP}}$** | $100 - (d100 - R_{prof})$ |
+| **$\mathbf{D_{Margin}}$** | $Defense_{Roll} - Defender_{Ecur}$ |
+| **$\mathbf{\bar{M}_{Def}}$** | $Defender_{Tier} \times 5.5$ |
+
+## III. TIER ADVANTAGE MULTIPLIER ($\mathbf{M_{DTA}}$)
+Based on $\Delta T = T_{Defender} - T_{Attacker}$.
+
+| Attacker vs Defender | Multiplier |
+| :--- | :--- |
+| **Equal Tier** | **x 1.00** |
+| **Defender +1 Tier** | **x 0.75** |
+| **Defender +2 Tier** | **x 0.50** |
+| **Attacker +1 Tier** | **x 1.25** |
+| **Attacker +2 Tier** | **x 1.50** |
+
+## IV. RECOVERY (RENEWAL)
+- **Long Rest:** Restores $\mathbf{E_{cur}}$ to 100% (or current $\mathbf{E_{max}}$). [cite_start]It **does not** recover lost $\mathbf{E_{max}}$[cite: 2490].
+- **Waning Roll:** Happens at milestones. $\mathbf{1d6}$ (Universal) or $\mathbf{2d6}$ (Focus).
+
+---
+© 2025 Serelith Varn.
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                        Playtest_scenario_v0.9.md                         ###
+##                                                                          ###
+###############################################################################
+
+# Nárëquenta: Alpha Test Scenario — The Rescue of the Last Echo (v0.9)
+
+Test Focus (v0.9): Testing the Tier I Guarantee at creation, Attrition Control with $\mathbf{1\text{d}10}$ Proficiency, and the lethality of the Tier-Neutral Damage Formula.
+
+Duration: 2-3 Hours.
+
+---
+
+## 1. Starting Point: The Waning Sanctuary 🛡️
+
+The PCs are guardians of a **Waning Sanctuary** where the Echoes of legends are preserved. One such Echo is under attack by **The Silence** (an entity that feeds on unrealized potential). The Silence causes an **Anxiety Debuff** (All Attacker rolls have $\mathbf{-5}$ applied to $\mathbf{R_{prof}}$ for damage calculation only). The **Waning Echo** has 5 turns until it fades completely.
+
+- **Preparation:** Ensure all PCs have rolled **Initial Erosion ($\mathbf{1\text{d}10}$)**. All $\mathbf{E_{cur}}$ are at $90-99\%$. Crucially, ensure the player has designated **one Essence** to be exactly **$90\% \ \mathbf{E_{max}}$** to grant them **Tier I** status and $\mathbf{1d10}$ $\mathbf{D_{prof}}$ (Tier I Guarantee).
+    
+
+---
+
+## 2. Phase 1: The Prodigal Crossing (Testing Motor/Quality Pairs)
+
+- **Goal:** Force the spending of $\mathbf{E_{cur}}$ across multiple Essences.
+    
+- **Challenge:** A Barricade of Mistic Force blocks the way.
+    
+- **Action:** PCs must spend effort to bypass the challenge (requires 3 quick successes).
+    
+
+|**Action**|**Motor (EP​)**|**Quality (ES​)**|**Attrition (Per Success)**|
+|---|---|---|---|
+|**Brute Force**|VITALIS|MOTUS|$\max(0, 7 - R_{prof}) + 1\%$|
+|**Quick Climb**|MOTUS|VITALIS|$\max(0, 7 - R_{prof}) + 1\%$|
+
+- **Success Check:** The PC must feel the pressure of the $\mathbf{E_{cur}}$ drop from the cost of action and the Anxiety Debuff.
+    
+
+---
+
+## 3. Phase 2: The Enigma of Sacrifice (Testing High-Risk Attrition)
+
+- **Goal:** Test VERBUM / ANIMA usage and the vulnerability of a low $\mathbf{E_{cur}}$ pool.
+    
+- **Challenge:** The Echo's door is sealed by a Mystical Enigma requiring **Focus and Will**.
+    
+- **Action:** The PC must:
+    
+    - **Solve:** $\text{VERBUM}$ (Motor) + $\text{SENSUS}$ (Quality).
+        
+    - **Break:** $\text{ANIMA}$ (Motor) + $\text{VERBUM}$ (Quality).
+        
+- **Success Check:** Requires a successful roll ($\mathbf{d100' \le E_{cur}}$). Failure should result in the **$\mathbf{E_{cur}}$ Motor being penalized by $\mathbf{1\text{d}6}\%$** (simulating extreme mental strain) in addition to the standard cost.
+    
+
+---
+
+## 4. Phase 3: The Final Act and Progression Setup ⚔️
+
+- **Goal:** Test the **Tier-Neutral Damage Formula** and the need for **Action Surges** (max 5 at Tier V).
+    
+- **Challenge:** A **Form Guardian** (NPC, Tier I, $\mathbf{E_{cur}} \approx 90\%$, $\mathbf{HP 100}$) materializes.
+    
+- **Special Rule:** The PC with the lowest $\mathbf{E_{max}}$ (highest Tier) should be encouraged to attack first to test the efficiency of their $\mathbf{A_{FP}}$.
+    
+- **Damage Rule:** Use the **Defensive Tier Advantage ($\mathbf{M_{DTA}}$)** when the PC is hit (e.g., PC Tier III vs NPC Tier I $\rightarrow \times 0.75$ Multiplier).
+    
+
+|**Rule Tested**|**PC Tier IV → Tier I NPC**|**Formula Component**|
+|---|---|---|
+|**Offense Power**|PC's high $\mathbf{R_{prof}}$ yields high $\mathbf{A_{FP}}$.|$100 - d100'$|
+|**Defense Balance**|PC takes reduced damage.|$\times M_{DTA}$|
+
+- **Exit:** The GM guides the PCs to a moment of **Long Rest** and prompts the **Waning Roll** at the end of the chapter: "Which Essence betrayed you? What are you willing to lose to master it?".
+    
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See See [LICENSE.md](license.md)].
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                          Playtest_sheet_v0.9.md                          ###
+##                                                                          ###
+###############################################################################
+
+# Nárëquenta: Alpha Test Sheet (v0.9)
+
+**Name:** [_____________________]
+**Concept / Legend People Tell About You:** [_____________________]
+**HP Current:** [100] / 100
+**ACTION SURGE (AS) POOL AVAILABLE:** [ ] / [ Max: 5 at Tier V ] [cite: 199, 201]
+
+## ESSENCES (E_max vs E_cur)
+
+**Instructions:** $\mathbf{E_{max}}$ is your permanent potential, capped at **50%**.$\mathbf{E_{cur}}$ is your daily energy pool.
+
+| Essence | E_MAX (Maximum Potential) | TIER / $\mathbf{\bar{M}}$ (Avg Proficiency) | E_CUR (Current Energy) | D_PROF POOL (Active Dice) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **MOTUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **SENSUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **VERBUM** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **ANIMA** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+
+## QUICK TIER REFERENCE (v0.9) 
+
+| Remaining E_MAX (%) | TIER | D_PROF Pool | $\mathbf{\bar{M}}$ (Mitigation/Damage Avg) | AS Max |
+| :--- | :--- | :--- | :--- | :--- |
+| 100% – 91% | **0** | None | 0.0 | 0 |
+| 90% – 81% | **I** | $1\text{d}10$ | 5.5 | 1 |
+| 80% – 71% | **II** | $2\text{d}10$ | 11.0 | 2 |
+| 70% – 61% | **III** | $3\text{d}10$ | 16.5 | 3 |
+| 60% – 51% | **IV** | $4\text{d}10$ | 22.0 | 4 |
+| **50% (PINNACLE)** | **V** | $5\text{d}10$ | 27.5 | **5** |
+
+## QUICK ATTRITION AND DAMAGE REFERENCE (v0.9) 
+
+| Attrition | Motor Essence ($\mathbf{E_{P}}$) | Quality Essence ($\mathbf{E_{S}}$) | Calculation Summary |
+| :--- | :--- | :--- | :--- |
+| **$\mathbf{E_{cur}}$ Cost** | [cite_start]$\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ [cite: 204] | [cite_start]**$1\%$ Fixed Cost** [cite: 204, 266] | [cite_start]**$\mathbf{D_{Final}}$** is Tier-Neutral, mitigated by $\mathbf{M}_{Defense}$ and scaled by $\mathbf{M_{DTA}}$[cite: 266]. |
+| **Failure (Effort)** | [cite_start]$\mathbf{1\%}$ Loss [cite: 267] | [cite_start]$\mathbf{1\%}$ Loss [cite: 267] | [cite_start]Both $\mathbf{E_{cur}}$ pools are reduced by $1\%$ on failed effort rolls[cite: 267]. |
+
+**MOTOR/QUALITY PAIRS:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## EROSION / REFINEMENT LOG (Permanent Loss)
+(Log the $\mathbf{E_{max}}$ loss and resource gains achieved during the Waning Roll.)
+
+| Date / Chapter | [cite_start]Refined Essence (Focus **2d6** Risk) [cite: 18] | Old E\_MAX | New E\_MAX | TIER Gained | AS Gained |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## FINAL VOW
+(What you promised to do before you fade.)
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license: 62).
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                          core_rules_v0.9.6.4.md                          ###
+##                                                                          ###
+###############################################################################
+
+# 📜 Nárëquenta Core Rules v0.9.64
+
+## 1. What This Game Is 🧭
+
+Nárëquenta is a TTRPG where heroes begin near their peak and end spent. Progression is the **defining of character through loss**. Power is a finite resource. **Proficiency Compensates for Decline**.
+***
+
+## 2. Facets of the Self (Essences) ✨
+
+Each character is defined by five Essences. Each Essence starts at **$100\%$**, subject to Initial Erosion.
+
+- **VITALIS** — body, endurance, force, presence
+- **MOTUS** — movement, finesse, agility, grace
+- **SENSUS** — awareness, instinct, focus, perception
+- **VERBUM** — intellect, logic, structure, speech
+- **ANIMA** — conviction, will, faith, sacrifice
+
+### Essence Values
+
+- **Maximum Value ($\mathbf{E_{max}}$):** Permanent limit. Can never drop below **$50\%$** (Hard Floor).
+- **Current Value ($\mathbf{E_{cur}}$):** Usable energy. Determines your **Zone of Strain**.
+***
+
+## 3. Action Resolution: The Effective Roll 🎯
+
+Success is determined by comparing the **Effective Roll** against the Permanent Capacity ($\mathbf{E_{max}}$), adjusted by fatigue.
+
+### A. Lockout Condition (The Absolute Void)
+
+Before any roll, the Current Value ($\mathbf{E_{cur}}$) is checked.
+
+$$\text{If } \mathbf{E_{cur}} < 1 \rightarrow \text{Automatic Failure / Action Impossible}$$
+
+> ==**If Active Vigor is less than 1, the action results in automatic failure.**==
+
+**Emergency Recovery (The Quick Breath):** If you are at $0 \mathbf{E_{cur}}$, you may spend your entire turn to take a Quick Breath (Short Rest).
+
+### B. The Effective Roll Formula
+
+$$\mathbf{R_{Eff}} = \mathbf{d100} - \mathbf{R_{prof}}$$
+
+> ==**The Effective Roll equals the Chaos Die ($\mathbf{d100}$) minus the Skill Result ($\mathbf{R_{prof}}$).==**
+
+### C. The Success Check
+
+$$\mathbf{R_{Eff}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$$
+
+> ==**The action succeeds if the Effective Roll is less than or equal to your $\mathbf{E_{max}}$ minus the current Zone Penalty.==**
+
+### D. Zones of Strain ($\mathbf{E_{cur}}$)
+
+As $\mathbf{E_{cur}}$ depletes, you fall into lower Zones, increasing the difficulty of actions.
+
+| **Range $\mathbf{E_{cur}}$** | **Zone Name** | **Penalty ($\mathbf{Z_{Penalty}}$)** |
+| :--- | :--- | :--- |
+| **100% – 76%** | **Peak** | **-0** |
+| **75% – 51%** | **Waning** | **-10** |
+| **50% – 26%** | **Fading** | **-20** |
+| **25% – 0%** | **Hollow** | **-30** |
+***
+
+## 4. Attrition: The Cost of Action 🩸
+
+Every action burns Essence. The cost is derived from the **Item Weight** and mitigated by **Skill**.
+
+### Attrition Formula
+
+$$\mathbf{Cost} = \max \left( 0, \mathbf{Weight} - \left\lfloor \frac{\mathbf{R_{prof}}}{2} \right\rfloor \right)$$
+
+> **The Energy Cost equals the Weapon Weight minus half of the Proficiency Roll (rounded down).**
+
+| **Weight Class** | **Base Cost** | **Examples** |
+| :--- | :--- | :--- |
+| **Light** | **10%** | Daggers, Shortbows |
+| **Medium** | **15%** | Swords, Javelins |
+| **Heavy** | **20%** | Mauls, Arbalests |
+
+- **Critical Success (1-5):** Halve the final Cost.
+- **Critical Failure (96-100):** Double the final Cost.
+***
+
+## 5. Combat: Precision Lethality ($\mathbf{D_{Final}}$) 💥
+
+Damage calculation privileges Skill ($\mathbf{R_{prof}}$). **Damage is Tier-Neutral**, calculated by Margins and modified by Tier Advantage.
+
+### Final Damage Formula
+
+$$\mathbf{D_{Final}} = \max \left( \mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Def}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}}) \right) \times \mathbf{M_{DTA}}$$
+
+ >==**Final Damage is the higher of the Proficiency Floor or the Calculated Margin, multiplied by the Tier Advantage.**==
+
+| **Component**                                | **Definition**                                                                                 |
+| :------------------------------------------- | :--------------------------------------------------------------------------------------------- |
+| **$\mathbf{R_{prof}}$ (Hard Floor)**         | **Additive Base Damage.** The absolute minimum damage is your Proficiency Roll result.         |
+| **$\mathbf{A_{FP}}$ (Full Force Potential)** | $\mathbf{100 - (d100 - R_{prof})}$. **Tier-Neutral.** Based on 100%, not Attacker's $E_{cur}$. |
+| **$\mathbf{\bar{M}_{Def}}$ (Mitigation)**    | The Defender's passive armor (Average of their $D_{prof}$ pool).                               |
+| **$\mathbf{D_{Margin}}$ (Vulnerability)**    | Defender's Defense Roll minus Defender's $\mathbf{E_{cur}}$. Positive values add damage.       |
+| **$\mathbf{M_{DTA}}$ (Tier Advantage)**      | Multiplier scaling from $\times 0.75$ (Uphill) to $\times 2.00$ (Overpower).                   |
+***
+
+## 6. Rituals and Renewal (Recovery) 🕯️
+
+Rituals close the game cycle (Spend → Fade → **Renew**), allowing the PC to manage their daily fatigue and accept their permanent loss.
+
+### A. Focus Renewal (Long Rest) 🌙
+
+This ritual allows the PC to recover their mental and physical focus, returning to their daily potential.
+
+- **Trigger:** Long Rest (e.g., a safe night's sleep, minimum 6 hours).
+- **Process:**
+    1. **Vigor Restoration:** The **Current Value ($\mathbf{E_{cur}}$)** of all Essences resets to **100%**.
+       > _Critical Rule:_ Recovery is **NOT** capped by $\mathbf{E_{max}}$. Even if your Soul Peak is degraded to 50%, your Active Vigor returns to 100%. You begin the day fully energized, in the **Peak Zone**.
+    2. **Surge Restoration:** The **Action Surge (AS) Pool** is **fully restored** to the total determined by the character's Proficiency Tier.
+- **Narrative Cost:** Time and safety.
+
+### B. The Short Rest (Respite) 🍵
+
+A brief pause to bind wounds, catch breath, and center the mind (15 minutes).
+
+$$\mathbf{Recovery} = \text{Sum of } \mathbf{D_{prof}}$$
+
+ >==**Recovery equals the sum of your Proficiency Dice pool results.**==
+
+(Fallback: If Tier 0, roll 1d10).
+
+### C. Emergency Recovery (The Quick Breath) 💨
+
+A desperate attempt to center oneself in the heat of battle, usually triggered when hitting the Void ($0 \ \mathbf{E_{cur}}$).
+
+- **Trigger:** Can be taken at any time during your turn, or forced when $\mathbf{E_{cur}} < 1$.
+- **Cost:** **Entire Turn Action.** You cannot Move, Defend, Attack, or React until the start of your next turn.
+- **Effect:** Immediately resolves as a **Short Rest** (Roll $\mathbf{D_{prof}}$ or 1d10 and recover that amount to $\mathbf{E_{cur}}$).
+
+### D. Note on Permanent Loss 💀
+
+The system distinguishes between **Fatigue** and **Decay**.
+
+- **Renewable:** $\mathbf{E_{cur}}$ (**Active Vigor**) represents energy. It fluctuates constantly and recovers to **100%**.
+- **Non-Renewable:** $\mathbf{E_{max}}$ (**Soul Peak**) represents the soul's structural integrity. The system **DOES NOT** restore $\mathbf{E_{max}}$ lost through the Waning Roll.
+***
+
+## 7. Progression: The Waning Roll 🌘
+
+Progression occurs at narrative milestones by permanently reducing $\mathbf{E_{max}}$ to advance Proficiency Tiers.
+
+- **Universal Decay (Non-Chosen):** Roll **1d6**. Subtract from $\mathbf{E_{max}}$.
+- **Refinement Focus (Chosen):** Roll **2d6**. Subtract from $\mathbf{E_{max}}$ to gain $\mathbf{D_{prof}}$.
+
+### Proficiency & Dice Mapping Table
+
+| **Tier** | **Total $\mathbf{E_{max}}$ Loss** | **Remaining $\mathbf{E_{max}}$** | **$\mathbf{D_{prof}}$ Dice** | **Mitigation ($\mathbf{\bar{M}}$)** | **Action Surges** |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **0** | $0-9\%$ | $100-91\%$ | None | $0.0$ | **0** |
+| **I** | $10-19\%$ | $90-81\%$ | $\mathbf{1\text{d}10}$ | $5.5$ | **1** |
+| **II** | $20-29\%$ | $80-71\%$ | $\mathbf{2\text{d}10}$ | $11.0$ | **2** |
+| **III** | $30-39\%$ | $70-61\%$ | $\mathbf{3\text{d}10}$ | $16.5$ | **3** |
+| **IV** | $40-49\%$ | $60-51\%$ | $\mathbf{4\text{d}10}$ | $22.0$ | **4** |
+| **V** | $\mathbf{50\%}$ | **50% (Pinnacle)** | $\mathbf{5\text{d}10}$ | $\mathbf{27.5}$ | **5** |
+***
+
+## 8. Use of Proficiency (Detailed Mechanics) ⚙️
+
+The result of the $\mathbf{D_{prof}}$ roll ($\mathbf{R_{prof}}$) is used for three simultaneous effects:
+
+1.  **Error Mitigation:** Subtract $\mathbf{R_{prof}}$ from the $\mathbf{d100}$ roll.
+2.  **Attrition Reduction:** $\mathbf{Cost} = \text{Weight} - \lfloor R_{prof}/2 \rfloor$.
+3.  **Special Attacks (Optional):** Sacrifice dice from the $\mathbf{D_{prof}}$ *pool* to perform enhanced actions.
+
+***
+
+## 9. Appendix: System Reference (Sigla) 📚
+
+### Component Breakdowns
+
+1. Full Potential Margin ($\mathbf{A_{FP}}$)
+
+$$\mathbf{A_{FP}} = \mathbf{100 - (d100-R_{prof})}$$
+
+> ==**This calculates the Attacker's raw power relative to a perfect 100 base. A lower modified roll yields a higher $\mathbf{A_{FP}}$.==**
+
+2. Defender Margin ($\mathbf{D_{Margin}}$)
+
+$$\mathbf{D_{Margin}} = \mathbf{d100_D-D_{Ecur}}$$
+
+> ==**This measures the Defender's vulnerability. A positive $\mathbf{D_{Margin}}$ means the Defender failed their defense, increasing damage.==**
+
+***
+© 2025 Serelith Varn — Nárëquenta. Licensed under Nárëquenta Limited Open License (v0.1). See [[LICENSE.md]].
+###############################################################################
+##                                                                          ###
+##                               CHANGELOG.md                               ###
+##                                                                          ###
+###############################################################################
+
+# 📜 Nárëquenta — Contos do Declínio
+
+**Registo de Alterações (Change Log)**
+
+Todas as alterações notáveis a este projeto serão documentadas neste ficheiro.
+
+O formato é inspirado em Keep a Changelog, e adere ao Versionamento Semântico quando aplicável.
+
+---
+
+## [v0.9.64] — 2025-12-01 (Recuperação Unificada)
+**Status:** Refinamento Beta - Ajuste de Ciclo de Jogo
+- **Changed:** Alterada a regra de **Renovação de Foco (Descanso Longo)**. A restauração de $\mathbf{E_{cur}}$ agora vai até **100%** (Zona de Pico), não sendo mais limitada pelo valor atual de $\mathbf{E_{max}}$. O limite de $\mathbf{E_{max}}$ aplica-se apenas a testes de dificuldade.
+- **Added:** Definida a fórmula de **Descanso Curto** como a **Soma dos resultados de $\mathbf{D_{prof}}$** (ou 1d10 para Tier 0).
+- **Added:** Adicionada a mecânica de **Recuperação de Emergência (Fôlego Rápido)**, permitindo gastar uma ação completa para realizar um Descanso Curto quando o Vigor atinge zero.
+- **Fixed:** Consolidação dos ficheiros de Regras Centrais e Rituais num único fluxo lógico para facilitar a consulta.
+
+---
+
+## [v0.9.6] — 2025-11-28 (Letalidade de Precisão & Zonas de Tensão)
+**Status:** Refinamento Beta - Atualização Matemática Central
+- **Changed:** **Limiar de Sucesso** alterado. O sucesso é agora $\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalidade}})$. A Essência Atual ($\mathbf{E_{cur}}$) determina apenas a Zona.
+- **Added:** **Zonas de Tensão** definidas: **Pico** (-0), **Minguante** (-10), **Desvanecente** (-20) e **Vazio** (-30).
+- **Changed:** **Fórmula de Atrição** atualizada para refletir o Peso do Equipamento.
+    - Antigo: $\max(0, 7 - R_{prof})$.
+    - Novo: $\max(0, \mathbf{Peso} - \lfloor R_{prof}/2 \rfloor)$.
+- **Added:** **Classes de Peso** definidas como Leve (**10%**), Médio (**15%**) e Pesado (**20%**).
+- **Changed:** **Fórmula de Dano** atualizada para incluir um **Piso Rígido**. O dano já não pode ser reduzido abaixo do resultado bruto de $\mathbf{R_{prof}}$ pela mitigação (antes dos Multiplicadores de Tier).
+- **Fixed:** Ficheiros de localização (`pt.json`) atualizados para refletir as novas fórmulas de Atrição e Sucesso.
+
+---
+
+## [v0.9] — 2025-11-17 (Maestria Progressiva & Controlo de Atrição)
+**Status:** Lógica de Progressão Finalizada
+- **Changed:** A progressão por perda de $\mathbf{E_{max}}$ é agora estritamente sequencial (um Tier de cada vez).
+- **Added:** Regra de Sincronização de Tier para Rolagens do Esvanecer.
+- **Added:** Mecânica de **Refocus (Descanso Curto)** para restaurar $\mathbf{E_{cur}}$.
+- **Added:** Ação de emergência **Centelha Final** ($\mathbf{E_{cur}=0\%}$).
+
+---
+
+## [v0.8] — 2025-11-15 (Migração SPA & Estabilização)
+**Status:** Arquitetura Estabilizada
+- **Added:** Implementação da arquitetura **Single Page Application (SPA)**.
+- **Added:** Integração completa da **Calculadora de Dano** na secção de Referência GM.
+- **Fixed:** Correções críticas no *launcher* Python e lógica de localização.
+
+---
+
+## [v0.7] — 2025-11-14 (Letalidade de Precisão)
+**Status:** Regras Base Finalizadas
+- **Changed:** Reestruturação completa da progressão e combate.
+- **Added:** **Erosão Inicial ($\mathbf{1\text{d}10}$)** na criação de personagem.
+- **Added:** **Limite Máximo ($\mathbf{50\%}$)** para $\mathbf{E_{max}}$.
+- **Changed:** Tabela de Tier de Proficiência alterada para **Progressão Uniforme ($\mathbf{1\text{d}10}$ por Tier)**.
+- **Added:** Fórmula de Dano Aditiva e Multiplicador de Vantagem de Tier ($\mathbf{M_{DTA}}$).
+- **Added:** Regra de Pares de Essência Motor/Qualidade.
+
+---
+
+## [v0.5] — 2025-10-27 (Rolagens de Ataque & Combate)
+**Status:** Pronto para Teste Alpha
+- **Changed:** O sistema de Resolução de Ação passa a ser por **Rolagens Contestadas**.
+- **Added:** Tiers de Proficiência e Mapeamento de Dados.
+- **Added:** Sistema de Resultados Críticos e Mitigação de Proficiência.
+
+---
+
+## [v0.4] — 2025-10-26 (Ciclo de Progresso Final)
+**Status:** Pronto para Teste Alpha
+- **Removed:** Removidas regras obsoletas de Cicatrização.
+- **Changed:** Alterada a regra de progressão para a **Rolagem do Esvanecer** (Waning Roll).
+- **Changed:** A Escolha de Proficiência rola $\mathbf{4\text{d}6}$ em troca de **$\mathbf{2\text{d}10}$ Dados de Proficiência ($\mathbf{D_{prof}}$)**.
+- **Fixed:** Corrigido o título do jogo para **Nárëquenta — Contos do Declínio**.
+
+---
+
+## [v0.3] — 2025-10-26 (Refinamento do Escopo de Atrição)
+**Status:** Prontidão para Teste Alpha
+- **Removed:** Removido o custo de Atrição ($\mathbf{E_{cur}}$) para a maioria das ações fora de combate.
+- **Added:** Adicionada regra de Custo Fixo de **$\mathbf{2\%}$** para situações de stress extremo fora de combate.
+- **Added:** Adicionada **Penalidade Simétrica ($\mathbf{10}$)** para NPCs.
+
+---
+
+## [v0.2] — 2025-10-26 (Estrutura de Design)
+**Status:** Prontidão para Teste Alpha
+- **Changed:** Alterada a nomenclatura das Facetas para **VITALIS · MOTUS · SENSUS · VERBUM · ANIMA**.
+- **Added:** Adicionada a separação crítica entre **Essência Máxima ($\mathbf{E_{max}}$)** e **Essência Atual ($\mathbf{E_{cur}}$)**.
+- **Added:** Adicionada a **Escala Minguante**, onde $\mathbf{E_{max}}$ baixo concede bónus de Eficiência.
+- **Added:** Adicionada Resolução de Ação por Rolagem Híbrida e sistema de Dano Mitigado por $\mathbf{E_{max}}$.
+- **Added:** Adicionado suporte Multilíngue (PT-PT / EN-US) e lógica de automação da ficha.
+
+---
+
+## [v0.1] — 2025-10-25 (Desenvolvimento Privado)
+**Status:** Prova de Origem
+- **Added:** Estabelecido o mecanismo principal de auto-atrito: Ações consomem percentagens da Faceta.
+- **Added:** Definido o sistema opcional de "Cicatrização" que reduz o valor máximo em troca de eficiência.
+- **Added:** Definidas cinco Facetas do Eu: VIGOR · GRACE · MIND · SPIRIT · SHADOW.
+- **Added:** Adicionada Fase de Recuperação e regra de Fim de Jogo.
+
+***
+
+🧾 Chave de Versão
+
+|**Tipo**|**Significado**|
+|---|---|
+|**Added**|Nova funcionalidade ou mecânica|
+|**Changed**|Regra ajustada ou reequilibrada|
+|**Removed**|Mecânica ou ficheiro removido|
+|**Fixed**|Correção ou erro tipográfico|
+
+---
+🪶 Créditos
+
+Design & Escrita — Serelith Varn
+Desenvolvimento de Sistema & Documentação — GPT-5 (Liora Vex Framework)
+
+“Somos lembrados pela forma elegante como nos desvanecemos.”
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Declínio.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Ver [LICENSE.md](license.md).
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                                CREDITS.md                                ###
+##                                                                          ###
+###############################################################################
+
+# 🕯️ Nárëquenta — Contos do Esvanecer (Tales of the Waning)
+
+### Manifestação do Autor e Créditos
+
+---
+
+## 🪶 Autoria Primária
+
+Criado e Escrito por:
+
+Serelith Varn
+
+Designer · Contador de Histórias · Arquiteto de Sistema
+
+Nárëquenta foi concebido, desenhado e documentado pela primeira vez em 25 de Outubro de 2025.
+
+Todos os mecanismos centrais, terminologia e estrutura narrativa tiveram origem no repositório privado narequenta sob a conta GitHub de Serelith Varn.
+
+---
+
+## 🧩 Sumário do Conceito Base (v0.8)
+
+> Um sistema de role-playing de mesa onde os heróis começam perto do seu auge e desvanecem com o uso.
+> 
+> O poder é consumido pela ação; a Proficiência Compensa o Declínio.
+> 
+> A história não é sobre ganhar força, mas sobre escolher o que gastar antes do fim.
+
+Palavras-chave mecânicas: **Facetas do Ser (Essências)**, **Erosão**, **Refinamento**, **Vantagem de Nível Defensivo ($\mathbf{M_{DTA}}$)**, **Atrição Controlada**, e **Arquitetura SPA Estabilizada**.
+
+---
+
+## ⚖️ Direitos e Licenciamento
+
+Todo o texto criativo, expressão de regras e terminologia neste repositório são © 2025 Serelith Varn.
+
+Este material está atualmente publicado sob a Nárëquenta Limited Open License (v0.1).
+
+**Pode:**
+
+- Testar este material em privado ou publicamente.
+    
+- Partilhar feedback diretamente com o autor.
+    
+- Criar e publicar **conteúdo de fã (Fan Content)**, desde que credite Serelith Varn e mantenha a natureza não comercial.
+    
+
+**Não Pode:**
+
+- Vender, monetizar ou distribuir comercialmente este sistema ou trabalhos derivados.
+    
+- Alterar, copiar ou redistribuir o texto das regras sem permissão.
+    
+- Usar o nome ou logótipo _Nárëquenta_ para implicar parceria ou endosso oficial.
+    
+
+Para colaboração, testes ou questões de licenciamento, por favor contacte:
+
+📧 serelith.varn@proton.me (placeholder – atualizar quando pronto)
+
+---
+
+## 🧱 Estrutura de Suporte
+
+Documentação Técnica e Apoio ao Desenvolvimento do Sistema:
+
+Google (Modelo Flash 2.5, Persona Liora Vex) — assistência de design colaborativo para a estrutura, formatação e consistência de arquivo do sistema v0.7.
+
+---
+
+## 🌒 Agradecimentos
+
+Um agradecimento especial a todos os que ajudam a refinar este sistema através de testes de jogo, feedback e debate filosófico.
+
+Os vossos insights esculpem a beleza na decadência.
+
+---
+
+> _“Que os nossos fins sejam elegantes, e as nossas cicatrizes sejam lembradas.”_
+
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). 📜 [Consulte a Licença →](LICENSE.md)
+
+---
+
+Qual o próximo documento que devo preparar para a atualização v0.8?
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                                LICENSE.md                                ###
+##                                                                          ###
+###############################################################################
+
+# 🕯️ Nárëquenta — Contos do Escurecer
+### Nárëquenta Limited Open License (v0.1)
+
+**Copyright © 2025 Serelith Varn**
+Todos os direitos reservados.
+
+---
+
+## 1. Propriedade
+
+Todo o texto criativo, terminologia, mecânica-tal-como-expressa, conceitos de cenário e apresentação de *Nárëquenta — Contos do Escurecer* são propriedade intelectual exclusiva de **Serelith Varn**.
+
+Este trabalho não pode ser vendido, relicenciado ou redistribuído no todo ou em parte sem permissão explícita por escrito do autor.
+
+---
+
+## 2. Permissão para Jogar e Criar
+
+É-lhe concedida uma **licença não exclusiva e livre de royalties** para:
+
+- Ler, aprender e jogar este sistema privada ou publicamente.
+- Gravar, transmitir (*stream*) ou publicar sessões de *actual-play* utilizando este sistema.
+- Criar e partilhar **conteúdo de fã ou homebrew** (aventuras, personagens, cenários ou suplementos) inspirados ou compatíveis com este sistema.
+
+Estas permissões são concedidas **desde que** siga os termos abaixo.
+
+---
+
+## 3. Termos de Uso
+
+Você **deve:**
+- Dar crédito a **Serelith Varn** como o criador de *Nárëquenta — Contos do Escurecer* em qualquer material publicado ou referência pública.
+- Incluir um link para o repositório original ou publicação oficial quando possível.
+- Declarar claramente que o seu trabalho não é oficial e não é endossado pelo criador.
+
+Você **não pode:**
+- Vender, monetizar ou distribuir comercialmente este sistema ou trabalhos derivados.
+- Alterar, copiar ou redistribuir o texto das regras sem permissão.
+- Usar o nome ou logótipo *Nárëquenta* para implicar parceria ou endosso oficial.
+
+---
+
+## 4. Trabalhos Derivados
+
+Criações de fãs ou de terceiros são bem-vindas e encorajadas, desde que:
+- Permaneçam **não comerciais**,
+- Incluam crédito visível a **Serelith Varn**,
+- Mantenham este texto de licença ou um link para o mesmo,
+- E se marquem claramente como conteúdo *não oficial*.
+
+---
+
+## 5. Direitos Comerciais
+
+Todos os direitos comerciais de *Nárëquenta — Contos do Escurecer* permanecem exclusivamente com **Serelith Varn**.
+Nenhuma transferência, venda ou propriedade partilhada está implícita por esta licença.
+
+Se desejar publicar conteúdo comercial ou oficial, contacte o autor para um acordo por escrito separado.
+
+---
+
+## 6. Licenciamento Futuro
+
+Esta versão da licença (v0.1) destina-se ao desenvolvimento fechado e ao uso comunitário não comercial.
+Uma edição pública posterior pode adotar uma estrutura compatível com Creative Commons ou ORC, mantendo a atribuição total ao autor.
+
+---
+
+> “Começamos perfeitos e desvanecemo-nos com graça.
+> Esta licença garante que os nossos ecos permanecem nossos.”
+
+###############################################################################
+##                                                                          ###
+##                                README.md                                 ###
+##                                                                          ###
+###############################################################################
+
+
+![Repository Header Image](header_image.png)
+# Nárëquenta — Contos do Declínio (Foundry VTT)
+
+**Versão: v0.9.6 (Letalidade de Precisão & Zonas de Tensão)**
+**Autor:** Serelith Varn (cortonemo)
+**Licença:** Nárëquenta Limited Open License (v0.1)
+**Compatibilidade:** Foundry VTT v11+
+
+-----
+
+## 💡 Filosofia Central: A Atrição é o Significado
+
+Nárëquenta é um TTRPG sobre **Decadência Elegante**. Os heróis começam no seu auge e desvanecem-se gradualmente à medida que agem e gastam a sua Essência. A progressão é a **definição do caráter através da perda**.
+
+**Axioma Central (v0.9.6):** O sucesso torna-se mais difícil à medida que te cansas (Zonas), mas a Perícia ($\mathbf{R_{prof}}$) garante um impacto mínimo ($\mathbf{D_{Piso}}$).
+
+## ⚙️ Sumário do Sistema (v0.9.6)
+
+O jogo é construído em torno da gestão de Essência, **Zonas de Tensão** e **Letalidade de Precisão**.
+
+* **Limiar de Sucesso:** As ações são bem-sucedidas se a **Rolagem Efetiva** for menor ou igual ao **Potencial menos Fadiga**:
+    $$\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalidade}})$$
+
+* **Zonas de Tensão:** À medida que $\mathbf{E_{cur}}$ cai, as penalidades aumentam:
+    * **Pico (100-76%):** -0
+    * **Minguante (75-51%):** -10
+    * **Desvanecente (50-26%):** -20
+    * **Vazio (25-0%):** -30
+
+* **Atrição:** O custo da ação deriva do **Peso do Item** e é mitigado pela Perícia:
+    $$Custo = \max(0, Peso - \lfloor R_{prof}/2 \rfloor)$$
+
+* **Dano:** Calculado usando a **Fórmula de Dano Aditiva** com um piso rígido de perícia:
+    $$\mathbf{D_{Final}} = \max(R_{prof}, (A_{FP} - \bar{M}_{Def} + D_{Margin} + R_{prof})) \times M_{DTA}$$
+
+## 🗂 Conteúdos do Repositório
+
+| Diretório | Conteúdo | Status |
+| :--- | :--- | :--- |
+| **`/Rules/`** | O Mecanismo Central, Metafísica e Rituais. | **v0.9.6 ATUALIZADO** |
+| **`/Playtest/`** | Fichas, cenários e referências rápidas para a Alpha. | **v0.9.6 ATUALIZADO** |
+| **`/Tools/`** | Scripts de cálculo e utilidades (e.g., Nárëquenta Calculator em Python). | **v0.9.6 ATUALIZADO** |
+
+-----
+
+### 📦 Instalação
+
+1.  Abra o Foundry VTT.
+2.  Vá a **Game Systems** -> **Install System**.
+3.  Cole o URL do Manifesto:
+    `https://github.com/cortonemo/narequenta-vtt/releases/latest/download/system.json`
+4.  Clique em **Install**.
+
+-----
+
+### 📜 Licença & Autoria
+
+**© 2025 Serelith Varn**
+Este projeto é lançado sob a **Nárëquenta Limited Open License (v0.1)**.
+Você é livre para jogar, transmitir e criar conteúdo de fã para este sistema — desde que forneça o crédito adequado e não o utilize comercialmente.
+Este software baseia-se no **Simple Worldbuilding System** de Atropos, utilizado sob a Licença MIT.
+
+📜 [Leia a licença completa →](LICENSE.md)
+-----
+
+
+
+###############################################################################
+##                                                                          ###
+##                          playtest_notes_v0.9.md                          ###
+##                                                                          ###
+###############################################################################
+
+# Notas de Playtest — 2025-11-17 (Pós-teste Alpha v0.9)
+
+ID da Sessão:
+
+Jogadores:
+
+Local / contexto:
+
+## V0.9 Eficácia Mecânica 🧪
+
+_(Foco na Mitigação da Decadência e no Tier Inicial)_
+
+O que funcionou bem:
+
+- A **Garantia de Tier I** inicial ($\mathbf{E_{max}} = 90\%$) pareceu adequada, ou tornou a criação de personagem demasiado complexa?
+    
+- A **Decadência Universal mais lenta ($\mathbf{1d6}$ de perda)** foi percetível, fazendo com que os jogadores se sentissem mais seguros em relação à perda permanente?
+    
+
+O que pareceu penalizador / pouco compensador:
+
+- O risco de **Focus $\mathbf{2d6}$** continuou a parecer uma troca apelativa por um aumento garantido de Tier, tendo em conta que a taxa de decadência foi reduzida a metade?
+    
+
+Os jogadores hesitaram em agir porque o custo lhes pareceu injusto?
+
+- Especificamente, os jogadores evitaram usar a **Essência de Tier I** ($90\% \ \mathbf{E_{max}}$) porque queriam preservar essa vantagem permanente?
+    
+
+Alguém gostou de se queimar por algo dramático?
+
+Alguma confusão de regras:
+
+- A distinção entre o Hard Floor de $\mathbf{E_{max}}$ ($50\%$) e o mínimo de $\mathbf{E_{cur}}$ ($0\%$) esteve clara durante o jogo?
+    
+
+Alterações imediatas a testar na próxima versão:
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+
+Licenciado para jogo não comercial e conteúdo de fãs ao abrigo da Nárëquenta Limited Open License (v0.1). Ver [LICENSE.md](license: 282).
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license: 282).
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                        character_sheet_v0.9.6.md                         ###
+##                                                                          ###
+###############################################################################
+
+# Ficha de Personagem v0.9.6 - Nárëquenta
+
+**Nome:** ____________________
+**PV:** [100] / 100
+**SURTOS DE INTENÇÃO (AS):** [ ] / [ Máx: ___ ]
+
+## ESSÊNCIAS (FACETAS DO EU)
+O Piso Rígido de $E_{max}$ é **50%**.
+
+| Essência | **$E_{MAX}$** (Potencial) | **NÍVEL** | **$E_{CUR}$** (Atual) | **PENALIDADE DE ZONA** |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **MOTUS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **SENSUS** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **VERBUM** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+| **ANIMA** | [____%] | [____] | [____%] | (0 / -10 / -20 / -30) |
+
+## REFERÊNCIA RÁPIDA: ZONAS DE TENSÃO
+Verifique o seu $\mathbf{E_{cur}}$ para determinar a Penalidade no Sucesso.
+
+| $\mathbf{E_{cur}}$ % | Zona | Penalidade |
+| :--- | :--- | :--- |
+| 100-76% | Pico | **-0** |
+| 75-51% | Minguante | **-10** |
+| 50-26% | Desvanecente | **-20** |
+| 25-0% | Vazio | **-30** |
+
+## REGISTO DE ATRIÇÃO E DANO
+**Sucesso:** $(d100 - R_{prof}) \le (E_{max} - Zona)$
+**Atrição:** $Custo = \max(0, Peso - \lfloor R_{prof}/2 \rfloor)$.
+
+| Classe de Peso | Custo Base | Exemplos |
+| :--- | :--- | :--- |
+| **Leve** | **10%** | Adagas, Arcos Curtos |
+| **Médio** | **15%** | Espadas, Dardos |
+| **Pesado** | **20%** | Maças, Bestas |
+
+**Dano ($D_{Final}$):** $\max(R_{prof}, (A_{FP} - \bar{M} + D_{Margin} + R_{prof})) \times M_{DTA}$.
+
+---
+© 2025 Serelith Varn.
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                          gm_reference_v0.9.6.md                          ###
+##                                                                          ###
+###############################################################################
+
+# Referência do Mestre v0.9.6 (Letalidade de Precisão)
+
+## I. FLUXO DA SESSÃO
+1. **Briefing:** Estabelecer o que arriscam perder.
+2. **Resolução de Ação:**
+   - **Teste:** $\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalidade}})$.
+   - **Atrição:** A ação queima $\mathbf{E_{cur}}$ com base no Peso do Item (Leve 10%, Med 15%, Pes 20%) menos $\lfloor R_{prof}/2 \rfloor$.
+3. **Zonas de Tensão:** Garantir que os jogadores registam a sua penalidade de Zona atual.
+   - **Pico (100-76%):** -0
+   - **Minguante (75-51%):** -10
+   - **Desvanecente (50-26%):** -20
+   - **Vazio (25-0%):** -30.
+
+## II. FÓRMULAS DE COMBATE
+**O Piso de Dano:** O dano nunca desce abaixo de $\mathbf{R_{prof}}$ (antes do Multiplicador de Nível).
+
+$$\mathbf{D_{Final}} = \max(\mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Def}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}})) \times \mathbf{M_{DTA}}$$
+
+| Componente | Fórmula / Valor |
+| :--- | :--- |
+| **$\mathbf{A_{FP}}$** | $100 - (d100 - R_{prof})$ |
+| **$\mathbf{D_{Margin}}$** | $Rolagem_{Def} - Defensor_{Ecur}$ |
+| **$\mathbf{\bar{M}_{Def}}$** | $Defensor_{Nível} \times 5.5$ |
+
+## III. MULTIPLICADOR DE VANTAGEM DE NÍVEL ($\mathbf{M_{DTA}}$)
+Baseado em $\Delta T = T_{Defensor} - T_{Atacante}$.
+
+| Atacante vs Defensor | Multiplicador |
+| :--- | :--- |
+| **Nível Igual** | **x 1.00** |
+| **Defensor +1 Nível** | **x 0.75** |
+| **Defensor +2 Níveis** | **x 0.50** |
+| **Atacante +1 Nível** | **x 1.25** |
+| **Atacante +2 Níveis** | **x 1.50** |
+
+## IV. RECUPERAÇÃO (RENOVAÇÃO)
+- **Descanso Longo:** Restaura $\mathbf{E_{cur}}$ para 100% (ou $\mathbf{E_{max}}$ atual). **Não** recupera $\mathbf{E_{max}}$ perdido.
+- **Rolagem do Esvanecer:** Ocorre em marcos. $\mathbf{1d6}$ (Universal) ou $\mathbf{2d6}$ (Foco).
+
+---
+© 2025 Serelith Varn.
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                               playtest.txt                               ###
+##                                                                          ###
+###############################################################################
+
+# Ficha de Personagem v0.7 - Nárëquenta: Contos do Esvanecer
+
+**Versão: v0.7-FINAL (Letalidade de Precisão)**
+
+Nome:
+Conceito / Lenda que as Pessoas Contam Sobre Ti:
+HP Atual: [100] / 100
+POOL DE IMPULSOS DE AÇÃO (AS) DISPONÍVEL: [ ] / [ Máx: Cons. Tabela AS ]
+
+## ESSÊNCIAS (FACETAS DO SER)
+Monitorize a sua capacidade máxima ($\mathbf{E_{max}}$ Hard Floor 50%) e a energia atual utilizável.
+
+| Essência | E_MÁX (Potencial Máximo) | E_ATUAL (Uso Atual) | TIER / $\mathbf{\bar{M}}$ (Proficiência Média) | POOL D_PROF (Dados Ativos) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **MOTUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **SENSUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **VERBUM** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **ANIMA** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+
+## REFERÊNCIA RÁPIDA DE TIERS (v0.7)
+Os $\mathbf{D_{prof}}$ são **$1d10$ por Tier**. A **Margem Média ($\mathbf{\bar{M}}$)** é usada para Mitigação de Defesa e Cálculo de Atrição.
+
+| E_MÁX Restante (%) | TIER | D_PROF Pool | $\mathbf{\bar{M}}$ (Mitigação/Dano Avg) |
+| :--- | :--- | :--- | :--- |
+| 100% – 91% | **0** | Nenhum | 0.0 |
+| 90% – 81% | **I** | $1\text{d}10$ | 5.5 |
+| 80% – 71% | **II** | $2\text{d}10$ | 11.0 |
+| 70% – 61% | **III** | $3\text{d}10$ | 16.5 |
+| 60% – 51% | **IV** | $4\text{d}10$ | 22.0 |
+| **50% (PINÁCULO)** | **V** | $5\text{d}10$ | 27.5 |
+
+## REGISTO DE RESOLUÇÃO DE AÇÃO E ATRIÇÃO
+*Sucesso na Rolagem Contestada:* Rola $\mathbf{d100 \le \mathbf{E_{cur}}}$. Subtrai $\mathbf{R_{prof}}$ (rolagem $\mathbf{D_{prof}}$) do $\mathbf{d100}$.
+
+| Atrição | Essência Motor ($\mathbf{E_{P}}$) | Essência Qualidade ($\mathbf{E_{S}}$) | Fórmulas de Cálculo v0.7 |
+| :--- | :--- | :--- | :--- |
+| **Custo de $\mathbf{E_{cur}}$** | $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ | **$1\%$ Custo Fixo** | **Dano Final:** $\mathbf{D_{Final}} = \max \left( 0, (A_{FP} - \bar{M}_{Defesa} + D_{Margin} + R_{prof}) \right) \times M_{DTA}$ |
+
+**PARES MOTOR/QUALIDADE:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## REGISTO DE EROSÃO / REFINAMENTOS (Perda Permanente)
+(Registe a perda permanente de $\mathbf{E_{max}}$ e os ganhos de recursos.)
+
+| Data / Capítulo | Essência Refinada (Foco 4d6) | E_MÁX Antigo | E_MÁX Novo | TIER Ganho | AS Ganho |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## PROMESSA FINAL
+(O que prometeste fazer antes de te desvaneças.)
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+<!-- ==== gm_reference_v0.7.md ==== -->
+
+# GM Reference v0.7
+
+Rascunho Finalizado — 2025-11-14
+
+## FLUXO DA SESSÃO
+1. **Briefing / Preparação:** Por que esta missão é importante (e o que arriscam perder).
+2. **Cenas de Jogo:** Qualquer ação significativa custa Essência ($\mathbf{E_{cur}}$) e é resolvida com uma **Rolagem Contestada**.
+    - O jogador escolhe as Essências Motor ($\mathbf{E_{P}}$) e Qualidade ($\mathbf{E_{S}}$) (ver Regras de Combate para Pares).
+    - O jogador usa $\mathbf{D_{prof}}$ para **Mitigação de Erro** ($\mathbf{R_{prof}}$ subtrai do $\mathbf{d100}$) e **Dano Base**.
+    - **Custo de Atrição:** A perda de $\mathbf{E_{cur}}$ é calculada usando o **resultado $\mathbf{R_{prof}}$ da rolagem** (Custo: $\max(0, 7 - R_{prof})$).
+
+## RITUAL E FASE DE RECUPERAÇÃO
+- **Renovação ($\mathbf{E_{cur}}$ e AS):** Restaura **$\mathbf{E_{cur}}$** para o seu valor $\mathbf{E_{max}}$ atual. Também restaura o pool de **Impulsos de Ação (AS)** até ao máximo determinado pelo Tier (Tier V = 4 AS).
+- **Decaimento e Refinamento ($\mathbf{E_{max}}$):** Este processo acontece **SOMENTE no final do Capítulo** (Rolagem do Esvanecer).
+    - Peça aos jogadores para escolherem o seu Foco de Proficiência (o risco de $\mathbf{4\text{d}6}$).
+    - Role o Decaimento Universal ($\mathbf{2\text{d}6}$) e aplique todas as perdas, garantindo que $\mathbf{E_{max}}$ nunca desce abaixo de **$50\%$**.
+
+## RITMO / TOM
+- **A Atrição é uma Escolha:** Nunca diga: "Não podes fazer isso." Diga: "O custo é $\mathbf{X\%}$ de perda de [Motor] e $\mathbf{1\%}$ de [Qualidade]. Estás disposto a queimar?"
+- **Vantagem de Nível (DTA):** Lembre-se que a **Vantagem de Nível Defensivo ($\mathbf{M_{DTA}}$)** gere automaticamente encontros de Tier baixo vs. Tier alto. O PC altamente proficiente (com $\mathbf{E_{max}}$ baixo) é defensivamente forte contra inimigos mais fracos.
+- **Letalidade:** Quando os Tiers são iguais, o combate é altamente letal ($\approx 46 \text{ HP}$ por acerto). Esteja preparado para resultados rápidos e decisivos baseados em margens críticas.
+- **Recompensa Narrativa:** Recompense descrições criativas e vívidas, permitindo ao Atacante ganhar vantagem na própria **rolagem de $\mathbf{D_{prof}}$** (e.g., rolar novamente um dado), em vez de modificar a fórmula final.
+- **Trate o Fim Como Sagrado.** Quando todas as Facetas atingem $\mathbf{E_{cur}} = 0$, pergunte: como são lembrados?
+
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Escurecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See  [LICENSE.md](license.md).
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+<!-- ==== PLAYTEST-SCENARIO.md ==== -->
+
+# Nárëquenta: Cenário de Teste Alpha — O Resgate do Último Eco
+
+**Foco do Teste (v0.7):** Testar o **Controlo de Atrição Tier I+** e a letalidade da **Fórmula de Dano Neutra por Nível**.
+**Duração:** 2-3 Horas.
+
+## 1. Ponto de Partida: O Santuário do Declínio
+
+Os PCs são guardiões de um **Santuário do Declínio** onde os Ecos de lendas são preservados. Um desses Ecos está sob ataque de **O Silêncio** (uma entidade que se alimenta de potencial não realizado). O Silêncio causa um **Debuff de Ansiedade** (Todas as rolagens de ataque do Atacante têm $\mathbf{-5}$ aplicado ao $\mathbf{R_{prof}}$ apenas para cálculo de dano) e o **Eco em Declínio** tem 5 turnos até desvanecer completamente.
+
+* **Preparação:** Certifique-se de que todos os PCs rolaram a **Erosão Inicial ($\mathbf{1\text{d}10}$)**. Todos os $\mathbf{E_{cur}}$ estão em $90-99\%$.
+
+---
+
+## 2. Fase 1: A Travessia Pródiga (Teste de Pares Motor/Qualidade)
+
+* **Objetivo:** Forçar o gasto de $\mathbf{E_{cur}}$ em múltiplas Essências.
+* **Desafio:** Uma Barricada de Força Mística bloqueia o caminho.
+* **Ação:** Os PCs devem gastar esforço para contornar o desafio (requer 3 sucessos rápidos).
+
+| Ação | Motor ($\mathbf{E_{P}}$) | Qualidade ($\mathbf{E_{S}}$) | Atrição (Por Sucesso) |
+| :--- | :--- | :--- | :--- |
+| **Força Bruta** | VITALIS | MOTUS | $\max(0, 7 - R_{prof}) + 1\%$ |
+| **Escalada Rápida** | MOTUS | VITALIS | $\max(0, 7 - R_{prof}) + 1\%$ |
+
+* **Verificação de Sucesso:** O PC deve sentir a pressão da queda de $\mathbf{E_{cur}}$ devido ao custo da ação e ao Debuff de Ansiedade.
+
+---
+
+## 3. Fase 2: O Enigma do Sacrifício (Teste de Atrição de Alto Risco)
+
+* **Objetivo:** Testar o uso de **VERBUM / ANIMA** e a vulnerabilidade de um *pool* $\mathbf{E_{cur}}$ baixo.
+* **Desafio:** A porta do Eco está selada por um Enigma Místico que requer **Foco e Vontade**.
+* **Ação:** O PC deve:
+    * **Resolver:** $\text{VERBUM}$ (Motor) + $\text{SENSUS}$ (Qualidade).
+    * **Quebrar:** $\text{ANIMA}$ (Motor) + $\text{VERBUM}$ (Qualidade).
+* **Verificação de Sucesso:** Requer uma rolagem bem-sucedida ($\mathbf{d100' \le E_{cur}}$). A falha deve resultar na **penalização da $\mathbf{E_{cur}}$ Motor em $\mathbf{1\text{d}6}\%$** (simulando *stress* mental extremo) para além do custo padrão.
+
+---
+
+## 4. Fase 3: O Ato Final e Configuração de Progressão
+
+* **Objetivo:** Testar a **Fórmula de Dano Neutra por Nível** e a necessidade de **Impulsos de Ação (AS)**.
+* **Desafio:** Um **Guardião de Forma** (NPC, Tier I, $\mathbf{E_{cur}} \approx 90\%$, $\mathbf{HP 100}$) materializa-se.
+* **Regra Especial:** O PC com o $\mathbf{E_{max}}$ mais baixo (Tier mais alto) deve ser incentivado a atacar primeiro para testar a eficiência da sua **Margem de Potencial Total ($\mathbf{A_{FP}}$)**.
+* **Regra de Dano:** Use o **Multiplicador de Vantagem de Nível Defensivo ($\mathbf{M_{DTA}}$)** quando o PC for atingido (e.g., PC Tier III vs NPC Tier I $\rightarrow \times 0.75$ Multiplicador).
+
+| Regra Testada | PC Tier IV $\rightarrow$ NPC Tier I | Componente da Fórmula |
+| :--- | :--- | :--- |
+| **Poder Ofensivo** | $\mathbf{R_{prof}}$ elevado do PC gera $\mathbf{A_{FP}}$ elevado. | $100 - d100'$ |
+| **Equilíbrio Defensivo** | PC recebe dano reduzido. | $\times M_{DTA}$ |
+
+* **Saída:** O MJ guia os PCs para um momento de **Descanso de Longa Duração** e inicia a **Rolagem do Esvanecer** no final do capítulo: "Que Essência vos traiu? O que estão dispostos a perder para a dominar?"
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+<!-- ==== PLAYTEST-SHEET.md ==== -->
+
+# Nárëquenta: Ficha de Teste Alpha (v0.7)
+
+**Nome:** [_____________________]
+**Conceito / Lenda que as Pessoas Contam Sobre Ti:** [_____________________]
+**HP Atual:** [100] / 100
+**POOL DE IMPULSOS DE AÇÃO (AS) DISPONÍVEL:** [ ] / [ Máx: Consultar Tabela AS ]
+
+## ESSÊNCIAS (E\_max vs E\_cur)
+
+**Instruções:** $\mathbf{E_{max}}$ é o seu potencial permanente, limitado a 50%. $\mathbf{E_{cur}}$ é o seu *pool* de energia diária.
+
+| Essência | E\_MÁX (Potencial Máximo) | TIER / $\mathbf{\bar{M}}$ (Proficiência Média) | E\_ATUAL (Energia Atual) | POOL D\_PROF (Dados Ativos) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **MOTUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **SENSUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **VERBUM** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **ANIMA** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+
+## REFERÊNCIA RÁPIDA DE ATRIÇÃO E DANO (v0.7)
+
+| Atrição | Essência Motor ($\mathbf{E_{P}}$) | Essência Qualidade ($\mathbf{E_{S}}$) | Sumário do Cálculo |
+| :--- | :--- | :--- | :--- |
+| **Custo de $\mathbf{E_{cur}}$** | $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ | **$1\%$ Custo Fixo** | **$\mathbf{D_{Final}}$** é Neutro por Nível, mitigado por $\mathbf{M}_{Defesa}$ e dimensionado por $\mathbf{M_{DTA}}$. |
+| **Falha (Esforço)** | $\mathbf{1\%}$ Perda | $\mathbf{1\%}$ Perda | Ambas as *pools* $\mathbf{E_{cur}}$ são reduzidas em $1\%$ em rolagens de esforço falhadas. |
+
+**PARES MOTOR/QUALIDADE:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## REGISTO DE EROSÃO / REFINAMENTOS (Perda Permanente)
+(Registar a perda $\mathbf{E_{max}}$ permanente e os ganhos de recursos obtidos durante a Rolagem do Esvanecer.)
+
+| Data / Capítulo | Essência Refinada (Foco 4d6 Risco) | E\_MÁX Antigo | E\_MÁX Novo | TIER Ganho | AS Ganho |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## PROMESSA FINAL
+(O que prometeste fazer antes de te desvaneças.)
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                        Playtest_scenario_v0.9.md                         ###
+##                                                                          ###
+###############################################################################
+
+# Nárëquenta: Ficha de Teste Alpha (v0.9)
+
+**Nome:** [_____________________]
+**Conceito / Lenda Que Contam Sobre Si:** [_____________________]
+**PV Atuais:** [100] / 100
+**RESERVA DE ATAQUE SÚBITO (AS) DISPONÍVEL:** [ ] / [ Máx: 5 no Nível V ]
+
+## ESSÊNCIAS ($E_{max}$ vs $E_{cur}$)
+
+**Instruções:** $\mathbf{E_{max}}$ é o seu potencial permanente, limitado a **50%**. $\mathbf{E_{cur}}$ é a sua reserva de energia diária.
+
+| Essência | $E_{MAX}$ (Potencial Máximo) | NÍVEL / $\mathbf{\bar{M}}$ (Proficiência Média) | $E_{CUR}$ (Energia Atual) | RESERVA $D_{PROF}$ (Dados Ativos) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
+| **MOTUS** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
+| **SENSUS** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
+| **VERBUM** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
+| **ANIMA** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
+
+## REFERÊNCIA RÁPIDA DE NÍVEIS (v0.9) 
+
+| $E_{MAX}$ Remanescente (%) | NÍVEL | Reserva $D_{PROF}$ | $\mathbf{\bar{M}}$ (Média de Mitigação/Dano) | AS Máx |
+| :--- | :--- | :--- | :--- | :--- |
+| 100% – 91% | **0** | Nenhum | 0.0 | 0 |
+| 90% – 81% | **I** | $1\text{d}10$ | 5.5 | 1 |
+| 80% – 71% | **II** | $2\text{d}10$ | 11.0 | 2 |
+| 70% – 61% | **III** | $3\text{d}10$ | 16.5 | 3 |
+| 60% – 51% | **IV** | $4\text{d}10$ | 22.0 | 4 |
+| **50% (PINÁCULO)** | **V** | $5\text{d}10$ | 27.5 | **5** |
+
+## REFERÊNCIA RÁPIDA DE ATRIÇÃO E DANO (v0.9) 
+
+| Atrição | Essência Motor ($\mathbf{E_{P}}$) | Essência Qualidade ($\mathbf{E_{S}}$) | Resumo do Cálculo |
+| :--- | :--- | :--- | :--- |
+| **Custo $\mathbf{E_{cur}}$** | $\mathbf{D_{Perda} = \max \left( 0, (7 - R_{prof}) \right)}$ | **Custo Fixo de $\mathbf{1\%}$** | **$\mathbf{D_{Final}}$** é Neutro em Nível, mitigado por $\mathbf{M}_{Defesa}$ e escalado por $\mathbf{M_{DTA}}$. |
+| **Falha (Esforço)** | $\mathbf{1\%}$ de Perda | $\mathbf{1\%}$ de Perda | Ambas as reservas de $\mathbf{E_{cur}}$ são reduzidas em $1\%$ em jogadas de esforço falhadas. |
+
+**PARES MOTOR/QUALIDADE:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## REGISTO DE EROSÃO / REFINAMENTO (Perda Permanente)
+(Registe a perda de $\mathbf{E_{max}}$ e os ganhos de recurso alcançados durante a Jogada Minguante.)
+
+| Data / Capítulo | Essência Refinada (Risco Foco **$2\text{d}6$**) | $E_{MAX}$ Antigo | $E_{MAX}$ Novo | NÍVEL Ganho | AS Ganho |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## VOTO FINAL
+(O que prometeu fazer antes de se desvanecer.)
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Minguante.
+Licenciado para jogo não comercial e conteúdo de fãs sob a Licença Aberta Limitada Nárëquenta (v0.1). Ver [LICENSE.md](license: 62).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See  [LICENSE.md](license.md).
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                         Playtest_sheet_v0.9.6.md                         ###
+##                                                                          ###
+###############################################################################
+
+# Nárëquenta: Ficha de Teste Alpha (v0.9.6)
+
+**Nome:** [_____________________]
+**Conceito:** [_____________________]
+**PV Atuais:** [100] / 100
+**RESERVA DE ATAQUE SÚBITO (AS):** [ ] / [ Máx: ___ ]
+
+## ESSÊNCIAS (E_max vs E_cur)
+**Instruções:** $\mathbf{E_{max}}$ é o potencial permanente (Piso 50%). $\mathbf{E_{cur}}$ define a sua **Zona de Tensão**.
+
+| Essência | $E_{MAX}$ (Potencial) | NÍVEL | $E_{CUR}$ (Atual) | ZONA (0/-10/-20/-30) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [____] | [100%] | [____] |
+| **MOTUS** | [100%] | [____] | [100%] | [____] |
+| **SENSUS** | [100%] | [____] | [100%] | [____] |
+| **VERBUM** | [100%] | [____] | [100%] | [____] |
+| **ANIMA** | [100%] | [____] | [100%] | [____] |
+
+## REFERÊNCIA RÁPIDA: ZONAS DE TENSÃO
+| $E_{cur}$ % | Zona | Penalidade |
+| :--- | :--- | :--- |
+| 100-76% | Pico | **-0** |
+| 75-51% | Minguante | **-10** |
+| 50-26% | Desvanecente | **-20** |
+| 25-0% | Vazio | **-30** |
+
+## REFERÊNCIA DE ATRIÇÃO E DANO (v0.9.6)
+
+**Sucesso:** $(d100 - R_{prof}) \le (E_{max} - Zona)$
+
+| Atrição (Custo) | Peso Leve (10) | Peso Médio (15) | Peso Pesado (20) |
+| :--- | :--- | :--- | :--- |
+| **Fórmula** | $\max(0, 10 - \lfloor R_{prof}/2 \rfloor)$ | $\max(0, 15 - \lfloor R_{prof}/2 \rfloor)$ | $\max(0, 20 - \lfloor R_{prof}/2 \rfloor)$ |
+
+**Dano Final:** $\max(R_{prof}, (A_{FP} - \bar{M}_{Def} + D_{Margin} + R_{prof})) \times M_{DTA}$
+
+---
+© 2025 Serelith Varn.
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                          core_rules_v0.9.64.md                           ###
+##                                                                          ###
+###############################################################################
+
+# 📜 Nárëquenta Regras Base v0.9.64 
+
+## 1. O Que É Este Jogo 🧭
+
+Nárëquenta é um TTRPG onde os heróis começam perto do seu auge e terminam gastos. A progressão é a **definição da personagem através da perda**. O poder é um recurso finito. **A Proficiência Compensa o Declínio**.
+***
+
+## 2. Facetas do Eu (Essências) ✨
+
+Cada personagem é definida por cinco Essências. Cada Essência começa a **$100\%$**, sujeita à Erosão Inicial.
+
+- **VITALIS** — corpo, resistência, força, presença
+- **MOTUS** — movimento, finesse, agilidade, graça
+- **SENSUS** — perceção, instinto, foco, atenção
+- **VERBUM** — intelecto, lógica, estrutura, discurso
+- **ANIMA** — convicção, vontade, fé, sacrifício
+
+### Valores de Essência
+
+- **Pico da Alma ($\mathbf{E_{max}}$):** Limite permanente. Nunca pode descer abaixo de **$50\%$** (Piso Rígido).
+- **Vigor Ativo ($\mathbf{E_{cur}}$):** Energia utilizável. Determina a tua **Zona de Tensão**.
+***
+
+## 3. Resolução de Ações: A Rolagem Efetiva 🎯
+
+O sucesso é determinado comparando a **Rolagem Efetiva** com a Capacidade Permanente ($\mathbf{E_{max}}$), ajustada pela fadiga.
+
+### A. Condição de Bloqueio (O Vazio Absoluto)
+
+Antes de qualquer rolagem, verifica-se o Vigor Ativo ($\mathbf{E_{cur}}$).
+
+$$\text{Se } \mathbf{E_{cur}} < 1 \rightarrow \text{Falha Automática / Ação Impossível}$$
+
+> ==**Se o Vigor Ativo for menor que 1, a ação resulta em falha automática.**==
+
+**Recuperação de Emergência (Fôlego Rápido):** Se estiveres a $0 \ \mathbf{E_{cur}}$, podes gastar o teu turno inteiro para tomar um Fôlego Rápido (Descanso Curto).
+
+### B. A Fórmula da Rolagem Efetiva
+
+$$\mathbf{R_{Eff}} = \mathbf{d100} - \mathbf{R_{prof}}$$
+
+> ==**A Rolagem Efetiva é igual ao Dado de Caos ($\mathbf{d100}$) menos o Resultado de Perícia ($\mathbf{R_{prof}}$).**==
+
+### C. O Teste de Sucesso
+
+$$\mathbf{R_{Eff}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$$
+
+> ==**A ação é bem-sucedida se a Rolagem Efetiva for menor ou igual ao teu $\mathbf{E_{max}}$ menos a Penalidade de Zona atual.**==
+### D. Zonas de Tensão ($\mathbf{E_{cur}}$)
+
+À medida que $\mathbf{E_{cur}}$ desce, a dificuldade artificial aumenta.
+
+| **Intervalo $\mathbf{E_{cur}}$** | **Nome da Zona** | **Penalidade ($\mathbf{Z_{Penalty}}$)** |
+| :--- | :--- | :--- |
+| **100% – 76%** | **Pico** | **-0** |
+| **75% – 51%** | **Minguante** | **-10** |
+| **50% – 26%** | **Desvanecente** | **-20** |
+| **25% – 0%** | **Vazio** | **-30** |
+***
+
+## 4. Atrição: O Custo da Ação 🩸
+
+Cada ação queima Essência. O custo deriva do **Peso do Item** e é mitigado pela **Perícia**.
+
+### Fórmula de Atrição
+
+$$\mathbf{Custo} = \max \left( 0, \mathbf{Peso} - \left\lfloor \frac{\mathbf{R_{prof}}}{2} \right\rfloor \right)$$
+
+> ==**O Custo de Energia é igual ao Peso da Arma menos metade do Resultado de Proficiência (arredondado para baixo).**==
+
+| **Classe de Peso** | **Custo Base** | **Exemplos** |
+| :--- | :--- | :--- |
+| **Leve** | **10%** | Adagas, Arcos Curtos |
+| **Médio** | **15%** | Espadas, Dardos |
+| **Pesado** | **20%** | Maças, Bestas Pesadas |
+
+- **Sucesso Crítico (1-5):** Reduz para metade o Custo final.
+- **Falha Crítica (96-100):** Duplica o Custo final.
+***
+
+## 5. Combate: Letalidade de Precisão ($\mathbf{D_{Final}}$) 💥
+
+O cálculo de dano privilegia a Perícia ($\mathbf{R_{prof}}$). **O Dano é Neutro em Nível**, calculado pelas Margens e modificado pela Vantagem de Nível.
+
+### Fórmula de Dano Final
+
+$$\mathbf{D_{Final}} = \max \left( \mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Def}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}}) \right) \times \mathbf{M_{DTA}}$$
+
+> ==**O Dano Final é o maior entre o Piso de Proficiência ou a Margem Calculada, multiplicado pela Vantagem de Nível.**==
+
+| **Componente** | **Definição** |
+| :--- | :--- |
+| **$\mathbf{R_{prof}}$ (Piso Rígido)** | **Dano Base Aditivo.** O dano mínimo absoluto é o teu resultado de Proficiência. |
+| **$\mathbf{A_{FP}}$ (Potencial Total)** | $\mathbf{100 - (d100 - R_{prof})}$. **Neutro em Nível.** Baseado em 100%, não no $E_{cur}$ do Atacante. |
+| **$\mathbf{\bar{M}_{Def}}$ (Mitigação)** | A armadura passiva do Defensor (Média do seu *pool* de $D_{prof}$). |
+| **$\mathbf{D_{Margin}}$ (Vulnerabilidade)** | Rolagem de Defesa do Defensor menos $\mathbf{E_{cur}}$. Valores positivos aumentam o dano. |
+| **$\mathbf{M_{DTA}}$ (Vantagem de Nível)** | Multiplicador que escala de $\times 0.75$ (Desvantagem) a $\times 2.00$ (Dominância). |
+***
+
+## 6. Rituais e Renovação (Recuperação) 🕯️
+
+Os Rituais fecham o ciclo do jogo (Gastar → Desvanecer → **Renovar**), permitindo ao PC gerir a fadiga diária e aceitar a perda permanente.
+
+### A. Renovação de Foco (Descanso Longo) 🌙
+
+Este ritual permite ao PC recuperar o seu foco mental e físico, regressando ao seu potencial diário.
+
+- **Gatilho:** Descanso Longo (ex: uma noite de sono segura, mínimo 6 horas).
+- **Processo:**
+    1. **Restauração de Vigor:** O **Valor Atual ($\mathbf{E_{cur}}$)** de todas as Essências reinicia a **100%**.
+       > *Regra Crítica:* A recuperação **NÃO** é limitada pelo $\mathbf{E_{max}}$. Mesmo se o teu Pico da Alma estiver degradado a 50%, o teu Vigor Ativo regressa a 100%. Começas o dia totalmente energizado, na **Zona de Pico**.
+    2. **Restauração de Surto:** O **Pool de Impulso de Ação (AS)** é **totalmente restaurado** ao total determinado pelo Nível de Proficiência.
+- **Custo Narrativo:** Tempo e segurança.
+
+### B. O Descanso Curto (Pausa) 🍵
+
+Uma breve pausa para tratar feridas, recuperar o fôlego e centrar a mente (15 minutos).
+
+$$\mathbf{Recuperação} = \text{Soma de } \mathbf{D_{prof}}$$
+
+> ==**A Recuperação é igual à soma dos resultados da tua Reserva de Dados de Proficiência.**==
+
+(Fallback: Se Nível 0, rola 1d10).
+
+### C. Recuperação de Emergência (O Fôlego Rápido) 💨
+
+Uma tentativa desesperada de se centrar no calor da batalha, geralmente acionada ao atingir o Vazio ($0 \ \mathbf{E_{cur}}$).
+
+- **Gatilho:** Pode ser realizado a qualquer momento durante o teu turno, ou forçado quando $\mathbf{E_{cur}} < 1$.
+- **Custo:** **Ação de Turno Completo.** Não podes Mover, Defender, Atacar ou Reagir até ao início do teu próximo turno.
+- **Efeito:** Resolve imediatamente como um **Descanso Curto** (Rola $\mathbf{D_{prof}}$ ou 1d10 e recupera essa quantidade em $\mathbf{E_{cur}}$).
+
+### D. Nota sobre Perda Permanente 💀
+
+O sistema distingue entre **Fadiga** e **Decadência**.
+
+- **Renovável:** $\mathbf{E_{cur}}$ (**Vigor Ativo**) representa energia. Flutua constantemente e recupera a **100%**.
+- **Não Renovável:** $\mathbf{E_{max}}$ (**Pico da Alma**) representa a integridade estrutural da alma. O sistema **NÃO** restaura $\mathbf{E_{max}}$ perdido através da Rolagem do Esvanecer.
+***
+
+## 7. Progressão: A Rolagem do Esvanecer 🌘
+
+A progressão ocorre em marcos narrativos ao reduzir permanentemente $\mathbf{E_{max}}$ para avançar Níveis de Proficiência.
+
+- **Decadência Universal (Não-Escolhida):** Rola **1d6**. Subtrai a $\mathbf{E_{max}}$.
+- **Foco de Refinamento (Escolhida):** Rola **2d6**. Subtrai a $\mathbf{E_{max}}$ para ganhar $\mathbf{D_{prof}}$.
+
+### Tabela de Proficiência e Mapeamento de Dados
+
+| **Nível** | **Perda Total $\mathbf{E_{max}}$** | **$\mathbf{E_{max}}$ Restante** | **Dados $\mathbf{D_{prof}}$** | **Mitigação ($\mathbf{\bar{M}}$)** | **Surtos de Ação** |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **0** | $0-9\%$ | $100-91\%$ | Nenhum | $0.0$ | **0** |
+| **I** | $10-19\%$ | $90-81\%$ | $\mathbf{1\text{d}10}$ | $5.5$ | **1** |
+| **II** | $20-29\%$ | $80-71\%$ | $\mathbf{2\text{d}10}$ | $11.0$ | **2** |
+| **III** | $30-39\%$ | $70-61\%$ | $\mathbf{3\text{d}10}$ | $16.5$ | **3** |
+| **IV** | $40-49\%$ | $60-51\%$ | $\mathbf{4\text{d}10}$ | $22.0$ | **4** |
+| **V** | $\mathbf{50\%}$ | **50% (Pináculo)** | $\mathbf{5\text{d}10}$ | $\mathbf{27.5}$ | **5** |
+***
+
+## 8. Uso da Proficiência (Mecânicas Detalhadas) ⚙️
+
+O resultado da rolagem $\mathbf{D_{prof}}$ ($\mathbf{R_{prof}}$) é usado para três efeitos simultâneos:
+
+1.  **Mitigação de Erro:** Subtrai $\mathbf{R_{prof}}$ da rolagem de $\mathbf{d100}$.
+2.  **Redução de Atrição:** $\mathbf{Custo} = \text{Peso} - \lfloor R_{prof}/2 \rfloor$.
+3.  **Ataques Especiais (Opcional):** Sacrificar dados do *pool* de $\mathbf{D_{prof}}$ para realizar ações aprimoradas.
+***
+
+## 9. Apêndice: Referência do Sistema (Sigla) 📚
+
+### Detalhes dos Componentes
+
+1. Margem de Potencial Total ($\mathbf{A_{FP}}$)
+
+$$\mathbf{A_{FP}} = \mathbf{100 - (d100-R_{prof})}$$
+
+> ==**Isto calcula o poder bruto do Atacante em relação a uma base perfeita de 100. Uma rolagem modificada mais baixa gera um $\mathbf{A_{FP}}$ maior.==**
+
+2. Margem do Defensor ($\mathbf{D_{Margin}}$)
+
+$$\mathbf{D_{Margin}} = \mathbf{d100_D-D_{Ecur}}$$
+
+> ==**Isto mede a vulnerabilidade do Defensor. Um $\mathbf{D_{Margin}}$ positivo significa que o Defensor falhou na defesa, aumentando o dano.**==
+***
+© 2025 Serelith Varn — Nárëquenta. Licenciado sob Nárëquenta Limited Open License (v0.1). Ver [[LICENSE.md]].
+###############################################################################
+##                                                                          ###
+##                                en-us.json                                ###
+##                                                                          ###
+###############################################################################
+
+{
+    "GAME_TITLE": "Nárëquenta: Tales of the Waning",
+    "SHEET_SUBTITLE": "Character Sheet",
+    
+    "WELCOME_TITLE": "Welcome to Nárëquenta",
+    "NAVIGATE_START_PROMPT": "Choose your starting view:",
+    "NAVIGATE_TITLE": "Navigate:",
+    "NAVIGATE_PC": "PC Sheet",
+    "NAVIGATE_NPC": "NPC Reference",
+    "NAVIGATE_GM": "Rules / GM Ref",
+    "LANG_SELECT": "Language:",
+
+    "LABEL_E_MAX": "Soul's Peak (E_max)",
+    "LABEL_E_CUR": "Active Vigor (E_cur)",
+    "LABEL_TIER_PROF": "Tier / Waning Yield",
+    "LABEL_D_PROF_POOL": "Waning Yield Pool",
+    "LABEL_ACTION_SURGES": "Surges of Intent",
+    "LABEL_INITIAL_EROSION": "Initial Erosion (1d10)",
+    "LABEL_SUCCESS_CHECK": "Success Check (d100)",
+    "LABEL_WANING_YIELD_RESULT": "Waning Yield Result (Sum)",
+	
+    "FIELD_NAME": "Name",
+    "FIELD_HP": "Current HP",
+    "FIELD_RPROF": "General Proficiency Level (R_Prof)",
+    "SECTION_PROMISE": "Final Vow",
+    "FIELD_PROMISE_HINT": "The Vow the Character has made",
+    "SECTION_SCARRING_LOG": "Erosion / Refinements Log",
+    
+    "SECTION_ESSENCES": "Essences (E_max vs E_cur - Hard Floor 50%)",
+    "GRID_ESSENCE": "Essence",
+    "GRID_EMAX": "E_MAX (%)",
+    "GRID_ECUR": "E_CURRENT (%)",
+    "GRID_TIER_AVG": "TIER / Avg. Margin (̄M)",
+    "GRID_DPROFICIENCY": "D_PROF Pool",
+    
+    "VITALIS_NAME": "VITALIS (Vigor, Presence)",
+    "MOTUS_NAME": "MOTUS (Movement, Finesse)",
+    "SENSUS_NAME": "SENSUS (Awareness, Instinct)",
+    "VERBUM_NAME": "VERBUM (Intellect, Logic)",
+    "ANIMA_NAME": "ANIMA (Will, Sacrifice)",
+
+    "SECTION_ABILITIES": "Abilities & Gear",
+    "SECTION_ABILITIES_NOTE": "Cost = max(0, Weight - floor(R_prof/2)). Damage Floor = R_prof.",
+    "TABLE_NAME": "Name / Item",
+    "TABLE_TYPE": "Weight Class",
+    "TABLE_COSTS": "Attrition Cost",
+    "TABLE_DAMAGE": "Damage / Effect",
+
+    "NPC_SHEET_TITLE": "Adversary Reference",
+    "FIELD_NPC_NAME": "Adversary Name:",
+    "SECTION_ESSENCES_NPC": "Essences (Focus on Mitigation)",
+
+    "GM_REF_SHEET_TITLE": "GM Reference",
+    
+    "GM_SECTION_1_TITLE": "I. Action Resolution & Attrition",
+    "ROLL_SUCCESS_TITLE": "Roll for Success",
+    "ROLL_SUCCESS_DESC": "Effective Roll (d100 - R_prof) <= (E_max - Zone Penalty).",
+    "ATTRITION_COST_TITLE": "Attrition Cost (E_cur Loss)",
+    "MOTOR_ESSENCE_LOSS": "Motor Essence (E_P) Loss:",
+    "ES_LOSS_COST": "Quality Essence (E_S) Loss:",
+
+    "GM_SECTION_2_TITLE": "II. Proficiency Scale (E_max)",
+    "GRID_EMAX_REM": "E_MAX Remaining (%)",
+    "GRID_TIER_HEADER": "TIER",
+    "GRID_MITIGATION_AVG": "̄M (Avg Mitigation)",
+    "GRID_AS_MAX": "AS (Action Surges) Max",
+    "DECAY_SUMMARY": "Decay: Non-Chosen 1d6 Loss / Focus 2d6 Loss (Waning Roll)",
+
+    "GM_SECTION_3_TITLE": "III. Damage Formula (D_Final)",
+    "FORMULA_WHERE": "Where:",
+    "A_FP_TITLE": "A_FP (Full Potential):",
+    "DEFENDER_MARGIN_TITLE": "D_Margin (Defender Margin):",
+
+    "CALC_TITLE": "IV. Interactive Damage Calculator ⚔️",
+    "CALC_ATTACKER": "ATTACKER (PC)",
+    "CALC_DEFENDER": "DEFENDER (NPC/PC)",
+    "FIELD_ECUR": "E_CUR (%):",
+    "GRID_TIER": "TIER (I-V):",
+    "FIELD_D100": "d100 ROLLED:",
+    "FIELD_DEFENSE_ROLL": "d100 DEFENSE:",
+    "CALC_BUTTON": "CALCULATE FINAL DAMAGE",
+    "CALC_FINAL_DAMAGE": "FINAL DAMAGE:",
+    
+    "CALC_SUBTITLE": "Attrition is Meaning. E_max never falls below 50%.",
+    "CALC_EMAX_LABEL": "Essence E_MAX (%) (50% to 100%):",
+    "CALC_RESULTS": "Calculation Results:",
+    "CALC_TIER": "Proficiency TIER:",
+    "CALC_LOSS": "Total E_MAX Loss:",
+    "CALC_DICE": "D_PROF Pool:",
+    "CALC_M_AVG": "Average Mitigation (̄M):",
+    
+    "CALC_ERROR": "ERROR",
+    "CALC_FAIL_STATUS": "FAILURE (Effective Roll > Threshold)",
+    "CALC_SUCCESS_STATUS": "SUCCESS.",
+    "CALC_D100_RANGE_ERROR": "d100 rolls must be between 1 and 100.",
+    
+    "SECTION_WANING_ROLLS": "Permanent Decay (Waning Roll)",
+    "FIELD_FOCUS_DECAY": "Focus Essence Decay (2d6 Loss):",
+    "FIELD_UNIVERSAL_DECAY": "Universal Decay (1d6 Loss):",
+    "SECTION_ROLLS_INPUT": "🎯 Action Resolution Inputs",
+    "FIELD_D100_ROLL": "d100 Roll (Success Check):",
+    "FIELD_RPROF_RESULT": "R_Prof Result (D_prof roll):"
+}
+
+
+###############################################################################
+##                                                                          ###
+##                                pt-pt.json                                ###
+##                                                                          ###
+###############################################################################
+
+{
+  "NAREQUENTA.GameTitle": "Nárëquenta: Contos do Declínio",
+  "SHEET_SUBTITLE": "Ficha de Personagem",
+  
+  "WELCOME_TITLE": "Bem-vindo a Nárëquenta",
+  "NAVIGATE_START_PROMPT": "Escolha a sua visualização inicial:",
+  "NAVIGATE_TITLE": "Navegar:",
+  "NAVIGATE_PC": "Ficha de Personagem",
+  "NAVIGATE_NPC": "Referência de Adversários",
+  "NAVIGATE_GM": "Regras / Ref. Mestre",
+  "LANG_SELECT": "Idioma:",
+
+  "LABEL_E_MAX": "Pico da Alma (E_max)",
+  "LABEL_E_CUR": "Vigor Ativo (E_cur)",
+  "LABEL_TIER_PROF": "Nível / Compensação de Declínio",
+  "LABEL_D_PROF_POOL": "Reserva de Compensação de Declínio",
+  "LABEL_ACTION_SURGES": "Surtos de Intenção",
+  "LABEL_INITIAL_EROSION": "Erosão Inicial (1d10)",
+  "LABEL_SUCCESS_CHECK": "Teste de Sucesso (d100)",
+  "LABEL_WANING_YIELD_RESULT": "Resultado da Compensação de Declínio (Soma)",
+  
+  "FIELD_NAME": "Nome",
+  "FIELD_HP": "Vigor Atual",
+  "FIELD_RPROF": "Nível de Proficiência Geral (R_Prof)",
+  "SECTION_PROMISE": "Voto Final",
+  "FIELD_PROMISE_HINT": "O Voto que o Personagem assumiu",
+  "SECTION_SCARRING_LOG": "Registo de Erosão / Refinamentos",
+  
+  "SECTION_ESSENCES": "Essências (Pico da Alma vs Vigor Ativo - Limite Mínimo 50%)",
+  "GRID_ESSENCE": "Essência",
+  "GRID_EMAX": "E_MAX (%)",
+  "GRID_ECUR": "E_CURRENT (%)",
+  "GRID_TIER_AVG": "NÍVEL / Marg. Média (̄M)",
+  "GRID_DPROFICIENCY": "Reserva de D_PROF",
+  
+  "VITALIS_NAME": "VITALIS (Vigor, Presença)",
+  "MOTUS_NAME": "MOTUS (Movimento, Destreza)",
+  "SENSUS_NAME": "SENSUS (Consciência, Instinto)",
+  "VERBUM_NAME": "VERBUM (Intelecto, Lógica)",
+  "ANIMA_NAME": "ANIMA (Vontade, Sacrifício)",
+
+  "SECTION_ABILITIES": "Habilidades e Equipamento",
+  "SECTION_ABILITIES_NOTE": "Custo = max(0, Peso - floor(R_prof/2)). Piso de Dano = R_prof.",
+  "TABLE_NAME": "Nome / Item",
+  "TABLE_TYPE": "Classe de Peso",
+  "TABLE_COSTS": "Custo de Atrição",
+  "TABLE_DAMAGE": "Dano / Efeito",
+
+  "WEAPON_BLADE": "Lâmina Usada",
+  "WEAPON_BLADE_TYPE": "VITALIS + ANIMA (Corpo a Corpo)",
+  "WEAPON_BLADE_DESC": "Força bruta e determinação. (Dano baseado em R_prof + Margens)",
+  "WEAPON_DAGGER": "Adaga de Destreza",
+  "WEAPON_DAGGER_TYPE": "MOTUS + SENSUS (Destreza)",
+  "WEAPON_DAGGER_DESC": "Precisão para explorar aberturas. (Dano baseado em R_prof + Margens)",
+  "WEAPON_BOW": "Arco de Caça",
+  "WEAPON_BOW_TYPE": "MOTUS + SENSUS (Distância)",
+  "WEAPON_BOW_DESC": "Coordenação motora e foco. (Dano baseado em R_prof + Margens)",
+  "WEAPON_SHIELD": "Muro de Escudos",
+  "WEAPON_SHIELD_TYPE": "VITALIS + ANIMA (Defesa)",
+  "WEAPON_SHIELD_DESC": "Resistir ao impacto com pura vontade. (Defesa reduz D_Margin)",
+  "CANTRIP_FLICKER": "Brilho",
+  "CANTRIP_FLICKER_TYPE": "MOTUS + SENSUS (Utilidade)",
+  "CANTRIP_FLICKER_DESC": "Cria uma pequena luz. (Custo Mitigado)",
+  "CANTRIP_SENSE": "Sentido de Cicatriz",
+  "CANTRIP_SENSE_TYPE": "SENSUS + VERBUM (Utilidade)",
+  "CANTRIP_SENSE_DESC": "Deteta onde a Essência foi gasta nas proximidades. (Custo Mitigado)",
+  "SPELL_BOLT": "Projétil de Brasa",
+  "SPELL_BOLT_TYPE": "VERBUM + SENSUS (Ataque)",
+  "SPELL_BOLT_DESC": "Projeta energia bruta e exaustiva. (Dano baseado em R_prof + Margens)",
+  "SPELL_AURA": "Aura de Foco",
+  "SPELL_AURA_TYPE": "VERBUM + ANIMA (Defesa)",
+  "SPELL_AURA_DESC": "Aliado adiciona ̄M à mitigação do próximo teste. (Custo de Atrição total)",
+  "SPELL_STONE": "Vontade de Pedra",
+  "SPELL_STONE_TYPE": "ANIMA + VITALIS (Defesa)",
+  "SPELL_STONE_DESC": "Aumenta a Mitigação de Defesa por ̄M até à próxima ronda. (Custo de Atrição total)",
+  "SPELL_DRAIN": "Dreno de Alma",
+  "SPELL_DRAIN_TYPE": "ANIMA + VERBUM (Ataque)",
+  "SPELL_DRAIN_DESC": "Causa dano e recupera parcialmente o Vigor Ativo do PC. (Dano baseado em R_prof + Margens)",
+
+  "NPC_SHEET_TITLE": "Referência de Adversários",
+  "FIELD_NPC_NAME": "Nome do Adversário:",
+  "SECTION_ESSENCES_NPC": "Essências (Foco na Mitigação)",
+
+  "GM_REF_SHEET_TITLE": "Referência do Mestre",
+  
+  "GM_SECTION_1_TITLE": "I. Resolução de Ações e Atrição",
+  "ROLL_SUCCESS_TITLE": "Teste para Sucesso",
+  "ROLL_SUCCESS_DESC": "Rolagem Efetiva (d100 - R_prof) <= (E_max - Penalidade de Zona).",
+  "ATTRITION_COST_TITLE": "Custo de Atrição (Perda de E_cur)",
+  "MOTOR_ESSENCE_LOSS": "Perda de Essência Motora (E_P):",
+  "ES_LOSS_COST": "Perda de Essência de Qualidade (E_S):",
+
+  "GM_SECTION_2_TITLE": "II. Escala de Proficiência (Pico da Alma)",
+  "GRID_EMAX_REM": "Pico da Alma Remanescente (%)",
+  "GRID_TIER_HEADER": "NÍVEL",
+  "GRID_MITIGATION_AVG": "̄M (Mitigação Média)",
+  "GRID_AS_MAX": "SIA (Surtos de Intenção de Ação) Máx",
+  "DECAY_SUMMARY": "Declínio: Perda 1d6 Não-Escolha / Perda 2d6 Focada (Teste de Declínio)",
+
+  "GM_SECTION_3_TITLE": "III. Fórmula de Dano (D_Final)",
+  "FORMULA_WHERE": "Onde:",
+  "A_FP_TITLE": "A_FP (Potencial Total):",
+  "DEFENDER_MARGIN_TITLE": "D_Margin (Margem do Defensor):",
+
+  "CALC_TITLE": "IV. Calculadora de Dano Interativa ⚔️",
+  "CALC_ATTACKER": "ATACANTE (PC)",
+  "CALC_DEFENDER": "DEFENSOR (NPC/PC)",
+  "FIELD_ECUR": "E_CUR (%):",
+  "GRID_TIER": "NÍVEL (I-V):",
+  "FIELD_D100": "d100 ROLADO:",
+  "FIELD_DEFENSE_ROLL": "d100 DEFESA:",
+  "CALC_BUTTON": "CALCULAR DANO FINAL",
+  "CALC_FINAL_DAMAGE": "DANO FINAL:",
+  
+  "CALC_SUBTITLE": "Atrição é Significado. O Pico da Alma nunca desce abaixo de 50%.",
+  "CALC_EMAX_LABEL": "Essência Pico da Alma (%) (50% a 100%):",
+  "CALC_RESULTS": "Resultados do Cálculo:",
+  "CALC_TIER": "NÍVEL de Proficiência:",
+  "CALC_LOSS": "Perda Total de E_MAX:",
+  "CALC_DICE": "Reserva de D_PROF:",
+  "CALC_M_AVG": "Mitigação Média (̄M):",
+  
+  "CALC_ERROR": "ERRO",
+  "CALC_FAIL_STATUS": "FALHA (Rolagem Efetiva > Limiar)",
+  "CALC_SUCCESS_STATUS": "SUCESSO.",
+  "CALC_D100_RANGE_ERROR": "Os testes d100 devem estar entre 1 e 100.",
+  
+  "SECTION_WANING_ROLLS": "Decadência Permanente (Waning Roll)",
+  "FIELD_FOCUS_DECAY": "Foco de Decadência (Perda 2d6):",
+  "FIELD_UNIVERSAL_DECAY": "Decadência Universal (Perda 1d6):",
+  "SECTION_ROLLS_INPUT": "🎯 Inputs de Resolução de Ação",
+  "FIELD_D100_ROLL": "Rolagem d100 (Teste de Sucesso):",
+  "FIELD_RPROF_RESULT": "Resultado R_Prof (Rolagem D_prof):"
+}
+
+
+###############################################################################
+##                                                                          ###
+##                               playtest.txt                               ###
+##                                                                          ###
+###############################################################################
+
+# Ficha de Personagem v0.7 - Nárëquenta: Contos do Esvanecer
+
+**Versão: v0.7-FINAL (Letalidade de Precisão)**
+
+Nome:
+Conceito / Lenda que as Pessoas Contam Sobre Ti:
+HP Atual: [100] / 100
+POOL DE IMPULSOS DE AÇÃO (AS) DISPONÍVEL: [ ] / [ Máx: Cons. Tabela AS ]
+
+## ESSÊNCIAS (FACETAS DO SER)
+Monitorize a sua capacidade máxima ($\mathbf{E_{max}}$ Hard Floor 50%) e a energia atual utilizável.
+
+| Essência | E_MÁX (Potencial Máximo) | E_ATUAL (Uso Atual) | TIER / $\mathbf{\bar{M}}$ (Proficiência Média) | POOL D_PROF (Dados Ativos) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **MOTUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **SENSUS** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **VERBUM** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+| **ANIMA** | [100%] | [100%] | [Tier 0 / 0.0] | [ ] |
+
+## REFERÊNCIA RÁPIDA DE TIERS (v0.7)
+Os $\mathbf{D_{prof}}$ são **$1d10$ por Tier**. A **Margem Média ($\mathbf{\bar{M}}$)** é usada para Mitigação de Defesa e Cálculo de Atrição.
+
+| E_MÁX Restante (%) | TIER | D_PROF Pool | $\mathbf{\bar{M}}$ (Mitigação/Dano Avg) |
+| :--- | :--- | :--- | :--- |
+| 100% – 91% | **0** | Nenhum | 0.0 |
+| 90% – 81% | **I** | $1\text{d}10$ | 5.5 |
+| 80% – 71% | **II** | $2\text{d}10$ | 11.0 |
+| 70% – 61% | **III** | $3\text{d}10$ | 16.5 |
+| 60% – 51% | **IV** | $4\text{d}10$ | 22.0 |
+| **50% (PINÁCULO)** | **V** | $5\text{d}10$ | 27.5 |
+
+## REGISTO DE RESOLUÇÃO DE AÇÃO E ATRIÇÃO
+*Sucesso na Rolagem Contestada:* Rola $\mathbf{d100 \le \mathbf{E_{cur}}}$. Subtrai $\mathbf{R_{prof}}$ (rolagem $\mathbf{D_{prof}}$) do $\mathbf{d100}$.
+
+| Atrição | Essência Motor ($\mathbf{E_{P}}$) | Essência Qualidade ($\mathbf{E_{S}}$) | Fórmulas de Cálculo v0.7 |
+| :--- | :--- | :--- | :--- |
+| **Custo de $\mathbf{E_{cur}}$** | $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ | **$1\%$ Custo Fixo** | **Dano Final:** $\mathbf{D_{Final}} = \max \left( 0, (A_{FP} - \bar{M}_{Defesa} + D_{Margin} + R_{prof}) \right) \times M_{DTA}$ |
+
+**PARES MOTOR/QUALIDADE:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## REGISTO DE EROSÃO / REFINAMENTOS (Perda Permanente)
+(Registe a perda permanente de $\mathbf{E_{max}}$ e os ganhos de recursos.)
+
+| Data / Capítulo | Essência Refinada (Foco 4d6) | E_MÁX Antigo | E_MÁX Novo | TIER Ganho | AS Ganho |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## PROMESSA FINAL
+(O que prometeste fazer antes de te desvaneças.)
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+<!-- ==== gm_reference_v0.7.md ==== -->
+
+# GM Reference v0.7
+
+Rascunho Finalizado — 2025-11-14
+
+## FLUXO DA SESSÃO
+1. **Briefing / Preparação:** Por que esta missão é importante (e o que arriscam perder).
+2. **Cenas de Jogo:** Qualquer ação significativa custa Essência ($\mathbf{E_{cur}}$) e é resolvida com uma **Rolagem Contestada**.
+    - O jogador escolhe as Essências Motor ($\mathbf{E_{P}}$) e Qualidade ($\mathbf{E_{S}}$) (ver Regras de Combate para Pares).
+    - O jogador usa $\mathbf{D_{prof}}$ para **Mitigação de Erro** ($\mathbf{R_{prof}}$ subtrai do $\mathbf{d100}$) e **Dano Base**.
+    - **Custo de Atrição:** A perda de $\mathbf{E_{cur}}$ é calculada usando o **resultado $\mathbf{R_{prof}}$ da rolagem** (Custo: $\max(0, 7 - R_{prof})$).
+
+## RITUAL E FASE DE RECUPERAÇÃO
+- **Renovação ($\mathbf{E_{cur}}$ e AS):** Restaura **$\mathbf{E_{cur}}$** para o seu valor $\mathbf{E_{max}}$ atual. Também restaura o pool de **Impulsos de Ação (AS)** até ao máximo determinado pelo Tier (Tier V = 4 AS).
+- **Decaimento e Refinamento ($\mathbf{E_{max}}$):** Este processo acontece **SOMENTE no final do Capítulo** (Rolagem do Esvanecer).
+    - Peça aos jogadores para escolherem o seu Foco de Proficiência (o risco de $\mathbf{4\text{d}6}$).
+    - Role o Decaimento Universal ($\mathbf{2\text{d}6}$) e aplique todas as perdas, garantindo que $\mathbf{E_{max}}$ nunca desce abaixo de **$50\%$**.
+
+## RITMO / TOM
+- **A Atrição é uma Escolha:** Nunca diga: "Não podes fazer isso." Diga: "O custo é $\mathbf{X\%}$ de perda de [Motor] e $\mathbf{1\%}$ de [Qualidade]. Estás disposto a queimar?"
+- **Vantagem de Nível (DTA):** Lembre-se que a **Vantagem de Nível Defensivo ($\mathbf{M_{DTA}}$)** gere automaticamente encontros de Tier baixo vs. Tier alto. O PC altamente proficiente (com $\mathbf{E_{max}}$ baixo) é defensivamente forte contra inimigos mais fracos.
+- **Letalidade:** Quando os Tiers são iguais, o combate é altamente letal ($\approx 46 \text{ HP}$ por acerto). Esteja preparado para resultados rápidos e decisivos baseados em margens críticas.
+- **Recompensa Narrativa:** Recompense descrições criativas e vívidas, permitindo ao Atacante ganhar vantagem na própria **rolagem de $\mathbf{D_{prof}}$** (e.g., rolar novamente um dado), em vez de modificar a fórmula final.
+- **Trate o Fim Como Sagrado.** Quando todas as Facetas atingem $\mathbf{E_{cur}} = 0$, pergunte: como são lembrados?
+
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Escurecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See  [LICENSE.md](license.md).
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+<!-- ==== PLAYTEST-SCENARIO.md ==== -->
+
+# Nárëquenta: Cenário de Teste Alpha — O Resgate do Último Eco
+
+**Foco do Teste (v0.7):** Testar o **Controlo de Atrição Tier I+** e a letalidade da **Fórmula de Dano Neutra por Nível**.
+**Duração:** 2-3 Horas.
+
+## 1. Ponto de Partida: O Santuário do Declínio
+
+Os PCs são guardiões de um **Santuário do Declínio** onde os Ecos de lendas são preservados. Um desses Ecos está sob ataque de **O Silêncio** (uma entidade que se alimenta de potencial não realizado). O Silêncio causa um **Debuff de Ansiedade** (Todas as rolagens de ataque do Atacante têm $\mathbf{-5}$ aplicado ao $\mathbf{R_{prof}}$ apenas para cálculo de dano) e o **Eco em Declínio** tem 5 turnos até desvanecer completamente.
+
+* **Preparação:** Certifique-se de que todos os PCs rolaram a **Erosão Inicial ($\mathbf{1\text{d}10}$)**. Todos os $\mathbf{E_{cur}}$ estão em $90-99\%$.
+
+---
+
+## 2. Fase 1: A Travessia Pródiga (Teste de Pares Motor/Qualidade)
+
+* **Objetivo:** Forçar o gasto de $\mathbf{E_{cur}}$ em múltiplas Essências.
+* **Desafio:** Uma Barricada de Força Mística bloqueia o caminho.
+* **Ação:** Os PCs devem gastar esforço para contornar o desafio (requer 3 sucessos rápidos).
+
+| Ação | Motor ($\mathbf{E_{P}}$) | Qualidade ($\mathbf{E_{S}}$) | Atrição (Por Sucesso) |
+| :--- | :--- | :--- | :--- |
+| **Força Bruta** | VITALIS | MOTUS | $\max(0, 7 - R_{prof}) + 1\%$ |
+| **Escalada Rápida** | MOTUS | VITALIS | $\max(0, 7 - R_{prof}) + 1\%$ |
+
+* **Verificação de Sucesso:** O PC deve sentir a pressão da queda de $\mathbf{E_{cur}}$ devido ao custo da ação e ao Debuff de Ansiedade.
+
+---
+
+## 3. Fase 2: O Enigma do Sacrifício (Teste de Atrição de Alto Risco)
+
+* **Objetivo:** Testar o uso de **VERBUM / ANIMA** e a vulnerabilidade de um *pool* $\mathbf{E_{cur}}$ baixo.
+* **Desafio:** A porta do Eco está selada por um Enigma Místico que requer **Foco e Vontade**.
+* **Ação:** O PC deve:
+    * **Resolver:** $\text{VERBUM}$ (Motor) + $\text{SENSUS}$ (Qualidade).
+    * **Quebrar:** $\text{ANIMA}$ (Motor) + $\text{VERBUM}$ (Qualidade).
+* **Verificação de Sucesso:** Requer uma rolagem bem-sucedida ($\mathbf{d100' \le E_{cur}}$). A falha deve resultar na **penalização da $\mathbf{E_{cur}}$ Motor em $\mathbf{1\text{d}6}\%$** (simulando *stress* mental extremo) para além do custo padrão.
+
+---
+
+## 4. Fase 3: O Ato Final e Configuração de Progressão
+
+* **Objetivo:** Testar a **Fórmula de Dano Neutra por Nível** e a necessidade de **Impulsos de Ação (AS)**.
+* **Desafio:** Um **Guardião de Forma** (NPC, Tier I, $\mathbf{E_{cur}} \approx 90\%$, $\mathbf{HP 100}$) materializa-se.
+* **Regra Especial:** O PC com o $\mathbf{E_{max}}$ mais baixo (Tier mais alto) deve ser incentivado a atacar primeiro para testar a eficiência da sua **Margem de Potencial Total ($\mathbf{A_{FP}}$)**.
+* **Regra de Dano:** Use o **Multiplicador de Vantagem de Nível Defensivo ($\mathbf{M_{DTA}}$)** quando o PC for atingido (e.g., PC Tier III vs NPC Tier I $\rightarrow \times 0.75$ Multiplicador).
+
+| Regra Testada | PC Tier IV $\rightarrow$ NPC Tier I | Componente da Fórmula |
+| :--- | :--- | :--- |
+| **Poder Ofensivo** | $\mathbf{R_{prof}}$ elevado do PC gera $\mathbf{A_{FP}}$ elevado. | $100 - d100'$ |
+| **Equilíbrio Defensivo** | PC recebe dano reduzido. | $\times M_{DTA}$ |
+
+* **Saída:** O MJ guia os PCs para um momento de **Descanso de Longa Duração** e inicia a **Rolagem do Esvanecer** no final do capítulo: "Que Essência vos traiu? O que estão dispostos a perder para a dominar?"
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license.md).
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+<!-- ==== PLAYTEST-SHEET.md ==== -->
+
+# Nárëquenta: Ficha de Teste Alpha (v0.7)
+
+**Nome:** [_____________________]
+**Conceito / Lenda que as Pessoas Contam Sobre Ti:** [_____________________]
+**HP Atual:** [100] / 100
+**POOL DE IMPULSOS DE AÇÃO (AS) DISPONÍVEL:** [ ] / [ Máx: Consultar Tabela AS ]
+
+## ESSÊNCIAS (E\_max vs E\_cur)
+
+**Instruções:** $\mathbf{E_{max}}$ é o seu potencial permanente, limitado a 50%. $\mathbf{E_{cur}}$ é o seu *pool* de energia diária.
+
+| Essência | E\_MÁX (Potencial Máximo) | TIER / $\mathbf{\bar{M}}$ (Proficiência Média) | E\_ATUAL (Energia Atual) | POOL D\_PROF (Dados Ativos) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **MOTUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **SENSUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **VERBUM** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **ANIMA** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+
+## REFERÊNCIA RÁPIDA DE ATRIÇÃO E DANO (v0.7)
+
+| Atrição | Essência Motor ($\mathbf{E_{P}}$) | Essência Qualidade ($\mathbf{E_{S}}$) | Sumário do Cálculo |
+| :--- | :--- | :--- | :--- |
+| **Custo de $\mathbf{E_{cur}}$** | $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ | **$1\%$ Custo Fixo** | **$\mathbf{D_{Final}}$** é Neutro por Nível, mitigado por $\mathbf{M}_{Defesa}$ e dimensionado por $\mathbf{M_{DTA}}$. |
+| **Falha (Esforço)** | $\mathbf{1\%}$ Perda | $\mathbf{1\%}$ Perda | Ambas as *pools* $\mathbf{E_{cur}}$ são reduzidas em $1\%$ em rolagens de esforço falhadas. |
+
+**PARES MOTOR/QUALIDADE:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## REGISTO DE EROSÃO / REFINAMENTOS (Perda Permanente)
+(Registar a perda $\mathbf{E_{max}}$ permanente e os ganhos de recursos obtidos durante a Rolagem do Esvanecer.)
+
+| Data / Capítulo | Essência Refinada (Foco 4d6 Risco) | E\_MÁX Antigo | E\_MÁX Novo | TIER Ganho | AS Ganho |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## PROMESSA FINAL
+(O que prometeste fazer antes de te desvaneças.)
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Esvanecer.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Consulte [LICENSE.md](license.md).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                          playtest_notes_v0.9.md                          ###
+##                                                                          ###
+###############################################################################
+
+# Playtest Notes — 2025-11-17 (Post-v0.9 Alpha Test)
+
+Session ID:
+
+Players:
+
+Location / context:
+
+## V0.9 Mechanical Efficacy 🧪
+
+_(Focus on the Decay Mitigation and Starting Tier)_
+
+What felt good:
+
+- Did the initial **Tier I Guarantee** ($\mathbf{E_{max}} = 90\%$) feel appropriate, or did it make character creation too complex?
+    
+- Was the slower **Universal Decay ($\mathbf{1d6}$ loss)** noticeable, making players feel safer against permanent loss?
+    
+
+What felt punishing / not worth it:
+
+- Did the **Focus $\mathbf{2d6}$ risk** still feel like a compelling trade-off for a guaranteed Tier increase, given the decay rate was halved?
+    
+
+Did players hesitate to act because cost felt unfair?
+
+- Specifically, did players avoid using the **Tier I Essence** ($90\% \ \mathbf{E_{max}}$) because they wanted to preserve that permanent advantage?
+    
+
+Did anyone love burning themselves for something dramatic?
+
+Any rules confusion:
+
+- Was the distinction between the $\mathbf{E_{max}}$ Hard Floor ($50\%$) and the $\mathbf{E_{cur}}$ minimum ($0\%$) clear during play?
+    
+
+Immediate changes to test in next version:
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license: 282).
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                          playtest_notes_v0.9.md                          ###
+##                                                                          ###
+###############################################################################
+
+# Notas de Playtest — 2025-11-17 (Pós-teste Alpha v0.9)
+
+ID da Sessão:
+
+Jogadores:
+
+Local / contexto:
+
+## V0.9 Eficácia Mecânica 🧪
+
+_(Foco na Mitigação da Decadência e no Tier Inicial)_
+
+O que funcionou bem:
+
+- A **Garantia de Tier I** inicial ($\mathbf{E_{max}} = 90\%$) pareceu adequada, ou tornou a criação de personagem demasiado complexa?
+    
+- A **Decadência Universal mais lenta ($\mathbf{1d6}$ de perda)** foi percetível, fazendo com que os jogadores se sentissem mais seguros em relação à perda permanente?
+    
+
+O que pareceu penalizador / pouco compensador:
+
+- O risco de **Focus $\mathbf{2d6}$** continuou a parecer uma troca apelativa por um aumento garantido de Tier, tendo em conta que a taxa de decadência foi reduzida a metade?
+    
+
+Os jogadores hesitaram em agir porque o custo lhes pareceu injusto?
+
+- Especificamente, os jogadores evitaram usar a **Essência de Tier I** ($90\% \ \mathbf{E_{max}}$) porque queriam preservar essa vantagem permanente?
+    
+
+Alguém gostou de se queimar por algo dramático?
+
+Alguma confusão de regras:
+
+- A distinção entre o Hard Floor de $\mathbf{E_{max}}$ ($50\%$) e o mínimo de $\mathbf{E_{cur}}$ ($0\%$) esteve clara durante o jogo?
+    
+
+Alterações imediatas a testar na próxima versão:
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+
+Licenciado para jogo não comercial e conteúdo de fãs ao abrigo da Nárëquenta Limited Open License (v0.1). Ver [LICENSE.md](license: 282).
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license: 282).
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                        Playtest_scenario_v0.9.md                         ###
+##                                                                          ###
+###############################################################################
+
+# Nárëquenta: Ficha de Teste Alpha (v0.9)
+
+**Nome:** [_____________________]
+**Conceito / Lenda Que Contam Sobre Si:** [_____________________]
+**PV Atuais:** [100] / 100
+**RESERVA DE ATAQUE SÚBITO (AS) DISPONÍVEL:** [ ] / [ Máx: 5 no Nível V ]
+
+## ESSÊNCIAS ($E_{max}$ vs $E_{cur}$)
+
+**Instruções:** $\mathbf{E_{max}}$ é o seu potencial permanente, limitado a **50%**. $\mathbf{E_{cur}}$ é a sua reserva de energia diária.
+
+| Essência | $E_{MAX}$ (Potencial Máximo) | NÍVEL / $\mathbf{\bar{M}}$ (Proficiência Média) | $E_{CUR}$ (Energia Atual) | RESERVA $D_{PROF}$ (Dados Ativos) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
+| **MOTUS** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
+| **SENSUS** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
+| **VERBUM** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
+| **ANIMA** | [100%] | [Nível 0 / 0.0] | [100%] | [ ] |
+
+## REFERÊNCIA RÁPIDA DE NÍVEIS (v0.9) 
+
+| $E_{MAX}$ Remanescente (%) | NÍVEL | Reserva $D_{PROF}$ | $\mathbf{\bar{M}}$ (Média de Mitigação/Dano) | AS Máx |
+| :--- | :--- | :--- | :--- | :--- |
+| 100% – 91% | **0** | Nenhum | 0.0 | 0 |
+| 90% – 81% | **I** | $1\text{d}10$ | 5.5 | 1 |
+| 80% – 71% | **II** | $2\text{d}10$ | 11.0 | 2 |
+| 70% – 61% | **III** | $3\text{d}10$ | 16.5 | 3 |
+| 60% – 51% | **IV** | $4\text{d}10$ | 22.0 | 4 |
+| **50% (PINÁCULO)** | **V** | $5\text{d}10$ | 27.5 | **5** |
+
+## REFERÊNCIA RÁPIDA DE ATRIÇÃO E DANO (v0.9) 
+
+| Atrição | Essência Motor ($\mathbf{E_{P}}$) | Essência Qualidade ($\mathbf{E_{S}}$) | Resumo do Cálculo |
+| :--- | :--- | :--- | :--- |
+| **Custo $\mathbf{E_{cur}}$** | $\mathbf{D_{Perda} = \max \left( 0, (7 - R_{prof}) \right)}$ | **Custo Fixo de $\mathbf{1\%}$** | **$\mathbf{D_{Final}}$** é Neutro em Nível, mitigado por $\mathbf{M}_{Defesa}$ e escalado por $\mathbf{M_{DTA}}$. |
+| **Falha (Esforço)** | $\mathbf{1\%}$ de Perda | $\mathbf{1\%}$ de Perda | Ambas as reservas de $\mathbf{E_{cur}}$ são reduzidas em $1\%$ em jogadas de esforço falhadas. |
+
+**PARES MOTOR/QUALIDADE:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## REGISTO DE EROSÃO / REFINAMENTO (Perda Permanente)
+(Registe a perda de $\mathbf{E_{max}}$ e os ganhos de recurso alcançados durante a Jogada Minguante.)
+
+| Data / Capítulo | Essência Refinada (Risco Foco **$2\text{d}6$**) | $E_{MAX}$ Antigo | $E_{MAX}$ Novo | NÍVEL Ganho | AS Ganho |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## VOTO FINAL
+(O que prometeu fazer antes de se desvanecer.)
+
+---
+© 2025 Serelith Varn — Nárëquenta: Contos do Minguante.
+Licenciado para jogo não comercial e conteúdo de fãs sob a Licença Aberta Limitada Nárëquenta (v0.1). Ver [LICENSE.md](license: 62).
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See  [LICENSE.md](license.md).
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                        Playtest_scenario_v0.9.md                         ###
+##                                                                          ###
+###############################################################################
+
+# Nárëquenta: Alpha Test Scenario — The Rescue of the Last Echo (v0.9)
+
+Test Focus (v0.9): Testing the Tier I Guarantee at creation, Attrition Control with $\mathbf{1\text{d}10}$ Proficiency, and the lethality of the Tier-Neutral Damage Formula.
+
+Duration: 2-3 Hours.
+
+---
+
+## 1. Starting Point: The Waning Sanctuary 🛡️
+
+The PCs are guardians of a **Waning Sanctuary** where the Echoes of legends are preserved. One such Echo is under attack by **The Silence** (an entity that feeds on unrealized potential). The Silence causes an **Anxiety Debuff** (All Attacker rolls have $\mathbf{-5}$ applied to $\mathbf{R_{prof}}$ for damage calculation only). The **Waning Echo** has 5 turns until it fades completely.
+
+- **Preparation:** Ensure all PCs have rolled **Initial Erosion ($\mathbf{1\text{d}10}$)**. All $\mathbf{E_{cur}}$ are at $90-99\%$. Crucially, ensure the player has designated **one Essence** to be exactly **$90\% \ \mathbf{E_{max}}$** to grant them **Tier I** status and $\mathbf{1d10}$ $\mathbf{D_{prof}}$ (Tier I Guarantee).
+    
+
+---
+
+## 2. Phase 1: The Prodigal Crossing (Testing Motor/Quality Pairs)
+
+- **Goal:** Force the spending of $\mathbf{E_{cur}}$ across multiple Essences.
+    
+- **Challenge:** A Barricade of Mistic Force blocks the way.
+    
+- **Action:** PCs must spend effort to bypass the challenge (requires 3 quick successes).
+    
+
+|**Action**|**Motor (EP​)**|**Quality (ES​)**|**Attrition (Per Success)**|
+|---|---|---|---|
+|**Brute Force**|VITALIS|MOTUS|$\max(0, 7 - R_{prof}) + 1\%$|
+|**Quick Climb**|MOTUS|VITALIS|$\max(0, 7 - R_{prof}) + 1\%$|
+
+- **Success Check:** The PC must feel the pressure of the $\mathbf{E_{cur}}$ drop from the cost of action and the Anxiety Debuff.
+    
+
+---
+
+## 3. Phase 2: The Enigma of Sacrifice (Testing High-Risk Attrition)
+
+- **Goal:** Test VERBUM / ANIMA usage and the vulnerability of a low $\mathbf{E_{cur}}$ pool.
+    
+- **Challenge:** The Echo's door is sealed by a Mystical Enigma requiring **Focus and Will**.
+    
+- **Action:** The PC must:
+    
+    - **Solve:** $\text{VERBUM}$ (Motor) + $\text{SENSUS}$ (Quality).
+        
+    - **Break:** $\text{ANIMA}$ (Motor) + $\text{VERBUM}$ (Quality).
+        
+- **Success Check:** Requires a successful roll ($\mathbf{d100' \le E_{cur}}$). Failure should result in the **$\mathbf{E_{cur}}$ Motor being penalized by $\mathbf{1\text{d}6}\%$** (simulating extreme mental strain) in addition to the standard cost.
+    
+
+---
+
+## 4. Phase 3: The Final Act and Progression Setup ⚔️
+
+- **Goal:** Test the **Tier-Neutral Damage Formula** and the need for **Action Surges** (max 5 at Tier V).
+    
+- **Challenge:** A **Form Guardian** (NPC, Tier I, $\mathbf{E_{cur}} \approx 90\%$, $\mathbf{HP 100}$) materializes.
+    
+- **Special Rule:** The PC with the lowest $\mathbf{E_{max}}$ (highest Tier) should be encouraged to attack first to test the efficiency of their $\mathbf{A_{FP}}$.
+    
+- **Damage Rule:** Use the **Defensive Tier Advantage ($\mathbf{M_{DTA}}$)** when the PC is hit (e.g., PC Tier III vs NPC Tier I $\rightarrow \times 0.75$ Multiplier).
+    
+
+|**Rule Tested**|**PC Tier IV → Tier I NPC**|**Formula Component**|
+|---|---|---|
+|**Offense Power**|PC's high $\mathbf{R_{prof}}$ yields high $\mathbf{A_{FP}}$.|$100 - d100'$|
+|**Defense Balance**|PC takes reduced damage.|$\times M_{DTA}$|
+
+- **Exit:** The GM guides the PCs to a moment of **Long Rest** and prompts the **Waning Roll** at the end of the chapter: "Which Essence betrayed you? What are you willing to lose to master it?".
+    
+
+---
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See See [LICENSE.md](license.md)].
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                         Playtest_sheet_v0.9.6.md                         ###
+##                                                                          ###
+###############################################################################
+
+# Nárëquenta: Ficha de Teste Alpha (v0.9.6)
+
+**Nome:** [_____________________]
+**Conceito:** [_____________________]
+**PV Atuais:** [100] / 100
+**RESERVA DE ATAQUE SÚBITO (AS):** [ ] / [ Máx: ___ ]
+
+## ESSÊNCIAS (E_max vs E_cur)
+**Instruções:** $\mathbf{E_{max}}$ é o potencial permanente (Piso 50%). $\mathbf{E_{cur}}$ define a sua **Zona de Tensão**.
+
+| Essência | $E_{MAX}$ (Potencial) | NÍVEL | $E_{CUR}$ (Atual) | ZONA (0/-10/-20/-30) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [____] | [100%] | [____] |
+| **MOTUS** | [100%] | [____] | [100%] | [____] |
+| **SENSUS** | [100%] | [____] | [100%] | [____] |
+| **VERBUM** | [100%] | [____] | [100%] | [____] |
+| **ANIMA** | [100%] | [____] | [100%] | [____] |
+
+## REFERÊNCIA RÁPIDA: ZONAS DE TENSÃO
+| $E_{cur}$ % | Zona | Penalidade |
+| :--- | :--- | :--- |
+| 100-76% | Pico | **-0** |
+| 75-51% | Minguante | **-10** |
+| 50-26% | Desvanecente | **-20** |
+| 25-0% | Vazio | **-30** |
+
+## REFERÊNCIA DE ATRIÇÃO E DANO (v0.9.6)
+
+**Sucesso:** $(d100 - R_{prof}) \le (E_{max} - Zona)$
+
+| Atrição (Custo) | Peso Leve (10) | Peso Médio (15) | Peso Pesado (20) |
+| :--- | :--- | :--- | :--- |
+| **Fórmula** | $\max(0, 10 - \lfloor R_{prof}/2 \rfloor)$ | $\max(0, 15 - \lfloor R_{prof}/2 \rfloor)$ | $\max(0, 20 - \lfloor R_{prof}/2 \rfloor)$ |
+
+**Dano Final:** $\max(R_{prof}, (A_{FP} - \bar{M}_{Def} + D_{Margin} + R_{prof})) \times M_{DTA}$
+
+---
+© 2025 Serelith Varn.
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                          Playtest_sheet_v0.9.md                          ###
+##                                                                          ###
+###############################################################################
+
+# Nárëquenta: Alpha Test Sheet (v0.9)
+
+**Name:** [_____________________]
+**Concept / Legend People Tell About You:** [_____________________]
+**HP Current:** [100] / 100
+**ACTION SURGE (AS) POOL AVAILABLE:** [ ] / [ Max: 5 at Tier V ] [cite: 199, 201]
+
+## ESSENCES (E_max vs E_cur)
+
+**Instructions:** $\mathbf{E_{max}}$ is your permanent potential, capped at **50%**.$\mathbf{E_{cur}}$ is your daily energy pool.
+
+| Essence | E_MAX (Maximum Potential) | TIER / $\mathbf{\bar{M}}$ (Avg Proficiency) | E_CUR (Current Energy) | D_PROF POOL (Active Dice) |
+| :--- | :--- | :--- | :--- | :--- |
+| **VITALIS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **MOTUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **SENSUS** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **VERBUM** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+| **ANIMA** | [100%] | [Tier 0 / 0.0] | [100%] | [ ] |
+
+## QUICK TIER REFERENCE (v0.9) 
+
+| Remaining E_MAX (%) | TIER | D_PROF Pool | $\mathbf{\bar{M}}$ (Mitigation/Damage Avg) | AS Max |
+| :--- | :--- | :--- | :--- | :--- |
+| 100% – 91% | **0** | None | 0.0 | 0 |
+| 90% – 81% | **I** | $1\text{d}10$ | 5.5 | 1 |
+| 80% – 71% | **II** | $2\text{d}10$ | 11.0 | 2 |
+| 70% – 61% | **III** | $3\text{d}10$ | 16.5 | 3 |
+| 60% – 51% | **IV** | $4\text{d}10$ | 22.0 | 4 |
+| **50% (PINNACLE)** | **V** | $5\text{d}10$ | 27.5 | **5** |
+
+## QUICK ATTRITION AND DAMAGE REFERENCE (v0.9) 
+
+| Attrition | Motor Essence ($\mathbf{E_{P}}$) | Quality Essence ($\mathbf{E_{S}}$) | Calculation Summary |
+| :--- | :--- | :--- | :--- |
+| **$\mathbf{E_{cur}}$ Cost** | [cite_start]$\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ [cite: 204] | [cite_start]**$1\%$ Fixed Cost** [cite: 204, 266] | [cite_start]**$\mathbf{D_{Final}}$** is Tier-Neutral, mitigated by $\mathbf{M}_{Defense}$ and scaled by $\mathbf{M_{DTA}}$[cite: 266]. |
+| **Failure (Effort)** | [cite_start]$\mathbf{1\%}$ Loss [cite: 267] | [cite_start]$\mathbf{1\%}$ Loss [cite: 267] | [cite_start]Both $\mathbf{E_{cur}}$ pools are reduced by $1\%$ on failed effort rolls[cite: 267]. |
+
+**MOTOR/QUALITY PAIRS:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
+
+## EROSION / REFINEMENT LOG (Permanent Loss)
+(Log the $\mathbf{E_{max}}$ loss and resource gains achieved during the Waning Roll.)
+
+| Date / Chapter | [cite_start]Refined Essence (Focus **2d6** Risk) [cite: 18] | Old E\_MAX | New E\_MAX | TIER Gained | AS Gained |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| | | | | | |
+
+## FINAL VOW
+(What you promised to do before you fade.)
+
+---
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license: 62).
+
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+
+
+###############################################################################
+##                                                                          ###
+##                                pt-pt.json                                ###
+##                                                                          ###
+###############################################################################
+
+{
+  "NAREQUENTA.GameTitle": "Nárëquenta: Contos do Declínio",
+  "SHEET_SUBTITLE": "Ficha de Personagem",
+  
+  "WELCOME_TITLE": "Bem-vindo a Nárëquenta",
+  "NAVIGATE_START_PROMPT": "Escolha a sua visualização inicial:",
+  "NAVIGATE_TITLE": "Navegar:",
+  "NAVIGATE_PC": "Ficha de Personagem",
+  "NAVIGATE_NPC": "Referência de Adversários",
+  "NAVIGATE_GM": "Regras / Ref. Mestre",
+  "LANG_SELECT": "Idioma:",
+
+  "LABEL_E_MAX": "Pico da Alma (E_max)",
+  "LABEL_E_CUR": "Vigor Ativo (E_cur)",
+  "LABEL_TIER_PROF": "Nível / Compensação de Declínio",
+  "LABEL_D_PROF_POOL": "Reserva de Compensação de Declínio",
+  "LABEL_ACTION_SURGES": "Surtos de Intenção",
+  "LABEL_INITIAL_EROSION": "Erosão Inicial (1d10)",
+  "LABEL_SUCCESS_CHECK": "Teste de Sucesso (d100)",
+  "LABEL_WANING_YIELD_RESULT": "Resultado da Compensação de Declínio (Soma)",
+  
+  "FIELD_NAME": "Nome",
+  "FIELD_HP": "Vigor Atual",
+  "FIELD_RPROF": "Nível de Proficiência Geral (R_Prof)",
+  "SECTION_PROMISE": "Voto Final",
+  "FIELD_PROMISE_HINT": "O Voto que o Personagem assumiu",
+  "SECTION_SCARRING_LOG": "Registo de Erosão / Refinamentos",
+  
+  "SECTION_ESSENCES": "Essências (Pico da Alma vs Vigor Ativo - Limite Mínimo 50%)",
+  "GRID_ESSENCE": "Essência",
+  "GRID_EMAX": "E_MAX (%)",
+  "GRID_ECUR": "E_CURRENT (%)",
+  "GRID_TIER_AVG": "NÍVEL / Marg. Média (̄M)",
+  "GRID_DPROFICIENCY": "Reserva de D_PROF",
+  
+  "VITALIS_NAME": "VITALIS (Vigor, Presença)",
+  "MOTUS_NAME": "MOTUS (Movimento, Destreza)",
+  "SENSUS_NAME": "SENSUS (Consciência, Instinto)",
+  "VERBUM_NAME": "VERBUM (Intelecto, Lógica)",
+  "ANIMA_NAME": "ANIMA (Vontade, Sacrifício)",
+
+  "SECTION_ABILITIES": "Habilidades e Equipamento",
+  "SECTION_ABILITIES_NOTE": "Custo = max(0, Peso - floor(R_prof/2)). Piso de Dano = R_prof.",
+  "TABLE_NAME": "Nome / Item",
+  "TABLE_TYPE": "Classe de Peso",
+  "TABLE_COSTS": "Custo de Atrição",
+  "TABLE_DAMAGE": "Dano / Efeito",
+
+  "WEAPON_BLADE": "Lâmina Usada",
+  "WEAPON_BLADE_TYPE": "VITALIS + ANIMA (Corpo a Corpo)",
+  "WEAPON_BLADE_DESC": "Força bruta e determinação. (Dano baseado em R_prof + Margens)",
+  "WEAPON_DAGGER": "Adaga de Destreza",
+  "WEAPON_DAGGER_TYPE": "MOTUS + SENSUS (Destreza)",
+  "WEAPON_DAGGER_DESC": "Precisão para explorar aberturas. (Dano baseado em R_prof + Margens)",
+  "WEAPON_BOW": "Arco de Caça",
+  "WEAPON_BOW_TYPE": "MOTUS + SENSUS (Distância)",
+  "WEAPON_BOW_DESC": "Coordenação motora e foco. (Dano baseado em R_prof + Margens)",
+  "WEAPON_SHIELD": "Muro de Escudos",
+  "WEAPON_SHIELD_TYPE": "VITALIS + ANIMA (Defesa)",
+  "WEAPON_SHIELD_DESC": "Resistir ao impacto com pura vontade. (Defesa reduz D_Margin)",
+  "CANTRIP_FLICKER": "Brilho",
+  "CANTRIP_FLICKER_TYPE": "MOTUS + SENSUS (Utilidade)",
+  "CANTRIP_FLICKER_DESC": "Cria uma pequena luz. (Custo Mitigado)",
+  "CANTRIP_SENSE": "Sentido de Cicatriz",
+  "CANTRIP_SENSE_TYPE": "SENSUS + VERBUM (Utilidade)",
+  "CANTRIP_SENSE_DESC": "Deteta onde a Essência foi gasta nas proximidades. (Custo Mitigado)",
+  "SPELL_BOLT": "Projétil de Brasa",
+  "SPELL_BOLT_TYPE": "VERBUM + SENSUS (Ataque)",
+  "SPELL_BOLT_DESC": "Projeta energia bruta e exaustiva. (Dano baseado em R_prof + Margens)",
+  "SPELL_AURA": "Aura de Foco",
+  "SPELL_AURA_TYPE": "VERBUM + ANIMA (Defesa)",
+  "SPELL_AURA_DESC": "Aliado adiciona ̄M à mitigação do próximo teste. (Custo de Atrição total)",
+  "SPELL_STONE": "Vontade de Pedra",
+  "SPELL_STONE_TYPE": "ANIMA + VITALIS (Defesa)",
+  "SPELL_STONE_DESC": "Aumenta a Mitigação de Defesa por ̄M até à próxima ronda. (Custo de Atrição total)",
+  "SPELL_DRAIN": "Dreno de Alma",
+  "SPELL_DRAIN_TYPE": "ANIMA + VERBUM (Ataque)",
+  "SPELL_DRAIN_DESC": "Causa dano e recupera parcialmente o Vigor Ativo do PC. (Dano baseado em R_prof + Margens)",
+
+  "NPC_SHEET_TITLE": "Referência de Adversários",
+  "FIELD_NPC_NAME": "Nome do Adversário:",
+  "SECTION_ESSENCES_NPC": "Essências (Foco na Mitigação)",
+
+  "GM_REF_SHEET_TITLE": "Referência do Mestre",
+  
+  "GM_SECTION_1_TITLE": "I. Resolução de Ações e Atrição",
+  "ROLL_SUCCESS_TITLE": "Teste para Sucesso",
+  "ROLL_SUCCESS_DESC": "Rolagem Efetiva (d100 - R_prof) <= (E_max - Penalidade de Zona).",
+  "ATTRITION_COST_TITLE": "Custo de Atrição (Perda de E_cur)",
+  "MOTOR_ESSENCE_LOSS": "Perda de Essência Motora (E_P):",
+  "ES_LOSS_COST": "Perda de Essência de Qualidade (E_S):",
+
+  "GM_SECTION_2_TITLE": "II. Escala de Proficiência (Pico da Alma)",
+  "GRID_EMAX_REM": "Pico da Alma Remanescente (%)",
+  "GRID_TIER_HEADER": "NÍVEL",
+  "GRID_MITIGATION_AVG": "̄M (Mitigação Média)",
+  "GRID_AS_MAX": "SIA (Surtos de Intenção de Ação) Máx",
+  "DECAY_SUMMARY": "Declínio: Perda 1d6 Não-Escolha / Perda 2d6 Focada (Teste de Declínio)",
+
+  "GM_SECTION_3_TITLE": "III. Fórmula de Dano (D_Final)",
+  "FORMULA_WHERE": "Onde:",
+  "A_FP_TITLE": "A_FP (Potencial Total):",
+  "DEFENDER_MARGIN_TITLE": "D_Margin (Margem do Defensor):",
+
+  "CALC_TITLE": "IV. Calculadora de Dano Interativa ⚔️",
+  "CALC_ATTACKER": "ATACANTE (PC)",
+  "CALC_DEFENDER": "DEFENSOR (NPC/PC)",
+  "FIELD_ECUR": "E_CUR (%):",
+  "GRID_TIER": "NÍVEL (I-V):",
+  "FIELD_D100": "d100 ROLADO:",
+  "FIELD_DEFENSE_ROLL": "d100 DEFESA:",
+  "CALC_BUTTON": "CALCULAR DANO FINAL",
+  "CALC_FINAL_DAMAGE": "DANO FINAL:",
+  
+  "CALC_SUBTITLE": "Atrição é Significado. O Pico da Alma nunca desce abaixo de 50%.",
+  "CALC_EMAX_LABEL": "Essência Pico da Alma (%) (50% a 100%):",
+  "CALC_RESULTS": "Resultados do Cálculo:",
+  "CALC_TIER": "NÍVEL de Proficiência:",
+  "CALC_LOSS": "Perda Total de E_MAX:",
+  "CALC_DICE": "Reserva de D_PROF:",
+  "CALC_M_AVG": "Mitigação Média (̄M):",
+  
+  "CALC_ERROR": "ERRO",
+  "CALC_FAIL_STATUS": "FALHA (Rolagem Efetiva > Limiar)",
+  "CALC_SUCCESS_STATUS": "SUCESSO.",
+  "CALC_D100_RANGE_ERROR": "Os testes d100 devem estar entre 1 e 100.",
+  
+  "SECTION_WANING_ROLLS": "Decadência Permanente (Waning Roll)",
+  "FIELD_FOCUS_DECAY": "Foco de Decadência (Perda 2d6):",
+  "FIELD_UNIVERSAL_DECAY": "Decadência Universal (Perda 1d6):",
+  "SECTION_ROLLS_INPUT": "🎯 Inputs de Resolução de Ação",
+  "FIELD_D100_ROLL": "Rolagem d100 (Teste de Sucesso):",
+  "FIELD_RPROF_RESULT": "Resultado R_Prof (Rolagem D_prof):"
+}
+
+
+###############################################################################
+##                                                                          ###
+##                                README.md                                 ###
+##                                                                          ###
+###############################################################################
+
+![Repository Header Image](header_image.png)
+# Nárëquenta — Tales of the Waning (Foundry VTT)
+
+**Version: v0.9.6 (Precision Lethality & Zones of Strain)**
+**Author:** Serelith Varn (cortonemo)
+**License:** Nárëquenta Limited Open License (v0.1)
+**Compatibility:** Foundry VTT v11+
+
+-----
+
+## 💡 Core Philosophy: Attrition is Meaning
+
+[cite_start]Nárëquenta is a TTRPG about **Beautiful Erosion**[cite: 2497]. Heroes start at their peak and gradually fade as they act and spend their Essence. [cite_start]Progression is the **defining of character through loss**[cite: 7].
+
+[cite_start]**Core Axiom (v0.9.6):** Success becomes harder as you tire (Zones), but Skill ($R_{prof}$) guarantees minimum impact ($D_{Floor}$)[cite: 9].
+
+## ⚙️ System Summary (v0.9.6)
+
+The game is built around Essence management, **Zones of Strain**, and **Precision Lethality**.
+
+* **Success Threshold:** Actions succeed if the **Effective Roll** is less than or equal to **Potential minus Fatigue**:
+    [cite_start]$$\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Zone_{Penalty}})$$ [cite: 30, 33]
+
+* **Zones of Strain:** As $\mathbf{E_{cur}}$ drops, penalties increase:
+    * **Peak (100-76%):** -0
+    * **Waning (75-51%):** -10
+    * **Fading (50-26%):** -20
+    * [cite_start]**Hollow (25-0%):** -30 [cite: 36-39]
+
+* **Attrition:** The cost of action is derived from **Item Weight** and mitigated by Skill:
+    [cite_start]$$Cost = \max(0, Weight - \lfloor R_{prof}/2 \rfloor)$$ [cite: 59]
+
+* **Damage:** Calculated using the **Additive Damage Formula** with a hard skill floor:
+    [cite_start]$$\mathbf{D_{Final}} = \max(R_{prof}, (A_{FP} - \bar{M}_{Def} + D_{Margin} + R_{prof})) \times M_{DTA}$$ [cite: 52]
+
+## 🗂 Repository Contents
+
+| Directory | Content | Status |
+| :--- | :--- | :--- |
+| **`/Rules/`** | The Core Mechanism, Metaphysics, and Rituals. | **v0.9.6 UPDATED** |
+| **`/Playtest/`** | Sheets, scenarios, and quick references for the Alpha. | **v0.9.6 UPDATED** |
+| **`/Tools/`** | Calculation scripts and utilities (e.g., Nárëquenta Calculator in Python). | **v0.9.6 UPDATED** |
+
+-----
+
+### 📦 Installation
+
+1.  Open Foundry VTT.
+2.  Go to **Game Systems** -> **Install System**.
+3.  Paste the Manifest URL:
+    `https://github.com/cortonemo/narequenta-vtt/releases/latest/download/system.json`
+4.  [cite_start]Click **Install** [cite: 2504-2505].
+
+-----
+
+### 📜 License & Authorship
+
+**© 2025 Serelith Varn**
+This project is released under the **Nárëquenta Limited Open License (v0.1)**.
+You are free to play, stream, and create fan content for this system—provided you give proper credit and do not use it commercially.
+[cite_start]This software is based on the **Simple Worldbuilding System** by Atropos, used under the MIT License [cite: 2506-2508].
+
+📜 [Read the full license →](LICENSE.md)
+
+
+###############################################################################
+##                                                                          ###
+##                                README.md                                 ###
+##                                                                          ###
+###############################################################################
+
+
+![Repository Header Image](header_image.png)
+# Nárëquenta — Contos do Declínio (Foundry VTT)
+
+**Versão: v0.9.6 (Letalidade de Precisão & Zonas de Tensão)**
+**Autor:** Serelith Varn (cortonemo)
+**Licença:** Nárëquenta Limited Open License (v0.1)
+**Compatibilidade:** Foundry VTT v11+
+
+-----
+
+## 💡 Filosofia Central: A Atrição é o Significado
+
+Nárëquenta é um TTRPG sobre **Decadência Elegante**. Os heróis começam no seu auge e desvanecem-se gradualmente à medida que agem e gastam a sua Essência. A progressão é a **definição do caráter através da perda**.
+
+**Axioma Central (v0.9.6):** O sucesso torna-se mais difícil à medida que te cansas (Zonas), mas a Perícia ($\mathbf{R_{prof}}$) garante um impacto mínimo ($\mathbf{D_{Piso}}$).
+
+## ⚙️ Sumário do Sistema (v0.9.6)
+
+O jogo é construído em torno da gestão de Essência, **Zonas de Tensão** e **Letalidade de Precisão**.
+
+* **Limiar de Sucesso:** As ações são bem-sucedidas se a **Rolagem Efetiva** for menor ou igual ao **Potencial menos Fadiga**:
+    $$\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalidade}})$$
+
+* **Zonas de Tensão:** À medida que $\mathbf{E_{cur}}$ cai, as penalidades aumentam:
+    * **Pico (100-76%):** -0
+    * **Minguante (75-51%):** -10
+    * **Desvanecente (50-26%):** -20
+    * **Vazio (25-0%):** -30
+
+* **Atrição:** O custo da ação deriva do **Peso do Item** e é mitigado pela Perícia:
+    $$Custo = \max(0, Peso - \lfloor R_{prof}/2 \rfloor)$$
+
+* **Dano:** Calculado usando a **Fórmula de Dano Aditiva** com um piso rígido de perícia:
+    $$\mathbf{D_{Final}} = \max(R_{prof}, (A_{FP} - \bar{M}_{Def} + D_{Margin} + R_{prof})) \times M_{DTA}$$
+
+## 🗂 Conteúdos do Repositório
+
+| Diretório | Conteúdo | Status |
+| :--- | :--- | :--- |
+| **`/Rules/`** | O Mecanismo Central, Metafísica e Rituais. | **v0.9.6 ATUALIZADO** |
+| **`/Playtest/`** | Fichas, cenários e referências rápidas para a Alpha. | **v0.9.6 ATUALIZADO** |
+| **`/Tools/`** | Scripts de cálculo e utilidades (e.g., Nárëquenta Calculator em Python). | **v0.9.6 ATUALIZADO** |
+
+-----
+
+### 📦 Instalação
+
+1.  Abra o Foundry VTT.
+2.  Vá a **Game Systems** -> **Install System**.
+3.  Cole o URL do Manifesto:
+    `https://github.com/cortonemo/narequenta-vtt/releases/latest/download/system.json`
+4.  Clique em **Install**.
+
+-----
+
+### 📜 Licença & Autoria
+
+**© 2025 Serelith Varn**
+Este projeto é lançado sob a **Nárëquenta Limited Open License (v0.1)**.
+Você é livre para jogar, transmitir e criar conteúdo de fã para este sistema — desde que forneça o crédito adequado e não o utilize comercialmente.
+Este software baseia-se no **Simple Worldbuilding System** de Atropos, utilizado sob a Licença MIT.
+
+📜 [Leia a licença completa →](LICENSE.md)
+-----
+
+
+
+###############################################################################
+##                                                                          ###
+##                          weapons and armors.md                           ###
+##                                                                          ###
+###############################################################################
+
+This proposal to add variable damage types, weapon bonuses, and armor-specific mitigation directly impacts the core mechanics of Nárëquenta, specifically the Tier-Neutral Lethality rule  and the unified damage formula.
+
+The system's current structure relies on **Proficiency compensating for Decline**  where damage is primarily driven by $\mathbf{R_{prof}}$ (the Proficiency Roll Result) and the Tier-based $\mathbf{M_{DTA}}$ (Tier Advantage Multiplier).
+
+Introducing flat bonuses from gear breaks the core **Attrition is Meaning** philosophy  by introducing non-decaying, external power sources. However, to incorporate the spirit of this request while preserving the core axioms, I propose an alternative design focusing on **Utility and Attrition Modification** rather than flat bonuses.
+
+## ⚙️ Proposal: Gear as Attrition & Margin Modifiers
+
+Instead of flat attack/defense bonuses, gear provides utility, mitigation, or shifts the nature of the Attrition Cost.
+
+### I. Weapon and Attack Types (Utility Focus)
+
+Weapons do not add flat damage; instead, they alter the action's **Motor/Quality Essence Pair**  and offer a unique utility or **Margin Modifier** on a successful hit, allowing a character to leverage their Proficiency more effectively.
+
+| Weapon Type | Combat Role | Motor ($\mathbf{E_{P}}$) / Quality ($\mathbf{E_{S}}$) Pair | Secondary Effect / Margin Modifier |
+| :--- | :--- | :--- | :--- |
+| **Slashing** (Swords/Axes) | Force & Will | VITALIS / ANIMA  | Add $\mathbf{1d4}$ to the resulting $\mathbf{A_{FP}}$ (Full Potential Margin). |
+| **Piercing** (Spears/Daggers) | Precision & Focus | MOTUS / SENSUS  | Ignore the $\mathbf{1\%}$ fixed $\mathbf{E_{S}}$ loss  on successful hit (Precision Attrition). |
+| **Bludgeoning** (Hammers/Maces) | Endurance & Power | VITALIS / MOTUS  | On a critical hit, Defender subtracts their Tier's $\mathbf{\bar{M}}$ (Average Mitigation)  from their next defense roll. |
+| **Ranged** (Bows/Thrown) | Finesse & Focus | MOTUS / SENSUS  | May target a non-Motor Essence; if hit, impose a $\mathbf{1d4\%}$ temporary $\mathbf{E_{cur}}$ penalty on the target Essence. |
+
+### II. Armor and Defense Types (Attrition/Damage Reduction Focus)
+
+Armor provides additional mitigation or reduces damage specifically against certain types, using historical context to inform the mechanic. Defense is still primarily handled by the Defender's $\mathbf{\bar{M}_{Defense}}$ (Average Mitigation).
+
+| Armor Type | Historical Context | Defense Enhancement | Mitigation Rule ($\mathbf{D_{Final}}$ Modification) |
+| :--- | :--- | :--- | :--- |
+| **Light Armor** (Leather/Padded) | Focus on mobility and deflection. | **+5** to the Defender's **Current Essence ($\mathbf{E_{cur}}$)** against **Slashing** attacks (making success harder for Attacker). | No $\mathbf{D_{Final}}$ change. |
+| **Medium Armor** (Mail/Brigandine) | Good all-around protection. | **+5** to the Defender's $\mathbf{\bar{M}_{Defense}}$  against **Bludgeoning** attacks only. | Apply the damage reduction *before* multiplying by $\mathbf{M_{DTA}}$. |
+| **Heavy Armor** (Plate/Harness) | Near-total protection against piercing/slashing. | **-2** to the Attacker's $\mathbf{R_{prof}}$ (Proficiency Roll Result)  against **Piercing** attacks only (reducing the guaranteed damage base). | The reduction to $\mathbf{R_{prof}}$ is applied *before* the damage calculation. |
+
+### 🛠️ Example Impact on Formulas
+
+To implement the **Heavy Armor** rule, the $\mathbf{D_{Final}}$ formula would be modified for Piercing attacks:
+
+$$
+\mathbf{D_{Final}} = \max \left( 0, (A_{FP}^{*} - \bar{M}_{Defense} + D_{Margin} + (\mathbf{R_{prof}} - 2) ) \right) \times M_{DTA}
+$$
+
+*Where $\mathbf{A_{FP}^{*}}$ uses the adjusted $\mathbf{R_{prof}}$ for its calculation as well.*
+
+---
+
+Would you prefer to use the flat bonus system (breaking the attrition model) or proceed with this **Attrition/Margin Modification** system?
+
+The Nárëquenta system integrates historical weapon types by defining their utility and effect on the Attrition and Damage Margins, rather than granting flat numerical bonuses. This preserves the core mechanical focus on Proficiency and Essence loss.
+
+Here are examples for each damage category and their corresponding effects, based on the proposed **Attrition/Margin Modification** system.
+
+## ⚔️ Weapon Attrition & Margin Modifiers (v0.9)
+
+### 1. Slashing (VITALIS + ANIMA Pair)
+
+Weapons of this type rely on **Force (VITALIS)** and **Will (ANIMA)** to cut through defenses, adding impact to the $\mathbf{A_{FP}}$ (Full Potential Margin).
+
+| Weapon Name | Motor ($\mathbf{E_{P}}$) / Quality ($\mathbf{E_{S}}$) | Secondary Effect / Margin Modifier |
+| :--- | :--- | :--- |
+| **Longsword / Katana** | VITALIS / ANIMA (Mêlée) | Add $\mathbf{1d4}$ to the resulting $\mathbf{A_{FP}}$. |
+| **Battle Axe / War Scythe** | VITALIS / ANIMA (Mêlée) | Add $\mathbf{1d4}$ to the resulting $\mathbf{A_{FP}}$. |
+
+### 2. Piercing (MOTUS + SENSUS Pair)
+
+These weapons emphasize **Precision (MOTUS)** and **Focus (SENSUS)** to find openings, reducing the strain on the wielder's $\mathbf{E_{cur}}$.
+
+| Weapon Name | Motor ($\mathbf{E_{P}}$) / Quality ($\mathbf{E_{S}}$) | Secondary Effect / Margin Modifier |
+| :--- | :--- | :--- |
+| **Dagger / Rapier** | MOTUS / SENSUS (Finesse) | Ignore the $\mathbf{1\%}$ fixed $\mathbf{E_{S}}$ loss on successful hit. |
+| **Lance / Spear** | MOTUS / SENSUS (Finesse) | Ignore the $\mathbf{1\%}$ fixed $\mathbf{E_{S}}$ loss on successful hit. |
+
+### 3. Bludgeoning (VITALIS + MOTUS Pair)
+
+These weapons use brute force and momentum (**VITALIS**) for impactful attacks. Their damage focuses on weakening the Defender's ability to resist future attacks.
+
+| Weapon Name | Motor ($\mathbf{E_{P}}$) / Quality ($\mathbf{E_{S}}$) | Secondary Effect / Margin Modifier |
+| :--- | :--- | :--- |
+| **Warhammer / Mace** | VITALIS / MOTUS (Force) | On a critical hit (GM-defined), Defender subtracts their Tier's $\mathbf{\bar{M}_{Defense}}$ from their next defense roll. |
+| **Club / Quarterstaff** | VITALIS / MOTUS (Force) | On a critical hit (GM-defined), Defender subtracts their Tier's $\mathbf{\bar{M}_{Defense}}$ from their next defense roll. |
+
+### 4. Ranged (MOTUS + SENSUS Pair)
+
+Ranged attacks leverage **Motor (MOTUS)** coordination and **Focus (SENSUS)** to inflict specific penalties by targeting vulnerable points.
+
+| Weapon Name | Motor ($\mathbf{E_{P}}$) / Quality ($\mathbf{E_{S}}$) | Secondary Effect / Margin Modifier |
+| :--- | :--- | :--- |
+| **Hunting Bow / Longbow** | MOTUS / SENSUS (Range) | May target a non-Motor Essence; if hit, impose a $\mathbf{1d4\%}$ temporary $\mathbf{E_{cur}}$ penalty on the target Essence. |
+| **Crossbow / Thrown Knife** | MOTUS / SENSUS (Range) | May target a non-Motor Essence; if hit, impose a $\mathbf{1d4\%}$ temporary $\mathbf{E_{cur}}$ penalty on the target Essence. |
+
+### 5. Unarmed (VITALIS + MOTUS Pair)
+
+Unarmed strikes are considered basic expressions of **Vigor (VITALIS)** and **Movement (MOTUS)**, using the standard $\mathbf{A_{FP}}$ calculation without a modifier.
+
+| Weapon Name | Motor ($\mathbf{E_{P}}$) / Quality ($\mathbf{E_{S}}$) | Secondary Effect / Margin Modifier |
+| :--- | :--- | :--- |
+| **Fist / Kick** | VITALIS / MOTUS (Unarmed) | Standard damage calculation. |
+
+---
+
+Would you like to review the proposed Armor rules and see how they apply their specific damage reductions?
+
+© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.

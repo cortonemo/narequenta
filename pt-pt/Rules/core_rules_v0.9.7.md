@@ -1,4 +1,4 @@
-# 📜 Nárëquenta Regras Base v0.9.64 
+# 📜 Nárëquenta Regras Base v0.9.7 (Aço & Estilhaços)
 
 ## 1. O Que É Este Jogo 🧭
 
@@ -11,14 +11,14 @@ Cada personagem é definida por cinco Essências. Cada Essência começa a **$10
 
 - **VITALIS** — corpo, resistência, força, presença
 - **MOTUS** — movimento, finesse, agilidade, graça
-- **SENSUS** — perceção, instinto, foco, atenção
+- **SENSUS** — consciência, instinto, foco, perceção
 - **VERBUM** — intelecto, lógica, estrutura, discurso
 - **ANIMA** — convicção, vontade, fé, sacrifício
 
 ### Valores de Essência
 
-- **Pico da Alma ($\mathbf{E_{max}}$):** Limite permanente. Nunca pode descer abaixo de **$50\%$** (Piso Rígido).
-- **Vigor Ativo ($\mathbf{E_{cur}}$):** Energia utilizável. Determina a tua **Zona de Tensão**.
+- **Valor Máximo ($\mathbf{E_{max}}$):** Limite permanente. Nunca pode descer abaixo de **$50\%$** (Piso Rígido).
+- **Valor Atual ($\mathbf{E_{cur}}$):** Energia utilizável. Determina a tua **Zona de Tensão**.
 ***
 
 ## 3. Resolução de Ações: A Rolagem Efetiva 🎯
@@ -27,13 +27,13 @@ O sucesso é determinado comparando a **Rolagem Efetiva** com a Capacidade Perma
 
 ### A. Condição de Bloqueio (O Vazio Absoluto)
 
-Antes de qualquer rolagem, verifica-se o Vigor Ativo ($\mathbf{E_{cur}}$).
+Antes de qualquer rolagem, verifica-se o Valor Atual ($\mathbf{E_{cur}}$).
 
 $$\text{Se } \mathbf{E_{cur}} < 1 \rightarrow \text{Falha Automática / Ação Impossível}$$
 
 > ==**Se o Vigor Ativo for menor que 1, a ação resulta em falha automática.**==
 
-**Recuperação de Emergência (Fôlego Rápido):** Se estiveres a $0 \ \mathbf{E_{cur}}$, podes gastar o teu turno inteiro para tomar um Fôlego Rápido (Descanso Curto).
+**Recuperação de Emergência (Fôlego Rápido):** Se estiveres a $0 \mathbf{E_{cur}}$, podes gastar o teu turno inteiro para tomar um Fôlego Rápido (Descanso Curto).
 
 ### B. A Fórmula da Rolagem Efetiva
 
@@ -46,9 +46,10 @@ $$\mathbf{R_{Eff}} = \mathbf{d100} - \mathbf{R_{prof}}$$
 $$\mathbf{R_{Eff}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$$
 
 > ==**A ação é bem-sucedida se a Rolagem Efetiva for menor ou igual ao teu $\mathbf{E_{max}}$ menos a Penalidade de Zona atual.**==
+
 ### D. Zonas de Tensão ($\mathbf{E_{cur}}$)
 
-À medida que $\mathbf{E_{cur}}$ desce, a dificuldade artificial aumenta.
+À medida que $\mathbf{E_{cur}}$ desce, cais em Zonas inferiores, aumentando a dificuldade das ações.
 
 | **Intervalo $\mathbf{E_{cur}}$** | **Nome da Zona** | **Penalidade ($\mathbf{Z_{Penalty}}$)** |
 | :--- | :--- | :--- |
@@ -66,13 +67,13 @@ Cada ação queima Essência. O custo deriva do **Peso do Item** e é mitigado p
 
 $$\mathbf{Custo} = \max \left( 0, \mathbf{Peso} - \left\lfloor \frac{\mathbf{R_{prof}}}{2} \right\rfloor \right)$$
 
-> ==**O Custo de Energia é igual ao Peso da Arma menos metade do Resultado de Proficiência (arredondado para baixo).**==
+> **O Custo de Energia é igual ao Peso da Arma menos metade do Resultado de Proficiência (arredondado para baixo).**
 
 | **Classe de Peso** | **Custo Base** | **Exemplos** |
 | :--- | :--- | :--- |
 | **Leve** | **10%** | Adagas, Arcos Curtos |
 | **Médio** | **15%** | Espadas, Dardos |
-| **Pesado** | **20%** | Maças, Bestas Pesadas |
+| **Pesado** | **20%** | Maças, Bestas |
 
 - **Sucesso Crítico (1-5):** Reduz para metade o Custo final.
 - **Falha Crítica (96-100):** Duplica o Custo final.
@@ -80,21 +81,46 @@ $$\mathbf{Custo} = \max \left( 0, \mathbf{Peso} - \left\lfloor \frac{\mathbf{R_{
 
 ## 5. Combate: Letalidade de Precisão ($\mathbf{D_{Final}}$) 💥
 
-O cálculo de dano privilegia a Perícia ($\mathbf{R_{prof}}$). **O Dano é Neutro em Nível**, calculado pelas Margens e modificado pela Vantagem de Nível.
+O cálculo de dano privilegia a Perícia ($\mathbf{R_{prof}}$). A fórmula permanece Aditiva, mas a Mitigação é agora granular, composta por **Nível**, **Armadura** e **Aparo Ativo**.
 
 ### Fórmula de Dano Final
 
-$$\mathbf{D_{Final}} = \max \left( \mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Def}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}}) \right) \times \mathbf{M_{DTA}}$$
+$$\mathbf{D_{Final}} = \max \left( \mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Total}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}}) \right) \times \mathbf{M_{DTA}}$$
 
 > ==**O Dano Final é o maior entre o Piso de Proficiência ou a Margem Calculada, multiplicado pela Vantagem de Nível.**==
 
 | **Componente** | **Definição** |
 | :--- | :--- |
 | **$\mathbf{R_{prof}}$ (Piso Rígido)** | **Dano Base Aditivo.** O dano mínimo absoluto é o teu resultado de Proficiência. |
-| **$\mathbf{A_{FP}}$ (Potencial Total)** | $\mathbf{100 - (d100 - R_{prof})}$. **Neutro em Nível.** Baseado em 100%, não no $E_{cur}$ do Atacante. |
-| **$\mathbf{\bar{M}_{Def}}$ (Mitigação)** | A armadura passiva do Defensor (Média do seu *pool* de $D_{prof}$). |
+| **$\mathbf{A_{FP}}$** | **Potencial Total.** $100 - (d100 - R_{prof})$. Modificado pelo **Bónus de Ataque da Arma**. |
+| **$\mathbf{\bar{M}_{Total}}$** | **Mitigação Total.** A soma de $\mathbf{\bar{M}_{Nível}} + \mathbf{\bar{M}_{Estática}} + \mathbf{\bar{M}_{Aparo}}$. |
 | **$\mathbf{D_{Margin}}$ (Vulnerabilidade)** | Rolagem de Defesa do Defensor menos $\mathbf{E_{cur}}$. Valores positivos aumentam o dano. |
 | **$\mathbf{M_{DTA}}$ (Vantagem de Nível)** | Multiplicador que escala de $\times 0.75$ (Desvantagem) a $\times 2.00$ (Dominância). |
+
+### A. As Três Camadas de Mitigação ($\mathbf{\bar{M}_{Total}}$)
+
+1.  **Reflexo ($\mathbf{\bar{M}_{Nível}}$):** A tua capacidade inata de amortecer golpes.
+    * *Fórmula:* $\text{Nível} \times 5.5$.
+2.  **Estática ($\mathbf{\bar{M}_{Estática}}$):** Barreiras físicas que funcionam independentemente da ação.
+    * *Fonte:* **Armadura** (Vestida) e **Escudos** (Segurados).
+    * *Sempre Ativa.*
+3.  **Aparo Ativo ($\mathbf{\bar{M}_{Aparo}}$):** Usar uma arma para desviar golpes iminentes.
+    * *Fonte:* **Armas Corpo a Corpo** (Espadas, Lanças, etc.).
+    * *Restrição:* Aplica-se apenas contra **Ataques Corpo a Corpo**. Se o inimigo estiver à Distância (>5ft), não podes aparar o projétil eficazmente com uma arma (Escudos ainda se aplicam).
+
+### B. Dados de Arma (Ataque & Aparo)
+
+As armas são definidas pelo equilíbrio entre Agressão (Bónus de Ataque) vs. Segurança (Bónus de Aparo).
+
+| Tipo de Arma | Bónus de Ataque (Adiciona a $\mathbf{A_{FP}}$) | Bónus de Aparo (Adiciona a $\mathbf{\bar{M}}$) | Nota Tática |
+| :--- | :---: | :---: | :--- |
+| **Desarmado** | +0 | +0 | Vulnerável. |
+| **Estilo Monge** | +1 | +4 | Técnicas de deflexão. |
+| **Adaga** | +0 | +1 | Demasiado pequena para proteger eficazmente. |
+| **Espada** | +2 | +3 | O equilíbrio perfeito. |
+| **Machado/Maça** | +4 | +1 | Alto impacto, recuperação fraca. |
+| **Lança** | +1 | +4 | O alcance mantém os inimigos afastados (Alta Mitigação). |
+| **Arco** | +0 | +1 | Bloqueio desesperado apenas. |
 ***
 
 ## 6. Rituais e Renovação (Recuperação) 🕯️
@@ -108,8 +134,8 @@ Este ritual permite ao PC recuperar o seu foco mental e físico, regressando ao 
 - **Gatilho:** Descanso Longo (ex: uma noite de sono segura, mínimo 6 horas).
 - **Processo:**
     1. **Restauração de Vigor:** O **Valor Atual ($\mathbf{E_{cur}}$)** de todas as Essências reinicia a **100%**.
-       > *Regra Crítica:* A recuperação **NÃO** é limitada pelo $\mathbf{E_{max}}$. Mesmo se o teu Pico da Alma estiver degradado a 50%, o teu Vigor Ativo regressa a 100%. Começas o dia totalmente energizado, na **Zona de Pico**.
-    2. **Restauração de Surto:** O **Pool de Impulso de Ação (AS)** é **totalmente restaurado** ao total determinado pelo Nível de Proficiência.
+        > _Regra Crítica:_ A recuperação **NÃO** é limitada pelo $\mathbf{E_{max}}$. Mesmo se o teu Pico da Alma estiver degradado a 50%, o teu Vigor Ativo regressa a 100%. Começas o dia totalmente energizado, na **Zona de Pico**.
+    2. **Restauração de Surto:** O **Pool de Impulso de Ação (AS)** é **totalmente restaurado** ao total determinado pelo Nível de Proficiência da personagem.
 - **Custo Narrativo:** Tempo e segurança.
 
 ### B. O Descanso Curto (Pausa) 🍵
@@ -166,7 +192,30 @@ O resultado da rolagem $\mathbf{D_{prof}}$ ($\mathbf{R_{prof}}$) é usado para t
 3.  **Ataques Especiais (Opcional):** Sacrificar dados do *pool* de $\mathbf{D_{prof}}$ para realizar ações aprimoradas.
 ***
 
-## 9. Apêndice: Referência do Sistema (Sigla) 📚
+## 9. Regra Opcional: Aço Estilhaçado (Integridade da Arma) ⚔️
+
+As ferramentas em Nárëquenta não são eternas; elas sofrem erosão tal como as almas que as empunham.
+
+### 1. Integridade ($\Omega$)
+Cada arma tem um **Valor de Integridade**.
+* **Padrão:** 3
+* **Fina:** 5
+* **Relíquia:** 10
+
+### 2. Eventos de Fratura
+Uma arma perde **1 Ponto de Integridade** quando:
+* **Falha Crítica (96-100):** Atinges uma superfície dura num ângulo catastrófico.
+* **Aparo de Sacrifício:** O portador escolhe absorver um **Acerto Crítico** (Atacante 1-5) inteiramente na arma para negar o efeito Crítico.
+
+### 3. O Estilhaçar
+Quando a Integridade chega a **0**:
+* A arma está **Quebrada**.
+* **Bónus de Ataque** torna-se 0.
+* **Bónus de Aparo** torna-se 0.
+* **Dano** é limitado apenas ao piso bruto de $R_{prof}$.
+***
+
+## 10. Apêndice: Referência do Sistema (Sigla) 📚
 
 ### Detalhes dos Componentes
 
@@ -180,6 +229,7 @@ $$\mathbf{A_{FP}} = \mathbf{100 - (d100-R_{prof})}$$
 
 $$\mathbf{D_{Margin}} = \mathbf{d100_D-D_{Ecur}}$$
 
-> ==**Isto mede a vulnerabilidade do Defensor. Um $\mathbf{D_{Margin}}$ positivo significa que o Defensor falhou na defesa, aumentando o dano.**==
+> ==**Isto mede a vulnerabilidade do Defensor. Um $\mathbf{D_{Margin}}$ positivo significa que o Defensor falhou na defesa, aumentando o dano.==**
+
 ***
 © 2025 Serelith Varn — Nárëquenta. Licenciado sob Nárëquenta Limited Open License (v0.1). Ver [[LICENSE.md]].

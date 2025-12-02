@@ -6,7 +6,16 @@ All notable changes to this project will be documented in this file.
 
 The format is inspired by Keep a Changelog, and adheres to Semantic Versioning when applicable.
 
----
+***
+## [v0.9.7] — 2025-12-02 (Steel & Splinters)
+**Status:** Beta Feature Expansion - Equipment Logic
+- **Changed:** **Combat Formula** updated to use $\mathbf{\bar{M}_{Total}}$ instead of just Tier Mitigation.
+- **Added:** Defined **Three Layers of Mitigation**: Reflex (Tier×5.5), Static (Armor/Shields), and Active Parry (Weapons).
+- **Added:** **Weapon Data Table** defining Attack ($\mathbf{A_{FP}}$) and Parry ($\mathbf{\bar{M}}$) bonuses for standard archetypes (Sword, Axe, Spear, Bow, Unarmed).
+- **Added:** **Parry Restriction Rule:** Active Parry only applies against attacks within melee range (≤5ft).
+- **Added:** **Optional Rule: Splintering Steel.** Weapons now have an Integrity rating (3/5/10) and degrade on Critical Failures or Sacrificial Parries.
+
+***
 
 ## [v0.9.64] — 2025-12-01 (Unified Recovery)
 **Status:** Beta Refinement - Game Cycle Adjustment

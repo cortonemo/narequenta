@@ -1,4 +1,4 @@
-# 📜 Nárëquenta Core Rules v0.9.64
+# 📜 Nárëquenta Core Rules v0.9.7 (Steel & Splinters)
 
 ## 1. What This Game Is 🧭
 
@@ -81,21 +81,46 @@ $$\mathbf{Cost} = \max \left( 0, \mathbf{Weight} - \left\lfloor \frac{\mathbf{R_
 
 ## 5. Combat: Precision Lethality ($\mathbf{D_{Final}}$) 💥
 
-Damage calculation privileges Skill ($\mathbf{R_{prof}}$). **Damage is Tier-Neutral**, calculated by Margins and modified by Tier Advantage.
+Damage calculation privileges Skill ($\mathbf{R_{prof}}$). The formula remains Additive, but Mitigation is now granular, composed of **Tier**, **Armor**, and **Active Parry**.
 
 ### Final Damage Formula
 
-$$\mathbf{D_{Final}} = \max \left( \mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Def}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}}) \right) \times \mathbf{M_{DTA}}$$
+$$\mathbf{D_{Final}} = \max \left( \mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Total}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}}) \right) \times \mathbf{M_{DTA}}$$
 
- >==**Final Damage is the higher of the Proficiency Floor or the Calculated Margin, multiplied by the Tier Advantage.**==
+> ==**Final Damage is the higher of the Proficiency Floor or the Calculated Margin, multiplied by the Tier Advantage.**==
 
-| **Component**                                | **Definition**                                                                                 |
-| :------------------------------------------- | :--------------------------------------------------------------------------------------------- |
-| **$\mathbf{R_{prof}}$ (Hard Floor)**         | **Additive Base Damage.** The absolute minimum damage is your Proficiency Roll result.         |
-| **$\mathbf{A_{FP}}$ (Full Force Potential)** | $\mathbf{100 - (d100 - R_{prof})}$. **Tier-Neutral.** Based on 100%, not Attacker's $E_{cur}$. |
-| **$\mathbf{\bar{M}_{Def}}$ (Mitigation)**    | The Defender's passive armor (Average of their $D_{prof}$ pool).                               |
-| **$\mathbf{D_{Margin}}$ (Vulnerability)**    | Defender's Defense Roll minus Defender's $\mathbf{E_{cur}}$. Positive values add damage.       |
-| **$\mathbf{M_{DTA}}$ (Tier Advantage)**      | Multiplier scaling from $\times 0.75$ (Uphill) to $\times 2.00$ (Overpower).                   |
+| **Component** | **Definition** |
+| :--- | :--- |
+| **$\mathbf{R_{prof}}$ (Hard Floor)** | **Additive Base Damage.** The absolute minimum damage is your Proficiency Roll result. |
+| **$\mathbf{A_{FP}}$** | **Full Force Potential.** $100 - (d100 - R_{prof})$. Modified by **Weapon Attack Bonus**. |
+| **$\mathbf{\bar{M}_{Total}}$** | **Total Mitigation.** The sum of $\mathbf{\bar{M}_{Tier}} + \mathbf{\bar{M}_{Static}} + \mathbf{\bar{M}_{Parry}}$. |
+| **$\mathbf{D_{Margin}}$ (Vulnerability)** | Defender's Defense Roll minus Defender's $\mathbf{E_{cur}}$. Positive values add damage. |
+| **$\mathbf{M_{DTA}}$ (Tier Advantage)** | Multiplier scaling from $\times 0.75$ (Uphill) to $\times 2.00$ (Overpower). |
+
+### A. The Three Layers of Mitigation ($\mathbf{\bar{M}_{Total}}$)
+
+1.  **Reflex ($\mathbf{\bar{M}_{Tier}}$):** Your innate ability to roll with punches.
+    * *Formula:* $\text{Tier} \times 5.5$.
+2.  **Static ($\mathbf{\bar{M}_{Static}}$):** Physical barriers that function regardless of action.
+    * *Source:* **Armor** (Worn) and **Shields** (Held).
+    * *Always Active.*
+3.  **Active Parry ($\mathbf{\bar{M}_{Parry}}$):** Using a weapon to deflect incoming blows.
+    * *Source:* **Melee Weapons** (Swords, Spears, etc.).
+    * *Restriction:* Only applies against **Melee Attacks**. If the enemy is Ranged (>5ft), you cannot parry the projectile effectively with a weapon (Shields still apply).
+
+### B. Weapon Data (Attack & Parry)
+
+Weapons are defined by their balance of Aggression (Attack Bonus) vs. Safety (Parry Bonus).
+
+| Weapon Type | Attack Bonus (Add to $\mathbf{A_{FP}}$) | Parry Bonus (Add to $\mathbf{\bar{M}}$) | Tactical Note |
+| :--- | :---: | :---: | :--- |
+| **Unarmed** | +0 | +0 | Vulnerable. |
+| **Monk Style** | +1 | +4 | Deflection techniques. |
+| **Dagger** | +0 | +1 | Too small to guard effectively. |
+| **Sword** | +2 | +3 | The perfect balance. |
+| **Axe/Mace** | +4 | +1 | High impact, poor recovery. |
+| **Spear** | +1 | +4 | Range keeps enemies away (High Mitigation). |
+| **Bow** | +0 | +1 | Desperate blocking only. |
 ***
 
 ## 6. Rituals and Renewal (Recovery) 🕯️
@@ -109,7 +134,7 @@ This ritual allows the PC to recover their mental and physical focus, returning 
 - **Trigger:** Long Rest (e.g., a safe night's sleep, minimum 6 hours).
 - **Process:**
     1. **Vigor Restoration:** The **Current Value ($\mathbf{E_{cur}}$)** of all Essences resets to **100%**.
-       > _Critical Rule:_ Recovery is **NOT** capped by $\mathbf{E_{max}}$. Even if your Soul Peak is degraded to 50%, your Active Vigor returns to 100%. You begin the day fully energized, in the **Peak Zone**.
+        > _Critical Rule:_ Recovery is **NOT** capped by $\mathbf{E_{max}}$. Even if your Soul Peak is degraded to 50%, your Active Vigor returns to 100%. You begin the day fully energized, in the **Peak Zone**.
     2. **Surge Restoration:** The **Action Surge (AS) Pool** is **fully restored** to the total determined by the character's Proficiency Tier.
 - **Narrative Cost:** Time and safety.
 
@@ -119,7 +144,7 @@ A brief pause to bind wounds, catch breath, and center the mind (15 minutes).
 
 $$\mathbf{Recovery} = \text{Sum of } \mathbf{D_{prof}}$$
 
- >==**Recovery equals the sum of your Proficiency Dice pool results.**==
+> ==**Recovery equals the sum of your Proficiency Dice pool results.**==
 
 (Fallback: If Tier 0, roll 1d10).
 
@@ -165,10 +190,32 @@ The result of the $\mathbf{D_{prof}}$ roll ($\mathbf{R_{prof}}$) is used for thr
 1.  **Error Mitigation:** Subtract $\mathbf{R_{prof}}$ from the $\mathbf{d100}$ roll.
 2.  **Attrition Reduction:** $\mathbf{Cost} = \text{Weight} - \lfloor R_{prof}/2 \rfloor$.
 3.  **Special Attacks (Optional):** Sacrifice dice from the $\mathbf{D_{prof}}$ *pool* to perform enhanced actions.
-
 ***
 
-## 9. Appendix: System Reference (Sigla) 📚
+## 9. Optional Rule: Splintering Steel (Weapon Integrity) ⚔️
+
+Tools in Nárëquenta are not eternal; they erode like the souls that wield them.
+
+### 1. Integrity ($\Omega$)
+Every weapon has an **Integrity Rating**.
+* **Standard:** 3
+* **Fine:** 5
+* **Relic:** 10
+
+### 2. Fracture Events
+A weapon loses **1 Point of Integrity** when:
+* **Critical Failure (96-100):** You strike a hard surface at a catastrophic angle.
+* **Sacrificial Parry:** The wielder chooses to absorb a **Critical Hit** (Attacker 1-5) entirely on the weapon to negate the Critical effect.
+
+### 3. The Shattering
+When Integrity reaches **0**:
+* The weapon is **Broken**.
+* **Attack Bonus** becomes 0.
+* **Parry Bonus** becomes 0.
+* **Damage** is limited to the raw $R_{prof}$ floor only.
+***
+
+## 10. Appendix: System Reference (Sigla) 📚
 
 ### Component Breakdowns
 

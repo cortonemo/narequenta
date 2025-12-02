@@ -6,7 +6,16 @@ Todas as alterações notáveis a este projeto serão documentadas neste ficheir
 
 O formato é inspirado em Keep a Changelog, e adere ao Versionamento Semântico quando aplicável.
 
----
+***
+## [v0.9.7] — 2025-12-02 (Aço & Estilhaços)
+**Status:** Expansão de Funcionalidades Beta - Lógica de Equipamento
+- **Changed:** **Fórmula de Combate** atualizada para usar $\mathbf{\bar{M}_{Total}}$ em vez de apenas Mitigação de Nível.
+- **Added:** Definidas **Três Camadas de Mitigação**: Reflexo (Nível×5.5), Estática (Armadura/Escudos) e Aparo Ativo (Armas).
+- **Added:** **Tabela de Dados de Arma** adicionada, definindo bónus de Ataque ($\mathbf{A_{FP}}$) e Aparo ($\mathbf{\bar{M}}$) para arquétipos padrão (Espada, Machado, Lança, Arco, Desarmado).
+- **Added:** **Regra de Restrição de Aparo**: O Aparo Ativo aplica-se apenas contra ataques dentro do alcance corpo a corpo (≤5ft).
+- **Added:** **Regra Opcional: Aço Estilhaçado.** As armas agora têm um valor de Integridade (3/5/10) e degradam-se em Falhas Críticas ou Aparos de Sacrifício.
+
+***
 
 ## [v0.9.64] — 2025-12-01 (Recuperação Unificada)
 **Status:** Refinamento Beta - Ajuste de Ciclo de Jogo
@@ -121,7 +130,4 @@ Desenvolvimento de Sistema & Documentação — GPT-5 (Liora Vex Framework)
 
 ---
 © 2025 Serelith Varn — Nárëquenta: Contos do Declínio.
-Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Ver [LICENSE.md](license.md).
-
-© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+Licenciado para jogo não comercial e conteúdo de fã sob a Nárëquenta Limited Open License (v0.1). Ver [LICENSE.md](LICENSE.md).

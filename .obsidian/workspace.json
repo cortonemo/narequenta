@@ -1,56 +1,41 @@
 {
   "main": {
-    "id": "d51fd96930c1ce35",
+    "id": "a81fc65c1ec95372",
     "type": "split",
     "children": [
       {
-        "id": "59b91a75da78fb40",
+        "id": "1d0b57f518a120e4",
         "type": "tabs",
         "children": [
           {
-            "id": "2ce6ca3a71ea493b",
+            "id": "637dd92e8e4505f8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "weapons and armors.md",
+                "file": "pt-pt/Rules/core_rules_v0.9.7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "weapons and armors"
-            }
-          },
-          {
-            "id": "ac0f45b835907b4b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "en-us/Rules/core_rules_v0.9.6.4.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "core_rules_v0.9.6.4"
+              "title": "core_rules_v0.9.7"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "10f3a370023953f3",
+    "id": "12c2d5cfee6aea87",
     "type": "split",
     "children": [
       {
-        "id": "2ccffe45da7cf50f",
+        "id": "4c84c2ebfc54a645",
         "type": "tabs",
         "children": [
           {
-            "id": "877d4f4d0ebbd967",
+            "id": "7dce0e38e2846cf4",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -63,7 +48,7 @@
             }
           },
           {
-            "id": "98c1c5bdc921e87f",
+            "id": "8241497828ba1f3a",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -80,7 +65,7 @@
             }
           },
           {
-            "id": "44eb6c0ab262e699",
+            "id": "daae46486c1118d3",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -96,20 +81,20 @@
     "width": 300
   },
   "right": {
-    "id": "8eb9c6eddbf2da9a",
+    "id": "390ad1cfe7087565",
     "type": "split",
     "children": [
       {
-        "id": "028d02e4f9b5a57e",
+        "id": "1fb81d01941500d4",
         "type": "tabs",
         "children": [
           {
-            "id": "9c6a0e69e86cbd25",
+            "id": "507435407954f25b",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "pt-pt/CHANGELOG.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for CHANGELOG"
             }
           },
           {
-            "id": "e768e410ed50f79e",
+            "id": "2f6cf65fb5317d49",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "pt-pt/CHANGELOG.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              "title": "Outgoing links from CHANGELOG"
             }
           },
           {
-            "id": "9314441f312bd38d",
+            "id": "5eacb7d0b8e4776d",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -152,18 +137,32 @@
             }
           },
           {
-            "id": "bb5ad8a0516e26ff",
+            "id": "449321239c21c795",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "07459df46e9c37a0",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "pt-pt/CHANGELOG.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of CHANGELOG"
             }
           }
         ]
@@ -184,53 +183,35 @@
       "bases:Create new base": false
     }
   },
-  "active": "ac0f45b835907b4b",
+  "active": "637dd92e8e4505f8",
   "lastOpenFiles": [
-    "en-us/playtest/Playtest_sheet_v0.9.md",
-    "en-us/playtest/Playtest_scenario_v0.9.md",
-    "en-us/playtest/gm_reference_v0.9.6.md",
-    "en-us/playtest/character_sheet_v0.9.6.md",
-    "en-us/logs/playtest_notes_v0.9.md",
+    "en-us/Rules/core_rules_v0.9.7.md",
+    "pt-pt/Rules/core_rules_v0.9.7.md",
     "pt-pt/Rules/core_rules_v0.9.64.md",
-    "weapons and armors.md",
-    "en-us/Rules/core_rules_v0.9.6.4.md",
-    "CHANGELOG.md",
-    "en-us/Rules/core_rules_v0.9.6.md",
-    "RulesMerged.txt",
     "pt-pt/CHANGELOG.md",
-    "pt-pt/Rules/Rules_rituals_v0.9.64.md",
-    "en-us/Rules/Rules_rituals_v0.9.64.md",
-    "pt-pt/Rules/rules_contested_rolls_v0.9.md",
-    "en-us/Rules/rules_contested_rolls_v0.9.md",
-    "en-us/Rules/all_in_one_rule_v0.9.md",
-    "LICENSE.md",
-    "pt-pt/README.md",
-    "pt-pt/LICENSE.md",
-    "pt-pt/CREDITS.md",
-    "pt-pt/playtest/Playtest_sheet_v0.9.6.md",
-    "pt-pt/playtest/Playtest_scenario_v0.9.md",
-    "pt-pt/playtest/gm_reference_v0.9.6.md",
-    "pt-pt/playtest/character_sheet_v0.9.6.md",
-    "pt-pt/logs/playtest_notes_v0.9.md",
-    "README.md",
-    "Untitled",
-    "pt-pt/Rules/rules.txt",
-    "pt-pt/playtest/playtest.txt",
-    "header_image.png",
-    "assets/html/sheets/index.html",
-    "assets/html/sheets/index2 - Copy.html",
-    "assets/html/sheets/index1 - Copy.html",
-    "assets/html/sheets/index1.html",
-    "assets/html/sheets/index2.html",
-    "narequenta.txt",
-    "assets/image/narequenta.png",
-    "assets/image/narequenta00.png",
-    "assets/image/narequenta01.png",
-    "assets/image/narequenta_minimal_favicon_64x64.png",
-    "assets/image/narequenta_minimal_favicon_48x48.png",
+    "CHANGELOG.md",
     "assets/image/narequenta_minimal_favicon_32x32.png",
-    "assets/image/narequenta_minimal_favicon_16x16.png",
+    "pt-pt/logs/playtest_notes_v0.9.md",
+    "assets/image/narequenta_minimal_favicon_64x64.png",
+    "assets/image/narequenta_favicon_32x32.png",
+    "pt-pt/playtest/Playtest_sheet_v0.9.6.md",
+    "en-us/playtest/Playtest_sheet_v0.9.md",
+    "pt-pt/README.md",
+    "assets/image/narequenta_favicon_16x16.png",
+    "CREDITS.md",
+    "README.md",
+    "assets/image/Minimalist_dark_fantasy_202511151421.jpeg",
+    "assets/image/narequenta_favicon.ico",
+    "pt-pt/playtest/playtest.txt",
+    "Narequenta-rules.txt",
+    "assets/image/Minimalist_dark_fantasy_202511151421 (1).jpeg",
+    "assets/image/narequenta_minimal_favicon.ico",
+    "assets/lang/en-us.json",
+    "assets/lang/pt-pt.json",
+    "assets/image/Minimalist_dark_fantasy_202511151421 (2).jpeg",
     "assets/image/Minimalist_dark_fantasy_202511151421 (3).jpeg",
-    "assets/image/Minimalist_dark_fantasy_202511151421 (2).jpeg"
+    "weapons and armors.md",
+    "favicon.ico",
+    "assets/image/narequenta_minimal_favicon_16x16.png"
   ]
 }
