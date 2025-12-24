@@ -1,5 +1,5 @@
 ![Repository Header Image](header_image.jpeg)
-# Nárëquenta — Tales of the Waning (Foundry VTT)
+# Nárëquenta — Tales of the Waning
 
 **Version: v0.9.6 (Precision Lethality & Zones of Strain)**
 **Author:** Serelith Varn (cortonemo)
