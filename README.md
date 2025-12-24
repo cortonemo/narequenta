@@ -1,4 +1,4 @@
-![Repository Header Image](header_image.png)
+![Repository Header Image](header_image.jpeg)
 # Nárëquenta — Tales of the Waning (Foundry VTT)
 
 **Version: v0.9.6 (Precision Lethality & Zones of Strain)**
