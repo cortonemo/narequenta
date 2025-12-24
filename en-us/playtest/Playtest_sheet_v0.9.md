@@ -3,7 +3,7 @@
 **Name:** [_____________________]
 **Concept / Legend People Tell About You:** [_____________________]
 **HP Current:** [100] / 100
-**ACTION SURGE (AS) POOL AVAILABLE:** [ ] / [ Max: 5 at Tier V ] [cite: 199, 201]
+**ACTION SURGE (AS) POOL AVAILABLE:** [ ] / [ Max: 5 at Tier V ] 
 
 ## ESSENCES (E_max vs E_cur)
 
@@ -32,15 +32,15 @@
 
 | Attrition | Motor Essence ($\mathbf{E_{P}}$) | Quality Essence ($\mathbf{E_{S}}$) | Calculation Summary |
 | :--- | :--- | :--- | :--- |
-| **$\mathbf{E_{cur}}$ Cost** | [cite_start]$\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$ [cite: 204] | [cite_start]**$1\%$ Fixed Cost** [cite: 204, 266] | [cite_start]**$\mathbf{D_{Final}}$** is Tier-Neutral, mitigated by $\mathbf{M}_{Defense}$ and scaled by $\mathbf{M_{DTA}}$[cite: 266]. |
-| **Failure (Effort)** | [cite_start]$\mathbf{1\%}$ Loss [cite: 267] | [cite_start]$\mathbf{1\%}$ Loss [cite: 267] | [cite_start]Both $\mathbf{E_{cur}}$ pools are reduced by $1\%$ on failed effort rolls[cite: 267]. |
+| **$\mathbf{E_{cur}}$ Cost** | $\mathbf{D_{Loss} = \max \left( 0, (7 - R_{prof}) \right)}$  | **$1\%$ Fixed Cost**  | **$\mathbf{D_{Final}}$** is Tier-Neutral, mitigated by $\mathbf{M}_{Defense}$ and scaled by $\mathbf{M_{DTA}}$. |
+| **Failure (Effort)** | $\mathbf{1\%}$ Loss  | $\mathbf{1\%}$ Loss  | Both $\mathbf{E_{cur}}$ pools are reduced by $1\%$ on failed effort rolls. |
 
 **MOTOR/QUALITY PAIRS:** VITALIS/MOTUS, MOTUS/VITALIS, SENSUS/VERBUM, VERBUM/ANIMA, ANIMA/SENSUS.
 
 ## EROSION / REFINEMENT LOG (Permanent Loss)
 (Log the $\mathbf{E_{max}}$ loss and resource gains achieved during the Waning Roll.)
 
-| Date / Chapter | [cite_start]Refined Essence (Focus **2d6** Risk) [cite: 18] | Old E\_MAX | New E\_MAX | TIER Gained | AS Gained |
+| Date / Chapter | Refined Essence (Focus **2d6** Risk)  | Old E\_MAX | New E\_MAX | TIER Gained | AS Gained |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | | | | | | |
 

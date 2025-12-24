@@ -27,7 +27,7 @@ Check your $\mathbf{E_{cur}}$ to determine your Penalty to Success.
 
 ## ATTRITION & DAMAGE LOG
 **Success:** $(d100 - R_{prof}) \le (E_{max} - Zone)$
-[cite_start]**Attrition:** $Cost = \max(0, Weight - \lfloor R_{prof}/2 \rfloor)$[cite: 2528].
+**Attrition:** $Cost = \max(0, Weight - \lfloor R_{prof}/2 \rfloor)$.
 
 | Weight Class | Base Cost | Examples |
 | :--- | :--- | :--- |

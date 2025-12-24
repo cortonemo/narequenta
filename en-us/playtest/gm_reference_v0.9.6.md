@@ -3,16 +3,16 @@
 ## I. SESSION FLOW
 1. **Briefing:** Establish what they risk losing.
 2. **Action Resolution:**
-   - [cite_start]**Check:** $\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$[cite: 2502].
-   - [cite_start]**Attrition:** Action burns $\mathbf{E_{cur}}$ based on Item Weight (Light 10%, Med 15%, Hvy 20%) minus $\lfloor R_{prof}/2 \rfloor$[cite: 2528].
+   - **Check:** $\mathbf{d100} - \mathbf{R_{prof}} \le (\mathbf{E_{max}} - \mathbf{Z_{Penalty}})$.
+   - **Attrition:** Action burns $\mathbf{E_{cur}}$ based on Item Weight (Light 10%, Med 15%, Hvy 20%) minus $\lfloor R_{prof}/2 \rfloor$.
 3. **Zones of Strain:** Ensure players track their current Zone penalty.
    - **Peak (100-76%):** -0
    - **Waning (75-51%):** -10
    - **Fading (50-26%):** -20
-   - [cite_start]**Hollow (25-0%):** -30 [cite: 2505-2508].
+   - **Hollow (25-0%):** -30 .
 
 ## II. COMBAT FORMULAS
-[cite_start]**The Damage Floor:** Damage never drops below $\mathbf{R_{prof}}$ (before Tier Multiplier)[cite: 2517].
+**The Damage Floor:** Damage never drops below $\mathbf{R_{prof}}$ (before Tier Multiplier).
 
 $$\mathbf{D_{Final}} = \max(\mathbf{R_{prof}}, (\mathbf{A_{FP}} - \mathbf{\bar{M}_{Def}} + \mathbf{D_{Margin}} + \mathbf{R_{prof}})) \times \mathbf{M_{DTA}}$$
 
@@ -34,7 +34,7 @@ Based on $\Delta T = T_{Defender} - T_{Attacker}$.
 | **Attacker +2 Tier** | **x 1.50** |
 
 ## IV. RECOVERY (RENEWAL)
-- **Long Rest:** Restores $\mathbf{E_{cur}}$ to 100% (or current $\mathbf{E_{max}}$). [cite_start]It **does not** recover lost $\mathbf{E_{max}}$[cite: 2490].
+- **Long Rest:** Restores $\mathbf{E_{cur}}$ to 100% (or current $\mathbf{E_{max}}$). It **does not** recover lost $\mathbf{E_{max}}$.
 - **Waning Roll:** Happens at milestones. $\mathbf{1d6}$ (Universal) or $\mathbf{2d6}$ (Focus).
 
 ---
