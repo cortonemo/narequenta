@@ -43,16 +43,6 @@ The game is built around Essence management, **Zones of Strain**, and **Precisio
 
 -----
 
-### 📦 Installation
-
-1.  Open Foundry VTT.
-2.  Go to **Game Systems** -> **Install System**.
-3.  Paste the Manifest URL:
-    `https://github.com/cortonemo/narequenta-vtt/releases/latest/download/system.json`
-4.  Click **Install** .
-
------
-
 ### 📜 License & Authorship
 
 **© 2025 Serelith Varn**
