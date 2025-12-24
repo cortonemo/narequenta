@@ -38,8 +38,6 @@ Check your $\mathbf{E_{cur}}$ to determine your Penalty to Success.
 **Damage ($D_{Final}$):** $\max(R_{prof}, (A_{FP} - \bar{M} + D_{Margin} + R_{prof})) \times M_{DTA}$.
 
 ---
-© 2025 Serelith Varn.
-
 
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). [Read the full license →](LICENSE.md)

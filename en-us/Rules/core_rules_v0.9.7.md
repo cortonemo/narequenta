@@ -232,10 +232,5 @@ $$\mathbf{D_{Margin}} = \mathbf{d100_D-D_{Ecur}}$$
 > ==**This measures the Defender's vulnerability. A positive $\mathbf{D_{Margin}}$ means the Defender failed their defense, increasing damage.==**
 ***
 
-© 2025 Serelith Varn — Nárëquenta. Licensed under Nárëquenta Limited Open License (v0.1). See [[LICENSE.md]].
-***
-
-
-
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [[LICENSE.md]].

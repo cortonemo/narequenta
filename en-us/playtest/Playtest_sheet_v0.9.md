@@ -48,9 +48,6 @@
 (What you promised to do before you fade.)
 
 ---
-© 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See [LICENSE.md](license: 62).
-
 
 © 2025 Serelith Varn — Nárëquenta: Tales of the Waning.
-Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). See LICENSE.md.
+Licensed for non-commercial play and fan content under the Nárëquenta Limited Open License (v0.1). [Read the full license →](LICENSE.md)
