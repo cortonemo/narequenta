@@ -75,6 +75,8 @@ backup/
 *.env
 secrets.txt
 passwords.txt
+*.txt
+.weapons and armors.md
 
 # --- Optional: ignore heavy exports ---
 # Uncomment if you don't want to track generated docs or PDFs
